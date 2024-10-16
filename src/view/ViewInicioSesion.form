@@ -222,28 +222,28 @@
         <Component class="javax.swing.JLabel" name="icon_logo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/style/icon-registro/Logo.png"/>
+              <Image iconType="3" name="/style/icon_log_in/Logo.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="icon_mail">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/style/icon-registro/icon-mail.png"/>
+              <Image iconType="3" name="/style/icon_log_in/icon-mail.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="icon_pass">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/style/icon-registro/icon-pass.png"/>
+              <Image iconType="3" name="/style/icon_log_in/icon-pass.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="icon_tipoUser">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/style/icon-registro/icon-rol.png"/>
+              <Image iconType="3" name="/style/icon_log_in/icon-rol.png"/>
             </Property>
           </Properties>
         </Component>
@@ -280,7 +280,7 @@
     <Component class="javax.swing.JLabel" name="fondo_inicio">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/style/icon-registro/InicioDeSesion-img.jpg"/>
+          <Image iconType="3" name="/style/icon_log_in/InicioDeSesion-img.jpg"/>
         </Property>
       </Properties>
       <Constraints>

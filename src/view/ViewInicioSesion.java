@@ -84,13 +84,13 @@ public class ViewInicioSesion extends javax.swing.JFrame {
             }
         });
 
-        icon_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon-registro/Logo.png"))); // NOI18N
+        icon_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon_log_in/Logo.png"))); // NOI18N
 
-        icon_mail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon-registro/icon-mail.png"))); // NOI18N
+        icon_mail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon_log_in/icon-mail.png"))); // NOI18N
 
-        icon_pass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon-registro/icon-pass.png"))); // NOI18N
+        icon_pass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon_log_in/icon-pass.png"))); // NOI18N
 
-        icon_tipoUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon-registro/icon-rol.png"))); // NOI18N
+        icon_tipoUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon_log_in/icon-rol.png"))); // NOI18N
 
         fld_username.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         fld_username.setBorder(null);
@@ -185,7 +185,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
 
         getContentPane().add(pnl_contenedorInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 360, 640));
 
-        fondo_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon-registro/InicioDeSesion-img.jpg"))); // NOI18N
+        fondo_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon_log_in/InicioDeSesion-img.jpg"))); // NOI18N
         getContentPane().add(fondo_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 720));
 
         pack();
@@ -196,8 +196,8 @@ public class ViewInicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbx_tipoUsuarioActionPerformed
 
     private void lbl_LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_LogInMouseClicked
-        //ViewMenuPrincipal menu = new ViewMenuPrincipal();
-        //menu.setVisible(true);
+        ViewMenuPrincipal menu = new ViewMenuPrincipal();
+        menu.setVisible(true);
         dispose();
     }//GEN-LAST:event_lbl_LogInMouseClicked
 
