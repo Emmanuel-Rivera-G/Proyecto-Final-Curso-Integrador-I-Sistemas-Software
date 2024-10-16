@@ -1,9 +1,2 @@
 /build/
 /dist/
-/src/model/Producto.java
-/src/dao/interfaces/DAOProducto.java
-/src/dao/implemetacion/DAOProductoImpl.java
-/src/utils/UtilsProducto.java
-/src/config/Conexion.java
-/src/utils/.gitCheck
-/src/dao/interfaz/DAOProducto.java
