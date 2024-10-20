@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -13,7 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Producto;
-import model.ProductoDAO;
+import dao.implemetacion.DAOProductoImpl;
 import view.ViewMenuPrincipal;
 import view.viewRegistroProductos;// interfaz grafica Registro producto
 //import view.ViewMenuPrincipal;
@@ -35,7 +31,7 @@ public class ControladorProducto implements ActionListener{//implements controla
 
     //instanciacion de objetos
     Producto producto = new Producto();//hara uso de constructor vacio
-    ProductoDAO productodao = new ProductoDAO();
+    DAOProductoImpl productodao = new DAOProductoImpl();
     viewRegistroProductos view = new viewRegistroProductos();
     DefaultTableModel modeloTabla = new DefaultTableModel();// carga los nombres de la base de datos para interactuar con el
     
@@ -51,7 +47,6 @@ public class ControladorProducto implements ActionListener{//implements controla
     }
 
     /*public ControladorProducto(ViewMenuPrincipal vista) {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         this.view = view;// recibe los valores o dato
         view.setVisible(true);
         
