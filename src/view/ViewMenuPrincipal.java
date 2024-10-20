@@ -24,10 +24,10 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
      * Creates new form MenuPrincipal
      */
     CardLayout vista;
-    vistaPrincipal vistap = new vistaPrincipal();
-    viewRegistroUsuario vistaUser = new viewRegistroUsuario();
-    viewRegistroCategorias vistaCategorias = new viewRegistroCategorias();
-    viewRegistroProductos vistaProductos = new viewRegistroProductos();//SOOOOOL
+    VistaPrincipal vistap = new VistaPrincipal();
+    ViewRegistroUsuario vistaUser = new ViewRegistroUsuario();
+    ViewRegistroCategorias vistaCategorias = new ViewRegistroCategorias();
+    ViewRegistroProductos vistaProductos = new ViewRegistroProductos();//SOOOOOL
 
     public ViewMenuPrincipal() {
 

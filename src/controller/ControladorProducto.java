@@ -11,9 +11,8 @@ import javax.swing.table.DefaultTableModel;
 import model.Producto;
 import dao.implemetacion.DAOProductoImpl;
 import view.ViewMenuPrincipal;
-import view.viewRegistroProductos;// interfaz grafica Registro producto
+import view.ViewRegistroProductos;// interfaz grafica Registro producto
 //import view.ViewMenuPrincipal;
-
 //import java.util.ArrayList;
 /**
  *
@@ -32,12 +31,12 @@ public class ControladorProducto implements ActionListener{//implements controla
     //instanciacion de objetos
     Producto producto = new Producto();//hara uso de constructor vacio
     DAOProductoImpl productodao = new DAOProductoImpl();
-    viewRegistroProductos view = new viewRegistroProductos();
+    ViewRegistroProductos view = new ViewRegistroProductos();
     DefaultTableModel modeloTabla = new DefaultTableModel();// carga los nombres de la base de datos para interactuar con el
     
     
     
-    public ControladorProducto(viewRegistroProductos view) {
+    public ControladorProducto(ViewRegistroProductos view) {
         this.view = view;// recibe los valores o dato
         view.setVisible(true);
         
@@ -125,7 +124,7 @@ public class ControladorProducto implements ActionListener{//implements controla
     
     //***************INICIO Validacion de formularios tipo booleanoo si esta vacio o no**********************
     private boolean validarDatos(){
-        //if ("".equals(viewRegistroProductos.getTxtNombreProducto().getText())) {}
+        //if ("".equals(ViewRegistroProductos.getTxtNombreProducto().getText())) {}
         if("".equals(view.getTxtNombreProducto().getText()) ||"".equals(view.getTxtCodCategoria().getText()) || "".equals(view.getTxtUndMedida().getText())||"".equals(view.getTxtStockProducto().getText())){
             JOptionPane.showInputDialog(null,"Debe llenar los campos","ERROR", JOptionPane.ERROR_MESSAGE);
             return false;//retornara falso porque algun campo esta vacio
