@@ -479,7 +479,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         vista.show(pnl_principal, "RegistroProducto");
         
         //viewRegistroProductos.cargarDatos();
-        ControladorProducto controlador = new ControladorProducto(vistaProductos);//SOOOOOL
+        ControladorProducto controlador = new ControladorProducto(vistaProductos);//SOOOOO0L
         //controlador.agregarEventos();
         
         SwingUtilities.updateComponentTreeUI(this);

@@ -24,7 +24,6 @@ import view.viewRegistroProductos;// interfaz grafica Registro producto
  * @author Elvis
  */
 public class ControladorProducto implements ActionListener{//implements controla las acciones de la vista
-    
     //variables globales para metodo cargar datos
     private int codigoProd;
     private String nombreProd;
@@ -205,8 +204,5 @@ public class ControladorProducto implements ActionListener{//implements controla
         }
     
     }
-    
-    
-    
-    
+ 
 }

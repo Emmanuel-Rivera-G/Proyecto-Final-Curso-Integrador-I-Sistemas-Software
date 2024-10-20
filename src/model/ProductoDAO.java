@@ -30,7 +30,7 @@ public class ProductoDAO {
             // la lista se guardara en el Result Set "rs"
             //Ahora del RS debemos pasarlo al arraylist mediante un while
             while (rs.next()){//iterara a toda la lista de la base de datos productos
-                //hara uso del constructor vacio
+                //hara uso del constructor vacioO
                 Producto producto = new Producto();// obj Producto llamado producto// aqui traigo DTO PRODUCTO
                 producto.setId(rs.getInt(1));// referencia por la posicion de la columna tambien puede ir el nombre de la columna BD
                 producto.setNombre(rs.getString(2));

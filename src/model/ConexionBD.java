@@ -20,13 +20,13 @@ public class ConexionBD {
     private static final String usuario = "root"; // usuario comun root
     private static final String clave = "";      // no tiene password
 
-    // Metodo para obtener la conexion
+    // Metodo para obtener la conexion.
     public Connection conectarBaseDatos() {
         
         Connection con = null;
         
         try {
-            // Establece conexion
+            // Establece Conexion
             con = DriverManager.getConnection(url, usuario, clave);
             System.out.println("Conexion BD exitosa");
         } catch (SQLException e) {

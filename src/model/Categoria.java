@@ -12,13 +12,13 @@ public class Categoria {
     private int idcat;
     private String nombre;
     
-    //Vacio
+    //constructor Vacio
     public Categoria() {
     }
     
     
     //por polimorfismo en estos constructores no generara error
-    // constructor para agregar sin ID
+    // constructor para agregar sin ID.
 
     public Categoria(String nombre) {
         this.nombre = nombre;

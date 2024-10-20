@@ -19,7 +19,7 @@ public class Producto {
     public Producto() {
     }
 
-    //constructor para agregar sin ID
+    //constructor para agregar sin ID ID
 
     public Producto(String nombre, int idcategoria, String undmedida, int stock) {
         this.nombre = nombre;
