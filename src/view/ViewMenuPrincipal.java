@@ -5,12 +5,15 @@
 package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
+
 import style.RoundedPanel;
 import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
+
+import controller.ControladorProducto;
 /**
  *
  * @author rasmx
@@ -24,7 +27,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     vistaPrincipal vistap = new vistaPrincipal();
     viewRegistroUsuario vistaUser = new viewRegistroUsuario();
     viewRegistroCategorias vistaCategorias = new viewRegistroCategorias();
-    viewRegistroProductos vistaProductos = new viewRegistroProductos();
+    viewRegistroProductos vistaProductos = new viewRegistroProductos();//SOOOOOL
 
     public ViewMenuPrincipal() {
 
@@ -41,6 +44,13 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         pnl_principal.add(vistaUser, "RegistroUsuario");
         pnl_principal.add(vistaCategorias, "RegistroCategoria");
         pnl_principal.add(vistaProductos, "RegistroProducto");
+        
+        //inicio AGREGANDO
+        //ViewMenuPrincipal menu = new ViewMenuPrincipal();
+        //ViewRegistroProductos menu1 = new ViewRegistroProductos();
+        //vistaProductos.setVisible(true);
+        //dispose();
+        //fin AGREGANDO
 
         // Muestra el panel inicial
         vista.show(pnl_principal, "menu");
@@ -463,10 +473,25 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_productoMouseExited
 
     private void btn_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_productoActionPerformed
+        
+        
+        //agregandooo elvis
         vista.show(pnl_principal, "RegistroProducto");
+        
+        //viewRegistroProductos.cargarDatos();
+        ControladorProducto controlador = new ControladorProducto(vistaProductos);//SOOOOOL
+        //controlador.agregarEventos();
+        
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint();
         this.setTitle("Gestion de productos");
+
+        //ViewMenuPrincipal menu = new ViewMenuPrincipal();
+        //menu.setVisible(true);
+        
+        //agregandoo elvis 
+        
+        
 
     }//GEN-LAST:event_btn_productoActionPerformed
 
