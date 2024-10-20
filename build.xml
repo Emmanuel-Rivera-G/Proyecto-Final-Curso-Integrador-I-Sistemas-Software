@@ -10,12 +10,6 @@
 <project name="Proyecto_Final_Curso_Integrador_I" default="default" basedir=".">
     <description>Builds, tests, and runs the project Proyecto Final Curso Integrador I.</description>
     <import file="nbproject/build-impl.xml"/>
-    
-    <target name="compile" depends="init">
-        <javac srcdir="src" destdir="build/classes" source="19" target="19" includeantruntime="false">
-            <compilerarg value="-Xlint:-deprecation" />
-        </javac>
-    </target>
 
     <!--
 
