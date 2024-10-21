@@ -57,7 +57,6 @@ public class ControladorProducto implements ActionListener{//implements controla
     // aqui lee si se ha apretado al boton o no mediante LISTENER
     private void agregarEventos(){       
         
-        
         view.getBtnRegistrarProducto().addActionListener(this);
         
         view.getBtnEditarProducto().addActionListener(this);

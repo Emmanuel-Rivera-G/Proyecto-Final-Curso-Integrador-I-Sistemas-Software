@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao.implemetacion;
 
 import config.Conexion;
@@ -38,6 +34,8 @@ public class DAOUsuarioImpl implements DAOUsuario {
             rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            connection.close();
         }
         return resultado;
     }
@@ -62,6 +60,8 @@ public class DAOUsuarioImpl implements DAOUsuario {
             registroExitoso = rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            connection.close();
         }
         return registroExitoso;
     }
@@ -115,6 +115,8 @@ public class DAOUsuarioImpl implements DAOUsuario {
             rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            connection.close();
         }
 
         return listaUsuarios;
@@ -131,6 +133,8 @@ public class DAOUsuarioImpl implements DAOUsuario {
             eliminado = rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            connection.close();
         }
 
         return eliminado;
@@ -156,6 +160,8 @@ public class DAOUsuarioImpl implements DAOUsuario {
             actualizado = rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            connection.close();
         }
 
         return actualizado;
@@ -180,6 +186,10 @@ public class DAOUsuarioImpl implements DAOUsuario {
                 DTOUsuario usuario = new DTOUsuario(id, nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password);
                 usuarios.add(usuario);
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            connection.close();
         }
         return usuarios;
 
