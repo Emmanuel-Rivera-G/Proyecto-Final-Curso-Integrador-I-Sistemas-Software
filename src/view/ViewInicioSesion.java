@@ -5,8 +5,12 @@
 package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import controller.ControllerUsuario;
+import dao.implemetacion.DAOUsuarioImpl;
 import style.RoundedPanel;
 import java.awt.Color;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /**
@@ -196,9 +200,39 @@ public class ViewInicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbx_tipoUsuarioActionPerformed
 
     private void lbl_LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_LogInMouseClicked
-        ViewMenuPrincipal menu = new ViewMenuPrincipal();
-        menu.setVisible(true);
-        dispose();
+        String usuario = fld_username.getText().trim();
+        String password = fld_password.getText().trim();
+        int tipoUsuario = 0;
+
+        if (cmbx_tipoUsuario.getSelectedItem().equals("ADMINISTRADOR")) {
+            tipoUsuario = 1;
+        } else if (cmbx_tipoUsuario.getSelectedItem().equals("EMPLEADO")) {
+            tipoUsuario = 2;
+        } else {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+
+        try {
+            ControllerUsuario controllerUser = new  ControllerUsuario();
+            boolean autenticacion = controllerUser.login(usuario, usuario, tipoUsuario);
+            if (autenticacion) {
+                if (tipoUsuario == 1) {
+                    ViewMenuPrincipal menu = new ViewMenuPrincipal(usuario);
+                    menu.setVisible(true);
+                } else if (tipoUsuario == 2) {
+                    JOptionPane.showMessageDialog(null, "Vista Proximamente ...");
+                }
+                dispose(); 
+            } else {
+                JOptionPane.showMessageDialog(null, "Error en el inicio de sesión. Usuario o contraseña incorrectos.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error al conectar con la base de datos.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error inesperado: " + e.getMessage());
+        }
     }//GEN-LAST:event_lbl_LogInMouseClicked
 
     /**
@@ -225,6 +259,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbx_tipoUsuario;
