@@ -4,8 +4,15 @@
  */
 package view;
 
+import controller.ControllerUsuario;
+import dto.DTOUsuario;
 import style.RoundedPanel;
 import java.awt.Color;
+import java.util.List;
+import java.sql.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,12 +20,14 @@ import java.awt.Color;
  */
 public class viewRegistroUsuario extends javax.swing.JPanel {
 
+    private DefaultTableModel modeloTabla;
+    List<DTOUsuario> usuarios;
+
     /**
      * Creates new form vistaPrincipal
      */
     public viewRegistroUsuario() {
         this.setBackground(Color.decode("#000511"));
-
         initComponents();
     }
 
@@ -53,7 +62,7 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
         txtusuario = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         txtpass = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
+        lbl_btn_saved = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         panel_cont_icon_user4 =  new RoundedPanel(60, new Color(19, 22, 27));
         panel_cont_icon_user5 =  new RoundedPanel(60, Color.WHITE);
@@ -203,7 +212,12 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-guardar.png"))); // NOI18N
+        lbl_btn_saved.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-guardar.png"))); // NOI18N
+        lbl_btn_saved.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_btn_savedMouseClicked(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -215,7 +229,7 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
             panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user2Layout.createSequentialGroup()
                 .addGap(69, 69, 69)
-                .addComponent(jLabel13)
+                .addComponent(lbl_btn_saved)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user2Layout.createSequentialGroup()
                 .addContainerGap(13, Short.MAX_VALUE)
@@ -235,7 +249,7 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panel_cont_icon_user3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel13)
+                .addComponent(lbl_btn_saved)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -303,10 +317,25 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
         panel_cont_icon_user6.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-editar.png"))); // NOI18N
+        lbl_editar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_editarMouseClicked(evt);
+            }
+        });
 
         lbl_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-eliminar.png"))); // NOI18N
+        lbl_delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_deleteMouseClicked(evt);
+            }
+        });
 
         lbl_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-buscar.png"))); // NOI18N
+        lbl_buscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_buscarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_cont_icon_user6Layout = new javax.swing.GroupLayout(panel_cont_icon_user6);
         panel_cont_icon_user6.setLayout(panel_cont_icon_user6Layout);
@@ -339,6 +368,176 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tablaUsuariosMouseClicked
 
+    private void lbl_btn_savedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_btn_savedMouseClicked
+        try {
+            ControllerUsuario controllerUser = new ControllerUsuario();
+
+            int idTipoUsuario = 0;
+            String nombre, apellido, documento, direccion, telefono, correo, username, password;
+
+            nombre = txtnombre.getText().trim();
+            apellido = txtapellido.getText().trim();
+            documento = txtdocumento.getText().trim();
+            direccion = txtdireccion.getText().trim();
+            telefono = txttelefono.getText().trim();
+            correo = txtcorreo.getText().trim();
+            if (cmbTipoUsuario.getSelectedItem().equals("Administrador")) {
+                idTipoUsuario = 1;
+            } else if (cmbTipoUsuario.getSelectedItem().equals("Empleado")) {
+                idTipoUsuario = 2;
+            }
+            username = txtusuario.getText().trim();
+            password = txtpass.getText().trim();
+
+            boolean registrado = controllerUser.registrarUsuario(nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password);
+
+            if (registrado) {
+                JOptionPane.showMessageDialog(null, "Registro exitoso");
+                limpiarCampos();
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al registrar el usuario.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error inesperado: " + e.getMessage());
+        }
+    }//GEN-LAST:event_lbl_btn_savedMouseClicked
+
+    private void lbl_buscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_buscarMouseClicked
+        try {
+            ControllerUsuario controllerUser = new ControllerUsuario();
+            String nombre = txtnombre.getText().trim();
+            String apellido = txtapellido.getText().trim();
+            String documento = txtdocumento.getText().trim();
+            String correo = txtcorreo.getText().trim();
+
+            List<DTOUsuario> usuarios = controllerUser.buscarUsuarioPorCriterios(nombre, apellido, documento, correo);
+
+            if (!usuarios.isEmpty()) {
+                mostrarUsuariosPorCriterios(usuarios);
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontraron usuarios con esos criterios.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_lbl_buscarMouseClicked
+
+    private void lbl_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_deleteMouseClicked
+        try {
+            String documento = txtdocumento.getText().trim();  // Asumiendo que eliminas por documento
+            ControllerUsuario controllerUser = new ControllerUsuario();
+
+            boolean usuarioEliminado = controllerUser.eliminarUsuarioPorDocumento(documento);
+
+            if (usuarioEliminado) {
+                JOptionPane.showMessageDialog(null, "Usuario eliminado exitosamente.");
+                limpiarCampos();
+                mostrarActualizarTabla();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al eliminar el usuario.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }    }//GEN-LAST:event_lbl_deleteMouseClicked
+
+    private void lbl_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_editarMouseClicked
+        try {
+            ControllerUsuario controllerUser = new ControllerUsuario();
+
+            int idTipoUsuario;
+
+            String nombre, apellido, documento, direccion, telefono, correo, username, password;
+            nombre = txtnombre.getText().trim();
+            apellido = txtapellido.getText().trim();
+            documento = txtdocumento.getText().trim();  // Documento que no se puede cambiar
+            direccion = txtdireccion.getText().trim();
+            telefono = txttelefono.getText().trim();
+            correo = txtcorreo.getText().trim();
+
+            if (cmbTipoUsuario.getSelectedItem().equals("Administrador")) {
+                idTipoUsuario = 1;
+            } else {
+                idTipoUsuario = 2;
+            }
+            username = txtusuario.getText().trim();
+            password = txtpass.getText().trim();
+            DefaultTableModel tablaModel = (DefaultTableModel) tablaUsuarios.getModel();
+
+            boolean usuarioeditado = controllerUser.editarUsuario(nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password);
+
+            if (usuarioeditado) {
+                JOptionPane.showMessageDialog(null, "Usuario actualizado exitosamente.");
+                mostrarActualizarTabla();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al actualizar el usuario.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_lbl_editarMouseClicked
+
+    private void limpiarCampos() {
+        int idTipoUsuario = 0;
+        String nombre, apellido, documento, direccion, telefono, correo, username, password;
+
+        txtnombre.setText("");
+        txtapellido.setText("");
+        txtdocumento.setText("");
+        txtdireccion.setText("");
+        txttelefono.setText("");
+        txtcorreo.setText("");
+
+        if (cmbTipoUsuario.getSelectedItem().equals("Administrador")) {
+            idTipoUsuario = 1;
+        } else if (cmbTipoUsuario.getSelectedItem().equals("Empleado")) {
+            idTipoUsuario = 2;
+        }
+
+        txtusuario.setText("");
+        txtpass.setText("");
+    }
+
+    private DefaultTableModel construirModeloTabla(List<DTOUsuario> usuarios) {
+        String[] columnas = {"ID", "Nombre", "Apellido", "Documento", "Dirección", "Teléfono", "Correo", "Tipo Usuario", "Usuario", "Contraseña"};
+        DefaultTableModel modelo = new DefaultTableModel(null, columnas);
+        for (DTOUsuario usuario : usuarios) {
+            Object[] fila = new Object[10];
+            fila[0] = usuario.getIdUsuario();
+            fila[1] = usuario.getNombre();
+            fila[2] = usuario.getApellido();
+            fila[3] = usuario.getDocumento();
+            fila[4] = usuario.getDireccion();
+            fila[5] = usuario.getTelefono();
+            fila[6] = usuario.getCorreo();
+            fila[7] = usuario.getIdTipoUsuario() == 1 ? "Administrador" : "Empleado"; // Puedes convertir el tipo de usuario a texto
+            fila[8] = usuario.getUsername();
+            fila[9] = usuario.getPassword();
+            modelo.addRow(fila);
+        }
+
+        return modelo;
+    }
+
+    private void mostrarUsuariosPorCriterios(List<DTOUsuario> usuarios) {
+        this.usuarios = usuarios;
+        modeloTabla = construirModeloTabla(usuarios);
+        tablaUsuarios.setModel(modeloTabla);
+    }
+
+    private void mostrarActualizarTabla() {
+        try {
+            ControllerUsuario controlleruser = new ControllerUsuario();
+            List<DTOUsuario> usuarios = controlleruser.obtenerUsuarios();
+            DefaultTableModel modelo = construirModeloTabla(usuarios);
+            tablaUsuarios.setModel(modelo);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbTipoUsuario;
@@ -346,7 +545,6 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -355,6 +553,7 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_btn_saved;
     private javax.swing.JLabel lbl_buscar;
     private javax.swing.JLabel lbl_delete;
     private javax.swing.JLabel lbl_editar;

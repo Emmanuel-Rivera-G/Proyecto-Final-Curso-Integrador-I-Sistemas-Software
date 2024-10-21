@@ -291,7 +291,7 @@ public class viewRegistroCategorias extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(panel_cont_icon_user8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_cont_icon_user2Layout.createSequentialGroup()
-                        .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                         .addGap(17, 17, 17)
                         .addComponent(panel_cont_icon_user6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(27, Short.MAX_VALUE))
