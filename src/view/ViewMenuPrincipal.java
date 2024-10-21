@@ -22,10 +22,10 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
      */
     static private String nombre_usuario;
     CardLayout vista;
-    ViewPrincipal vistap = new ViewPrincipal();
-    ViewRegistroUsuario vistaUser = new ViewRegistroUsuario();
-    ViewRegistroCategorias vistaCategorias = new ViewRegistroCategorias();
-    ViewRegistroProductos vistaProductos = new ViewRegistroProductos();
+    vistaPrincipal vistap = new vistaPrincipal();
+    viewRegistroUsuario vistaUser = new viewRegistroUsuario();
+    viewRegistroCategorias vistaCategorias = new viewRegistroCategorias();
+    viewRegistroProductos vistaProductos = new viewRegistroProductos();
 
     public ViewMenuPrincipal(String nombre_usuario) {
         this.nombre_usuario = nombre_usuario;

@@ -11,12 +11,12 @@ import java.awt.Color;
  *
  * @author rasmx
  */
-public class ViewRegistroCategorias extends javax.swing.JPanel {
+public class viewRegistroCategorias extends javax.swing.JPanel {
 
     /**
      * Creates new form vistaPrincipal
      */
-    public ViewRegistroCategorias() {
+    public viewRegistroCategorias() {
         this.setBackground(Color.decode("#000511"));
         initComponents();
         
