@@ -1,18 +1,34 @@
 package dto;
 
-//import model.Producto;
+
 
 import model.Producto;
 
 
 public class DTOProducto {
-    private long idProducto;
+    private int idProducto;
     private String nombre;
+    private int idCategoría;
+    private String undMedida;
     private int stock;
-    private long idCategoría;
-    private double precioVenta;
 
     public DTOProducto() {
+    }
+    
+    public DTOProducto(String nombre, int idCategoría, String undMedida, int stock) {
+        this.idProducto = -1;
+        this.nombre = nombre;
+        this.idCategoría = idCategoría;
+        this.undMedida = undMedida;
+        this.stock = stock;
+    }
+
+    public DTOProducto(int idProducto, String nombre, int idCategoría, String undMedida, int stock) {
+        this.idProducto = idProducto;
+        this.nombre = nombre;
+        this.idCategoría = idCategoría;
+        this.undMedida = undMedida;
+        this.stock = stock;
     }
 
     public DTOProducto(Producto producto) {
@@ -20,14 +36,14 @@ public class DTOProducto {
         this.nombre = producto.getNombre();
         this.stock = producto.getStock();
         this.idCategoría = producto.getIdcategoria();
-        //this.precioVenta = producto.getPrecioVenta();
+        this.undMedida = producto.getUndmedida();
     }
 
-    public long getIdProducto() {
+    public int getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(long idProducto) {
+    public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
     }
 
@@ -47,24 +63,27 @@ public class DTOProducto {
         this.stock = stock;
     }
 
-    public long getIdCategoría() {
+    public int getIdCategoría() {
         return idCategoría;
     }
 
-    public void setIdCategoría(long idCategoría) {
+    public void setIdCategoría(int idCategoría) {
         this.idCategoría = idCategoría;
     }
 
-    public double getPrecioVenta() {
-        return precioVenta;
+    public String getUndMedida() {
+        return undMedida;
     }
 
-    public void setPrecioVenta(double precioVenta) {
-        this.precioVenta = precioVenta;
+    public void setUndMedida(String undMedida) {
+        this.undMedida = undMedida;
     }
     
     public Producto toProducto() {
-        //return new Producto(idProducto, nombre, stock, idCategoría, precioVenta);
-        return null;
+        return new Producto(idProducto, nombre, idCategoría, undMedida, stock);
+    }
+    
+    public static DTOProducto toDTOProducto(Producto producto) {
+        return new DTOProducto(producto);
     }
 }
