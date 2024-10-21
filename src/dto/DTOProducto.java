@@ -1,6 +1,6 @@
 package dto;
 
-import model.Producto;
+//import model.Producto;
 
 public class DTOProducto {
     private long idProducto;
