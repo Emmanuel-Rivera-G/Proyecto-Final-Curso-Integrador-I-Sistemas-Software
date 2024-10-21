@@ -11,12 +11,12 @@ import java.awt.Color;
  *
  * @author rasmx
  */
-public class vistaPrincipal extends javax.swing.JPanel {
+public class VistaPrincipal extends javax.swing.JPanel {
 
     /**
      * Creates new form vistaPrincipal
      */
-    public vistaPrincipal() {
+    public VistaPrincipal() {
         this.setBackground(Color.decode("#000511"));
         initComponents();
     }

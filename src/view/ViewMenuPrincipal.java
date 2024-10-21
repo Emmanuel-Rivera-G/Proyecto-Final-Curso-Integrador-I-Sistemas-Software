@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
@@ -25,10 +21,10 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
      */
     static private String nombre_usuario;
     CardLayout vista;
-    vistaPrincipal vistap = new vistaPrincipal();
-    viewRegistroUsuario vistaUser = new viewRegistroUsuario();
-    viewRegistroCategorias vistaCategorias = new viewRegistroCategorias();
-    viewRegistroProductos vistaProductos = new viewRegistroProductos();//SOOOOOL
+    VistaPrincipal vistap = new VistaPrincipal();
+    ViewRegistroUsuario vistaUser = new ViewRegistroUsuario();
+    ViewRegistroCategorias vistaCategorias = new ViewRegistroCategorias();
+    ViewRegistroProductos vistaProductos = new ViewRegistroProductos();//SOOOOOL
 
     public ViewMenuPrincipal(String nombre_usuario) {
         this.nombre_usuario = nombre_usuario;
