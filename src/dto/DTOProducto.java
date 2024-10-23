@@ -3,6 +3,9 @@ package dto;
 //import model.Producto;
 import model.Producto;
 
+import model.Producto;
+
+
 public class DTOProducto {
 
     private long idProducto;
@@ -18,7 +21,7 @@ public class DTOProducto {
         this.nombre = producto.getNombre();
         this.stock = producto.getStock();
         this.idCategoría = producto.getIdcategoria();
-
+        //this.precioVenta = producto.getPrecioVenta();
     }
 
     public long getIdProducto() {

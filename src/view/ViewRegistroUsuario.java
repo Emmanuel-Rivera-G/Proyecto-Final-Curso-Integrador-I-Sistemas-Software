@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author rasmx
  */
-public class viewRegistroUsuario extends javax.swing.JPanel {
+public class ViewRegistroUsuario extends javax.swing.JPanel {
 
     private DefaultTableModel modeloTabla;
     List<DTOUsuario> usuarios;
@@ -27,7 +27,7 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
     /**
      * Creates new form vistaPrincipal
      */
-    public viewRegistroUsuario() {
+    public ViewRegistroUsuario() {
         this.setBackground(Color.decode("#000511"));
         initComponents();
     }
