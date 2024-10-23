@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
 import controller.ControllerUsuario;
@@ -10,7 +6,8 @@ import style.RoundedPanel;
 import java.awt.Color;
 import java.util.List;
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,6 +26,13 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
     public ViewRegistroUsuario() {
         this.setBackground(Color.decode("#000511"));
         initComponents();
+        List<DTOUsuario> usuarios = null;
+        try {
+            usuarios = new ControllerUsuario().obtenerUsuarios();
+        } catch (SQLException ex) {
+            Logger.getLogger(ViewRegistroUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        mostrarUsuariosPorCriterios(usuarios);
     }
 
     /**

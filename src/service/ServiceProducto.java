@@ -9,7 +9,7 @@ public class ServiceProducto {
     private DAOProducto daoProducto;
 
     public ServiceProducto() {
-        
+        daoProducto = new DAOProductoImpl();
     }
 
     public void agregarProducto(DTOProducto productoDTO) {
