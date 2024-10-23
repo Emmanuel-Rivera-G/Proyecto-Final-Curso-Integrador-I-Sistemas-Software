@@ -175,10 +175,11 @@ public class DAOUsuarioImpl implements DAOUsuario {
     @Override
     public List<DTOUsuario> obtenerUsuarios() throws SQLException {
         List<DTOUsuario> usuarios = new ArrayList<>();
-        String sql = "SELECT id, nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password FROM usuario";
+        String sql = "SELECT id_usuario, nombre_usuario AS nombre, apellido_usuario AS apellido, documento_usuario AS documento, direccion_usuario AS direccion, telefono_usuario AS telefono, correo_usuario AS correo, id_tipo_usuario AS idTipoUsuario, username, password_usuario AS password \n" +
+"FROM usuario;";
         try (Statement statement = connection.createStatement(); ResultSet resultSet = statement.executeQuery(sql)) {
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
+                int id = resultSet.getInt("id_usuario");
                 String nombre = resultSet.getString("nombre");
                 String apellido = resultSet.getString("apellido");
                 String documento = resultSet.getString("documento");
