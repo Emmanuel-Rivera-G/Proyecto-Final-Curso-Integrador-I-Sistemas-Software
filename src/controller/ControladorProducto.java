@@ -10,7 +10,9 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.Producto;
 import dao.implemetacion.DAOProductoImpl;
-import view.ViewMenuPrincipal;
+import dao.interfaz.DAOProducto;
+import dto.DTOProducto;
+import service.ServiceProducto;
 import view.ViewRegistroProductos;// interfaz grafica Registro producto
 //import view.ViewMenuPrincipal;
 //import java.util.ArrayList;
@@ -30,7 +32,8 @@ public class ControladorProducto implements ActionListener{//implements controla
 
     //instanciacion de objetos
     Producto producto = new Producto();//hara uso de constructor vacio
-    DAOProductoImpl productodao = new DAOProductoImpl();
+    //DAOProducto productodao = new DAOProductoImpl();
+    ServiceProducto serviceProducto = new ServiceProducto();
     ViewRegistroProductos view = new ViewRegistroProductos();
     DefaultTableModel modeloTabla = new DefaultTableModel();// carga los nombres de la base de datos para interactuar con el
     
@@ -57,7 +60,6 @@ public class ControladorProducto implements ActionListener{//implements controla
     // aqui lee si se ha apretado al boton o no mediante LISTENER
     private void agregarEventos(){       
         
-        
         view.getBtnRegistrarProducto().addActionListener(this);
         
         view.getBtnEditarProducto().addActionListener(this);
@@ -79,10 +81,11 @@ public class ControladorProducto implements ActionListener{//implements controla
         String[] titulocolumnastbl = new String[] {"Codigo", "Nombre", "IdCategoria", "UndMedida", "Stock"};
 
         modeloTabla = new DefaultTableModel(titulocolumnastbl, 0);
-        List<Producto> listaProductos = productodao.listar();
+        List<DTOProducto> listaProductos = serviceProducto.obtenerTodosLosProductos();
 
         // Corrección en la creación de las filas
-        for (Producto producto : listaProductos) {
+        for (DTOProducto dtoProducto : listaProductos) {
+            producto = dtoProducto.toProducto();
             modeloTabla.addRow(new Object[] {
                 producto.getId(),
                 producto.getNombre(),
@@ -90,6 +93,7 @@ public class ControladorProducto implements ActionListener{//implements controla
                 producto.getUndmedida(),
                 producto.getStock()
             });
+            producto = null;
         }
 
         view.getTblTablaProductos().setModel(modeloTabla);
@@ -100,7 +104,7 @@ public class ControladorProducto implements ActionListener{//implements controla
         //String[] titulos = new String[]("Codigo","Nombre","IdCategoria","UndMedida","Stock");
         //String[] titulocolumnastbl = new String[]("CODIGO","NOMBRE","IDCATEGORIA","UND MEDIDA","STOCK");
         modeloTabla = new DefaultTableModel(titulocolumnastbl,0);
-        List<Producto>listaProductos = productodao.listar();
+        List<Producto>listaProductos = productodao.obtenerTodosLosProductos();
         for (Producto producto : listaProductos){
             
             modeloTabla.addRow(new Object[](producto.getId(),producto.getNombre(),producto.getIdcategoria(),producto.getUndmedida(),producto.getStock()));
@@ -152,7 +156,7 @@ public class ControladorProducto implements ActionListener{//implements controla
             if(validarDatos()){//validacion de metodo validar datos TRUE
                 if(cargarDatos()){//validacion de cargar datos si es TRUE, si todo ok sigue bajando
                     Producto producto = new Producto(nombreProd, idCategoria, undMedidaProd, stockProd);//Aqui se usa el contructor sin codigo en producto, para usar el metodo de cargarDatos()
-                    productodao.agregar(producto);//desde aqui llama al metodo agregar (interactua con la BD sql)de productoDAO ya instanciado
+                    serviceProducto.agregarProducto(new DTOProducto(producto));//desde aqui llama al metodo agregar (interactua con la BD sql)de productoDAO ya instanciado
                     JOptionPane.showMessageDialog(null, "Se ha registrado con exito");
                     LimpiarCampos();//despues de agregar se limpia campos
                 }
@@ -186,7 +190,7 @@ public class ControladorProducto implements ActionListener{//implements controla
     
     
     
-    //metodo abstracto secreo desde listar ACTION LISTENER para dar action a los buttons
+    //metodo abstracto secreo desde obtenerTodosLosProductos ACTION LISTENER para dar action a los buttons
     
     @Override
     public void actionPerformed(ActionEvent ae) {

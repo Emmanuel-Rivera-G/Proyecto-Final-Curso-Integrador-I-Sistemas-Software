@@ -7,11 +7,11 @@ import model.Producto;
 
 
 public class DTOProducto {
-
     private long idProducto;
     private String nombre;
     private int stock;
     private int idCategoría;
+    private String undMedida;
 
     public DTOProducto() {
     }
@@ -21,7 +21,7 @@ public class DTOProducto {
         this.nombre = producto.getNombre();
         this.stock = producto.getStock();
         this.idCategoría = producto.getIdcategoria();
-        //this.precioVenta = producto.getPrecioVenta();
+        this.undMedida = producto.getUndmedida();
     }
 
     public long getIdProducto() {
@@ -48,12 +48,20 @@ public class DTOProducto {
         this.stock = stock;
     }
 
-    public long getIdCategoría() {
+    public int getIdCategoría() {
         return idCategoría;
     }
 
     public void setIdCategoría(int idCategoría) {
         this.idCategoría = idCategoría;
+    }
+
+    public String getUndMedida() {
+        return undMedida;
+    }
+
+    public void setUndMedida(String undMedida) {
+        this.undMedida = undMedida;
     }
 
     public Producto toProducto() {

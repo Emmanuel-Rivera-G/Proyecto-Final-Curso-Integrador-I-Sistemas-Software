@@ -60,7 +60,7 @@ public class ControllerUsuario {
     public List<DTOUsuario> obtenerUsuarios() throws SQLException {
         return serviceUsuario.obtenerUsuarios();
     }
-
+    
     public String exportarExcel(File archivo, JTable table) {
         return serviceUsuario.exportarExcel(archivo, table);
     }

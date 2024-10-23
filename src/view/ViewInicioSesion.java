@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
@@ -214,7 +210,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
 
         try {
             ControllerUsuario controllerUser = new  ControllerUsuario();
-            boolean autenticacion = controllerUser.login(usuario, usuario, tipoUsuario);
+            boolean autenticacion = controllerUser.login(usuario, password, tipoUsuario);
             if (autenticacion) {
                 if (tipoUsuario == 1) {
                     ViewMenuPrincipal menu = new ViewMenuPrincipal(usuario);
