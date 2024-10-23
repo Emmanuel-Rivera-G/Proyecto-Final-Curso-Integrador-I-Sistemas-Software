@@ -12,14 +12,25 @@ import java.util.List;
 import dto.DTOUsuario;
 
 /**
+ * Implementación de la interfaz {@code DAOUsuario} que gestiona las operaciones
+ * de acceso a datos para los usuarios. Esta clase interactúa con la base de
+ * datos para realizar operaciones CRUD (Create, Read, Update, Delete) sobre la
+ * tabla de usuarios.
  *
- * @author rasmx
+ * @author Ralfph
  */
 public class DAOUsuarioImpl implements DAOUsuario {
 
     private Conexion conexion;
     private Connection connection;
 
+    /**
+     * Constructor de la clase {@code DAOUsuarioImpl}. Establece una conexión a
+     * la base de datos mediante la clase {@code Conexion}.
+     *
+     * @throws SQLException Si ocurre un error al establecer la conexión con la
+     * base de datos.
+     */
     public DAOUsuarioImpl() throws SQLException {
         conexion = new Conexion();
         connection = conexion.getConnection();
