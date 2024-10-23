@@ -8,9 +8,10 @@ import controller.ControllerUsuario;
 import dto.DTOUsuario;
 import style.RoundedPanel;
 import java.awt.Color;
+import java.io.File;
 import java.util.List;
 import java.sql.*;
-import java.util.ArrayList;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -41,7 +42,8 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
     private void initComponents() {
 
         panel_cont_icon_user1 =  new RoundedPanel(60, new Color(19, 22, 27));
-        jLabel14 = new javax.swing.JLabel();
+        lbl_btn_export = new javax.swing.JLabel();
+        lbl_registroUsuarios = new javax.swing.JLabel();
         panel_cont_icon_user2 =  new RoundedPanel(60, new Color(19, 22, 27));
         panel_cont_icon_user3 =  new RoundedPanel(60, Color.WHITE);
         jLabel3 = new javax.swing.JLabel();
@@ -79,10 +81,17 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
         panel_cont_icon_user1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user1.setForeground(new java.awt.Color(19, 22, 27));
 
-        jLabel14.setFont(new java.awt.Font("Gill Sans MT", 0, 21)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Registro de Usuarios");
+        lbl_btn_export.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-exportExcel.png"))); // NOI18N
+        lbl_btn_export.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_btn_exportMouseClicked(evt);
+            }
+        });
+
+        lbl_registroUsuarios.setFont(new java.awt.Font("Gill Sans MT", 0, 21)); // NOI18N
+        lbl_registroUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_registroUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_registroUsuarios.setText("Registro de Usuarios");
 
         javax.swing.GroupLayout panel_cont_icon_user1Layout = new javax.swing.GroupLayout(panel_cont_icon_user1);
         panel_cont_icon_user1.setLayout(panel_cont_icon_user1Layout);
@@ -90,15 +99,19 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
             panel_cont_icon_user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addComponent(lbl_registroUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 1039, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lbl_btn_export)
+                .addGap(16, 16, 16))
         );
         panel_cont_icon_user1Layout.setVerticalGroup(
             panel_cont_icon_user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(panel_cont_icon_user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lbl_registroUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                    .addComponent(lbl_btn_export, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         add(panel_cont_icon_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1100, 60));
@@ -479,6 +492,29 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_lbl_editarMouseClicked
 
+    private void lbl_btn_exportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_btn_exportMouseClicked
+        JFileChooser selecArchivo = new JFileChooser();
+        File archivo;
+
+        try {
+            ControllerUsuario controllerUser = new ControllerUsuario();
+
+            if (selecArchivo.showDialog(null, "Exportar") == JFileChooser.APPROVE_OPTION) {
+                archivo = selecArchivo.getSelectedFile();
+                String fileName = archivo.getName().toLowerCase(); 
+
+                if (fileName.endsWith("xls") || fileName.endsWith("xlsx")) {
+                    String resultado = controllerUser.exportarExcel(archivo, tablaUsuarios);
+                    JOptionPane.showMessageDialog(null, resultado + "\n Formato ." + fileName.substring(fileName.lastIndexOf(".") + 1));
+                } else {
+                    JOptionPane.showMessageDialog(null, "Elija un formato válido.");
+                }
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error durante la exportación: " + e.getMessage());
+        }
+    }//GEN-LAST:event_lbl_btn_exportMouseClicked
+
     private void limpiarCampos() {
         int idTipoUsuario = 0;
         String nombre, apellido, documento, direccion, telefono, correo, username, password;
@@ -545,7 +581,6 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -553,10 +588,16 @@ public class viewRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_btn_export;
+    private javax.swing.JLabel lbl_btn_exportExcel;
+    private javax.swing.JLabel lbl_btn_exportExcel1;
+    private javax.swing.JLabel lbl_btn_exportExcel2;
+    private javax.swing.JLabel lbl_btn_exportExcel3;
     private javax.swing.JLabel lbl_btn_saved;
     private javax.swing.JLabel lbl_buscar;
     private javax.swing.JLabel lbl_delete;
     private javax.swing.JLabel lbl_editar;
+    private javax.swing.JLabel lbl_registroUsuarios;
     private javax.swing.JPanel panel_cont_icon_user1;
     private javax.swing.JPanel panel_cont_icon_user2;
     private javax.swing.JPanel panel_cont_icon_user3;

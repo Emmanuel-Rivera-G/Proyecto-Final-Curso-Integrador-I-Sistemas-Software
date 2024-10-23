@@ -1,23 +1,24 @@
 package dto;
 
 //import model.Producto;
+import model.Producto;
 
 public class DTOProducto {
+
     private long idProducto;
     private String nombre;
     private int stock;
-    private long idCategoría;
-    private double precioVenta;
+    private int idCategoría;
 
     public DTOProducto() {
     }
 
     public DTOProducto(Producto producto) {
-        this.idProducto = producto.getIdProducto();
+        this.idProducto = producto.getId();
         this.nombre = producto.getNombre();
         this.stock = producto.getStock();
-        this.idCategoría = producto.getIdCategoría();
-        this.precioVenta = producto.getPrecioVenta();
+        this.idCategoría = producto.getIdcategoria();
+
     }
 
     public long getIdProducto() {
@@ -48,19 +49,11 @@ public class DTOProducto {
         return idCategoría;
     }
 
-    public void setIdCategoría(long idCategoría) {
+    public void setIdCategoría(int idCategoría) {
         this.idCategoría = idCategoría;
     }
 
-    public double getPrecioVenta() {
-        return precioVenta;
-    }
-
-    public void setPrecioVenta(double precioVenta) {
-        this.precioVenta = precioVenta;
-    }
-    
     public Producto toProducto() {
-        return new Producto(idProducto, nombre, stock, idCategoría, precioVenta);
+        return new Producto(nombre, idCategoría, null, stock);
     }
 }
