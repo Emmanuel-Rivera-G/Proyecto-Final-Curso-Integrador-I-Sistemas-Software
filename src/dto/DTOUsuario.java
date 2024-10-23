@@ -4,9 +4,13 @@
  */
 package dto;
 
+import model.Usuario;
+
 /**
+ * La clase {@code DTOUsuario} actúa como un Data Transfer Object (DTO) para
+ * transferir información de usuarios entre capas del sistema.
  *
- * @author rasmx
+ * @author Ralfph
  */
 public class DTOUsuario {
 
@@ -21,7 +25,30 @@ public class DTOUsuario {
     private String username;
     private String password;
 
+    /**
+     * Constructor vacío para crear un objeto {@code DTOUsuario} sin valores
+     * iniciales.
+     */
     public DTOUsuario() {
+    }
+
+    /**
+     * Constructor que inicializa un {@code DTOUsuario} a partir de un objeto
+     * {@code Usuario}.
+     *
+     * @param usuario El objeto {@code Usuario} con los datos a transferir.
+     */
+    public DTOUsuario(Usuario usuario) {
+        this.idUsuario = usuario.getIdUsuario();
+        this.nombre = usuario.getNombre();
+        this.apellido = usuario.getApellido();
+        this.documento = usuario.getDocumento();
+        this.direccion = usuario.getDireccion();
+        this.telefono = usuario.getTelefono();
+        this.correo = usuario.getCorreo();
+        this.idTipoUsuario = usuario.getIdTipoUsuario();
+        this.username = usuario.getUsername();
+        this.password = usuario.getPassword();
     }
 
     public DTOUsuario(int idUsuario, String nombre, String apellido, String documento, String direccion, String telefono, String correo, int idTipoUsuario, String username, String password) {
