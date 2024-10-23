@@ -8,6 +8,10 @@
 ## Fase de Desarrollo (40%)
 En esta fase se alcanzará un 40% del desarrollo del proyecto. Se han iniciado los trabajos y se han implementado varios casos de uso clave. Además, se han aplicado metodologías y patrones de diseño para asegurar un desarrollo sólido.
 
+Imagen Referencial:
+![CU40%](https://github.com/user-attachments/assets/b79b4840-b5d1-4113-90d6-c821d3145539)
+
+
 ### Casos de uso a completar
 - CU01 Registrar usuario
 - CU02 Autenticar usuaio
