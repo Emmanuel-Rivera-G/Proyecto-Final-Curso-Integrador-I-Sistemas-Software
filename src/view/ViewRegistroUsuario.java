@@ -12,13 +12,15 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import utils.UtilLoggerManager;
 
 /**
  *
  * @author rasmx
  */
 public class ViewRegistroUsuario extends javax.swing.JPanel {
-
+    
+    private final org.slf4j.Logger LOGGER = UtilLoggerManager.getLogger(ViewRegistroUsuario.class);
     private DefaultTableModel modeloTabla;
     List<DTOUsuario> usuarios;
 
@@ -511,8 +513,10 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                 if (fileName.endsWith("xls") || fileName.endsWith("xlsx")) {
                     String resultado = controllerUser.exportarExcel(archivo, tablaUsuarios);
                     JOptionPane.showMessageDialog(null, resultado + "\n Formato ." + fileName.substring(fileName.lastIndexOf(".") + 1));
+                    LOGGER.info("Formato elegido correctamente. (" + fileName.substring(fileName.lastIndexOf(".") + 1) + ")");
                 } else {
                     JOptionPane.showMessageDialog(null, "Elija un formato válido.");
+                    LOGGER.error("Formato de exportación incorrecto.");
                 }
             }
         } catch (Exception e) {
