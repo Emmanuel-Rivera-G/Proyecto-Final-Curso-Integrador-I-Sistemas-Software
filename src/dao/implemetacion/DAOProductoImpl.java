@@ -1,4 +1,5 @@
 package dao.implemetacion;
+import com.google.common.base.Preconditions;
 import config.Conexion;
 import dao.interfaz.DAOProducto;
 import dto.DTOProducto;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 import org.slf4j.Logger;
 import utils.UtilLoggerManager;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**
  *
@@ -29,6 +31,8 @@ public class DAOProductoImpl implements DAOProducto {
         List<DTOProducto> lista = new ArrayList<>();
         try {
             con = conexion.getConnection();
+            Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
+            
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();// devuelve lista de la base de datos productos
             // la lista se guardara en el Result Set "rs"
@@ -48,7 +52,7 @@ public class DAOProductoImpl implements DAOProducto {
             con.close();
             
         } catch (Exception e) {
-            LOGGER.error("Error en listar en la tabla {} : {}", tabla, e.getMessage(), e.getStackTrace());
+            LOGGER.error("Error en listar en la tabla {} : {}", tabla, e.getMessage(), ExceptionUtils.getStackTrace(e));
         }
         return lista;// retorna la lista cargada
     }
@@ -61,7 +65,9 @@ public class DAOProductoImpl implements DAOProducto {
         String sql = "INSERT INTO " + tabla + " (nombre,idCategoria,undMedida,Stock) VALUES (?,?,?,?)";
         try {
             con = conexion.getConnection();
+            Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
             ps = con.prepareStatement(sql);
+            
             ps.setString(1,producto.getNombre());
             ps.setInt(2,producto.getIdCategoría());
             ps.setString(3,producto.getUndMedida());
@@ -71,7 +77,7 @@ public class DAOProductoImpl implements DAOProducto {
             con.close();
             
         } catch (SQLException e) {
-            LOGGER.error("Error en agregar en la tabla {} : {}", tabla, e.getMessage(), e.getStackTrace());
+            LOGGER.error("Error en agregar en la tabla {} : {}", tabla, e.getMessage(), ExceptionUtils.getStackTrace(e));
         }
     }//TERMINA EL METODO AGREGAR
 
