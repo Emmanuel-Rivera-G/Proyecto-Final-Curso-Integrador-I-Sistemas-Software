@@ -10,6 +10,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import dto.DTOUsuario;
+import org.slf4j.Logger;
+import utils.UtilLoggerManager;
 
 /**
  * Implementación de la interfaz {@code DAOUsuario} que gestiona las operaciones
@@ -21,6 +23,7 @@ import dto.DTOUsuario;
  */
 public class DAOUsuarioImpl implements DAOUsuario {
 
+    private final Logger LOGGER = UtilLoggerManager.getLogger(DAOUsuario.class);
     private Conexion conexion;
     private Connection connection;
 
@@ -47,8 +50,13 @@ public class DAOUsuarioImpl implements DAOUsuario {
             ResultSet rs = ps.executeQuery();
             resultado = rs.next();
             rs.close();
+            if (resultado) {
+                LOGGER.info("Se registro un nuevo inicio de sesión.");
+            } else {
+                LOGGER.error("El usuario no se ha autenticado correctamente.");
+            }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Hubo un problema en la autenticación del usuario. " + e.getMessage(), e);
         }
         return resultado;
     }
@@ -71,8 +79,9 @@ public class DAOUsuarioImpl implements DAOUsuario {
 
             int rowsAffected = ps.executeUpdate();
             registroExitoso = rowsAffected > 0;
+            LOGGER.info("Se registro exitosamente un usuario.");
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Hubo un problema en el registro de usuario. " + e.getMessage(), e);
         }
         return registroExitoso;
     }
@@ -124,8 +133,9 @@ public class DAOUsuarioImpl implements DAOUsuario {
                 listaUsuarios.add(usuario);
             }
             rs.close();
+            LOGGER.info("Se recuperó correctamente los usuarios.");
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Hubo un problema en recuperar los usuarios por criterio. " + e.getMessage(), e);
         }
 
         return listaUsuarios;
@@ -140,8 +150,9 @@ public class DAOUsuarioImpl implements DAOUsuario {
             ps.setString(1, documento);
             int rowsAffected = ps.executeUpdate();
             eliminado = rowsAffected > 0;
+            LOGGER.info("Se elimino correctamente a un usuario.");
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Hubo un problema en eliminar un usuario por documento. " + e.getMessage(), e);
         }
 
         return eliminado;
@@ -165,8 +176,9 @@ public class DAOUsuarioImpl implements DAOUsuario {
 
             int rowsAffected = ps.executeUpdate();
             actualizado = rowsAffected > 0;
+            LOGGER.info("Se actualizo correctamente a un usuario.");
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Hubo un problema en actualizar un usuario en específico. " + e.getMessage(), e);
         }
 
         return actualizado;
@@ -192,6 +204,9 @@ public class DAOUsuarioImpl implements DAOUsuario {
                 DTOUsuario usuario = new DTOUsuario(id, nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password);
                 usuarios.add(usuario);
             }
+            LOGGER.info("Se recuperó correctamente a la lista de usuarios completa.");
+        } catch (SQLException e) {
+            LOGGER.error("Hubo un problema al recuperar todos los usuarios de la base de datos. " + e.getMessage(), e);
         }
         return usuarios;
 
