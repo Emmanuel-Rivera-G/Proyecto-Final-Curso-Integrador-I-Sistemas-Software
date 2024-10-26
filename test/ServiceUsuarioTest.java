@@ -60,7 +60,7 @@ public class ServiceUsuarioTest {
         DTOUsuario usuario = new DTOUsuario();
         usuario.setDocumento("123456");
         usuario.setNombre("Usuario 1");
-        usuario.setApellido("Apellido 1"); // No debe ser nulo
+        usuario.setApellido("Apellido 1");
         usuario.setCorreo("usuario1@example.com");
         usuario.setUsername("user1");
         usuario.setPassword("password123");
@@ -79,7 +79,7 @@ public class ServiceUsuarioTest {
         DTOUsuario usuario = new DTOUsuario();
         usuario.setDocumento("123456");
         usuario.setNombre("Usuario 1");
-        usuario.setApellido("Apellido 1"); // No debe ser nulo
+        usuario.setApellido("Apellido 1");
         usuario.setCorreo("usuario1@example.com");
         usuario.setUsername("user1");
         usuario.setPassword("password123");
@@ -101,7 +101,7 @@ public class ServiceUsuarioTest {
         DTOUsuario usuario = new DTOUsuario();
         usuario.setDocumento("123456");
         usuario.setNombre("Usuario 1");
-        usuario.setApellido("Apellido 1"); // No debe ser nulo
+        usuario.setApellido("Apellido 1");
         usuario.setCorreo("usuario1@example.com");
         usuario.setUsername("user1");
         usuario.setPassword("password123");
@@ -122,7 +122,7 @@ public class ServiceUsuarioTest {
         DTOUsuario usuario = new DTOUsuario();
         usuario.setDocumento("123456");
         usuario.setNombre("Usuario 1");
-        usuario.setApellido("Apellido 1"); // No debe ser nulo
+        usuario.setApellido("Apellido 1");
         usuario.setCorreo("usuario1@example.com");
         usuario.setUsername("user1");
         usuario.setPassword("password123");
@@ -140,7 +140,7 @@ public class ServiceUsuarioTest {
         DTOUsuario usuario1 = new DTOUsuario();
         usuario1.setDocumento("123456");
         usuario1.setNombre("Usuario 1");
-        usuario1.setApellido("Apellido 1"); // No debe ser nulo
+        usuario1.setApellido("Apellido 1");
         usuario1.setCorreo("usuario1@example.com");
         usuario1.setUsername("user1");
         usuario1.setPassword("password123");
@@ -149,7 +149,7 @@ public class ServiceUsuarioTest {
         DTOUsuario usuario2 = new DTOUsuario();
         usuario2.setDocumento("654321");
         usuario2.setNombre("Usuario 2");
-        usuario2.setApellido("Apellido 2"); // No debe ser nulo
+        usuario2.setApellido("Apellido 2");
         usuario2.setCorreo("usuario2@example.com");
         usuario2.setUsername("user2");
         usuario2.setPassword("password456");
