@@ -11,6 +11,10 @@ public class ServiceProducto {
     public ServiceProducto() {
         daoProducto = new DAOProductoImpl();
     }
+    
+    public ServiceProducto(DAOProducto daoProducto) {
+        this.daoProducto = daoProducto;
+    }
 
     public void agregarProducto(DTOProducto productoDTO) {
         daoProducto.agregarProducto(productoDTO);
