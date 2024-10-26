@@ -35,6 +35,16 @@ public class DAOUsuarioImpl implements DAOUsuario {
         connection = conexion.getConnection();
     }
 
+    /**
+     * Inicia sesión en el sistema verificando las credenciales del usuario.
+     *
+     * @param usuario el nombre de usuario
+     * @param contrasena la contraseña del usuario
+     * @param tipoUsuario el tipo de usuario (1 para Administrador, 2 para
+     * Empleado)
+     * @return true si las credenciales son válidas, false en caso contrario
+     * @throws SQLException si ocurre un error durante la consulta
+     */
     @Override
     public boolean login(String usuario, String contrasena, int tipoUsuario) throws SQLException {
         boolean resultado = false;
@@ -57,6 +67,14 @@ public class DAOUsuarioImpl implements DAOUsuario {
         return resultado;
     }
 
+    /**
+     * Registra un nuevo usuario en la base de datos.
+     *
+     * @param usuario el objeto DTOUsuario que contiene los datos del usuario a
+     * registrar
+     * @return true si el registro fue exitoso, false en caso contrario
+     * @throws SQLException si ocurre un error durante la inserción
+     */
     @Override
     public boolean registrarUsuario(DTOUsuario usuario) throws SQLException {
         boolean registroExitoso = false;
@@ -82,6 +100,17 @@ public class DAOUsuarioImpl implements DAOUsuario {
         return registroExitoso;
     }
 
+    /**
+     * Busca usuarios en la base de datos según los criterios proporcionados.
+     *
+     * @param nombre el nombre del usuario (opcional)
+     * @param apellido el apellido del usuario (opcional)
+     * @param documento el documento del usuario (opcional)
+     * @param correo el correo del usuario (opcional)
+     * @return una lista de DTOUsuario que coinciden con los criterios de
+     * búsqueda
+     * @throws SQLException si ocurre un error durante la consulta
+     */
     @Override
     public List<DTOUsuario> buscarUsuarioPorCriterios(String nombre, String apellido, String documento, String correo) throws SQLException {
         List<DTOUsuario> listaUsuarios = new ArrayList<>();
@@ -137,6 +166,13 @@ public class DAOUsuarioImpl implements DAOUsuario {
         return listaUsuarios;
     }
 
+    /**
+     * Elimina un usuario de la base de datos según el documento proporcionado.
+     *
+     * @param documento el documento del usuario a eliminar
+     * @return true si el usuario fue eliminado, false en caso contrario
+     * @throws SQLException si ocurre un error durante la eliminación
+     */
     @Override
     public boolean eliminarUsuarioPorDocumento(String documento) throws SQLException {
         boolean eliminado = false;
@@ -154,6 +190,13 @@ public class DAOUsuarioImpl implements DAOUsuario {
         return eliminado;
     }
 
+    /**
+     * Actualiza los datos de un usuario en la base de datos.
+     *
+     * @param usuario el objeto DTOUsuario con los datos actualizados
+     * @return true si la actualización fue exitosa, false en caso contrario
+     * @throws SQLException si ocurre un error durante la actualización
+     */
     @Override
     public boolean editarUsuario(DTOUsuario usuario) throws SQLException {
         boolean actualizado = false;
@@ -180,11 +223,17 @@ public class DAOUsuarioImpl implements DAOUsuario {
         return actualizado;
     }
 
+    /**
+     * Obtiene todos los usuarios registrados en la base de datos.
+     *
+     * @return una lista de DTOUsuario que representan todos los usuarios
+     * @throws SQLException si ocurre un error durante la consulta
+     */
     @Override
     public List<DTOUsuario> obtenerUsuarios() throws SQLException {
         List<DTOUsuario> usuarios = new ArrayList<>();
-        String sql = "SELECT id_usuario, nombre_usuario AS nombre, apellido_usuario AS apellido, documento_usuario AS documento, direccion_usuario AS direccion, telefono_usuario AS telefono, correo_usuario AS correo, id_tipo_usuario AS idTipoUsuario, username, password_usuario AS password \n" +
-"FROM usuario;";
+        String sql = "SELECT id_usuario, nombre_usuario AS nombre, apellido_usuario AS apellido, documento_usuario AS documento, direccion_usuario AS direccion, telefono_usuario AS telefono, correo_usuario AS correo, id_tipo_usuario AS idTipoUsuario, username, password_usuario AS password \n"
+                + "FROM usuario;";
         try (Statement statement = connection.createStatement(); ResultSet resultSet = statement.executeQuery(sql)) {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id_usuario");

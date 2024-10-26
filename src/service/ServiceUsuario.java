@@ -65,6 +65,19 @@ public class ServiceUsuario {
         return daoUsuario.registrarUsuario(usuario);
     }
 
+    /**
+     * Busca usuarios que coincidan con los criterios proporcionados (nombre,
+     * apellido, documento y correo).
+     *
+     * @param nombre Nombre del usuario a buscar (puede ser parcial o completo).
+     * @param apellido Apellido del usuario a buscar (puede ser parcial o
+     * completo).
+     * @param documento Documento de identificación del usuario a buscar.
+     * @param correo Correo electrónico del usuario a buscar.
+     * @return Lista de usuarios que coinciden con los criterios de búsqueda.
+     * @throws SQLException si ocurre un error al realizar la búsqueda en la
+     * base de datos.
+     */
     public List<DTOUsuario> buscarUsuarioPorCriterios(String nombre, String apellido, String documento, String correo) throws SQLException {
         return daoUsuario.buscarUsuarioPorCriterios(nombre, apellido, documento, correo);
     }

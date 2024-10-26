@@ -12,7 +12,7 @@ package model;
  * @author Ralfph
  */
 public class Usuario {
-
+    /*Atributos*/
     private int idUsuario;
     private String nombre;
     private String apellido;

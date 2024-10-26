@@ -5,7 +5,10 @@ import java.awt.Color;
 
 /**
  *
- * @author rasmx
+ * Clase vistaPrincipal que representa el panel principal de la interfaz
+ * gráfica. Establece la configuración inicial del fondo y sus componentes.
+ *
+ * @author Ralfph
  */
 public class VistaPrincipal extends javax.swing.JPanel {
 

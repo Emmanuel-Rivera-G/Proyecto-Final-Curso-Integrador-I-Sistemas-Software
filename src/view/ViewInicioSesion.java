@@ -2,7 +2,6 @@ package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
 import controller.ControllerUsuario;
-import dao.implemetacion.DAOUsuarioImpl;
 import style.RoundedPanel;
 import java.awt.Color;
 import java.sql.SQLException;
@@ -11,12 +10,22 @@ import javax.swing.UIManager;
 
 /**
  *
- * @author rasmx
+ * Ventana principal de inicio de sesión para usuarios.
+ * <p>
+ * Permite a los usuarios autenticarse mediante su nombre de usuario, contraseña
+ * y tipo de usuario.
+ * </p>
+ *
+ * @author Ralfph
  */
 public class ViewInicioSesion extends javax.swing.JFrame {
 
     /**
-     * Creates new form InicioSesionView1
+     * Constructor de la ventana de inicio de sesión.
+     * <p>
+     * Inicializa los componentes gráficos y configura la ventana para que
+     * aparezca centrada y maximizada.
+     * </p>
      */
     public ViewInicioSesion() {
         initComponents();
@@ -39,7 +48,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         cmbx_tipoUsuario = new javax.swing.JComboBox<>();
-        lbl_LogIn = new javax.swing.JLabel();
+        lbl_Login = new javax.swing.JLabel();
         icon_logo = new javax.swing.JLabel();
         icon_mail = new javax.swing.JLabel();
         icon_pass = new javax.swing.JLabel();
@@ -72,15 +81,15 @@ public class ViewInicioSesion extends javax.swing.JFrame {
             }
         });
 
-        lbl_LogIn.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_LogIn.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
-        lbl_LogIn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_LogIn.setText("LOG IN");
-        lbl_LogIn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lbl_LogIn.setOpaque(true);
-        lbl_LogIn.addMouseListener(new java.awt.event.MouseAdapter() {
+        lbl_Login.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_Login.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        lbl_Login.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_Login.setText("LOG IN");
+        lbl_Login.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lbl_Login.setOpaque(true);
+        lbl_Login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_LogInMouseClicked(evt);
+                lbl_LoginMouseClicked(evt);
             }
         });
 
@@ -140,7 +149,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
                         .addComponent(icon_logo))
                     .addGroup(pnl_contenedorInicioLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
-                        .addComponent(lbl_LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lbl_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(pnl_contenedorInicioLayout.createSequentialGroup()
                 .addGap(106, 106, 106)
@@ -174,7 +183,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
                                 .addGap(56, 56, 56)
                                 .addComponent(icon_tipoUser)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                        .addComponent(lbl_LogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_Login, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(lbl_questionPass)
                         .addGap(31, 31, 31))
@@ -186,7 +195,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
         getContentPane().add(pnl_contenedorInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 40, 360, 640));
 
         fondo_inicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icon_log_in/InicioDeSesion-img.jpg"))); // NOI18N
-        getContentPane().add(fondo_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 720));
+        getContentPane().add(fondo_inicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 790));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,8 +203,19 @@ public class ViewInicioSesion extends javax.swing.JFrame {
     private void cmbx_tipoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbx_tipoUsuarioActionPerformed
 
     }//GEN-LAST:event_cmbx_tipoUsuarioActionPerformed
-
-    private void lbl_LogInMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_LogInMouseClicked
+    /**
+     * Maneja el evento de clic en el botón de inicio de sesión.
+     * <p>
+     * Obtiene las credenciales de usuario desde los campos de texto de la
+     * interfaz, determina el tipo de usuario según la selección en el combo
+     * box, y llama al controlador para autenticar las credenciales. Si la
+     * autenticación es exitosa, se abre la ventana correspondiente al tipo de
+     * usuario. En caso de error, muestra un mensaje en pantalla.
+     * </p>
+     *
+     * @param evt el evento de clic del mouse.
+     */
+    private void lbl_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_LoginMouseClicked
         String usuario = fld_username.getText().trim();
         String password = fld_password.getText().trim();
         int tipoUsuario = 0;
@@ -209,7 +229,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
         }
 
         try {
-            ControllerUsuario controllerUser = new  ControllerUsuario();
+            ControllerUsuario controllerUser = new ControllerUsuario();
             boolean autenticacion = controllerUser.login(usuario, password, tipoUsuario);
             if (autenticacion) {
                 if (tipoUsuario == 1) {
@@ -218,7 +238,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
                 } else if (tipoUsuario == 2) {
                     JOptionPane.showMessageDialog(null, "Vista Proximamente ...");
                 }
-                dispose(); 
+                dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Error en el inicio de sesión. Usuario o contraseña incorrectos.");
             }
@@ -229,7 +249,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error inesperado: " + e.getMessage());
         }
-    }//GEN-LAST:event_lbl_LogInMouseClicked
+    }//GEN-LAST:event_lbl_LoginMouseClicked
 
     /**
      * @param args the command line arguments
@@ -268,7 +288,7 @@ public class ViewInicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel icon_tipoUser;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JLabel lbl_LogIn;
+    private javax.swing.JLabel lbl_Login;
     private javax.swing.JLabel lbl_inicioSesion;
     private javax.swing.JLabel lbl_questionPass;
     private static javax.swing.JPanel pnl_contenedorInicio;
