@@ -15,17 +15,21 @@ import javax.swing.table.DefaultTableModel;
 import utils.UtilLoggerManager;
 
 /**
+ * Clase que representa la vista de registro de usuarios. Esta clase permite
+ * realizar operaciones de registro, búsqueda, edición y eliminación de
+ * usuarios.
  *
- * @author rasmx
+ * @author Ralfph
  */
 public class ViewRegistroUsuario extends javax.swing.JPanel {
-    
+
     private final org.slf4j.Logger LOGGER = UtilLoggerManager.getLogger(ViewRegistroUsuario.class);
     private DefaultTableModel modeloTabla;
     List<DTOUsuario> usuarios;
 
     /**
-     * Creates new form vistaPrincipal
+     * Constructor de la clase viewRegistroUsuario. Inicializa el panel con un
+     * color de fondo específico y carga los componentes.
      */
     public ViewRegistroUsuario() {
         this.setBackground(Color.decode("#000511"));
@@ -388,6 +392,13 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tablaUsuariosMouseClicked
 
+    /**
+     * Inicia el proceso de registro de un nuevo usuario cuando se hace clic en
+     * el botón "Guardar". Obtiene los datos ingresados en los campos de texto y
+     * envía la solicitud de registro al controlador.
+     *
+     * @param evt el evento de clic del mouse.
+     */
     private void lbl_btn_savedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_btn_savedMouseClicked
         try {
             ControllerUsuario controllerUser = new ControllerUsuario();
@@ -423,6 +434,12 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_lbl_btn_savedMouseClicked
 
+    /**
+     * Realiza una búsqueda de usuarios basada en los criterios ingresados en
+     * los campos de texto y muestra los resultados en la tabla de usuarios.
+     *
+     * @param evt el evento de clic del mouse.
+     */
     private void lbl_buscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_buscarMouseClicked
         try {
             ControllerUsuario controllerUser = new ControllerUsuario();
@@ -443,6 +460,12 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_lbl_buscarMouseClicked
 
+    /**
+     * Elimina el usuario con el documento especificado en el campo de texto de
+     * documento. Después de la eliminación, actualiza la tabla de usuarios.
+     *
+     * @param evt el evento de clic del mouse.
+     */
     private void lbl_deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_deleteMouseClicked
         try {
             String documento = txtdocumento.getText().trim();  // Asumiendo que eliminas por documento
@@ -462,6 +485,13 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             e.printStackTrace();
         }    }//GEN-LAST:event_lbl_deleteMouseClicked
 
+    /**
+     * Edita los datos de un usuario existente con base en la información
+     * proporcionada en los campos de texto. Luego de la edición, actualiza la
+     * tabla para reflejar los cambios.
+     *
+     * @param evt el evento de clic del mouse.
+     */
     private void lbl_editarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_editarMouseClicked
         try {
             ControllerUsuario controllerUser = new ControllerUsuario();
@@ -498,7 +528,14 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }//GEN-LAST:event_lbl_editarMouseClicked
-
+    
+    /**
+     * Permite exportar los datos de la tabla de usuarios a un archivo de Excel
+     * (.xls o .xlsx). El archivo es guardado en la ubicación seleccionada por
+     * el usuario.
+     *
+     * @param evt el evento de clic del mouse.
+     */
     private void lbl_btn_exportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_btn_exportMouseClicked
         JFileChooser selecArchivo = new JFileChooser();
         File archivo;
@@ -508,7 +545,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
 
             if (selecArchivo.showDialog(null, "Exportar") == JFileChooser.APPROVE_OPTION) {
                 archivo = selecArchivo.getSelectedFile();
-                String fileName = archivo.getName().toLowerCase(); 
+                String fileName = archivo.getName().toLowerCase();
 
                 if (fileName.endsWith("xls") || fileName.endsWith("xlsx")) {
                     String resultado = controllerUser.exportarExcel(archivo, tablaUsuarios);

@@ -1,7 +1,5 @@
 package view;
 
-import controller.ControladorProducto;
-
 import style.RoundedPanel;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -11,21 +9,28 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
-
 /**
+ * Panel de registro de productos en la interfaz gráfica de la aplicación.
+ * <p>
+ * Esta clase define el panel para la vista de registro de productos y contiene
+ * varios componentes de la interfaz gráfica como botones, etiquetas, campos de
+ * texto y una tabla para gestionar productos.
+ * </p>
  *
- * @author rasmx
+ * @author Ralfph
  */
 public class ViewRegistroProductos extends javax.swing.JPanel {
 
     /**
      * Creates new form vistaPrincipal
      */
-    
-    
+    /**
+     * Constructor que inicializa el panel de registro de productos y establece
+     * el color de fondo.
+     */
     public ViewRegistroProductos() {
         this.setBackground(Color.decode("#000511"));
-        
+
         initComponents();
 
     }
@@ -376,7 +381,7 @@ public class ViewRegistroProductos extends javax.swing.JPanel {
     private void tblTablaProductosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTablaProductosMouseClicked
 
     }//GEN-LAST:event_tblTablaProductosMouseClicked
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscarProducto;
@@ -410,125 +415,211 @@ public class ViewRegistroProductos extends javax.swing.JPanel {
     private javax.swing.JTextField txtUndMedida;
     // End of variables declaration//GEN-END:variables
     //getter 
+    /**
+     * @return el botón de búsqueda de productos.
+     */
     public JButton getBtnBuscarProducto() {
         return btnBuscarProducto;
     }
 
+    /**
+     * @return el botón de edición de productos.
+     */
     public JButton getBtnEditarProducto() {
         return btnEditarProducto;
     }
 
+    /**
+     * @return el botón de eliminación de productos.
+     */
     public JButton getBtnEliminarProducto() {
         return btnEliminarProducto;
     }
 
+    /**
+     * @return el botón para limpiar los campos del formulario de productos.
+     */
     public JButton getBtnLimpiarProducto() {
         return btnLimpiarProducto;
     }
 
+    /**
+     * @return el botón para registrar nuevos productos.
+     */
     public JButton getBtnRegistrarProducto() {
         return btnRegistrarProducto;
     }
 
+    /**
+     * @return la etiqueta auxiliar adicional.
+     */
     public JLabel getjLabel1() {
         return jLabel1;
     }
 
+    /**
+     * @return la etiqueta auxiliar adicional.
+     */
     public JLabel getjLabel10() {
         return jLabel10;
     }
 
+    /**
+     * @return la etiqueta auxiliar adicional.
+     */
     public JLabel getjLabel11() {
         return jLabel11;
     }
 
+    /**
+     * @return la etiqueta auxiliar adicional.
+     */
     public JLabel getjLabel3() {
         return jLabel3;
     }
 
+    /**
+     * @return la etiqueta auxiliar adicional.
+     */
     public JLabel getjLabel4() {
         return jLabel4;
     }
 
+    /**
+     * @return la etiqueta auxiliar adicional.
+     */
     public JLabel getjLabel5() {
         return jLabel5;
     }
 
+    /**
+     * @return la etiqueta auxiliar adicional.
+     */
     public JLabel getjLabel6() {
         return jLabel6;
     }
 
+    /**
+     * @return la etiqueta auxiliar adicional.
+     */
     public JLabel getjLabel7() {
         return jLabel7;
     }
 
+    /**
+     * @return la etiqueta auxiliar adicional.
+     */
     public JLabel getjLabel8() {
         return jLabel8;
     }
 
+    /**
+     * Obtiene el componente de desplazamiento que contiene la tabla de
+     * productos.
+     *
+     * @return el JScrollPane que permite el desplazamiento en la tabla de
+     * productos.
+     */
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
+    /**
+     * @return el panel de iconos de usuario.
+     */
     public JPanel getPanel_cont_icon_user1() {
         return panel_cont_icon_user1;
     }
 
+    /**
+     * @return el panel de iconos del usuario en la segunda posición.
+     */
     public JPanel getPanel_cont_icon_user2() {
         return panel_cont_icon_user2;
     }
 
+    /**
+     * @return el panel de iconos del usuario en la tercera posición.
+     */
     public JPanel getPanel_cont_icon_user3() {
         return panel_cont_icon_user3;
     }
 
+    /**
+     * @return el panel de iconos del usuario en la quinta posición.
+     */
     public JPanel getPanel_cont_icon_user5() {
         return panel_cont_icon_user5;
     }
 
+    /**
+     * @return el panel de iconos del usuario en la sexta posición.
+     */
     public JPanel getPanel_cont_icon_user6() {
         return panel_cont_icon_user6;
     }
 
+    /**
+     * @return el panel de iconos del usuario en la septima posición.
+     */
     public JPanel getPanel_cont_icon_user7() {
         return panel_cont_icon_user7;
     }
 
+    /**
+     * @return el panel de iconos del usuario en la octava posición.
+     */
     public JPanel getPanel_cont_icon_user8() {
         return panel_cont_icon_user8;
     }
 
+    /**
+     * @return la tabla que muestra los productos registrados.
+     */
     public JTable getTblTablaProductos() {
         return tblTablaProductos;
     }
 
+    /**
+     * @return el campo de texto para ingresar el código de la categoría del
+     * producto.
+     */
     public JTextField getTxtCodCategoria() {
         return txtCodCategoria;
     }
 
+    /**
+     * @return el campo de texto para ingresar el código del producto.
+     */
     public JTextField getTxtCodProducto() {
         return txtCodProducto;
     }
 
+    /**
+     * @return el campo de texto para ingresar el nombre del producto.
+     */
     public JTextField getTxtNombreProducto() {
         return txtNombreProducto;
     }
 
+    /**
+     * @return el campo de texto para ingresar el stock del producto.
+     */
     public JTextField getTxtStockProducto() {
         return txtStockProducto;
     }
 
+    /**
+     * @return el campo de texto para ingresar la unidad de medida del producto.
+     */
     public JTextField getTxtUndMedida() {
         return txtUndMedida;
     }
 
+    /**
+     * @return el campo de texto para ingresar el ID de búsqueda del producto.
+     */
     public JTextField getTxtIdBuscar() {
         return txtIdBuscar;
     }
-
-    
-    
-    
-    
-
 }

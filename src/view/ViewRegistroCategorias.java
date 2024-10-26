@@ -4,18 +4,23 @@ import style.RoundedPanel;
 import java.awt.Color;
 
 /**
+ * Panel de registro de categorías en la interfaz gráfica de la aplicación.
+ * <p>
+ * Esta clase define el panel para la vista de registro de categorías, con un
+ * fondo personalizado.
+ * </p>
  *
- * @author rasmx
+ * @author Ralfph
  */
 public class ViewRegistroCategorias extends javax.swing.JPanel {
 
     /**
-     * Creates new form vistaPrincipal
+     * Constructor que inicializa el panel de registro de categorías y establece
+     * el color de fondo.
      */
     public ViewRegistroCategorias() {
         this.setBackground(Color.decode("#000511"));
         initComponents();
-        
 
     }
 
