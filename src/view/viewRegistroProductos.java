@@ -127,7 +127,7 @@ public class viewRegistroProductos extends javax.swing.JPanel {
         jLabel7.setText("Unidad de Medida:");
 
         jLabel8.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        jLabel8.setText("ID a BUSCAR:");
+        jLabel8.setText("BUSCAR POR ID o NOMBRE:");
 
         btnLimpiarProducto.setBackground(new java.awt.Color(0, 102, 255));
         btnLimpiarProducto.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
@@ -530,9 +530,5 @@ public class viewRegistroProductos extends javax.swing.JPanel {
         return txtIdBuscar;
     }
 
-    
-    
-    
-    
 
 }

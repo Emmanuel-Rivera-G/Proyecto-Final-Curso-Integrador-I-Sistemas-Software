@@ -13,11 +13,11 @@ public class DTOProducto {
     }
 
     public DTOProducto(Producto producto) {
-        this.idProducto = producto.getIdProducto();
+        //this.idProducto = producto.getIdProducto();
         this.nombre = producto.getNombre();
         this.stock = producto.getStock();
-        this.idCategoría = producto.getIdCategoría();
-        this.precioVenta = producto.getPrecioVenta();
+        //this.idCategoría = producto.getIdCategoría();
+        //this.precioVenta = producto.getPrecioVenta();
     }
 
     public long getIdProducto() {
@@ -60,7 +60,7 @@ public class DTOProducto {
         this.precioVenta = precioVenta;
     }
     
-    public Producto toProducto() {
-        return new Producto(idProducto, nombre, stock, idCategoría, precioVenta);
-    }
+    //public Producto toProducto() {
+        //return new Producto(idProducto, nombre, stock, idCategoría, precioVenta);
+    //}
 }

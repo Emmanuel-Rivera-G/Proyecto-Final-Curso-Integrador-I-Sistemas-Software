@@ -491,7 +491,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         
         //agregandoo elvis 
         
-        
+                
 
     }//GEN-LAST:event_btn_productoActionPerformed
 

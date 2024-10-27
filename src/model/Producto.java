@@ -28,8 +28,7 @@ public class Producto {
         this.stock = stock;
     }
     
-    //constructor para actualizar
-
+    //constructor para actualizar (se esta usando Controller - ControladorProducto)
     public Producto(int id, String nombre, int idcategoria, String undmedida, int stock) {
         this.id = id;
         this.nombre = nombre;
