@@ -7,7 +7,7 @@ import model.Producto;
 
 
 public class DTOProducto {
-    private long idProducto;
+    private int idProducto;
     private String nombre;
     private int stock;
     private int idCategoría;
@@ -24,11 +24,11 @@ public class DTOProducto {
         this.undMedida = producto.getUndmedida();
     }
 
-    public long getIdProducto() {
+    public int getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(long idProducto) {
+    public void setIdProducto(int idProducto) {
         this.idProducto = idProducto;
     }
 

@@ -19,6 +19,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
  */
 public class DAOProductoImpl implements DAOProducto {
     private final Logger LOGGER = UtilLoggerManager.getLogger(DAOProductoImpl.class);
+    private final String TABLA = "productos";
     
     Conexion conexion = new Conexion();//llamanos a la clase conexionBD instanciamos
     Connection con;
@@ -26,8 +27,7 @@ public class DAOProductoImpl implements DAOProducto {
     ResultSet rs;
     
     public List<DTOProducto> obtenerTodosLosProductos() {
-        String tabla = "productos";
-        String sql = "SELECT * FROM " + tabla;
+        String sql = "SELECT * FROM " + TABLA;
         List<DTOProducto> lista = new ArrayList<>();
         try {
             con = conexion.getConnection();
@@ -52,7 +52,7 @@ public class DAOProductoImpl implements DAOProducto {
             con.close();
             
         } catch (Exception e) {
-            LOGGER.error("Error en listar en la tabla {} : {}", tabla, e.getMessage(), ExceptionUtils.getStackTrace(e));
+            LOGGER.error("Error en listar en la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
         }
         return lista;// retorna la lista cargada
     }
@@ -61,8 +61,7 @@ public class DAOProductoImpl implements DAOProducto {
     
     //Metodo agregar
     public void agregarProducto(DTOProducto producto) {
-        String tabla = "productos";
-        String sql = "INSERT INTO " + tabla + " (nombre,idCategoria,undMedida,Stock) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO " + TABLA + " (nombre,idCategoria,undMedida,Stock) VALUES (?,?,?,?)";
         try {
             con = conexion.getConnection();
             Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
@@ -77,22 +76,84 @@ public class DAOProductoImpl implements DAOProducto {
             con.close();
             
         } catch (SQLException e) {
-            LOGGER.error("Error en agregar en la tabla {} : {}", tabla, e.getMessage(), ExceptionUtils.getStackTrace(e));
+            LOGGER.error("Error en agregar en la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
         }
     }//TERMINA EL METODO AGREGAR
 
     @Override
     public void actualizarProducto(DTOProducto producto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "UPDATE " + TABLA + " SET nombre = ?, idCategoria = ?, undMedida = ?, Stock = ? WHERE id = ?;";
+        try {
+            con = conexion.getConnection();
+            Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
+            ps = con.prepareStatement(sql);
+            
+            ps.setString(1,producto.getNombre());
+            ps.setInt(2,producto.getIdCategoría());
+            ps.setString(3,producto.getUndMedida());
+            ps.setInt(4,producto.getStock());
+            
+            ps.setInt(5, producto.getIdProducto());
+            
+            ps.executeUpdate();
+            con.close();
+            
+        } catch (SQLException e) {
+            LOGGER.error("Error en actualizar la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
+        }
     }
 
     @Override
-    public void eliminarProducto(long idProducto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void eliminarProducto(int idProducto) {
+        String sql = "DELETE FROM " + TABLA + " WHERE id = ?;";
+        try {
+            con = conexion.getConnection();
+            Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
+            ps = con.prepareStatement(sql);
+            
+            ps.setInt(1, idProducto);
+            
+            ps.executeUpdate();
+            con.close();
+        } catch (SQLException e) {
+            LOGGER.error("Error en eleminar de la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
+        }
     }
 
     @Override
-    public DTOProducto obtenerProductoPorId(long idProducto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public DTOProducto obtenerProductoPorId(int idProducto) {
+        String sql = "SELECT * FROM " + TABLA + " WHERE id=?;";
+        DTOProducto dtoProducto = null;
+        try {
+            con = conexion.getConnection();
+            Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
+            ps = con.prepareStatement(sql);
+            
+            ps.setInt(1, idProducto);
+            rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                dtoProducto = new DTOProducto();
+                dtoProducto.setIdProducto(rs.getInt(1));
+                dtoProducto.setNombre(rs.getString(2));
+                dtoProducto.setIdCategoría(rs.getInt(3));
+                dtoProducto.setUndMedida(rs.getString(4));
+                dtoProducto.setStock(rs.getInt(5));
+            }
+        } catch (SQLException e) {
+            LOGGER.error("Error en obtener un producto por Id. ", ExceptionUtils.getStackTrace(e));
+        } finally {
+            cerrarConexion();
+            return dtoProducto;
+        }
+    }
+    
+    public void cerrarConexion() {
+        try {
+            con.close();
+            ps.close();
+        } catch (SQLException e) {
+            LOGGER.error("Error en cerrar conexión. ", ExceptionUtils.getStackTrace(e));
+        }
     }
 }
