@@ -31,7 +31,7 @@ public interface DAOProducto {
      *
      * @param idProducto el identificador único del producto a eliminar
      */
-    public void eliminarProducto(long idProducto);
+    public void eliminarProducto(int idProducto);
     
     /**
      * Obtiene un producto de la base de datos basado en su identificador único.
@@ -39,7 +39,7 @@ public interface DAOProducto {
      * @param idProducto el identificador único del producto a consultar
      * @return el objeto {@link DTOProducto} que representa el producto encontrado, o {@code null} si no existe
      */
-    public DTOProducto obtenerProductoPorId(long idProducto);
+    public DTOProducto obtenerProductoPorId(int idProducto);
     
     /**
      * Obtiene una lista de todos los productos almacenados en la base de datos.
