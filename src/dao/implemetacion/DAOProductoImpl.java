@@ -144,8 +144,8 @@ public class DAOProductoImpl implements DAOProducto {
             LOGGER.error("Error en obtener un producto por Id. ", ExceptionUtils.getStackTrace(e));
         } finally {
             cerrarConexion();
-            return dtoProducto;
         }
+        return dtoProducto;
     }
     
     public void cerrarConexion() {
