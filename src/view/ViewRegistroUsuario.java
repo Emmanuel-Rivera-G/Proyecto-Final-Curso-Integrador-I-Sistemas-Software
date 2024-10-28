@@ -81,7 +81,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
         panel_cont_icon_user5 =  new RoundedPanel(60, Color.WHITE);
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuarios = new javax.swing.JTable();
-        panel_cont_icon_user6 =  new RoundedPanel(60, new Color(19, 22, 27));
+        panel_cont_icon_user6 =  new RoundedPanel(75, new Color(19, 22, 27));
         lbl_editar = new javax.swing.JLabel();
         lbl_delete = new javax.swing.JLabel();
         lbl_buscar = new javax.swing.JLabel();
@@ -89,7 +89,6 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(839, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_cont_icon_user1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user1.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_btn_export.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-exportExcel.png"))); // NOI18N
@@ -110,7 +109,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             panel_cont_icon_user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbl_registroUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 1039, Short.MAX_VALUE)
+                .addComponent(lbl_registroUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 1041, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_btn_export)
                 .addGap(16, 16, 16))
@@ -127,10 +126,8 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
 
         add(panel_cont_icon_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1100, 60));
 
-        panel_cont_icon_user2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user2.setForeground(new java.awt.Color(19, 22, 27));
 
-        panel_cont_icon_user3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user3.setForeground(new java.awt.Color(19, 22, 27));
 
         jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -169,30 +166,28 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user3Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtusuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panel_cont_icon_user3Layout.createSequentialGroup()
-                        .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtdireccion)
-                                .addComponent(txttelefono, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtcorreo, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtnombre, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtapellido, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtdocumento, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cmbTipoUsuario, javax.swing.GroupLayout.Alignment.LEADING, 0, 203, Short.MAX_VALUE))
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12))
-                        .addGap(0, 10, Short.MAX_VALUE))
-                    .addComponent(txtpass, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtpass, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+                    .addComponent(txtusuario)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtdireccion)
+                            .addComponent(txttelefono, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtcorreo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtnombre, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtapellido, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtdocumento, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbTipoUsuario, javax.swing.GroupLayout.Alignment.LEADING, 0, 203, Short.MAX_VALUE))
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel12)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         panel_cont_icon_user3Layout.setVerticalGroup(
             panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +251,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                 .addComponent(lbl_btn_saved)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user2Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user2Layout.createSequentialGroup()
                         .addComponent(panel_cont_icon_user3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -274,15 +269,13 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                 .addComponent(panel_cont_icon_user3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_btn_saved)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         add(panel_cont_icon_user2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 260, 590));
 
-        panel_cont_icon_user4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user4.setForeground(new java.awt.Color(19, 22, 27));
 
-        panel_cont_icon_user5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user5.setForeground(new java.awt.Color(19, 22, 27));
 
         tablaUsuarios.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -325,19 +318,18 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             .addGroup(panel_cont_icon_user4Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         panel_cont_icon_user4Layout.setVerticalGroup(
             panel_cont_icon_user4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user4Layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
 
         add(panel_cont_icon_user4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 830, 510));
 
-        panel_cont_icon_user6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user6.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-editar.png"))); // NOI18N
@@ -370,7 +362,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                 .addComponent(lbl_editar)
                 .addGap(133, 133, 133)
                 .addComponent(lbl_delete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                 .addComponent(lbl_buscar)
                 .addGap(104, 104, 104))
         );
@@ -382,7 +374,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                     .addComponent(lbl_buscar)
                     .addComponent(lbl_delete)
                     .addComponent(lbl_editar))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         add(panel_cont_icon_user6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 620, 830, 70));
@@ -635,10 +627,6 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_btn_export;
-    private javax.swing.JLabel lbl_btn_exportExcel;
-    private javax.swing.JLabel lbl_btn_exportExcel1;
-    private javax.swing.JLabel lbl_btn_exportExcel2;
-    private javax.swing.JLabel lbl_btn_exportExcel3;
     private javax.swing.JLabel lbl_btn_saved;
     private javax.swing.JLabel lbl_buscar;
     private javax.swing.JLabel lbl_delete;
