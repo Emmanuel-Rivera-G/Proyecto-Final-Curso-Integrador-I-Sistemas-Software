@@ -49,7 +49,7 @@ public class DAOProductoImpl implements DAOProducto {
                 lista.add(dtoProducto);// aqui se carga todos los productos ARRAYLIST
                 
             }
-            con.close();
+            cerrarConexion();
             
         } catch (Exception e) {
             LOGGER.error("Error en listar en la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
@@ -73,7 +73,7 @@ public class DAOProductoImpl implements DAOProducto {
             ps.setInt(4,producto.getStock());
             
             ps.executeUpdate();// EJECUTA LA CONSULTA O INSERCION SQL UPDATE
-            con.close();
+            cerrarConexion();
             
         } catch (SQLException e) {
             LOGGER.error("Error en agregar en la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
@@ -96,7 +96,7 @@ public class DAOProductoImpl implements DAOProducto {
             ps.setInt(5, producto.getIdProducto());
             
             ps.executeUpdate();
-            con.close();
+            cerrarConexion();
             
         } catch (SQLException e) {
             LOGGER.error("Error en actualizar la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
@@ -114,7 +114,7 @@ public class DAOProductoImpl implements DAOProducto {
             ps.setInt(1, idProducto);
             
             ps.executeUpdate();
-            con.close();
+            cerrarConexion();
         } catch (SQLException e) {
             LOGGER.error("Error en eleminar de la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
         }
@@ -144,8 +144,8 @@ public class DAOProductoImpl implements DAOProducto {
             LOGGER.error("Error en obtener un producto por Id. ", ExceptionUtils.getStackTrace(e));
         } finally {
             cerrarConexion();
-            return dtoProducto;
         }
+        return dtoProducto;
     }
     
     public void cerrarConexion() {
