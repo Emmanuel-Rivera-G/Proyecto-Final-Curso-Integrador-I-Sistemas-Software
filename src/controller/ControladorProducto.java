@@ -64,22 +64,20 @@ public class ControladorProducto implements ActionListener{//implements controla
             }
 
             private void filtrarTabla() {
-                String filtro = view.getTxtIdBuscar().getText();
-                List<Producto> listaFiltrada = productodao.filtrarProducto(filtro);
+                int filtro = Integer.parseInt(view.getTxtIdBuscar().getText());
+                DTOProducto filtrado = serviceProducto.obtenerProductoPorId(filtro);
 
                 // Limpiar la tabla antes de mostrar los resultados filtrados
                 modeloTabla.setRowCount(0);
 
                 // Agregar los productos filtrados a la tabla
-                for (Producto producto : listaFiltrada) {
-                    modeloTabla.addRow(new Object[] {
-                        producto.getId(),
-                        producto.getNombre(),
-                        producto.getIdcategoria(),
-                        producto.getUndmedida(),
-                        producto.getStock()
-                    });
-                }
+                modeloTabla.addRow(new Object[] {
+                    filtrado.getIdProducto(),
+                    filtrado.getNombre(),
+                    filtrado.getIdCategoría(),
+                    filtrado.getUndMedida(),
+                    filtrado.getStock()
+                });
 
                 view.getTblTablaProductos().setModel(modeloTabla);
 
@@ -206,7 +204,7 @@ public class ControladorProducto implements ActionListener{//implements controla
                     Producto producto = new Producto(nombreProd, idCategoria, undMedidaProd, stockProd);
 
                     // Intentar agregar el producto a la base de datos
-                    productodao.agregar(producto);
+                    serviceProducto.agregarProducto(new DTOProducto(producto));
 
                     // Solo se muestra el mensaje de éxito si no ocurre ninguna excepción
                     JOptionPane.showMessageDialog(null, "Se ha registrado con éxito");
@@ -215,11 +213,9 @@ public class ControladorProducto implements ActionListener{//implements controla
                     LimpiarCampos();
                 }
             }
-        } catch (SQLException e) { // Manejo específico para SQLException
+        } catch (Exception e) { // Manejo específico para SQLException
             // Este bloque catch solo se ejecuta si ocurre un error de SQL (como el UNIQUE constraint)
             JOptionPane.showMessageDialog(null, "YA EXISTE EL PRODUCTO", "ERROR", JOptionPane.ERROR_MESSAGE);
-            System.out.println("Error en el método agregarProducto - ControladorProducto: " + e);
-        } catch (HeadlessException e) { // Otras excepciones
             System.out.println("Error en el método agregarProducto - ControladorProducto: " + e);
         } finally {
             // Actualizar la tabla sin importar si ocurrió una excepción o no
@@ -267,7 +263,7 @@ public class ControladorProducto implements ActionListener{//implements controla
             if(validarDatos()){
                 if(cargarDatos()){
                     Producto producto = new Producto(codigoProd, nombreProd, idCategoria, undMedidaProd, stockProd);
-                    productodao.actualizar(producto);// Se hace uso del metodo actualizar que se creo en productoDAO
+                    serviceProducto.actualizarProducto(new DTOProducto(producto));// Se hace uso del metodo actualizar que se creo en productoDAO
                     LimpiarCampos();//despues de ACTUALIZAR se limpia campos
                 
                 }
@@ -283,7 +279,7 @@ public class ControladorProducto implements ActionListener{//implements controla
     private void eliminarProducto(){
         try {
             if (codigoProd != 0){//negacion si no esigual a cero sera TRUE
-                productodao.eliminar(codigoProd);
+                serviceProducto.eliminarProducto(codigoProd);
                 JOptionPane.showMessageDialog(null,"Registro borrado");
                 LimpiarCampos();
             }else{
@@ -298,22 +294,20 @@ public class ControladorProducto implements ActionListener{//implements controla
     }
     
     //metodo filtrado
-    private void actualizarTablaFiltrada(String filtro) {
-        List<Producto> productosFiltrados = productodao.filtrarProducto(filtro);
+    private void actualizarTablaFiltrada(int filtro) {
+        DTOProducto productoFiltrado = serviceProducto.obtenerProductoPorId(filtro);
 
         // Obtiene el modelo de la tabla y la limpia
         modeloTabla.setRowCount(0);
 
         // Agrega las filas filtradas
-        for (Producto producto : productosFiltrados) {
-            modeloTabla.addRow(new Object[]{
-                producto.getId(),
-                producto.getNombre(),
-                producto.getIdcategoria(),
-                producto.getUndmedida(),
-                producto.getStock()
-            });
-        }
+        modeloTabla.addRow(new Object[]{
+            producto.getId(),
+            producto.getNombre(),
+            producto.getIdcategoria(),
+            producto.getUndmedida(),
+            producto.getStock()
+        });
 
         view.getTblTablaProductos().setModel(modeloTabla);
     }
