@@ -1,10 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
-import java.sql.SQLException;//------throw
+import java.sql.SQLException;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
@@ -14,16 +10,15 @@ import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.event.DocumentEvent;//pruebaaaaaa filtrar
-import javax.swing.event.DocumentListener;//pruebaaaaaa filtrar
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import model.Producto;
-import model.ProductoDAO;
-import view.ViewMenuPrincipal;
-import view.viewRegistroProductos;// interfaz grafica Registro producto
-//import view.ViewMenuPrincipal;
-
-//import java.util.ArrayList;
+import dao.implemetacion.DAOProductoImpl;
+import dao.interfaz.DAOProducto;
+import dto.DTOProducto;
+import service.ServiceProducto;
+import view.ViewRegistroProductos;
 /**
  *
  * @author Elvis
@@ -32,7 +27,7 @@ public class ControladorProducto implements ActionListener{//implements controla
     //variables globales para metodo cargar datos
     private int codigoProd=0;//=0
     private String nombreProd;
-    private int idCategoria;///############################
+    private int idCategoria;
     private String undMedidaProd;
     private int stockProd;
     
@@ -40,13 +35,11 @@ public class ControladorProducto implements ActionListener{//implements controla
 
     //instanciacion de objetos
     Producto producto = new Producto();//hara uso de constructor vacio
-    ProductoDAO productodao = new ProductoDAO();
-    viewRegistroProductos view = new viewRegistroProductos();
-    DefaultTableModel modeloTabla = new DefaultTableModel();// carga los nombres de la base de datos para interactuar con el
+    ServiceProducto serviceProducto = new ServiceProducto();
+    ViewRegistroProductos view = new ViewRegistroProductos();
+    DefaultTableModel modeloTabla = new DefaultTableModel();
     
-    
-    
-    public ControladorProducto(viewRegistroProductos view) {
+    public ControladorProducto(ViewRegistroProductos view) {
         this.view = view;// recibe los valores o dato
         view.setVisible(true);
         
@@ -102,7 +95,6 @@ public class ControladorProducto implements ActionListener{//implements controla
     }
 
     /*public ControladorProducto(ViewMenuPrincipal vista) {
-        //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         this.view = view;// recibe los valores o dato
         view.setVisible(true);
         
@@ -113,7 +105,6 @@ public class ControladorProducto implements ActionListener{//implements controla
 
     // aqui lee si se ha apretado al boton o no mediante LISTENER
     private void agregarEventos(){       
-        
         
         view.getBtnRegistrarProducto().addActionListener(this);
         
@@ -136,10 +127,11 @@ public class ControladorProducto implements ActionListener{//implements controla
         String[] titulocolumnastbl = new String[] {"Codigo", "Nombre", "IdCategoria", "UndMedida", "Stock"};
 
         modeloTabla = new DefaultTableModel(titulocolumnastbl, 0);
-        List<Producto> listaProductos = productodao.listar();
+        List<DTOProducto> listaProductos = serviceProducto.obtenerTodosLosProductos();
 
         // Corrección en la creación de las filas
-        for (Producto producto : listaProductos) {
+        for (DTOProducto dtoProducto : listaProductos) {
+            producto = dtoProducto.toProducto();
             modeloTabla.addRow(new Object[] {
                 producto.getId(),
                 producto.getNombre(),
@@ -147,6 +139,7 @@ public class ControladorProducto implements ActionListener{//implements controla
                 producto.getUndmedida(),
                 producto.getStock()
             });
+            producto = null;
         }
 
         view.getTblTablaProductos().setModel(modeloTabla);
@@ -157,7 +150,7 @@ public class ControladorProducto implements ActionListener{//implements controla
         //String[] titulos = new String[]("Codigo","Nombre","IdCategoria","UndMedida","Stock");
         //String[] titulocolumnastbl = new String[]("CODIGO","NOMBRE","IDCATEGORIA","UND MEDIDA","STOCK");
         modeloTabla = new DefaultTableModel(titulocolumnastbl,0);
-        List<Producto>listaProductos = productodao.listar();
+        List<Producto>listaProductos = productodao.obtenerTodosLosProductos();
         for (Producto producto : listaProductos){
             
             modeloTabla.addRow(new Object[](producto.getId(),producto.getNombre(),producto.getIdcategoria(),producto.getUndmedida(),producto.getStock()));
@@ -183,7 +176,7 @@ public class ControladorProducto implements ActionListener{//implements controla
     
     //***************INICIO Validacion de formularios tipo booleanoo si esta vacio o no**********************
     private boolean validarDatos(){
-        //if ("".equals(viewRegistroProductos.getTxtNombreProducto().getText())) {}
+        //if ("".equals(ViewRegistroProductos.getTxtNombreProducto().getText())) {}
         if("".equals(view.getTxtNombreProducto().getText()) ||"".equals(view.getTxtCodCategoria().getText()) || "".equals(view.getTxtUndMedida().getText())||"".equals(view.getTxtStockProducto().getText())){
             JOptionPane.showInputDialog(null,"Debe llenar los campos","ERROR", JOptionPane.ERROR_MESSAGE);
             return false;//retornara falso porque algun campo esta vacio
@@ -236,8 +229,7 @@ public class ControladorProducto implements ActionListener{//implements controla
             if(validarDatos()){//validacion de metodo validar datos TRUE
                 if(cargarDatos()){//validacion de cargar datos si es TRUE, si todo ok sigue bajando
                     Producto producto = new Producto(nombreProd, idCategoria, undMedidaProd, stockProd);//Aqui se usa el contructor sin codigo en producto, para usar el metodo de cargarDatos()
-                    productodao.agregar(producto);//desde aqui llama al metodo agregar (interactua con la BD sql)de productoDAO ya instanciado
-                    
+                    serviceProducto.agregarProducto(new DTOProducto(producto));//desde aqui llama al metodo agregar (interactua con la BD sql)de productoDAO ya instanciado
                     JOptionPane.showMessageDialog(null, "Se ha registrado con exito");
                     LimpiarCampos();//despues de agregar se limpia campos
                 }

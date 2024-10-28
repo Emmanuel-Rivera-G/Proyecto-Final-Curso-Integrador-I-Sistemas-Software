@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
@@ -11,28 +7,45 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-
-
 import controller.ControladorProducto;
+
 /**
+ * Ventana principal del menú de la aplicación, que permite navegar entre
+ * diferentes módulos de gestión como usuarios, categorías y productos.
+ * <p>
+ * Este menú es accesible después del inicio de sesión e incluye botones para
+ * cambiar entre secciones.
+ * </p>
  *
- * @author rasmx
+ * @author Ralfph
  */
 public class ViewMenuPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form MenuPrincipal
      */
+    static private String nombre_usuario;
     CardLayout vista;
-    vistaPrincipal vistap = new vistaPrincipal();
-    viewRegistroUsuario vistaUser = new viewRegistroUsuario();
-    viewRegistroCategorias vistaCategorias = new viewRegistroCategorias();
-    viewRegistroProductos vistaProductos = new viewRegistroProductos();//SOOOOOL
+    VistaPrincipal vistap = new VistaPrincipal();
+    ViewRegistroUsuario vistaUser = new ViewRegistroUsuario();
+    ViewRegistroCategorias vistaCategorias = new ViewRegistroCategorias();
+    ViewRegistroProductos vistaProductos = new ViewRegistroProductos();//SOOOOOL
 
-    public ViewMenuPrincipal() {
-
+    /**
+     * Constructor de la ventana del menú principal.
+     * <p>
+     * Configura el fondo, ajusta el tamaño de la ventana y muestra el nombre
+     * del usuario autenticado.
+     * </p>
+     *
+     * @param nombre_usuario Nombre del usuario autenticado que se muestra en la
+     * interfaz.
+     */
+    public ViewMenuPrincipal(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
         getContentPane().setBackground(Color.decode("#000511"));
         initComponents();
+        lbl_usuario_rol.setText(nombre_usuario);
         this.setTitle("Menu Principal");
         this.setLocationRelativeTo(null);
         this.setExtendedState(this.MAXIMIZED_BOTH);
@@ -44,17 +57,8 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         pnl_principal.add(vistaUser, "RegistroUsuario");
         pnl_principal.add(vistaCategorias, "RegistroCategoria");
         pnl_principal.add(vistaProductos, "RegistroProducto");
-        
-        //inicio AGREGANDO
-        //ViewMenuPrincipal menu = new ViewMenuPrincipal();
-        //ViewRegistroProductos menu1 = new ViewRegistroProductos();
-        //vistaProductos.setVisible(true);
-        //dispose();
-        //fin AGREGANDO
 
-        // Muestra el panel inicial
         vista.show(pnl_principal, "menu");
-
     }
 
     /**
@@ -69,7 +73,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         panel_cont_menu_op = new RoundedPanel(60,new Color(19, 22, 27));
         btn_inicio = new javax.swing.JButton();
         btn_categoria = new javax.swing.JButton();
-        btn_home2 = new javax.swing.JButton();
+        btn_cerrar_sesion = new javax.swing.JButton();
         btn_usuario = new javax.swing.JButton();
         btn_producto = new javax.swing.JButton();
         btn_entrada = new javax.swing.JButton();
@@ -91,7 +95,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panel_cont_menu_op.setBackground(new java.awt.Color(0, 0, 0));
-        panel_cont_menu_op.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         btn_inicio.setBackground(new java.awt.Color(19, 22, 27));
         btn_inicio.setFont(new java.awt.Font("Gill Sans MT", 0, 20)); // NOI18N
@@ -131,22 +134,22 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btn_home2.setBackground(new java.awt.Color(19, 22, 27));
-        btn_home2.setFont(new java.awt.Font("Gill Sans MT", 0, 20)); // NOI18N
-        btn_home2.setForeground(new java.awt.Color(255, 255, 255));
-        btn_home2.setText("Cerrar Sesion");
-        btn_home2.setBorder(null);
-        btn_home2.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_cerrar_sesion.setBackground(new java.awt.Color(19, 22, 27));
+        btn_cerrar_sesion.setFont(new java.awt.Font("Gill Sans MT", 0, 20)); // NOI18N
+        btn_cerrar_sesion.setForeground(new java.awt.Color(255, 255, 255));
+        btn_cerrar_sesion.setText("Cerrar Sesion");
+        btn_cerrar_sesion.setBorder(null);
+        btn_cerrar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_home2MouseEntered(evt);
+                btn_cerrar_sesionMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_home2MouseExited(evt);
+                btn_cerrar_sesionMouseExited(evt);
             }
         });
-        btn_home2.addActionListener(new java.awt.event.ActionListener() {
+        btn_cerrar_sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_home2ActionPerformed(evt);
+                btn_cerrar_sesionActionPerformed(evt);
             }
         });
 
@@ -269,8 +272,8 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(29, Short.MAX_VALUE)
                 .addComponent(lbl_icon_cerrar_sesion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_home2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12))
+                .addComponent(btn_cerrar_sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_menu_opLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(panel_cont_menu_opLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -343,7 +346,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addGroup(panel_cont_menu_opLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_menu_opLayout.createSequentialGroup()
-                        .addComponent(btn_home2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_cerrar_sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_menu_opLayout.createSequentialGroup()
                         .addComponent(lbl_icon_cerrar_sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,14 +358,17 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
 
         lbl_icon_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons_menu_principal/userIconDashboard1.png"))); // NOI18N
 
+        lbl_usuario_rol.setFont(new java.awt.Font("Gill Sans MT", 0, 18)); // NOI18N
+        lbl_usuario_rol.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout panel_cont_icon_userLayout = new javax.swing.GroupLayout(panel_cont_icon_user);
         panel_cont_icon_user.setLayout(panel_cont_icon_userLayout);
         panel_cont_icon_userLayout.setHorizontalGroup(
             panel_cont_icon_userLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_userLayout.createSequentialGroup()
                 .addComponent(lbl_icon_user)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_usuario_rol, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lbl_usuario_rol, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         panel_cont_icon_userLayout.setVerticalGroup(
@@ -388,7 +394,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                     .addComponent(panel_cont_icon_user, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panel_cont_menu_op, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 844, Short.MAX_VALUE))
+                .addComponent(pnl_principal, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -397,7 +403,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                 .addComponent(panel_cont_icon_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panel_cont_menu_op, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
             .addComponent(pnl_principal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -411,7 +417,15 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     private void btn_inicioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inicioMouseExited
         //btn_home.setBackground(Color.BLACK); // Vuelve al color original al salir el mouse
     }//GEN-LAST:event_btn_inicioMouseExited
-
+    /**
+     * Cambia la vista al menú principal.
+     * <p>
+     * Actualiza el título de la ventana y asegura que el panel principal se
+     * actualice correctamente.
+     * </p>
+     *
+     * @param evt Evento de clic del botón de inicio.
+     */
     private void btn_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicioActionPerformed
         vista.show(pnl_principal, "menu");
         SwingUtilities.updateComponentTreeUI(this);
@@ -428,6 +442,14 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_categoriaMouseExited
 
+    /**
+     * Cambia la vista a la sección de gestión de categorías.
+     * <p>
+     * Actualiza el título de la ventana a "Gestion de categorias".
+     * </p>
+     *
+     * @param evt Evento de clic del botón de categoría.
+     */
     private void btn_categoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_categoriaActionPerformed
         vista.show(pnl_principal, "RegistroCategoria");
         SwingUtilities.updateComponentTreeUI(this);
@@ -436,17 +458,27 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btn_categoriaActionPerformed
 
-    private void btn_home2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_home2MouseEntered
+    private void btn_cerrar_sesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cerrar_sesionMouseEntered
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_home2MouseEntered
+    }//GEN-LAST:event_btn_cerrar_sesionMouseEntered
 
-    private void btn_home2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_home2MouseExited
+    private void btn_cerrar_sesionMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cerrar_sesionMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_home2MouseExited
+    }//GEN-LAST:event_btn_cerrar_sesionMouseExited
 
-    private void btn_home2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_home2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_home2ActionPerformed
+    /**
+     * Cambia la vista de la aplicación al inicio de sesión.
+     * <p>
+     * Cierra la ventana actual para retornar a la vista de inicio de sesión.
+     * </p>
+     *
+     * @param evt Evento de clic del botón para salir al inicio de sesión.
+     */
+    private void btn_cerrar_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cerrar_sesionActionPerformed
+        ViewInicioSesion viewInicio = new ViewInicioSesion();
+        viewInicio.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btn_cerrar_sesionActionPerformed
 
     private void btn_usuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usuarioMouseEntered
 
@@ -456,6 +488,15 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_usuarioMouseExited
 
+    /**
+     * Cambia la vista a la sección de gestión de usuarios.
+     * <p>
+     * Actualiza el título de la ventana a "Gestion de usuarios" y muestra la
+     * vista de registro de usuarios en el panel principal.
+     * </p>
+     *
+     * @param evt Evento de clic del botón de usuario.
+     */
     private void btn_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usuarioActionPerformed
         vista.show(pnl_principal, "RegistroUsuario");
         SwingUtilities.updateComponentTreeUI(this);
@@ -472,27 +513,21 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_productoMouseExited
 
+    /**
+     * Cambia la vista a la sección de gestión de productos.
+     * <p>
+     * Actualiza el título de la ventana a "Gestion de productos" y establece el
+     * controlador de productos.
+     * </p>
+     *
+     * @param evt Evento de clic del botón de productos.
+     */
     private void btn_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_productoActionPerformed
-        
-        
-        //agregandooo elvis
         vista.show(pnl_principal, "RegistroProducto");
-        
-        //viewRegistroProductos.cargarDatos();
         ControladorProducto controlador = new ControladorProducto(vistaProductos);//SOOOOO0L
-        //controlador.agregarEventos();
-        
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint();
         this.setTitle("Gestion de productos");
-
-        //ViewMenuPrincipal menu = new ViewMenuPrincipal();
-        //menu.setVisible(true);
-        
-        //agregandoo elvis 
-        
-                
-
     }//GEN-LAST:event_btn_productoActionPerformed
 
     private void btn_entradaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_entradaMouseEntered
@@ -552,15 +587,15 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewMenuPrincipal().setVisible(true);
+                new ViewMenuPrincipal(nombre_usuario).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_categoria;
+    private javax.swing.JButton btn_cerrar_sesion;
     private javax.swing.JButton btn_entrada;
-    private javax.swing.JButton btn_home2;
     private javax.swing.JButton btn_inicio;
     private javax.swing.JButton btn_producto;
     private javax.swing.JButton btn_proveedor;

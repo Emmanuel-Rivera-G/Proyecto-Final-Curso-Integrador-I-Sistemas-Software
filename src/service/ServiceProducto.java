@@ -9,7 +9,11 @@ public class ServiceProducto {
     private DAOProducto daoProducto;
 
     public ServiceProducto() {
-        this.daoProducto = new DAOProductoImpl();
+        daoProducto = new DAOProductoImpl();
+    }
+    
+    public ServiceProducto(DAOProducto daoProducto) {
+        this.daoProducto = daoProducto;
     }
 
     public void agregarProducto(DTOProducto productoDTO) {
@@ -20,11 +24,11 @@ public class ServiceProducto {
         daoProducto.actualizarProducto(productoDTO);
     }
 
-    public void eliminarProducto(long idProducto) {
+    public void eliminarProducto(int idProducto) {
         daoProducto.eliminarProducto(idProducto);
     }
 
-    public DTOProducto obtenerProductoPorId(long idProducto) {
+    public DTOProducto obtenerProductoPorId(int idProducto) {
         DTOProducto producto = daoProducto.obtenerProductoPorId(idProducto);
         return producto != null ? producto : null;
     }
