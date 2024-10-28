@@ -42,6 +42,14 @@ public interface DAOProducto {
     public DTOProducto obtenerProductoPorId(int idProducto);
     
     /**
+     * Obtiene un producto de la base de datos basado en su nombre.
+     *
+     * @param nombre el nombre del producto a consultar
+     * @return el objeto {@link DTOProducto} que representa el producto encontrado, o {@code null} si no existe
+     */
+    public DTOProducto obtenerProductoPorNombre(String nombre);
+    
+    /**
      * Obtiene una lista de todos los productos almacenados en la base de datos.
      *
      * @return una lista de objetos {@link DTOProducto} que representan todos los productos almacenados

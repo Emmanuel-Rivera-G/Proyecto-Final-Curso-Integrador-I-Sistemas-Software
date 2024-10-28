@@ -65,6 +65,6 @@ public class DTOProducto {
     }
 
     public Producto toProducto() {
-        return new Producto(nombre, idCategoría, null, stock);
+        return new Producto(idProducto, nombre, idCategoría, undMedida, stock);
     }
 }

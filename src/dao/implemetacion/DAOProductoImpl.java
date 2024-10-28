@@ -119,6 +119,34 @@ public class DAOProductoImpl implements DAOProducto {
             LOGGER.error("Error en eleminar de la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
         }
     }
+    
+    @Override
+    public DTOProducto obtenerProductoPorNombre(String param) {
+        String sql = "SELECT * FROM " + TABLA + " WHERE nombre=?;";
+        DTOProducto dtoProducto = null;
+        try {
+            con = conexion.getConnection();
+            Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, param);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                dtoProducto = new DTOProducto();
+                dtoProducto.setIdProducto(rs.getInt("id"));
+                dtoProducto.setNombre(rs.getString("nombre"));
+                dtoProducto.setIdCategoría(rs.getInt("idCategoria"));
+                dtoProducto.setUndMedida(rs.getString("undMedida"));
+                dtoProducto.setStock(rs.getInt("Stock"));
+            }
+        } catch (SQLException e) {
+            LOGGER.error("Error en obtener un producto por nombre. ", ExceptionUtils.getStackTrace(e));
+        } finally {
+            cerrarConexion();
+        }
+        return dtoProducto;
+    }
 
     @Override
     public DTOProducto obtenerProductoPorId(int idProducto) {
@@ -156,4 +184,5 @@ public class DAOProductoImpl implements DAOProducto {
             LOGGER.error("Error en cerrar conexión. ", ExceptionUtils.getStackTrace(e));
         }
     }
+
 }

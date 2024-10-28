@@ -61,25 +61,37 @@ public class ControladorProducto implements ActionListener{//implements controla
             }
 
             private void filtrarTabla() {
-                int filtro = Integer.parseInt(view.getTxtIdBuscar().getText());
-                Producto filtrado = serviceProducto.obtenerProductoPorId(filtro);
+                String filtro = view.getTxtIdBuscar().getText();
+                try {
+                    Producto filtrado = serviceProducto.obtenerProductoPorParametro(filtro);
+                    if (filtrado == null) {
+                        throw new NullPointerException("El producto no se encontró.");
+                    }
+                    modeloTabla.setRowCount(0);
+                    modeloTabla.addRow(new Object[] {
+                        filtrado.getId(),
+                        filtrado.getNombre(),
+                        filtrado.getIdcategoria(),
+                        filtrado.getUndmedida(),
+                        filtrado.getStock()
+                    });
 
-                // Limpiar la tabla antes de mostrar los resultados filtrados
-                modeloTabla.setRowCount(0);
+                    view.getTblTablaProductos().setModel(modeloTabla);
+                } catch (Exception e) {
+                    modeloTabla.setRowCount(0);
+                    List<Producto> productos = serviceProducto.obtenerTodosLosProductos();
+                    for (Producto producto : productos) {
+                        modeloTabla.addRow(new Object[] {
+                            producto.getId(),
+                            producto.getNombre(),
+                            producto.getIdcategoria(),
+                            producto.getUndmedida(),
+                            producto.getStock()
+                        });
+                    }
 
-                // Agregar los productos filtrados a la tabla
-                modeloTabla.addRow(new Object[] {
-                    filtrado.getId(),
-                    filtrado.getNombre(),
-                    filtrado.getIdcategoria(),
-                    filtrado.getUndmedida(),
-                    filtrado.getStock()
-                });
-
-                view.getTblTablaProductos().setModel(modeloTabla);
-
-                //String filtro = view.getTxtIdBuscar().getText();
-                //actualizarTablaFiltrada(filtro);
+                    view.getTblTablaProductos().setModel(modeloTabla);
+                }
             }
         });
         

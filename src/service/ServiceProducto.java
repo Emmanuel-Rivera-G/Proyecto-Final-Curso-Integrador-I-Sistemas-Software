@@ -36,6 +36,23 @@ public class ServiceProducto {
         Producto producto = daoProducto.obtenerProductoPorId(idProducto).toProducto();
         return producto != null ? producto : null;
     }
+    
+    public Producto obtenerProductoPorNombre(String nombre) {
+        Producto producto = daoProducto.obtenerProductoPorNombre(nombre).toProducto();
+        return producto != null ? producto : null;
+    }
+    
+    public Producto obtenerProductoPorParametro(String param) {
+        try {
+            int num = Integer.parseInt(param);
+            return obtenerProductoPorId(num);
+        } catch (NumberFormatException e) {
+            String nombre = param;
+            return obtenerProductoPorNombre(nombre);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public List<Producto> obtenerTodosLosProductos() {
         List<Producto> productos = (List<Producto>) CollectionUtils.collect(
