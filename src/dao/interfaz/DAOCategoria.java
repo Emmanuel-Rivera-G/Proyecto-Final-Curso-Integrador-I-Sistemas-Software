@@ -6,4 +6,7 @@ package dao.interfaz;
  */
 public interface DAOCategoria {
     
+    
+    
+    
 }
