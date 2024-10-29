@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 import java.util.List;
 import model.Producto;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 
 /**
  * Clase de prueba para el servicio de productos.
@@ -32,7 +32,7 @@ public class ServiceProductoTest {
     private ServiceProducto serviceProducto;
     private DAOProducto daoProductoSimulado;
     private Conexion conexion;
-    private final Logger LOGGER = UtilLoggerManager.getLogger(ServiceProductoTest.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(ServiceProductoTest.class);
 
     private int lastIdBeforeTests;
 

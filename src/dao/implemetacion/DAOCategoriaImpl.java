@@ -6,7 +6,7 @@ import dao.interfaz.DAOCategoria;
 import dto.DTOCategoria;
 import java.util.List;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,7 +26,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
  */
 public class DAOCategoriaImpl implements DAOCategoria {
     /** Logger para registrar eventos y errores de la clase. */
-    private final Logger LOGGER = UtilLoggerManager.getLogger(DAOCategoriaImpl.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(DAOCategoriaImpl.class);
 
     /** Nombre de la tabla en la base de datos para las categorías. */
     private final String TABLA = "categorias";
