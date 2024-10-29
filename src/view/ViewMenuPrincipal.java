@@ -353,7 +353,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                         .addGap(19, 19, 19))))
         );
 
-        panel_cont_icon_user.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_icon_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons_menu_principal/userIconDashboard1.png"))); // NOI18N
@@ -403,7 +402,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                 .addComponent(panel_cont_icon_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panel_cont_menu_op, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
             .addComponent(pnl_principal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
