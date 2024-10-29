@@ -1,6 +1,6 @@
 import config.Conexion;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 import java.sql.Connection;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,7 +15,7 @@ import static org.junit.Assert.fail;
  */
 public class ConexionTest {
     private Conexion conexion;
-    private final Logger LOGGER = UtilLoggerManager.getLogger(ConexionTest.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(ConexionTest.class);
 
     /**
      * Configuración inicial antes de cada prueba.

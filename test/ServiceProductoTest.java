@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 import java.util.List;
 import model.Producto;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 
 /**
  * Clase de prueba para el servicio de productos.
@@ -32,7 +32,7 @@ public class ServiceProductoTest {
     private ServiceProducto serviceProducto;
     private DAOProducto daoProductoSimulado;
     private Conexion conexion;
-    private final Logger LOGGER = UtilLoggerManager.getLogger(ServiceProductoTest.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(ServiceProductoTest.class);
 
     private int lastIdBeforeTests;
 
@@ -83,16 +83,16 @@ public class ServiceProductoTest {
      */
     @Test
     public void testAgregarProducto() {
-        Producto producto = new Producto();
-        producto.setNombre("Producto de Prueba");
-        producto.setIdcategoria(1);
-        producto.setUndmedida("Unidad");
-        producto.setStock(10);
+        DTOProducto dtoProducto = new DTOProducto();
+        dtoProducto.setNombre("Producto de Prueba");
+        dtoProducto.setIdCategoría(1);
+        dtoProducto.setUndMedida("Unidad");
+        dtoProducto.setStock(10);
 
-        serviceProducto.agregarProducto(producto);
+        serviceProducto.agregarProducto(dtoProducto);
 
-        List<DTOProducto> productos = daoProductoSimulado.obtenerTodosLosProductos();
-        assertTrue(productos.stream().anyMatch(p -> "Producto de Prueba".equals(p.getNombre())));
+        List<DTOProducto> dtoProductos = daoProductoSimulado.obtenerTodosLosProductos();
+        assertTrue(dtoProductos.stream().anyMatch(p -> "Producto de Prueba".equals(p.getNombre())));
     }
 
     /**
@@ -102,20 +102,20 @@ public class ServiceProductoTest {
      */
     @Test
     public void testActualizarProducto() {
-        Producto producto = new Producto();
-        producto.setNombre("Producto de Prueba");
-        producto.setIdcategoria(1);
-        producto.setUndmedida("Unidad");
-        producto.setStock(10);
+        DTOProducto dtoProducto = new DTOProducto();
+        dtoProducto.setNombre("Producto de Prueba");
+        dtoProducto.setIdCategoría(1);
+        dtoProducto.setUndMedida("Unidad");
+        dtoProducto.setStock(10);
 
-        serviceProducto.agregarProducto(producto);
+        serviceProducto.agregarProducto(dtoProducto);
 
         List<DTOProducto> productos = daoProductoSimulado.obtenerTodosLosProductos();
         int newProductId = productos.get(productos.size() - 1).getIdProducto();
 
-        producto.setId(newProductId);
-        producto.setNombre("Producto Actualizado");
-        serviceProducto.actualizarProducto(producto);
+        dtoProducto.setIdProducto(newProductId);
+        dtoProducto.setNombre("Producto Actualizado");
+        serviceProducto.actualizarProducto(dtoProducto);
 
         DTOProducto result = daoProductoSimulado.obtenerProductoPorId(newProductId);
         assertEquals("Producto Actualizado", result.getNombre());
@@ -128,13 +128,13 @@ public class ServiceProductoTest {
      */
     @Test
     public void testEliminarProducto() {
-        Producto producto = new Producto();
-        producto.setNombre("Producto de Prueba");
-        producto.setIdcategoria(1);
-        producto.setUndmedida("Unidad");
-        producto.setStock(10);
+        DTOProducto dtoProducto = new DTOProducto();
+        dtoProducto.setNombre("Producto de Prueba");
+        dtoProducto.setIdCategoría(1);
+        dtoProducto.setUndMedida("Unidad");
+        dtoProducto.setStock(10);
 
-        serviceProducto.agregarProducto(producto);
+        serviceProducto.agregarProducto(dtoProducto);
 
         List<DTOProducto> productos = daoProductoSimulado.obtenerTodosLosProductos();
         int newProductId = productos.get(productos.size() - 1).getIdProducto();
@@ -152,18 +152,18 @@ public class ServiceProductoTest {
      */
     @Test
     public void testObtenerProductoPorId() {
-        Producto producto = new Producto();
-        producto.setNombre("Producto de Prueba");
-        producto.setIdcategoria(1);
-        producto.setUndmedida("Unidad");
-        producto.setStock(10);
+        DTOProducto dtoProducto = new DTOProducto();
+        dtoProducto.setNombre("Producto de Prueba");
+        dtoProducto.setIdCategoría(1);
+        dtoProducto.setUndMedida("Unidad");
+        dtoProducto.setStock(10);
 
-        serviceProducto.agregarProducto(producto);
+        serviceProducto.agregarProducto(dtoProducto);
 
         List<DTOProducto> productos = daoProductoSimulado.obtenerTodosLosProductos();
         int newProductId = productos.get(productos.size() - 1).getIdProducto();
 
-        Producto result = serviceProducto.obtenerProductoPorId(newProductId);
+        DTOProducto result = serviceProducto.obtenerProductoPorId(newProductId);
         assertNotNull(result);
         assertEquals("Producto de Prueba", result.getNombre());
     }
@@ -177,22 +177,22 @@ public class ServiceProductoTest {
     public void testObtenerTodosLosProductos() {
         int initialSize = serviceProducto.obtenerTodosLosProductos().size();
 
-        Producto producto1 = new Producto();
+        DTOProducto producto1 = new DTOProducto();
         producto1.setNombre("Producto de Prueba 1");
-        producto1.setIdcategoria(1);
-        producto1.setUndmedida("Unidad");
+        producto1.setIdCategoría(1);
+        producto1.setUndMedida("Unidad");
         producto1.setStock(10);
 
-        Producto producto2 = new Producto();
+        DTOProducto producto2 = new DTOProducto();
         producto2.setNombre("Producto de Prueba 2");
-        producto2.setIdcategoria(1);
-        producto2.setUndmedida("Unidad");
+        producto2.setIdCategoría(1);
+        producto2.setUndMedida("Unidad");
         producto2.setStock(20);
 
         serviceProducto.agregarProducto(producto1);
         serviceProducto.agregarProducto(producto2);
 
-        List<Producto> productos = serviceProducto.obtenerTodosLosProductos();
+        List<DTOProducto> productos = serviceProducto.obtenerTodosLosProductos();
         assertEquals(initialSize + 2, productos.size());
     }
 }

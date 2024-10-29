@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**
@@ -18,7 +18,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
  * @author Elvis
  */
 public class DAOProductoImpl implements DAOProducto {
-    private final Logger LOGGER = UtilLoggerManager.getLogger(DAOProductoImpl.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(DAOProductoImpl.class);
     private final String TABLA = "productos";
     
     Conexion conexion = new Conexion();//llamanos a la clase conexionBD instanciamos
@@ -161,12 +161,12 @@ public class DAOProductoImpl implements DAOProducto {
             rs = ps.executeQuery();
             
             while (rs.next()) {
-                dtoProducto = new DTOProducto();
-                dtoProducto.setIdProducto(rs.getInt(1));
-                dtoProducto.setNombre(rs.getString(2));
-                dtoProducto.setIdCategoría(rs.getInt(3));
-                dtoProducto.setUndMedida(rs.getString(4));
-                dtoProducto.setStock(rs.getInt(5));
+                dtoProducto = new DTOProducto()
+                        .setIdProducto(rs.getInt("id"))
+                        .setNombre(rs.getString("nombre"))
+                        .setIdCategoría(rs.getInt("idCategoria"))
+                        .setUndMedida(rs.getString("undMedida"))
+                        .setStock(rs.getInt("Stock"));
             }
         } catch (SQLException e) {
             LOGGER.error("Error en obtener un producto por Id. ", ExceptionUtils.getStackTrace(e));

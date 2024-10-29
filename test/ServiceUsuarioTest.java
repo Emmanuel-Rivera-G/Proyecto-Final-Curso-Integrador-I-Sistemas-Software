@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 
 /**
  * Clase de prueba para el servicio de usuario. Esta clase contiene
@@ -25,7 +25,7 @@ public class ServiceUsuarioTest {
 
     private ServiceUsuario serviceUsuario;
     private Conexion conexion;
-    private final Logger LOGGER = UtilLoggerManager.getLogger(ServiceUsuarioTest.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(ServiceUsuarioTest.class);
 
     /**
      * Método que se ejecuta antes de cada prueba. Inicializa el servicio

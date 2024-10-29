@@ -1,26 +1,29 @@
 package dto;
 
-//import model.Producto;
 import model.Producto;
-
-import model.Producto;
+import utils.UtilsCategoria;
 
 
 public class DTOProducto {
     private int idProducto;
     private String nombre;
     private int stock;
-    private int idCategoría;
+    private DTOCategoria categoria;
     private String undMedida;
 
     public DTOProducto() {
+        this.idProducto = -1;
+        this.nombre = null;
+        this.stock = -1;
+        this.categoria = null;
+        this.undMedida = null;
     }
 
     public DTOProducto(Producto producto) {
         this.idProducto = producto.getId();
         this.nombre = producto.getNombre();
         this.stock = producto.getStock();
-        this.idCategoría = producto.getIdcategoria();
+        this.categoria = UtilsCategoria.toDTOCategoria(producto.getCategoria());
         this.undMedida = producto.getUndmedida();
     }
 
@@ -28,43 +31,57 @@ public class DTOProducto {
         return idProducto;
     }
 
-    public void setIdProducto(int idProducto) {
+    public DTOProducto setIdProducto(int idProducto) {
         this.idProducto = idProducto;
+        return this;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public DTOProducto setNombre(String nombre) {
         this.nombre = nombre;
+        return this;
     }
 
     public int getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public DTOProducto setStock(int stock) {
         this.stock = stock;
+        return this;
     }
 
     public int getIdCategoría() {
-        return idCategoría;
+        return categoria.getIdCategoria();
     }
 
-    public void setIdCategoría(int idCategoría) {
-        this.idCategoría = idCategoría;
+    public DTOProducto setIdCategoría(int idCategoría) {
+        if (this.categoria == null) this.categoria = new DTOCategoria();
+        this.categoria.setIdCategoria(idCategoría);
+        return this;
     }
 
+    public DTOCategoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(DTOCategoria categoria) {
+        this.categoria = categoria;
+    }
+    
     public String getUndMedida() {
         return undMedida;
     }
 
-    public void setUndMedida(String undMedida) {
+    public DTOProducto setUndMedida(String undMedida) {
         this.undMedida = undMedida;
+        return this;
     }
 
     public Producto toProducto() {
-        return new Producto(idProducto, nombre, idCategoría, undMedida, stock);
+        return new Producto(idProducto, nombre, UtilsCategoria.toCategoria(categoria), undMedida, stock);
     }
 }
