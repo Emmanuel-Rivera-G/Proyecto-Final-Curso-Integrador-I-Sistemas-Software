@@ -161,12 +161,12 @@ public class DAOProductoImpl implements DAOProducto {
             rs = ps.executeQuery();
             
             while (rs.next()) {
-                dtoProducto = new DTOProducto();
-                dtoProducto.setIdProducto(rs.getInt(1));
-                dtoProducto.setNombre(rs.getString(2));
-                dtoProducto.setIdCategoría(rs.getInt(3));
-                dtoProducto.setUndMedida(rs.getString(4));
-                dtoProducto.setStock(rs.getInt(5));
+                dtoProducto = new DTOProducto()
+                        .setIdProducto(rs.getInt("id"))
+                        .setNombre(rs.getString("nombre"))
+                        .setIdCategoría(rs.getInt("idCategoria"))
+                        .setUndMedida(rs.getString("undMedida"))
+                        .setStock(rs.getInt("Stock"));
             }
         } catch (SQLException e) {
             LOGGER.error("Error en obtener un producto por Id. ", ExceptionUtils.getStackTrace(e));
