@@ -85,7 +85,7 @@ public class ServiceProductoTest {
     public void testAgregarProducto() {
         DTOProducto dtoProducto = new DTOProducto();
         dtoProducto.setNombre("Producto de Prueba");
-        dtoProducto.setIdCategoría(1);
+        dtoProducto.setIdCategoria(1);
         dtoProducto.setUndMedida("Unidad");
         dtoProducto.setStock(10);
 
@@ -104,7 +104,7 @@ public class ServiceProductoTest {
     public void testActualizarProducto() {
         DTOProducto dtoProducto = new DTOProducto();
         dtoProducto.setNombre("Producto de Prueba");
-        dtoProducto.setIdCategoría(1);
+        dtoProducto.setIdCategoria(1);
         dtoProducto.setUndMedida("Unidad");
         dtoProducto.setStock(10);
 
@@ -130,7 +130,7 @@ public class ServiceProductoTest {
     public void testEliminarProducto() {
         DTOProducto dtoProducto = new DTOProducto();
         dtoProducto.setNombre("Producto de Prueba");
-        dtoProducto.setIdCategoría(1);
+        dtoProducto.setIdCategoria(1);
         dtoProducto.setUndMedida("Unidad");
         dtoProducto.setStock(10);
 
@@ -154,7 +154,7 @@ public class ServiceProductoTest {
     public void testObtenerProductoPorId() {
         DTOProducto dtoProducto = new DTOProducto();
         dtoProducto.setNombre("Producto de Prueba");
-        dtoProducto.setIdCategoría(1);
+        dtoProducto.setIdCategoria(1);
         dtoProducto.setUndMedida("Unidad");
         dtoProducto.setStock(10);
 
@@ -179,13 +179,13 @@ public class ServiceProductoTest {
 
         DTOProducto producto1 = new DTOProducto();
         producto1.setNombre("Producto de Prueba 1");
-        producto1.setIdCategoría(1);
+        producto1.setIdCategoria(1);
         producto1.setUndMedida("Unidad");
         producto1.setStock(10);
 
         DTOProducto producto2 = new DTOProducto();
         producto2.setNombre("Producto de Prueba 2");
-        producto2.setIdCategoría(1);
+        producto2.setIdCategoria(1);
         producto2.setUndMedida("Unidad");
         producto2.setStock(20);
 
