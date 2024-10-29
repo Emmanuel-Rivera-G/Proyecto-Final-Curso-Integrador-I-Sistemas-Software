@@ -17,7 +17,7 @@ public class UtilsProducto {
                 p.getId(),
                 p.getNombre(),
                 p.getStock(),
-                p.getIdcategoria(),
+                p.getCategoria().getNombre(),
                 p.getUndmedida()
             };
         }
@@ -28,7 +28,7 @@ public class UtilsProducto {
         return new Object[]{
             producto.getId(),
             producto.getNombre(),
-            producto.getIdcategoria(),
+            producto.getCategoria().getIdcat(),
             producto.getUndmedida(),
             producto.getStock()
         };
