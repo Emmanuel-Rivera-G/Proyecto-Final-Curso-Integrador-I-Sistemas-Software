@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import dto.DTOUsuario;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 
 /**
  * Implementación de la interfaz {@code DAOUsuario} que gestiona las operaciones
@@ -19,7 +19,7 @@ import utils.UtilLoggerManager;
  */
 public class DAOUsuarioImpl implements DAOUsuario {
 
-    private final Logger LOGGER = UtilLoggerManager.getLogger(DAOUsuario.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(DAOUsuario.class);
     private Conexion conexion;
     private Connection connection;
 

@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 
 /**
  * Clase que representa la vista de registro de usuarios. Esta clase permite
@@ -23,7 +23,7 @@ import utils.UtilLoggerManager;
  */
 public class ViewRegistroUsuario extends javax.swing.JPanel {
 
-    private final org.slf4j.Logger LOGGER = UtilLoggerManager.getLogger(ViewRegistroUsuario.class);
+    private final org.slf4j.Logger LOGGER = UtilsLoggerManager.getLogger(ViewRegistroUsuario.class);
     private DefaultTableModel modeloTabla;
     List<DTOUsuario> usuarios;
 
