@@ -54,11 +54,11 @@ public class DTOProducto {
         return this;
     }
 
-    public int getIdCategoría() {
+    public int getIdCategoria() {
         return categoria.getIdCategoria();
     }
 
-    public DTOProducto setIdCategoría(int idCategoría) {
+    public DTOProducto setIdCategoria(int idCategoría) {
         if (this.categoria == null) this.categoria = new DTOCategoria();
         this.categoria.setIdCategoria(idCategoría);
         return this;

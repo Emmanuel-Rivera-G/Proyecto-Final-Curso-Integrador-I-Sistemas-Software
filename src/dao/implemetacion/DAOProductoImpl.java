@@ -26,6 +26,7 @@ public class DAOProductoImpl implements DAOProducto {
     PreparedStatement ps;
     ResultSet rs;
     
+    @Override
     public List<DTOProducto> obtenerTodosLosProductos() {
         String sql = "SELECT * FROM " + TABLA;
         List<DTOProducto> lista = new ArrayList<>();
@@ -42,7 +43,7 @@ public class DAOProductoImpl implements DAOProducto {
                 DTOProducto dtoProducto = new DTOProducto();// obj Producto llamado producto// aqui traigo DTO PRODUCTO
                 dtoProducto.setIdProducto(rs.getInt(1));// referencia por la posicion de la columna tambien puede ir el nombre de la columna BD
                 dtoProducto.setNombre(rs.getString(2));
-                dtoProducto.setIdCategoría(rs.getInt(3));
+                dtoProducto.setIdCategoria(rs.getInt(3));
                 dtoProducto.setUndMedida(rs.getString(4));
                 dtoProducto.setStock(rs.getInt(5));
                 
@@ -60,6 +61,7 @@ public class DAOProductoImpl implements DAOProducto {
     //TERMINA EL METODO LISTAR
     
     //Metodo agregar
+    @Override
     public void agregarProducto(DTOProducto producto) {
         String sql = "INSERT INTO " + TABLA + " (nombre,idCategoria,undMedida,Stock) VALUES (?,?,?,?)";
         try {
@@ -68,7 +70,7 @@ public class DAOProductoImpl implements DAOProducto {
             ps = con.prepareStatement(sql);
             
             ps.setString(1,producto.getNombre());
-            ps.setInt(2,producto.getIdCategoría());
+            ps.setInt(2,producto.getIdCategoria());
             ps.setString(3,producto.getUndMedida());
             ps.setInt(4,producto.getStock());
             
@@ -89,7 +91,7 @@ public class DAOProductoImpl implements DAOProducto {
             ps = con.prepareStatement(sql);
             
             ps.setString(1,producto.getNombre());
-            ps.setInt(2,producto.getIdCategoría());
+            ps.setInt(2,producto.getIdCategoria());
             ps.setString(3,producto.getUndMedida());
             ps.setInt(4,producto.getStock());
             
@@ -136,7 +138,7 @@ public class DAOProductoImpl implements DAOProducto {
                 dtoProducto = new DTOProducto();
                 dtoProducto.setIdProducto(rs.getInt("id"));
                 dtoProducto.setNombre(rs.getString("nombre"));
-                dtoProducto.setIdCategoría(rs.getInt("idCategoria"));
+                dtoProducto.setIdCategoria(rs.getInt("idCategoria"));
                 dtoProducto.setUndMedida(rs.getString("undMedida"));
                 dtoProducto.setStock(rs.getInt("Stock"));
             }
@@ -164,7 +166,7 @@ public class DAOProductoImpl implements DAOProducto {
                 dtoProducto = new DTOProducto()
                         .setIdProducto(rs.getInt("id"))
                         .setNombre(rs.getString("nombre"))
-                        .setIdCategoría(rs.getInt("idCategoria"))
+                        .setIdCategoria(rs.getInt("idCategoria"))
                         .setUndMedida(rs.getString("undMedida"))
                         .setStock(rs.getInt("Stock"));
             }
@@ -176,7 +178,7 @@ public class DAOProductoImpl implements DAOProducto {
         return dtoProducto;
     }
     
-    public void cerrarConexion() {
+    private void cerrarConexion() {
         try {
             con.close();
             ps.close();
