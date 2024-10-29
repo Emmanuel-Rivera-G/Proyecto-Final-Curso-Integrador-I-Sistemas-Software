@@ -12,15 +12,15 @@ import javax.swing.JTable;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
-import model.Producto;
 import dto.DTOProducto;
 import service.ServiceProducto;
+import utils.UtilsProducto;
 import view.ViewRegistroProductos;
 /**
  *
  * @author Elvis
  */
-public class ControladorProducto implements ActionListener{//implements controla las acciones de la vista
+public class ControllerProducto implements ActionListener{//implements controla las acciones de la vista
     //variables globales para metodo cargar datos
     private int codigoProd=0;//=0
     private String nombreProd;
@@ -31,12 +31,11 @@ public class ControladorProducto implements ActionListener{//implements controla
 
 
     //instanciacion de objetos
-    Producto producto = new Producto();//hara uso de constructor vacio
     ServiceProducto serviceProducto = new ServiceProducto();
     ViewRegistroProductos view = new ViewRegistroProductos();
     DefaultTableModel modeloTabla = new DefaultTableModel();
     
-    public ControladorProducto(ViewRegistroProductos view) {
+    public ControllerProducto(ViewRegistroProductos view) {
         this.view = view;// recibe los valores o dato
         view.setVisible(true);
         
@@ -63,29 +62,31 @@ public class ControladorProducto implements ActionListener{//implements controla
             private void filtrarTabla() {
                 String filtro = view.getTxtIdBuscar().getText();
                 try {
-                    Producto filtrado = serviceProducto.obtenerProductoPorParametro(filtro);
-                    if (filtrado == null) {
+                    List<DTOProducto> ListDtoFiltrado = serviceProducto.buscarProductosPorNombreOIdConPrefijo(filtro);
+                    if (ListDtoFiltrado == null) {
                         throw new NullPointerException("El producto no se encontró.");
                     }
                     modeloTabla.setRowCount(0);
-                    modeloTabla.addRow(new Object[] {
-                        filtrado.getId(),
-                        filtrado.getNombre(),
-                        filtrado.getIdcategoria(),
-                        filtrado.getUndmedida(),
-                        filtrado.getStock()
-                    });
+                    for (DTOProducto dtoFiltrado : ListDtoFiltrado) {
+                        modeloTabla.addRow(new Object[] {
+                            dtoFiltrado.getIdProducto(),
+                            dtoFiltrado.getNombre(),
+                            dtoFiltrado.getIdCategoría(),
+                            dtoFiltrado.getUndMedida(),
+                            dtoFiltrado.getStock()
+                        });
+                    }
 
                     view.getTblTablaProductos().setModel(modeloTabla);
                 } catch (Exception e) {
                     modeloTabla.setRowCount(0);
-                    List<Producto> productos = serviceProducto.obtenerTodosLosProductos();
-                    for (Producto producto : productos) {
+                    List<DTOProducto> listaDtoProductos = serviceProducto.obtenerTodosLosProductos();
+                    for (DTOProducto producto : listaDtoProductos) {
                         modeloTabla.addRow(new Object[] {
-                            producto.getId(),
+                            producto.getIdProducto(),
                             producto.getNombre(),
-                            producto.getIdcategoria(),
-                            producto.getUndmedida(),
+                            producto.getIdCategoría(),
+                            producto.getUndMedida(),
                             producto.getStock()
                         });
                     }
@@ -101,7 +102,7 @@ public class ControladorProducto implements ActionListener{//implements controla
     
     }
 
-    /*public ControladorProducto(ViewMenuPrincipal vista) {
+    /*public ControllerProducto(ViewMenuPrincipal vista) {
         this.view = view;// recibe los valores o dato
         view.setVisible(true);
         
@@ -114,10 +115,10 @@ public class ControladorProducto implements ActionListener{//implements controla
     private void agregarEventos(){       
         
         view.getBtnRegistrarProducto().addActionListener(this);
-        
         view.getBtnEditarProducto().addActionListener(this);
         view.getBtnEliminarProducto().addActionListener(this);
         view.getBtnLimpiarProducto().addActionListener(this);
+        view.getBtnBuscarProducto().addActionListener(this);
         
         view.getTblTablaProductos().addMouseListener(new MouseAdapter(){
             
@@ -134,18 +135,12 @@ public class ControladorProducto implements ActionListener{//implements controla
         String[] titulocolumnastbl = new String[] {"Codigo", "Nombre", "IdCategoria", "UndMedida", "Stock"};
 
         modeloTabla = new DefaultTableModel(titulocolumnastbl, 0);
-        List<Producto> listaProductos = serviceProducto.obtenerTodosLosProductos();
+        List<DTOProducto> listaDtoProductos = serviceProducto.obtenerTodosLosProductos();
 
         // Corrección en la creación de las filas
-        for (Producto producto : listaProductos) {
-            modeloTabla.addRow(new Object[] {
-                producto.getId(),
-                producto.getNombre(),
-                producto.getIdcategoria(),
-                producto.getUndmedida(),
-                producto.getStock()
-            });
-            producto = null;
+        for (DTOProducto dtoProducto : listaDtoProductos) {
+            modeloTabla.addRow(UtilsProducto.convertirAArray(dtoProducto));
+            dtoProducto = null;
         }
 
         view.getTblTablaProductos().setModel(modeloTabla);
@@ -157,9 +152,9 @@ public class ControladorProducto implements ActionListener{//implements controla
         //String[] titulocolumnastbl = new String[]("CODIGO","NOMBRE","IDCATEGORIA","UND MEDIDA","STOCK");
         modeloTabla = new DefaultTableModel(titulocolumnastbl,0);
         List<Producto>listaProductos = productodao.obtenerTodosLosProductos();
-        for (Producto producto : listaProductos){
+        for (Producto dtoProducto : listaProductos){
             
-            modeloTabla.addRow(new Object[](producto.getId(),producto.getNombre(),producto.getIdcategoria(),producto.getUndmedida(),producto.getStock()));
+            modeloTabla.addRow(new Object[](dtoProducto.getId(),dtoProducto.getNombre(),dtoProducto.getIdcategoria(),dtoProducto.getUndmedida(),dtoProducto.getStock()));
             
         }
         view.getTblTablaProductos().setModel(modeloTabla);
@@ -209,15 +204,20 @@ public class ControladorProducto implements ActionListener{//implements controla
         try {
             if (validarDatos()) { // Validación de datos
                 if (cargarDatos()) { // Cargar datos
-                    Producto producto = new Producto(nombreProd, idCategoria, undMedidaProd, stockProd);
+                    //nombreProd, idCategoria, undMedidaProd, stockProd
+                    DTOProducto dtoProducto = new DTOProducto()
+                            .setNombre(nombreProd)
+                            .setIdCategoría(idCategoria)
+                            .setUndMedida(undMedidaProd)
+                            .setStock(stockProd);
 
-                    // Intentar agregar el producto a la base de datos
-                    serviceProducto.agregarProducto(producto);
+                    // Intentar agregar el dtoProducto a la base de datos
+                    serviceProducto.agregarProducto(dtoProducto);
 
                     // Solo se muestra el mensaje de éxito si no ocurre ninguna excepción
                     JOptionPane.showMessageDialog(null, "Se ha registrado con éxito");
 
-                    // Limpiar campos después de agregar el producto
+                    // Limpiar campos después de agregar el dtoProducto
                     LimpiarCampos();
                 }
             }
@@ -232,8 +232,8 @@ public class ControladorProducto implements ActionListener{//implements controla
         /*try {
             if(validarDatos()){//validacion de metodo validar datos TRUE
                 if(cargarDatos()){//validacion de cargar datos si es TRUE, si todo ok sigue bajando
-                    Producto producto = new Producto(nombreProd, idCategoria, undMedidaProd, stockProd);//Aqui se usa el contructor sin codigo en producto, para usar el metodo de cargarDatos()
-                    serviceProducto.agregarProducto(producto);//desde aqui llama al metodo agregar (interactua con la BD sql)de productoDAO ya instanciado
+                    Producto dtoProducto = new Producto(nombreProd, idCategoria, undMedidaProd, stockProd);//Aqui se usa el contructor sin codigo en dtoProducto, para usar el metodo de cargarDatos()
+                    serviceProducto.agregarProducto(dtoProducto);//desde aqui llama al metodo agregar (interactua con la BD sql)de productoDAO ya instanciado
                     JOptionPane.showMessageDialog(null, "Se ha registrado con exito");
                     LimpiarCampos();//despues de agregar se limpia campos
                 }
@@ -270,8 +270,13 @@ public class ControladorProducto implements ActionListener{//implements controla
         try {
             if(validarDatos()){
                 if(cargarDatos()){
-                    Producto producto = new Producto(codigoProd, nombreProd, idCategoria, undMedidaProd, stockProd);
-                    serviceProducto.actualizarProducto(producto);// Se hace uso del metodo actualizar que se creo en productoDAO
+                    DTOProducto dtoProducto = new DTOProducto()
+                            .setIdProducto(codigoProd)
+                            .setNombre(nombreProd)
+                            .setIdCategoría(idCategoria)
+                            .setUndMedida(undMedidaProd)
+                            .setStock(stockProd);
+                    serviceProducto.actualizarProducto(dtoProducto);// Se hace uso del metodo actualizar que se creo en productoDAO
                     LimpiarCampos();//despues de ACTUALIZAR se limpia campos
                 
                 }
@@ -302,20 +307,15 @@ public class ControladorProducto implements ActionListener{//implements controla
     }
     
     //metodo filtrado
-    private void actualizarTablaFiltrada(int filtro) {
-        Producto productoFiltrado = serviceProducto.obtenerProductoPorId(filtro);
+    private void actualizarTablaFiltrada() {
+        String filtro = view.getTxtIdBuscar().getText();
+        DTOProducto productoFiltrado = serviceProducto.obtenerProductoPorParametro(filtro);
 
         // Obtiene el modelo de la tabla y la limpia
         modeloTabla.setRowCount(0);
 
         // Agrega las filas filtradas
-        modeloTabla.addRow(new Object[]{
-            productoFiltrado.getId(),
-            productoFiltrado.getNombre(),
-            productoFiltrado.getIdcategoria(),
-            productoFiltrado.getUndmedida(),
-            productoFiltrado.getStock()
-        });
+        modeloTabla.addRow(UtilsProducto.convertirAArray(productoFiltrado));
 
         view.getTblTablaProductos().setModel(modeloTabla);
     }
@@ -340,6 +340,9 @@ public class ControladorProducto implements ActionListener{//implements controla
         }
         if (ae.getSource() ==view.getBtnEliminarProducto()){
             eliminarProducto();
+        }
+        if (ae.getSource() ==view.getBtnBuscarProducto()) {
+            actualizarTablaFiltrada();
         }
         
         

@@ -7,7 +7,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import controller.ControladorProducto;
+import controller.ControllerProducto;
 
 /**
  * Ventana principal del menú de la aplicación, que permite navegar entre
@@ -524,7 +524,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
      */
     private void btn_productoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_productoActionPerformed
         vista.show(pnl_principal, "RegistroProducto");
-        ControladorProducto controlador = new ControladorProducto(vistaProductos);//SOOOOO0L
+        ControllerProducto controlador = new ControllerProducto(vistaProductos);//SOOOOO0L
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint();
         this.setTitle("Gestion de productos");

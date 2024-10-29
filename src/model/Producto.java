@@ -1,5 +1,8 @@
 package model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 /**
  *
  * @author Elvis
@@ -72,7 +75,16 @@ public class Producto {
     public void setStock(int stock) {
         this.stock = stock;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+                .append("ID", this.id)
+                .append("Nombre", this.nombre)
+                .append("Id Categoría", this.idcategoria)
+                .append("Stock", this.stock)
+                .append("Unidad de Medida", this.undmedida)
+                .toString();
+    }
     
 }
