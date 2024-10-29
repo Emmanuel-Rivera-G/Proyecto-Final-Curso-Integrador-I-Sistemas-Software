@@ -1,20 +1,21 @@
 package dto;
 
 import model.Producto;
+import utils.UtilsCategoria;
 
 
 public class DTOProducto {
     private int idProducto;
     private String nombre;
     private int stock;
-    private int idCategoría;
+    private DTOCategoria categoria;
     private String undMedida;
 
     public DTOProducto() {
         this.idProducto = -1;
         this.nombre = null;
         this.stock = -1;
-        this.idCategoría = -1;
+        this.categoria = null;
         this.undMedida = null;
     }
 
@@ -22,7 +23,7 @@ public class DTOProducto {
         this.idProducto = producto.getId();
         this.nombre = producto.getNombre();
         this.stock = producto.getStock();
-        this.idCategoría = producto.getIdcategoria();
+        this.categoria = UtilsCategoria.toDTOCategoria(producto.getCategoria());
         this.undMedida = producto.getUndmedida();
     }
 
@@ -54,14 +55,23 @@ public class DTOProducto {
     }
 
     public int getIdCategoría() {
-        return idCategoría;
+        return categoria.getIdCategoria();
     }
 
     public DTOProducto setIdCategoría(int idCategoría) {
-        this.idCategoría = idCategoría;
+        if (this.categoria == null) this.categoria = new DTOCategoria();
+        this.categoria.setIdCategoria(idCategoría);
         return this;
     }
 
+    public DTOCategoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(DTOCategoria categoria) {
+        this.categoria = categoria;
+    }
+    
     public String getUndMedida() {
         return undMedida;
     }
@@ -72,6 +82,6 @@ public class DTOProducto {
     }
 
     public Producto toProducto() {
-        return new Producto(idProducto, nombre, idCategoría, undMedida, stock);
+        return new Producto(idProducto, nombre, UtilsCategoria.toCategoria(categoria), undMedida, stock);
     }
 }
