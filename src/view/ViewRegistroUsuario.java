@@ -1,5 +1,7 @@
 package view;
 
+import com.google.common.base.CharMatcher;
+import com.google.common.base.Strings;
 import controller.ControllerUsuario;
 import dto.DTOUsuario;
 import style.RoundedPanel;
@@ -412,6 +414,23 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             username = txtusuario.getText().trim();
             password = txtpass.getText().trim();
 
+            String mensajeError = ValidarEntradaUsuario(nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password);
+            try {
+                validarUsername(username);
+                validarDocumento(documento);
+                validarNombre(nombre);
+            } catch (IllegalArgumentException e) {
+                String errorMessage = e.getMessage();
+                JOptionPane.showMessageDialog(null, errorMessage, "Error de Validación", JOptionPane.ERROR_MESSAGE);
+                LOGGER.error("Error de validación de entrada: " + errorMessage);
+                return; // Salir si hay un error de validación
+            }
+            if (mensajeError != null) {
+                JOptionPane.showMessageDialog(null, mensajeError);
+                LOGGER.error("Error inesperado");
+                return;
+            }
+
             boolean registrado = controllerUser.registrarUsuario(nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password);
 
             if (registrado) {
@@ -422,9 +441,101 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error inesperado: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Los datos de entrada no deben ser nulos : " + e.getMessage());
         }
     }//GEN-LAST:event_lbl_btn_savedMouseClicked
+
+    /**
+     * Valida la entrada del usuario asegurándose de que todos los campos
+     * requeridos no sean nulos o vacíos, y que el tipo de usuario sea válido.
+     * Implementacion de Google Guava (Strings)
+     *
+     * @param nombre El nombre del usuario.
+     * @param apellido El apellido del usuario.
+     * @param documento El número de documento del usuario.
+     * @param direccion La dirección del usuario.
+     * @param telefono El número de teléfono del usuario.
+     * @param correo El correo electrónico del usuario.
+     * @param idTipoUsuario El ID del tipo de usuario (1 para Administrador, 2
+     * para Empleado).
+     * @param username El nombre de usuario.
+     * @param password La contraseña del usuario.
+     * @return Un mensaje de error si hay algún problema de validación, o null
+     * si todos los campos son válidos.
+     */
+    private String ValidarEntradaUsuario(String nombre, String apellido, String documento, String direccion, String telefono, String correo, int idTipoUsuario, String username, String password) {
+        if (Strings.isNullOrEmpty(nombre)) {
+            return "El nombre no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(apellido)) {
+            return "El apellido no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(documento)) {
+            return "El documento no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(direccion)) {
+            return "La dirección no debe ser nula o vacía.";
+        }
+        if (Strings.isNullOrEmpty(telefono)) {
+            return "El teléfono no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(correo)) {
+            return "El correo no debe ser nulo o vacío.";
+        }
+        if (idTipoUsuario <= 0) {
+            return "Selecciona un tipo de usuario válido.";
+        }
+        if (Strings.isNullOrEmpty(username)) {
+            return "El nombre de usuario no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(password)) {
+            return "La contraseña no debe ser nula o vacía.";
+        }
+        return null;
+
+    }
+
+    /**
+     * Valida el nombre de usuario asegurándose de que contenga solo letras y
+     * dígitos. Implementacion de Google Guava (CharMatcher)
+     *
+     * @param username El nombre de usuario a validar.
+     * @throws IllegalArgumentException Si el nombre de usuario contiene
+     * caracteres no válidos.
+     */
+    private void validarUsername(String username) {
+        if (!CharMatcher.javaLetterOrDigit().matchesAllOf(username)) {
+            throw new IllegalArgumentException("El nombre de usuario solo debe contener letras y dígitos.");
+        }
+    }
+
+    /**
+     * Valida el número de documento asegurándose de que contenga solo dígitos.
+     * Implementacion de Google Guava (CharMatcher)
+     *
+     * @param documento El documento a validar.
+     * @throws IllegalArgumentException Si el documento contiene caracteres no
+     * válidos.
+     */
+    private void validarDocumento(String documento) {
+        if (!CharMatcher.javaDigit().matchesAllOf(documento)) {
+            throw new IllegalArgumentException("El documento solo debe contener dígitos.");
+        }
+    }
+
+    /**
+     * Valida el nombre asegurándose de que contenga solo letras, dígitos y
+     * espacios. Implementacion de Google Guava (CharMatcher)
+     *
+     * @param nombre El nombre a validar.
+     * @throws IllegalArgumentException Si el nombre contiene caracteres no
+     * válidos.
+     */
+    private void validarNombre(String nombre) {
+        if (!CharMatcher.javaLetterOrDigit().or(CharMatcher.whitespace()).matchesAllOf(nombre)) {
+            throw new IllegalArgumentException("El nombre solo debe contener letras, dígitos y espacios.");
+        }
+    }
 
     /**
      * Realiza una búsqueda de usuarios basada en los criterios ingresados en
@@ -520,7 +631,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }//GEN-LAST:event_lbl_editarMouseClicked
-    
+
     /**
      * Permite exportar los datos de la tabla de usuarios a un archivo de Excel
      * (.xls o .xlsx). El archivo es guardado en la ubicación seleccionada por
