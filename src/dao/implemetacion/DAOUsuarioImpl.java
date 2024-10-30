@@ -93,7 +93,7 @@ public class DAOUsuarioImpl implements DAOUsuario {
 
             int rowsAffected = ps.executeUpdate();
             registroExitoso = rowsAffected > 0;
-            LOGGER.info("Se registro exitosamente un usuario.");
+            LOGGER.info("Se registró exitosamente un usuario.");
         } catch (SQLException e) {
             LOGGER.error("Hubo un problema en el registro de usuario. " + e.getMessage(), e);
         }
