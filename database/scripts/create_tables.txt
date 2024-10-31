@@ -1,0 +1,41 @@
+CREATE DATABASE control_stock
+use control_stock
+CREATE TABLE `tipo_usuario` (
+  `id_tipo_usuario` INT AUTO_INCREMENT PRIMARY KEY,
+  `nombre_tipo_usuario` VARCHAR(20) NOT NULL UNIQUE -- Por ejemplo: 'Administrador', 'Empleado'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Insertar tipos de usuario
+INSERT INTO `tipo_usuario` (nombre_tipo_usuario) VALUES ('Administrador');
+INSERT INTO `tipo_usuario` (nombre_tipo_usuario) VALUES ('Empleado');
+
+-- Crear la tabla usuario
+CREATE TABLE `usuario` (
+  `id_usuario` INT AUTO_INCREMENT PRIMARY KEY,
+  `nombre_usuario` VARCHAR(50) NOT NULL,
+  `apellido_usuario` VARCHAR(50) NOT NULL,
+  `documento_usuario` VARCHAR(12) NOT NULL UNIQUE,
+  `direccion_usuario` VARCHAR(100) NOT NULL,
+  `telefono_usuario` VARCHAR(15) NOT NULL,
+  `correo_usuario` VARCHAR(50) NOT NULL UNIQUE,
+  `id_tipo_usuario` INT NOT NULL, 
+  `username` VARCHAR(30) NOT NULL UNIQUE,
+  `password_usuario` VARCHAR(32) NOT NULL, 
+  FOREIGN KEY (`id_tipo_usuario`) REFERENCES `tipo_usuario` (`id_tipo_usuario`) ON DELETE RESTRICT -- No permitimos eliminar tipos de usuario si están asignados
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- Crear la tabla categorias
+CREATE TABLE categorias (
+    `id_categoria` INT AUTO_INCREMENT PRIMARY KEY,
+    `nombre` VARCHAR(100) UNIQUE NOT NULL
+);
+
+-- Crear la tabla productos
+CREATE TABLE productos (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `nombre` VARCHAR(100) UNIQUE NOT NULL,
+    `idCategoria` INT NOT NULL,
+    `undMedida` VARCHAR(50) NOT NULL,
+    `stock` INT NOT NULL
+);
