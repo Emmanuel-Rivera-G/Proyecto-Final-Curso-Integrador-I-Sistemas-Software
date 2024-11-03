@@ -1,11 +1,13 @@
 package controller;
 
+import com.google.common.base.Strings;
 import dto.DTOUsuario;
 import java.io.File;
 import service.ServiceUsuario;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JTable;
+import org.apache.commons.lang3.Validate;
 
 /**
  * La clase {@code ControllerUsuario} es el controlador que gestiona las
@@ -66,6 +68,8 @@ public class ControllerUsuario {
         DTOUsuario nuevoUsuario = new DTOUsuario(0, nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password);
         return serviceUsuario.registrarUsuario(nuevoUsuario);
     }
+
+    
 
     /**
      * Busca usuarios según los criterios de búsqueda proporcionados.
