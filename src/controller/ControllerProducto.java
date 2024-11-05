@@ -14,7 +14,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import dto.DTOProducto;
 import org.slf4j.Logger;
-import service.ServiceProducto;
+import service.ServiceProductoDaoImpl;
 import utils.UtilsLoggerManager;
 import utils.UtilsProducto;
 import view.ViewRegistroProductos;
@@ -33,7 +33,7 @@ public class ControllerProducto implements ActionListener{//implements controla 
     private int stockProd;
 
     //instanciacion de objetos
-    ServiceProducto serviceProducto = new ServiceProducto();
+    ServiceProductoDaoImpl serviceProducto = new ServiceProductoDaoImpl();
     ViewRegistroProductos view = new ViewRegistroProductos();
     DefaultTableModel modeloTabla = new DefaultTableModel();
     

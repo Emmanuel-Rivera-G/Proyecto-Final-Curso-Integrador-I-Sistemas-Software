@@ -1,7 +1,7 @@
 import org.junit.Before;
 import org.junit.After;
 import org.junit.Test;
-import service.ServiceProducto;
+import service.ServiceProductoDaoImpl;
 import dao.implemetacion.DAOProductoImpl;
 import dto.DTOProducto;
 import java.sql.Connection;
@@ -29,7 +29,7 @@ public class ServiceProductoTest {
     private final int ID_1 = 1;
     private final int ID_2 = 2;
     
-    private ServiceProducto serviceProducto;
+    private ServiceProductoDaoImpl serviceProducto;
     private DAOProducto daoProductoSimulado;
     private Conexion conexion;
     private final Logger LOGGER = UtilsLoggerManager.getLogger(ServiceProductoTest.class);
@@ -45,7 +45,7 @@ public class ServiceProductoTest {
     @Before
     public void setUp() {
         daoProductoSimulado = new DAOProductoImpl();
-        serviceProducto = new ServiceProducto(daoProductoSimulado);
+        serviceProducto = new ServiceProductoDaoImpl(daoProductoSimulado);
         conexion = new Conexion();
 
         // Obtener el último ID antes de cada prueba

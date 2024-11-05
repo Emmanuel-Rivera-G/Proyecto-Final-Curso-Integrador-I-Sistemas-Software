@@ -5,21 +5,22 @@ import dao.interfaz.DAOProducto;
 import dto.DTOProducto;
 import java.util.List;
 import model.Producto;
+import service.interfaz.ServiceProducto;
 import utils.UtilsProducto;
 
 /**
- * La clase ServiceProducto proporciona servicios para gestionar productos,
- * incluyendo operaciones CRUD y búsquedas avanzadas.
+ * La clase ServiceProductoDaoImpl proporciona servicios para gestionar productos,
+ incluyendo operaciones CRUD y búsquedas avanzadas.
  * 
  * @author Emmanuel
  */
-public class ServiceProducto {
+public class ServiceProductoDaoImpl implements ServiceProducto {
     private DAOProducto daoProducto;
 
     /**
      * Constructor que inicializa el DAO con la implementación por defecto.
      */
-    public ServiceProducto() {
+    public ServiceProductoDaoImpl() {
         daoProducto = new DAOProductoImpl();
     }
     
@@ -28,7 +29,7 @@ public class ServiceProducto {
      *
      * @param daoProducto la implementación de DAOProducto a utilizar
      */
-    public ServiceProducto(DAOProducto daoProducto) {
+    public ServiceProductoDaoImpl(DAOProducto daoProducto) {
         this.daoProducto = daoProducto;
     }
 
