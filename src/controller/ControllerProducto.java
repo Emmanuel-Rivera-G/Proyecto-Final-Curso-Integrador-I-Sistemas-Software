@@ -15,8 +15,12 @@ import javax.swing.table.DefaultTableModel;
 import dto.DTOProducto;
 import org.slf4j.Logger;
 import service.ServiceProductoDaoImpl;
+import utils.CargadorProducto;
+import utils.MessageUtils;
+import utils.TableModelProducto;
 import utils.UtilsLoggerManager;
-import utils.UtilsProducto;
+import utils.ConversorProducto;
+import utils.ValidatorProducto;
 import view.ViewRegistroProductos;
 /**
  *
@@ -68,7 +72,7 @@ public class ControllerProducto implements ActionListener{//implements controla 
                     if (listDtoFiltrado == null) {
                         throw new NullPointerException("El producto no se encontró.");
                     }
-                    UtilsProducto.actualizarTablaCompleta(modeloTabla, listDtoFiltrado);
+                    TableModelProducto.actualizarTablaCompleta(modeloTabla, listDtoFiltrado);
 
                     view.getTblTablaProductos().setModel(modeloTabla);
                 } catch (Exception e) {
@@ -118,7 +122,7 @@ public class ControllerProducto implements ActionListener{//implements controla 
         List<DTOProducto> listaDtoProductos = serviceProducto.obtenerTodosLosProductos();
 
         // Corrección en la creación de las filas
-        modeloTabla = UtilsProducto.crearTablaCompleta(titulocolumnastbl, listaDtoProductos);
+        modeloTabla = TableModelProducto.crearTablaCompleta(titulocolumnastbl, listaDtoProductos);
 
         view.getTblTablaProductos().setModel(modeloTabla);
         view.getTblTablaProductos().setPreferredSize(new Dimension(350, modeloTabla.getRowCount() * 16));
@@ -154,7 +158,7 @@ public class ControllerProducto implements ActionListener{//implements controla 
     
     //***************INICIO Validacion de formularios tipo booleanoo si esta vacio o no**********************
     private boolean validarDatos(){
-        return UtilsProducto.validarCamposVistaParaDTOProducto(
+        return ValidatorProducto.validarCamposVistaParaDTOProducto(
                 view.getTxtNombreProducto().getText(), 
                 view.getTxtCodCategoria().getText(), 
                 view.getTxtUndMedida().getText(), 
@@ -162,7 +166,7 @@ public class ControllerProducto implements ActionListener{//implements controla 
     }
     
     private boolean cargarDatos(){// metodo carga a las variablesGlob con los valores txt, validacion de datos correctos en integer parseint
-        DTOProducto dtoProducto = UtilsProducto.cargarDatosDeLabelsADTOProducto(
+        DTOProducto dtoProducto = CargadorProducto.cargarDatosDeLabelsADTOProducto(
             view.getTxtNombreProducto(),
             view.getTxtCodCategoria(),
             view.getTxtUndMedida(),
@@ -198,7 +202,7 @@ public class ControllerProducto implements ActionListener{//implements controla 
                     serviceProducto.agregarProducto(dtoProducto);
 
                     // Solo se muestra el mensaje de éxito si no ocurre ninguna excepción
-                    UtilsProducto.mostrarMensajeExitoso("Se ha registrado con éxito");
+                    MessageUtils.mostrarMensajeExitoso("Se ha registrado con éxito");
 
                     // Limpiar campos después de agregar el dtoProducto
                     LimpiarCampos();
@@ -208,7 +212,7 @@ public class ControllerProducto implements ActionListener{//implements controla 
             }  
         } catch (Exception e) { // Manejo específico para SQLException
             // Este bloque catch solo se ejecuta si ocurre un error de SQL (como el UNIQUE constraint)
-            UtilsProducto.mostrarMensajeError("YA EXISTE EL PRODUCTO");
+            MessageUtils.mostrarMensajeError("YA EXISTE EL PRODUCTO");
             LOGGER.error("Error en el método agregarProducto - ControladorProducto: " + e.getMessage());
             // Actualizar la tabla sin importar si ocurrió una excepción o no
             listarTabla();
@@ -280,7 +284,7 @@ public class ControllerProducto implements ActionListener{//implements controla 
                 JOptionPane.showMessageDialog(null,"Registro borrado");
                 LimpiarCampos();
             }else{
-                UtilsProducto.mostrarMensajeError("Tiene que seleccionar un producto mostrado en la tabla");
+                MessageUtils.mostrarMensajeError("Tiene que seleccionar un producto mostrado en la tabla");
             }
         } catch (Exception e) {
             LOGGER.error("Error eliminar - Controlador Producto: " + e.getMessage());
@@ -294,9 +298,9 @@ public class ControllerProducto implements ActionListener{//implements controla 
         String filtro = view.getTxtIdBuscar().getText();
         DTOProducto productoFiltrado = serviceProducto.obtenerProductoPorParametro(filtro);
         try {
-            UtilsProducto.actualizarTablaCompleta(modeloTabla, productoFiltrado);
+            TableModelProducto.actualizarTablaCompleta(modeloTabla, productoFiltrado);
         } catch (NullPointerException e){
-            UtilsProducto.mostrarMensajeError("Debe llenar elementos en buscar");
+            MessageUtils.mostrarMensajeError("Debe llenar elementos en buscar");
             LOGGER.error("Elementos en buscar incompletos. ", e.getMessage());
         }
 

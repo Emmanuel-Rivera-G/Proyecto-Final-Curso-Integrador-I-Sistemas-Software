@@ -8,7 +8,7 @@ import org.slf4j.Logger;
  * @author Emmanuel
  */
 public class ValidatorProducto {
-    private final static Logger LOGGER = UtilsLoggerManager.getLogger(UtilsProducto.class);
+    private final static Logger LOGGER = UtilsLoggerManager.getLogger(ValidatorProducto.class);
     
     /**
      * Valida los campos necesarios para crear un DTOProducto en una vista.
@@ -28,7 +28,7 @@ public class ValidatorProducto {
         boolean validado = true;
         
         if (alMenosUnCampoVacio) {
-            UtilsProducto.mostrarMensajeError("Debe llenar los campos");
+            MessageUtils.mostrarMensajeError("Debe llenar los campos");
             LOGGER.error("Llenar todos los campos de la vista para DTOProducto.");
             validado = false;
         }

@@ -11,6 +11,7 @@ import org.apache.commons.collections4.CollectionUtils;
  * @author Emmanuel
  */
 public class ConverterProducto {
+    
     /**
      * Convierte un objeto Producto en un DTOProducto.
      * @param producto Producto a convertir.
@@ -20,7 +21,7 @@ public class ConverterProducto {
         return new DTOProducto(producto);
     }
     
-    public Producto toProducto(DTOProducto dtoProducto) {
+    public static Producto toProducto(DTOProducto dtoProducto) {
         return dtoProducto.toProducto();
     }
     
@@ -39,6 +40,6 @@ public class ConverterProducto {
      * @return Lista de objetos DTOProducto.
      */
     public static List<DTOProducto> convertirProductosADTO(List<Producto> productos) {
-        return new ArrayList<>(CollectionUtils.collect(productos, UtilsProducto::toDTOProducto));
+        return new ArrayList<>(CollectionUtils.collect(productos, ConverterProducto::toDTOProducto));
     }
 }

@@ -6,7 +6,9 @@ import dto.DTOProducto;
 import java.util.List;
 import model.Producto;
 import service.interfaz.ServiceProducto;
-import utils.UtilsProducto;
+import utils.ConverterProducto;
+import utils.FiltradorProducto;
+import utils.ConversorProducto;
 
 /**
  * La clase ServiceProductoDaoImpl proporciona servicios para gestionar productos,
@@ -118,7 +120,7 @@ public class ServiceProductoDaoImpl implements ServiceProducto {
      * @return una lista de Producto con todos los productos
      */
     public List<Producto> obtenerTodosLosToProductos() {
-        return UtilsProducto.convertirDTOAProducto(this.obtenerTodosLosProductos());
+        return ConverterProducto.convertirDTOAProducto(this.obtenerTodosLosProductos());
     }
     
     /**
@@ -128,7 +130,7 @@ public class ServiceProductoDaoImpl implements ServiceProducto {
      * @return una lista de DTOProducto que cumple con el prefijo en el nombre
      */
     public List<DTOProducto> buscarProductosNombrePorPrefijo(String prefijo) {
-        return UtilsProducto.filtrarPorNombreConPrefijo(obtenerTodosLosProductos(), prefijo);
+        return FiltradorProducto.filtrarPorNombreConPrefijo(obtenerTodosLosProductos(), prefijo);
     }
     
     /**
@@ -138,7 +140,7 @@ public class ServiceProductoDaoImpl implements ServiceProducto {
      * @return una lista de DTOProducto que cumple con el prefijo en el ID
      */
     public List<DTOProducto> buscarProductosIdPorPrefijo(String prefijo) {
-        return UtilsProducto.filtrarPorIdConPrefijo(obtenerTodosLosProductos(), prefijo);
+        return FiltradorProducto.filtrarPorIdConPrefijo(obtenerTodosLosProductos(), prefijo);
     }
     
     /**

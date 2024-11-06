@@ -1,6 +1,7 @@
 package utils;
 
 import dto.DTOProducto;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
@@ -40,6 +41,20 @@ public class TableModelProducto {
     }
     
     /**
+    * Actualiza el modelo de tabla agregando un solo DTOProducto, limpiando el contenido anterior.
+    *
+    * @param modeloTabla DefaultTableModel que se actualizará con el DTOProducto proporcionado.
+    * @param dtoProducto DTOProducto que se añadirá a la tabla.
+    * @throws NullPointerException Si el producto es nulo.
+    */
+    public static void actualizarTablaCompleta(DefaultTableModel modeloTabla, DTOProducto dtoProducto) throws NullPointerException {
+        if (dtoProducto == null) throw new NullPointerException("No debe ser nulo.");
+        List<DTOProducto> lista = new ArrayList<DTOProducto>();
+        lista.add(dtoProducto);
+        actualizarTablaCompleta(modeloTabla, lista);
+    }
+    
+    /**
     * Agrega una fila al modelo de tabla utilizando los datos de un DTOProducto.
     *
     * @param modeloTabla DefaultTableModel al que se añadirá la fila.
@@ -47,6 +62,6 @@ public class TableModelProducto {
     * @throws NullPointerException Si el producto es nulo.
     */
     public static void agregarFilaDTOProductoATabla(DefaultTableModel modeloTabla, DTOProducto dtoProducto) throws NullPointerException {
-        modeloTabla.addRow(UtilsProducto.convertirAArray(dtoProducto));
+        modeloTabla.addRow(ConversorProducto.toArray(dtoProducto));
     }
 }
