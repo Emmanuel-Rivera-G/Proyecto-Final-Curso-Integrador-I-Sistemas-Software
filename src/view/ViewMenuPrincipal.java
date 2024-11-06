@@ -30,6 +30,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     ViewRegistroUsuario vistaUser = new ViewRegistroUsuario();
     ViewRegistroCategorias vistaCategorias = new ViewRegistroCategorias();
     ViewRegistroProductos vistaProductos = new ViewRegistroProductos();//SOOOOOL
+    ViewVisualizador vistaVisualizador = new ViewVisualizador();
 
     /**
      * Constructor de la ventana del menú principal.
@@ -53,7 +54,8 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         vista = (CardLayout) pnl_principal.getLayout();
 
         // Agrega los paneles al pnl_principal
-        pnl_principal.add(vistap, "menu");
+        //pnl_principal.add(vistap, "menu");
+        pnl_principal.add(vistaVisualizador, "vistaVisualizador");
         pnl_principal.add(vistaUser, "RegistroUsuario");
         pnl_principal.add(vistaCategorias, "RegistroCategoria");
         pnl_principal.add(vistaProductos, "RegistroProducto");
@@ -426,7 +428,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
      * @param evt Evento de clic del botón de inicio.
      */
     private void btn_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicioActionPerformed
-        vista.show(pnl_principal, "menu");
+        vista.show(pnl_principal, "vistaVisualizador");
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint();
         this.setTitle("Menu Principal");
