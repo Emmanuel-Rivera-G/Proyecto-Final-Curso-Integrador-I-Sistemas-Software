@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
 import java.util.List;
 import model.Producto;
 import org.slf4j.Logger;
+import service.interfaz.ServiceProducto;
 import utils.UtilsLoggerManager;
 
 /**
@@ -29,7 +30,7 @@ public class ServiceProductoTest {
     private final int ID_1 = 1;
     private final int ID_2 = 2;
     
-    private ServiceProductoDaoImpl serviceProducto;
+    private ServiceProducto serviceProducto;
     private DAOProducto daoProductoSimulado;
     private Conexion conexion;
     private final Logger LOGGER = UtilsLoggerManager.getLogger(ServiceProductoTest.class);
