@@ -15,6 +15,7 @@ import javax.swing.table.DefaultTableModel;
 import dto.DTOProducto;
 import org.slf4j.Logger;
 import service.ServiceProductoDaoImpl;
+import service.interfaz.ServiceProducto;
 import utils.CargadorProducto;
 import utils.MessageUtils;
 import utils.TableModelProducto;
