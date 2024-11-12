@@ -8,6 +8,7 @@ import java.awt.Color;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import controller.ControllerProducto;
+import javax.swing.JPanel;
 
 /**
  * Ventana principal del menú de la aplicación, que permite navegar entre
@@ -31,6 +32,10 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     ViewRegistroCategorias vistaCategorias = new ViewRegistroCategorias();
     ViewRegistroProductos vistaProductos = new ViewRegistroProductos();//SOOOOOL
     ViewVisualizador vistaVisualizador = new ViewVisualizador();
+    ViewRegistroEntradas vistaRegistroEntradas = new ViewRegistroEntradas();
+    ViewListadoSalidas vistaListadoSalidas = new ViewListadoSalidas(this);
+    ViewRegistroSalidas vistaRegistroSalidas = new ViewRegistroSalidas(this);
+    ViewRegistroProveedores vistaRegistroProveedor = new ViewRegistroProveedores();
 
     /**
      * Constructor de la ventana del menú principal.
@@ -59,6 +64,10 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         pnl_principal.add(vistaUser, "RegistroUsuario");
         pnl_principal.add(vistaCategorias, "RegistroCategoria");
         pnl_principal.add(vistaProductos, "RegistroProducto");
+        pnl_principal.add(vistaRegistroEntradas, "RegistroEntradas");
+        pnl_principal.add(vistaListadoSalidas, "vistaListadoSalidas");
+        pnl_principal.add(vistaRegistroSalidas, "RegistroSalidas");
+        pnl_principal.add(vistaRegistroProveedor, "RegistroProveedor");
 
         vista.show(pnl_principal, "menu");
     }
@@ -237,6 +246,9 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         btn_proveedor.setText("Proveedor");
         btn_proveedor.setBorder(null);
         btn_proveedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_proveedorMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_proveedorMouseEntered(evt);
             }
@@ -411,6 +423,15 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Getter para acceder al CardLayout
+    public CardLayout getVista() {
+        return vista;
+    }
+
+    // Getter para acceder al JPanel principal
+    public JPanel getPnlPrincipal() {
+        return pnl_principal;
+    }
     private void btn_inicioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_inicioMouseEntered
         //btn_home.setBackground(Color.ORANGE); // Cambia el color al pasar el mouse
     }//GEN-LAST:event_btn_inicioMouseEntered
@@ -502,7 +523,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         vista.show(pnl_principal, "RegistroUsuario");
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint();
-        this.setTitle("Gestiion de usuarios");
+        this.setTitle("Gestion de usuarios");
 
     }//GEN-LAST:event_btn_usuarioActionPerformed
 
@@ -539,8 +560,19 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_entradaMouseExited
 
+    /**
+     * Cambia la vista a la sección de gestion de entradas.
+     * <p>
+     * Actualiza el título de la ventana a "gestion de entradas".
+     * </p>
+     *
+     * @param evt Evento de clic del botón de entradas.
+     */
     private void btn_entradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entradaActionPerformed
-        // TODO add your handling code here:
+        vista.show(pnl_principal, "RegistroEntradas");
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();
+        this.setTitle("Registro de entradas");
     }//GEN-LAST:event_btn_entradaActionPerformed
 
     private void btn_salidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salidaMouseEntered
@@ -551,8 +583,19 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_salidaMouseExited
 
+    /**
+     * Cambia la vista a la sección de gestión de salidas.
+     * <p>
+     * Actualiza el título de la ventana a "Listado de salidas".
+     * </p>
+     *
+     * @param evt Evento de clic del botón de salidas.
+     */
     private void btn_salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salidaActionPerformed
-        // TODO add your handling code here:
+        vista.show(pnl_principal, "vistaListadoSalidas");
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();
+        this.setTitle("Listado de salidas");
     }//GEN-LAST:event_btn_salidaActionPerformed
 
     private void btn_proveedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_proveedorMouseEntered
@@ -564,8 +607,17 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_proveedorMouseExited
 
     private void btn_proveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_proveedorActionPerformed
-        // TODO add your handling code here:
+        vista.show(pnl_principal, "RegistroProveedor");
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();
+        this.setTitle("Registro de Proveedor");
     }//GEN-LAST:event_btn_proveedorActionPerformed
+
+    private void btn_proveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_proveedorMouseClicked
+        vista.show(pnl_principal, "RegistroProveedor");
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();
+        this.setTitle("Registro de Proveedor");    }//GEN-LAST:event_btn_proveedorMouseClicked
 
     /**
      * @param args the command line arguments
