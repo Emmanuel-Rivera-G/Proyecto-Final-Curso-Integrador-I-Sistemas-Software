@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import dao.interfaz.DAOSalida;
 import dto.DTOSalida;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +55,26 @@ public class DAOSalidaImpl implements DAOSalida {
 
     @Override
     public int guardarSalida(DTOSalida dtoSalida) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "INSERT INTO Salida (idSalida, idProducto, cantidad, valorUnitario, valorTotal, fechaSalida, idUsuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setInt(1, dtoSalida.getIdSalida());
+            stmt.setInt(2, dtoSalida.getDtoProducto().getIdProducto());
+            stmt.setInt(3, dtoSalida.getCantidad());
+            stmt.setDouble(4, dtoSalida.getValorUnitario());
+            stmt.setDouble(5, dtoSalida.getValorTotal());
+            stmt.setTimestamp(6, Timestamp.valueOf(dtoSalida.getFechaSalida()));
+            stmt.setInt(7, dtoSalida.getDtoUsuario().getIdUsuario());
+            int affectedRows = stmt.executeUpdate();
+            if (affectedRows > 0) {
+                ResultSet generatedKeys = stmt.getGeneratedKeys();
+                if (generatedKeys.next()) {
+                    return generatedKeys.getInt(1);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
     }
 
     @Override
