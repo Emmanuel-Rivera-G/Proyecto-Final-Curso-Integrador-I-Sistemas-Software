@@ -5,7 +5,9 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import dao.interfaz.DAOSalida;
+import dto.DTOProducto;
 import dto.DTOSalida;
+import dto.DTOUsuario;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -105,6 +107,26 @@ public class DAOSalidaImpl implements DAOSalida {
             e.printStackTrace();
             return false;
         }
+    }
+    
+    private DTOSalida mapResultSetToSalida(ResultSet rs) throws SQLException {
+        DTOSalida salida = new DTOSalida();
+        salida.setIdSalida(rs.getInt("idSalida"));
+        
+        DTOProducto producto = new DTOProducto();
+        producto.setIdProducto(rs.getInt("idProducto"));
+        salida.setDtoProducto(producto);
+        
+        DTOUsuario usuario = new DTOUsuario();
+        usuario.setIdUsuario(rs.getInt("idUsuario"));
+        salida.setDtoUsuario(usuario);
+        
+        salida.setCantidad(rs.getInt("cantidad"));
+        salida.setValorUnitario(rs.getDouble("valorUnitario"));
+        salida.setValorTotal(rs.getDouble("valorTotal"));
+        salida.setFechaSalida(rs.getTimestamp("fechaSalida").toLocalDateTime());
+        
+        return salida;
     }
     
 }
