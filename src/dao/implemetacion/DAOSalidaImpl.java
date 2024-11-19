@@ -3,6 +3,7 @@ package dao.implemetacion;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import dao.interfaz.DAOSalida;
 import dto.DTOSalida;
 import java.sql.SQLException;
@@ -38,7 +39,17 @@ public class DAOSalidaImpl implements DAOSalida {
 
     @Override
     public DTOSalida obtenerSalidaPorId(int idSalida) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "SELECT * FROM Salida WHERE idSalida = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, idSalida);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return mapResultSetToSalida(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
