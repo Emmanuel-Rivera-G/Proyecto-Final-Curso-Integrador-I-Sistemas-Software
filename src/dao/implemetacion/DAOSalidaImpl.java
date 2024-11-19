@@ -79,7 +79,20 @@ public class DAOSalidaImpl implements DAOSalida {
 
     @Override
     public boolean actualizarSalida(DTOSalida dtoSalida) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        String sql = "UPDATE Salida SET idProducto = ?, cantidad = ?, valorUnitario = ?, valorTotal = ?, fechaSalida = ?, idUsuario = ? WHERE idSalida = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, dtoSalida.getDtoProducto().getIdProducto());
+            stmt.setInt(2, dtoSalida.getCantidad());
+            stmt.setDouble(3, dtoSalida.getValorUnitario());
+            stmt.setDouble(4, dtoSalida.getValorTotal());
+            stmt.setTimestamp(5, Timestamp.valueOf(dtoSalida.getFechaSalida()));
+            stmt.setInt(6, dtoSalida.getDtoUsuario().getIdUsuario());
+            stmt.setInt(7, dtoSalida.getIdSalida());
+            return stmt.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
