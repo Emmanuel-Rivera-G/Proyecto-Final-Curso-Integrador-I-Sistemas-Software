@@ -54,6 +54,12 @@ public class DTOEntrada {
      * DTO que representa el usuario que registra la entrada.
      */
     private DTOUsuario usuario;
+    
+    /**
+     * Constructor vacío para inicialización con Setter.
+     */
+    public DTOEntrada() {
+    }
 
     /**
      * Constructor completo para la clase DTOEntrada.
