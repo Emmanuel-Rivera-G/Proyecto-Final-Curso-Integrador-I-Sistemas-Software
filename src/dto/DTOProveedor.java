@@ -38,6 +38,12 @@ public class DTOProveedor {
      * Dirección de correo electrónico del proveedor.
      */
     private String email;
+    
+    /**
+     * Constructor vacío para inicialización con Setter.
+     */
+    public DTOProveedor() {
+    }
 
     /**
      * Constructor que inicializa todos los atributos del {@code DTOProveedor}.

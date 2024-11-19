@@ -55,6 +55,12 @@ public class DTOSalida {
      * Destino del producto retirado.
      */
     private String destino;
+    
+    /**
+     * Constructor vacío de DTOSalida.
+     */
+    public DTOSalida() {
+    }
 
     /**
      * Constructor que inicializa todos los atributos de la clase DTOSalida.

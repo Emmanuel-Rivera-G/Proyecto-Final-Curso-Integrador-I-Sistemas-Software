@@ -16,21 +16,21 @@ public interface ServiceEntrada {
      *
      * @param dtoEntrada el DTO de la entrada a agregar
      */
-    public void agregarEntrada(DTOEntrada dtoEntrada);
+    public boolean agregarEntrada(DTOEntrada dtoEntrada);
 
     /**
      * Actualiza una entrada existente en la base de datos.
      *
      * @param dtoEntrada el DTO de la entrada a actualizar
      */
-    public void actualizarEntrada(DTOEntrada dtoEntrada);
+    public boolean actualizarEntrada(DTOEntrada dtoEntrada);
 
     /**
      * Elimina una entrada de la base de datos.
      *
      * @param idEntrada el ID de la entrada a eliminar
      */
-    public void eliminarEntrada(int idEntrada);
+    public boolean eliminarEntrada(int idEntrada);
 
     /**
      * Obtiene una entrada por su ID.
