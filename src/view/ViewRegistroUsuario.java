@@ -1,5 +1,7 @@
 package view;
 
+import com.google.common.base.CharMatcher;
+import com.google.common.base.Strings;
 import controller.ControllerUsuario;
 import dto.DTOUsuario;
 import style.RoundedPanel;
@@ -12,7 +14,7 @@ import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 
 /**
  * Clase que representa la vista de registro de usuarios. Esta clase permite
@@ -23,7 +25,7 @@ import utils.UtilLoggerManager;
  */
 public class ViewRegistroUsuario extends javax.swing.JPanel {
 
-    private final org.slf4j.Logger LOGGER = UtilLoggerManager.getLogger(ViewRegistroUsuario.class);
+    private final org.slf4j.Logger LOGGER = UtilsLoggerManager.getLogger(ViewRegistroUsuario.class);
     private DefaultTableModel modeloTabla;
     List<DTOUsuario> usuarios;
 
@@ -81,7 +83,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
         panel_cont_icon_user5 =  new RoundedPanel(60, Color.WHITE);
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuarios = new javax.swing.JTable();
-        panel_cont_icon_user6 =  new RoundedPanel(60, new Color(19, 22, 27));
+        panel_cont_icon_user6 =  new RoundedPanel(75, new Color(19, 22, 27));
         lbl_editar = new javax.swing.JLabel();
         lbl_delete = new javax.swing.JLabel();
         lbl_buscar = new javax.swing.JLabel();
@@ -89,7 +91,6 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(839, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_cont_icon_user1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user1.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_btn_export.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-exportExcel.png"))); // NOI18N
@@ -110,7 +111,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             panel_cont_icon_user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbl_registroUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 1039, Short.MAX_VALUE)
+                .addComponent(lbl_registroUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, 1041, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_btn_export)
                 .addGap(16, 16, 16))
@@ -127,10 +128,8 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
 
         add(panel_cont_icon_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1100, 60));
 
-        panel_cont_icon_user2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user2.setForeground(new java.awt.Color(19, 22, 27));
 
-        panel_cont_icon_user3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user3.setForeground(new java.awt.Color(19, 22, 27));
 
         jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -169,30 +168,28 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user3Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtusuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panel_cont_icon_user3Layout.createSequentialGroup()
-                        .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txtdireccion)
-                                .addComponent(txttelefono, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtcorreo, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtnombre, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtapellido, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtdocumento, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cmbTipoUsuario, javax.swing.GroupLayout.Alignment.LEADING, 0, 203, Short.MAX_VALUE))
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12))
-                        .addGap(0, 10, Short.MAX_VALUE))
-                    .addComponent(txtpass, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtpass, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
+                    .addComponent(txtusuario)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtdireccion)
+                            .addComponent(txttelefono, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtcorreo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtnombre, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtapellido, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtdocumento, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbTipoUsuario, javax.swing.GroupLayout.Alignment.LEADING, 0, 203, Short.MAX_VALUE))
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel12)))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
         panel_cont_icon_user3Layout.setVerticalGroup(
             panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +253,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                 .addComponent(lbl_btn_saved)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user2Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(17, Short.MAX_VALUE)
                 .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user2Layout.createSequentialGroup()
                         .addComponent(panel_cont_icon_user3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -274,15 +271,13 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                 .addComponent(panel_cont_icon_user3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lbl_btn_saved)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         add(panel_cont_icon_user2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 260, 590));
 
-        panel_cont_icon_user4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user4.setForeground(new java.awt.Color(19, 22, 27));
 
-        panel_cont_icon_user5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user5.setForeground(new java.awt.Color(19, 22, 27));
 
         tablaUsuarios.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -325,19 +320,18 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             .addGroup(panel_cont_icon_user4Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         panel_cont_icon_user4Layout.setVerticalGroup(
             panel_cont_icon_user4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user4Layout.createSequentialGroup()
-                .addContainerGap(44, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
 
         add(panel_cont_icon_user4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 830, 510));
 
-        panel_cont_icon_user6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user6.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-editar.png"))); // NOI18N
@@ -370,7 +364,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                 .addComponent(lbl_editar)
                 .addGap(133, 133, 133)
                 .addComponent(lbl_delete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                 .addComponent(lbl_buscar)
                 .addGap(104, 104, 104))
         );
@@ -382,7 +376,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                     .addComponent(lbl_buscar)
                     .addComponent(lbl_delete)
                     .addComponent(lbl_editar))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         add(panel_cont_icon_user6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 620, 830, 70));
@@ -420,6 +414,23 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             username = txtusuario.getText().trim();
             password = txtpass.getText().trim();
 
+            String mensajeError = ValidarEntradaUsuario(nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password);
+            try {
+                validarUsername(username);
+                validarDocumento(documento);
+                validarNombre(nombre);
+            } catch (IllegalArgumentException e) {
+                String errorMessage = e.getMessage();
+                JOptionPane.showMessageDialog(null, errorMessage, "Error de Validación", JOptionPane.ERROR_MESSAGE);
+                LOGGER.error("Error de validación de entrada: " + errorMessage);
+                return; // Salir si hay un error de validación
+            }
+            if (mensajeError != null) {
+                JOptionPane.showMessageDialog(null, mensajeError);
+                LOGGER.error("Error inesperado");
+                return;
+            }
+
             boolean registrado = controllerUser.registrarUsuario(nombre, apellido, documento, direccion, telefono, correo, idTipoUsuario, username, password);
 
             if (registrado) {
@@ -430,9 +441,101 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error inesperado: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Los datos de entrada no deben ser nulos : " + e.getMessage());
         }
     }//GEN-LAST:event_lbl_btn_savedMouseClicked
+
+    /**
+     * Valida la entrada del usuario asegurándose de que todos los campos
+     * requeridos no sean nulos o vacíos, y que el tipo de usuario sea válido.
+     * Implementacion de Google Guava (Strings)
+     *
+     * @param nombre El nombre del usuario.
+     * @param apellido El apellido del usuario.
+     * @param documento El número de documento del usuario.
+     * @param direccion La dirección del usuario.
+     * @param telefono El número de teléfono del usuario.
+     * @param correo El correo electrónico del usuario.
+     * @param idTipoUsuario El ID del tipo de usuario (1 para Administrador, 2
+     * para Empleado).
+     * @param username El nombre de usuario.
+     * @param password La contraseña del usuario.
+     * @return Un mensaje de error si hay algún problema de validación, o null
+     * si todos los campos son válidos.
+     */
+    private String ValidarEntradaUsuario(String nombre, String apellido, String documento, String direccion, String telefono, String correo, int idTipoUsuario, String username, String password) {
+        if (Strings.isNullOrEmpty(nombre)) {
+            return "El nombre no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(apellido)) {
+            return "El apellido no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(documento)) {
+            return "El documento no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(direccion)) {
+            return "La dirección no debe ser nula o vacía.";
+        }
+        if (Strings.isNullOrEmpty(telefono)) {
+            return "El teléfono no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(correo)) {
+            return "El correo no debe ser nulo o vacío.";
+        }
+        if (idTipoUsuario <= 0) {
+            return "Selecciona un tipo de usuario válido.";
+        }
+        if (Strings.isNullOrEmpty(username)) {
+            return "El nombre de usuario no debe ser nulo o vacío.";
+        }
+        if (Strings.isNullOrEmpty(password)) {
+            return "La contraseña no debe ser nula o vacía.";
+        }
+        return null;
+
+    }
+
+    /**
+     * Valida el nombre de usuario asegurándose de que contenga solo letras y
+     * dígitos. Implementacion de Google Guava (CharMatcher)
+     *
+     * @param username El nombre de usuario a validar.
+     * @throws IllegalArgumentException Si el nombre de usuario contiene
+     * caracteres no válidos.
+     */
+    private void validarUsername(String username) {
+        if (!CharMatcher.javaLetterOrDigit().matchesAllOf(username)) {
+            throw new IllegalArgumentException("El nombre de usuario solo debe contener letras y dígitos.");
+        }
+    }
+
+    /**
+     * Valida el número de documento asegurándose de que contenga solo dígitos.
+     * Implementacion de Google Guava (CharMatcher)
+     *
+     * @param documento El documento a validar.
+     * @throws IllegalArgumentException Si el documento contiene caracteres no
+     * válidos.
+     */
+    private void validarDocumento(String documento) {
+        if (!CharMatcher.javaDigit().matchesAllOf(documento)) {
+            throw new IllegalArgumentException("El documento solo debe contener dígitos.");
+        }
+    }
+
+    /**
+     * Valida el nombre asegurándose de que contenga solo letras, dígitos y
+     * espacios. Implementacion de Google Guava (CharMatcher)
+     *
+     * @param nombre El nombre a validar.
+     * @throws IllegalArgumentException Si el nombre contiene caracteres no
+     * válidos.
+     */
+    private void validarNombre(String nombre) {
+        if (!CharMatcher.javaLetterOrDigit().or(CharMatcher.whitespace()).matchesAllOf(nombre)) {
+            throw new IllegalArgumentException("El nombre solo debe contener letras, dígitos y espacios.");
+        }
+    }
 
     /**
      * Realiza una búsqueda de usuarios basada en los criterios ingresados en
@@ -528,7 +631,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }//GEN-LAST:event_lbl_editarMouseClicked
-    
+
     /**
      * Permite exportar los datos de la tabla de usuarios a un archivo de Excel
      * (.xls o .xlsx). El archivo es guardado en la ubicación seleccionada por
@@ -635,10 +738,6 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lbl_btn_export;
-    private javax.swing.JLabel lbl_btn_exportExcel;
-    private javax.swing.JLabel lbl_btn_exportExcel1;
-    private javax.swing.JLabel lbl_btn_exportExcel2;
-    private javax.swing.JLabel lbl_btn_exportExcel3;
     private javax.swing.JLabel lbl_btn_saved;
     private javax.swing.JLabel lbl_buscar;
     private javax.swing.JLabel lbl_delete;

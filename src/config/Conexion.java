@@ -3,7 +3,7 @@ package config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 
 /**
  * Clase de configuración para la conexión a la base de datos.
@@ -14,7 +14,7 @@ public class Conexion {
     /**
      * Logger para registrar información y errores de la conexión.
      */
-    private final Logger LOGGER = UtilLoggerManager.getLogger(Conexion.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(Conexion.class);
     
     /**
      * URL base para la conexión a la base de datos.

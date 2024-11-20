@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 
 /**
@@ -18,7 +18,7 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
  * @author Elvis
  */
 public class DAOProductoImpl implements DAOProducto {
-    private final Logger LOGGER = UtilLoggerManager.getLogger(DAOProductoImpl.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(DAOProductoImpl.class);
     private final String TABLA = "productos";
     
     Conexion conexion = new Conexion();//llamanos a la clase conexionBD instanciamos
@@ -26,6 +26,7 @@ public class DAOProductoImpl implements DAOProducto {
     PreparedStatement ps;
     ResultSet rs;
     
+    @Override
     public List<DTOProducto> obtenerTodosLosProductos() {
         String sql = "SELECT * FROM " + TABLA;
         List<DTOProducto> lista = new ArrayList<>();
@@ -42,14 +43,14 @@ public class DAOProductoImpl implements DAOProducto {
                 DTOProducto dtoProducto = new DTOProducto();// obj Producto llamado producto// aqui traigo DTO PRODUCTO
                 dtoProducto.setIdProducto(rs.getInt(1));// referencia por la posicion de la columna tambien puede ir el nombre de la columna BD
                 dtoProducto.setNombre(rs.getString(2));
-                dtoProducto.setIdCategoría(rs.getInt(3));
+                dtoProducto.setIdCategoria(rs.getInt(3));
                 dtoProducto.setUndMedida(rs.getString(4));
                 dtoProducto.setStock(rs.getInt(5));
                 
                 lista.add(dtoProducto);// aqui se carga todos los productos ARRAYLIST
                 
             }
-            con.close();
+            cerrarConexion();
             
         } catch (Exception e) {
             LOGGER.error("Error en listar en la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
@@ -60,6 +61,7 @@ public class DAOProductoImpl implements DAOProducto {
     //TERMINA EL METODO LISTAR
     
     //Metodo agregar
+    @Override
     public void agregarProducto(DTOProducto producto) {
         String sql = "INSERT INTO " + TABLA + " (nombre,idCategoria,undMedida,Stock) VALUES (?,?,?,?)";
         try {
@@ -68,12 +70,12 @@ public class DAOProductoImpl implements DAOProducto {
             ps = con.prepareStatement(sql);
             
             ps.setString(1,producto.getNombre());
-            ps.setInt(2,producto.getIdCategoría());
+            ps.setInt(2,producto.getIdCategoria());
             ps.setString(3,producto.getUndMedida());
             ps.setInt(4,producto.getStock());
             
             ps.executeUpdate();// EJECUTA LA CONSULTA O INSERCION SQL UPDATE
-            con.close();
+            cerrarConexion();
             
         } catch (SQLException e) {
             LOGGER.error("Error en agregar en la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
@@ -89,14 +91,14 @@ public class DAOProductoImpl implements DAOProducto {
             ps = con.prepareStatement(sql);
             
             ps.setString(1,producto.getNombre());
-            ps.setInt(2,producto.getIdCategoría());
+            ps.setInt(2,producto.getIdCategoria());
             ps.setString(3,producto.getUndMedida());
             ps.setInt(4,producto.getStock());
             
             ps.setInt(5, producto.getIdProducto());
             
             ps.executeUpdate();
-            con.close();
+            cerrarConexion();
             
         } catch (SQLException e) {
             LOGGER.error("Error en actualizar la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
@@ -114,10 +116,38 @@ public class DAOProductoImpl implements DAOProducto {
             ps.setInt(1, idProducto);
             
             ps.executeUpdate();
-            con.close();
+            cerrarConexion();
         } catch (SQLException e) {
             LOGGER.error("Error en eleminar de la tabla {} : {}", TABLA, e.getMessage(), ExceptionUtils.getStackTrace(e));
         }
+    }
+    
+    @Override
+    public DTOProducto obtenerProductoPorNombre(String param) {
+        String sql = "SELECT * FROM " + TABLA + " WHERE nombre=?;";
+        DTOProducto dtoProducto = null;
+        try {
+            con = conexion.getConnection();
+            Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
+            ps = con.prepareStatement(sql);
+
+            ps.setString(1, param);
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                dtoProducto = new DTOProducto();
+                dtoProducto.setIdProducto(rs.getInt("id"));
+                dtoProducto.setNombre(rs.getString("nombre"));
+                dtoProducto.setIdCategoria(rs.getInt("idCategoria"));
+                dtoProducto.setUndMedida(rs.getString("undMedida"));
+                dtoProducto.setStock(rs.getInt("Stock"));
+            }
+        } catch (SQLException e) {
+            LOGGER.error("Error en obtener un producto por nombre. ", ExceptionUtils.getStackTrace(e));
+        } finally {
+            cerrarConexion();
+        }
+        return dtoProducto;
     }
 
     @Override
@@ -133,22 +163,22 @@ public class DAOProductoImpl implements DAOProducto {
             rs = ps.executeQuery();
             
             while (rs.next()) {
-                dtoProducto = new DTOProducto();
-                dtoProducto.setIdProducto(rs.getInt(1));
-                dtoProducto.setNombre(rs.getString(2));
-                dtoProducto.setIdCategoría(rs.getInt(3));
-                dtoProducto.setUndMedida(rs.getString(4));
-                dtoProducto.setStock(rs.getInt(5));
+                dtoProducto = new DTOProducto()
+                        .setIdProducto(rs.getInt("id"))
+                        .setNombre(rs.getString("nombre"))
+                        .setIdCategoria(rs.getInt("idCategoria"))
+                        .setUndMedida(rs.getString("undMedida"))
+                        .setStock(rs.getInt("Stock"));
             }
         } catch (SQLException e) {
             LOGGER.error("Error en obtener un producto por Id. ", ExceptionUtils.getStackTrace(e));
         } finally {
             cerrarConexion();
-            return dtoProducto;
         }
+        return dtoProducto;
     }
     
-    public void cerrarConexion() {
+    private void cerrarConexion() {
         try {
             con.close();
             ps.close();
@@ -156,4 +186,5 @@ public class DAOProductoImpl implements DAOProducto {
             LOGGER.error("Error en cerrar conexión. ", ExceptionUtils.getStackTrace(e));
         }
     }
+
 }

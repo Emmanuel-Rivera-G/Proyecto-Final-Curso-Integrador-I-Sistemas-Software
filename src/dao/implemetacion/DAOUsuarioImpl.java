@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import dto.DTOUsuario;
 import org.slf4j.Logger;
-import utils.UtilLoggerManager;
+import utils.UtilsLoggerManager;
 
 /**
  * Implementación de la interfaz {@code DAOUsuario} que gestiona las operaciones
@@ -19,7 +19,7 @@ import utils.UtilLoggerManager;
  */
 public class DAOUsuarioImpl implements DAOUsuario {
 
-    private final Logger LOGGER = UtilLoggerManager.getLogger(DAOUsuario.class);
+    private final Logger LOGGER = UtilsLoggerManager.getLogger(DAOUsuario.class);
     private Conexion conexion;
     private Connection connection;
 
@@ -93,7 +93,7 @@ public class DAOUsuarioImpl implements DAOUsuario {
 
             int rowsAffected = ps.executeUpdate();
             registroExitoso = rowsAffected > 0;
-            LOGGER.info("Se registro exitosamente un usuario.");
+            LOGGER.info("Se registró exitosamente un usuario.");
         } catch (SQLException e) {
             LOGGER.error("Hubo un problema en el registro de usuario. " + e.getMessage(), e);
         }
