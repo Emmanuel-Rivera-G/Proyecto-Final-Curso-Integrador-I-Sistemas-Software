@@ -1,127 +1,92 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package model;
 
-import java.time.LocalDateTime;
-
 /**
- * Clase que representa una entrada de producto en el sistema de inventario.
- * Contiene información relacionada con el producto, la cantidad, los valores
- * asociados, la fecha de la entrada, el proveedor y el usuario que registra
- * la entrada.
- * 
- * @author Yinyer
+ *
+ * @author Lenovo
  */
 public class Entrada {
-
-    /**
-     * Identificador único de la entrada.
-     */
-    private int idEntrada;
-
-    /**
-     * Producto que se ingresa en la entrada.
-     */
-    private Producto producto;
-
-    /**
-     * Cantidad de producto que se ingresa.
-     */
+    private int identrada;
+    private int idproducto;
+    private String nombreproducto;
+    private String descoperacion;
+    private String fecha;
     private int cantidad;
+    private double preciounitario;
+    private double total;
+    
+    //polimorfismo diferente parametros
+    //contructor vacio
 
-    /**
-     * Valor unitario del producto.
-     */
-    private double valorUnitario;
-
-    /**
-     * Valor total de la entrada (cantidad * valor unitario).
-     */
-    private double valorTotal;
-
-    /**
-     * Fecha en la que se realizó la entrada.
-     */
-    private LocalDateTime fechaEntrada;
-
-    /**
-     * Proveedor que suministra el producto.
-     */
-    private Proveedor proveedor;
-
-    /**
-     * Usuario que registra la entrada.
-     */
-    private Usuario usuario;
-
-    /**
-     * Constructor vacío para la clase Entrada.
-     */
     public Entrada() {
     }
-
-    /**
-     * Constructor completo para la clase Entrada.
-     * 
-     * @param idEntrada     Identificador de la entrada.
-     * @param producto      Producto de la entrada.
-     * @param cantidad      Cantidad del producto.
-     * @param valorUnitario Valor unitario del producto.
-     * @param valorTotal    Valor total de la entrada.
-     * @param fechaEntrada  Fecha de la entrada.
-     * @param proveedor     Proveedor del producto.
-     * @param usuario       Usuario que registra la entrada.
-     */
-    public Entrada(int idEntrada, Producto producto, int cantidad, double valorUnitario, double valorTotal, LocalDateTime fechaEntrada, Proveedor proveedor, Usuario usuario) {
-        this.idEntrada = idEntrada;
-        this.producto = producto;
+    //contructor considerando el ID autoincrementable al REGISTRAR
+    public Entrada(int idproducto, String nombreproducto, String descoperacion, String fecha, int cantidad, double preciounitario, double total) {
+        this.idproducto = idproducto;
+        this.nombreproducto = nombreproducto;
+        this.descoperacion = descoperacion;
+        this.fecha = fecha;
         this.cantidad = cantidad;
-        this.valorUnitario = valorUnitario;
-        this.valorTotal = valorTotal;
-        this.fechaEntrada = fechaEntrada;
-        this.proveedor = proveedor;
-        this.usuario = usuario;
+        this.preciounitario = preciounitario;
+        this.total = total;
+    }
+    //constructor para EDITAR entrada con ID al buscar
+    public Entrada(int identrada, int idproducto, String nombreproducto, String descoperacion, String fecha, int cantidad, double preciounitario, double total) {
+        this.identrada = identrada;
+        this.idproducto = idproducto;
+        this.nombreproducto = nombreproducto;
+        this.descoperacion = descoperacion;
+        this.fecha = fecha;
+        this.cantidad = cantidad;
+        this.preciounitario = preciounitario;
+        this.total = total;
+    }
+    
+    //get y set
+
+    public int getIdentrada() {
+        return identrada;
     }
 
-    /**
-     * Obtiene el identificador de la entrada.
-     * 
-     * @return idEntrada
-     */
-    public int getIdEntrada() {
-        return idEntrada;
+    public void setIdentrada(int identrada) {
+        this.identrada = identrada;
     }
 
-    /**
-     * Establece el identificador de la entrada.
-     * 
-     * @param idEntrada Nuevo identificador de la entrada.
-     */
-    public void setIdEntrada(int idEntrada) {
-        this.idEntrada = idEntrada;
+    public int getIdproducto() {
+        return idproducto;
     }
 
-    /**
-     * Obtiene el producto de la entrada.
-     * 
-     * @return producto
-     */
-    public Producto getProducto() {
-        return producto;
+    public void setIdproducto(int idproducto) {
+        this.idproducto = idproducto;
     }
 
-    /**
-     * Establece el producto de la entrada.
-     * 
-     * @param producto Nuevo producto para la entrada.
-     */
-    public void setProducto(Producto producto) {
-        this.producto = producto;
+    public String getNombreproducto() {
+        return nombreproducto;
     }
 
-    /**
-     * Obtiene la cantidad de producto de la entrada.
-     * 
-     * @return cantidad
-     */
+    public void setNombreproducto(String nombreproducto) {
+        this.nombreproducto = nombreproducto;
+    }
+
+    public String getDescoperacion() {
+        return descoperacion;
+    }
+
+    public void setDescoperacion(String descoperacion) {
+        this.descoperacion = descoperacion;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
     public int getCantidad() {
         return cantidad;
     }
@@ -135,93 +100,25 @@ public class Entrada {
         this.cantidad = cantidad;
     }
 
-    /**
-     * Obtiene el valor unitario del producto.
-     * 
-     * @return valorUnitario
-     */
-    public double getValorUnitario() {
-        return valorUnitario;
+    public double getPreciounitario() {
+        return preciounitario;
     }
 
-    /**
-     * Establece el valor unitario del producto.
-     * 
-     * @param valorUnitario Nuevo valor unitario del producto.
-     */
-    public void setValorUnitario(double valorUnitario) {
-        this.valorUnitario = valorUnitario;
+    public void setPreciounitario(double preciounitario) {
+        this.preciounitario = preciounitario;
     }
 
-    /**
-     * Obtiene el valor total de la entrada.
-     * 
-     * @return valorTotal
-     */
-    public double getValorTotal() {
-        return valorTotal;
+    public double getTotal() {
+        return total;
     }
 
-    /**
-     * Establece el valor total de la entrada.
-     * 
-     * @param valorTotal Nuevo valor total de la entrada.
-     */
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
+    public void setTotal(double total) {
+        this.total = total;
     }
-
-    /**
-     * Obtiene la fecha en que se realizó la entrada.
-     * 
-     * @return fechaEntrada
-     */
-    public LocalDateTime getFechaEntrada() {
-        return fechaEntrada;
-    }
-
-    /**
-     * Establece la fecha en que se realizó la entrada.
-     * 
-     * @param fechaEntrada Nueva fecha de la entrada.
-     */
-    public void setFechaEntrada(LocalDateTime fechaEntrada) {
-        this.fechaEntrada = fechaEntrada;
-    }
-
-    /**
-     * Obtiene el proveedor del producto.
-     * 
-     * @return proveedor
-     */
-    public Proveedor getProveedor() {
-        return proveedor;
-    }
-
-    /**
-     * Establece el proveedor del producto.
-     * 
-     * @param proveedor Nuevo proveedor del producto.
-     */
-    public void setProveedor(Proveedor proveedor) {
-        this.proveedor = proveedor;
-    }
-
-    /**
-     * Obtiene el usuario que registra la entrada.
-     * 
-     * @return usuario
-     */
-    public Usuario getUsuario() {
-        return usuario;
-    }
-
-    /**
-     * Establece el usuario que registra la entrada.
-     * 
-     * @param usuario Nuevo usuario que registra la entrada.
-     */
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+    
+    
+    
+    
+    
+    
 }

@@ -2,6 +2,12 @@ package view;
 
 import style.RoundedPanel;
 import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  * Panel de registro de Registro de entradas en la interfaz gráfica de la aplicación.
@@ -38,43 +44,38 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
         panel_cont_icon_user2 =  new RoundedPanel(30, new Color(19, 22, 27));
         panel_cont_icon_user3 =  new RoundedPanel(30, Color.WHITE);
         lbl_id_entrada = new javax.swing.JLabel();
-        txtidentrada = new javax.swing.JTextField();
+        txtIdEntrada = new javax.swing.JTextField();
         lbl_nombreProducto = new javax.swing.JLabel();
-        txtnombreProducto = new javax.swing.JTextField();
         lbl_stock = new javax.swing.JLabel();
         lbl_fecha = new javax.swing.JLabel();
         lbl_precioEntrada = new javax.swing.JLabel();
         lbl_precioVenta = new javax.swing.JLabel();
         lbl_total = new javax.swing.JLabel();
-        txtTotal1 = new javax.swing.JTextField();
-        txtField_fecha = new javax.swing.JTextField();
-        txtField_stock = new javax.swing.JTextField();
-        txtField_precioV = new javax.swing.JTextField();
-        txtField_precioEntrada = new javax.swing.JTextField();
+        txtTotalE = new javax.swing.JTextField();
+        txtFechaEntrada = new javax.swing.JTextField();
+        txtDescOperacion = new javax.swing.JTextField();
+        txtPrecioUnitario = new javax.swing.JTextField();
+        txtCantidadP = new javax.swing.JTextField();
+        txtNombreProducto = new javax.swing.JTextField();
+        txtIdProducto = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         panel_cont_icon_user5 =  new RoundedPanel(30, Color.WHITE);
         lbl_buscarP = new javax.swing.JLabel();
         lbl_idProducto_1 = new javax.swing.JLabel();
-        txtidProducto = new javax.swing.JTextField();
-        lbl_buscar1 = new javax.swing.JLabel();
+        txtBuscarNameProduct = new javax.swing.JTextField();
         panel_cont_icon_user7 =  new RoundedPanel(60, new Color(0,5,17));
         jLabel11 = new javax.swing.JLabel();
         panel_cont_icon_user8 =  new RoundedPanel(60, new Color(0,5,17));
-        lbl_saved = new javax.swing.JLabel();
+        btnRegistrarEntrada = new javax.swing.JButton();
         panel_cont_icon_user6 =  new RoundedPanel(60, new Color(0, 5, 17));
-        lbl_buscar = new javax.swing.JLabel();
-        lbl_editar = new javax.swing.JLabel();
-        lbl_delete = new javax.swing.JLabel();
-        lbl_guardar = new javax.swing.JLabel();
+        btnEditarEntrada = new javax.swing.JButton();
+        btnEliminarEntrada = new javax.swing.JButton();
         panel_cont_icon_user10 =  new RoundedPanel(30, Color.WHITE);
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tbl_entradas2 = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblEntradas = new javax.swing.JTable();
         panel_cont_icon_user11 =  new RoundedPanel(30, Color.WHITE);
-        lbl_datosProveedor = new javax.swing.JLabel();
-        lbl_id_Proveedor = new javax.swing.JLabel();
-        txtidproveedor = new javax.swing.JTextField();
-        lblNombre = new javax.swing.JLabel();
-        txtproveedor = new javax.swing.JTextField();
-        lbl_buscar2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblTablaProductosABuscarEnt = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(839, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -114,9 +115,10 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
         lbl_id_entrada.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
         lbl_id_entrada.setText("ID Entrada");
 
-        txtidentrada.addActionListener(new java.awt.event.ActionListener() {
+        txtIdEntrada.setEditable(false);
+        txtIdEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtidentradaActionPerformed(evt);
+                txtIdEntradaActionPerformed(evt);
             }
         });
 
@@ -124,51 +126,70 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
         lbl_nombreProducto.setText("Nombre Producto");
 
         lbl_stock.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        lbl_stock.setText("Stock");
+        lbl_stock.setText("Descripcion de Operacion:");
 
         lbl_fecha.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        lbl_fecha.setText("Fecha");
+        lbl_fecha.setText("Fecha:");
 
         lbl_precioEntrada.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        lbl_precioEntrada.setText("Precio Entrada.");
+        lbl_precioEntrada.setText("Cantidad:");
 
         lbl_precioVenta.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        lbl_precioVenta.setText("Precio Venta");
+        lbl_precioVenta.setText("Precio Unitario:");
 
         lbl_total.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        lbl_total.setText("Total");
+        lbl_total.setText("Total:");
+
+        txtTotalE.setEditable(false);
+
+        txtNombreProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreProductoActionPerformed(evt);
+            }
+        });
+
+        txtIdProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdProductoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Cod Producto");
 
         javax.swing.GroupLayout panel_cont_icon_user3Layout = new javax.swing.GroupLayout(panel_cont_icon_user3);
         panel_cont_icon_user3.setLayout(panel_cont_icon_user3Layout);
         panel_cont_icon_user3Layout.setHorizontalGroup(
             panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user3Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
                 .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user3Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTotal1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lbl_nombreProducto)
-                                .addComponent(txtnombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lbl_stock)
-                                .addComponent(txtField_stock, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lbl_id_entrada)
-                            .addComponent(txtidentrada, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtDescOperacion, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                    .addComponent(txtTotalE, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                     .addGroup(panel_cont_icon_user3Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
+                        .addGap(1, 1, 1)
                         .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtField_fecha, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtField_precioEntrada, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtField_precioV, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtFechaEntrada, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtCantidadP, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtPrecioUnitario, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(panel_cont_icon_user3Layout.createSequentialGroup()
                                 .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_total)
                                     .addComponent(lbl_precioVenta)
                                     .addComponent(lbl_precioEntrada)
-                                    .addComponent(lbl_fecha))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(16, Short.MAX_VALUE))
+                                    .addComponent(lbl_fecha)
+                                    .addComponent(lbl_total, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(lbl_stock)
+                    .addComponent(lbl_id_entrada)
+                    .addComponent(txtIdEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel_cont_icon_user3Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(lbl_nombreProducto))
+                    .addGroup(panel_cont_icon_user3Layout.createSequentialGroup()
+                        .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNombreProducto)))
+                .addGap(16, 16, 16))
         );
         panel_cont_icon_user3Layout.setVerticalGroup(
             panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,32 +197,36 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
                 .addGap(14, 14, 14)
                 .addComponent(lbl_id_entrada)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtidentrada, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtIdEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl_nombreProducto)
+                .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_nombreProducto)
+                    .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtnombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panel_cont_icon_user3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
+                .addComponent(lbl_stock, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_stock)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtField_stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDescOperacion, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_fecha)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtField_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtFechaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(lbl_precioEntrada)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtField_precioEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCantidadP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_precioVenta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtField_precioV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPrecioUnitario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_total)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTotal1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addComponent(txtTotalE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         panel_cont_icon_user5.setForeground(new java.awt.Color(19, 22, 27));
@@ -211,43 +236,36 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
         lbl_buscarP.setText("Buscar Producto");
 
         lbl_idProducto_1.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        lbl_idProducto_1.setText("ID Producto");
+        lbl_idProducto_1.setText("Nombre o ID Producto:");
 
-        lbl_buscar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-buscar.png"))); // NOI18N
+        txtBuscarNameProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarNameProductActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panel_cont_icon_user5Layout = new javax.swing.GroupLayout(panel_cont_icon_user5);
         panel_cont_icon_user5.setLayout(panel_cont_icon_user5Layout);
         panel_cont_icon_user5Layout.setHorizontalGroup(
             panel_cont_icon_user5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_buscarP)
-                .addGap(129, 129, 129))
             .addGroup(panel_cont_icon_user5Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(panel_cont_icon_user5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_buscarP)
                     .addComponent(lbl_idProducto_1)
-                    .addComponent(txtidProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
-                .addComponent(lbl_buscar1)
-                .addGap(41, 41, 41))
+                    .addComponent(txtBuscarNameProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         panel_cont_icon_user5Layout.setVerticalGroup(
             panel_cont_icon_user5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbl_buscarP)
-                .addGroup(panel_cont_icon_user5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_cont_icon_user5Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(lbl_idProducto_1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtidProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(38, Short.MAX_VALUE))
-                    .addGroup(panel_cont_icon_user5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_buscar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                .addGap(28, 28, 28)
+                .addComponent(lbl_idProducto_1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtBuscarNameProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panel_cont_icon_user7.setForeground(new java.awt.Color(19, 22, 27));
@@ -275,149 +293,134 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
 
         panel_cont_icon_user8.setForeground(new java.awt.Color(19, 22, 27));
 
-        lbl_saved.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-guardar.png"))); // NOI18N
+        btnRegistrarEntrada.setBackground(new java.awt.Color(0, 102, 255));
+        btnRegistrarEntrada.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        btnRegistrarEntrada.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarEntrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/iconGuardar1.png"))); // NOI18N
+        btnRegistrarEntrada.setText("Guardar");
 
         javax.swing.GroupLayout panel_cont_icon_user8Layout = new javax.swing.GroupLayout(panel_cont_icon_user8);
         panel_cont_icon_user8.setLayout(panel_cont_icon_user8Layout);
         panel_cont_icon_user8Layout.setHorizontalGroup(
             panel_cont_icon_user8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user8Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(lbl_saved)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(btnRegistrarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         panel_cont_icon_user8Layout.setVerticalGroup(
             panel_cont_icon_user8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user8Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(lbl_saved)
-                .addGap(9, 9, 9))
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(btnRegistrarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         panel_cont_icon_user6.setForeground(new java.awt.Color(19, 22, 27));
 
-        lbl_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-buscar.png"))); // NOI18N
+        btnEditarEntrada.setBackground(new java.awt.Color(0, 102, 255));
+        btnEditarEntrada.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        btnEditarEntrada.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditarEntrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/iconEditar1.png"))); // NOI18N
+        btnEditarEntrada.setText("Editar");
 
-        lbl_editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-editar.png"))); // NOI18N
-
-        lbl_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-eliminar.png"))); // NOI18N
-
-        lbl_guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-saved.png"))); // NOI18N
+        btnEliminarEntrada.setBackground(new java.awt.Color(0, 102, 255));
+        btnEliminarEntrada.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        btnEliminarEntrada.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarEntrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-delete.png"))); // NOI18N
+        btnEliminarEntrada.setText("Eliminar");
 
         javax.swing.GroupLayout panel_cont_icon_user6Layout = new javax.swing.GroupLayout(panel_cont_icon_user6);
         panel_cont_icon_user6.setLayout(panel_cont_icon_user6Layout);
         panel_cont_icon_user6Layout.setHorizontalGroup(
             panel_cont_icon_user6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user6Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(lbl_editar)
-                .addGap(136, 136, 136)
-                .addComponent(lbl_delete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_buscar)
-                .addGap(59, 59, 59)
-                .addComponent(lbl_guardar)
-                .addGap(18, 18, 18))
+                .addGap(97, 97, 97)
+                .addComponent(btnEditarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(183, 183, 183)
+                .addComponent(btnEliminarEntrada)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_cont_icon_user6Layout.setVerticalGroup(
             panel_cont_icon_user6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_cont_icon_user6Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(panel_cont_icon_user6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lbl_buscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_delete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_editar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_guardar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user6Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addGroup(panel_cont_icon_user6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEditarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         panel_cont_icon_user10.setForeground(new java.awt.Color(19, 22, 27));
 
-        tbl_entradas2.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        tbl_entradas2.setModel(new javax.swing.table.DefaultTableModel(
+        tblEntradas.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        tblEntradas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Producto", "Stock", "Fecha", "ID proveedor", "Precio Entrada", "Precio Venta", "Total"
+
             }
         ));
-        tbl_entradas2.addMouseListener(new java.awt.event.MouseAdapter() {
+        tblEntradas.setRowHeight(15);
+        tblEntradas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tbl_entradas2MouseClicked(evt);
+                tblEntradasMouseClicked(evt);
             }
         });
-        jScrollPane3.setViewportView(tbl_entradas2);
+        jScrollPane2.setViewportView(tblEntradas);
 
         javax.swing.GroupLayout panel_cont_icon_user10Layout = new javax.swing.GroupLayout(panel_cont_icon_user10);
         panel_cont_icon_user10.setLayout(panel_cont_icon_user10Layout);
         panel_cont_icon_user10Layout.setHorizontalGroup(
             panel_cont_icon_user10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane3)
-                .addContainerGap())
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 732, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_cont_icon_user10Layout.setVerticalGroup(
             panel_cont_icon_user10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         panel_cont_icon_user11.setForeground(new java.awt.Color(19, 22, 27));
 
-        lbl_datosProveedor.setBackground(new java.awt.Color(0, 0, 0));
-        lbl_datosProveedor.setFont(new java.awt.Font("Gill Sans MT", 0, 17)); // NOI18N
-        lbl_datosProveedor.setText("Datos del Proveedor");
+        tblTablaProductosABuscarEnt.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        tblTablaProductosABuscarEnt.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        lbl_id_Proveedor.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        lbl_id_Proveedor.setText("ID");
+            },
+            new String [] {
 
-        lblNombre.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        lblNombre.setText("Nombre");
-
-        lbl_buscar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-buscar.png"))); // NOI18N
+            }
+        ));
+        tblTablaProductosABuscarEnt.setRowHeight(15);
+        tblTablaProductosABuscarEnt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblTablaProductosABuscarEntMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tblTablaProductosABuscarEnt);
 
         javax.swing.GroupLayout panel_cont_icon_user11Layout = new javax.swing.GroupLayout(panel_cont_icon_user11);
         panel_cont_icon_user11.setLayout(panel_cont_icon_user11Layout);
         panel_cont_icon_user11Layout.setHorizontalGroup(
             panel_cont_icon_user11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user11Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(panel_cont_icon_user11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtidproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panel_cont_icon_user11Layout.createSequentialGroup()
-                        .addComponent(lbl_id_Proveedor)
-                        .addGap(80, 80, 80)
-                        .addComponent(lbl_datosProveedor))
-                    .addComponent(lblNombre)
-                    .addComponent(txtproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbl_buscar2)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         panel_cont_icon_user11Layout.setVerticalGroup(
             panel_cont_icon_user11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user11Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panel_cont_icon_user11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_cont_icon_user11Layout.createSequentialGroup()
-                        .addComponent(lbl_datosProveedor)
-                        .addGap(13, 13, 13))
-                    .addComponent(lbl_id_Proveedor, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtidproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtproveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_buscar2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panel_cont_icon_user2Layout = new javax.swing.GroupLayout(panel_cont_icon_user2);
@@ -436,7 +439,7 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
                             .addGroup(panel_cont_icon_user2Layout.createSequentialGroup()
                                 .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(panel_cont_icon_user11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(panel_cont_icon_user11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(panel_cont_icon_user10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(panel_cont_icon_user6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(panel_cont_icon_user7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -460,42 +463,53 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
                 .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panel_cont_icon_user6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panel_cont_icon_user8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         add(panel_cont_icon_user2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1100, 600));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tbl_entradas2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_entradas2MouseClicked
+    private void txtIdEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdEntradaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbl_entradas2MouseClicked
+    }//GEN-LAST:event_txtIdEntradaActionPerformed
 
-    private void txtidentradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidentradaActionPerformed
+    private void tblTablaProductosABuscarEntMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTablaProductosABuscarEntMouseClicked
+
+    }//GEN-LAST:event_tblTablaProductosABuscarEntMouseClicked
+
+    private void tblEntradasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblEntradasMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtidentradaActionPerformed
+    }//GEN-LAST:event_tblEntradasMouseClicked
+
+    private void txtBuscarNameProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarNameProductActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBuscarNameProductActionPerformed
+
+    private void txtNombreProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreProductoActionPerformed
+
+    private void txtIdProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdProductoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEditarEntrada;
+    private javax.swing.JButton btnEliminarEntrada;
+    private javax.swing.JButton btnRegistrarEntrada;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JLabel lblNombre;
-    private javax.swing.JLabel lbl_buscar;
-    private javax.swing.JLabel lbl_buscar1;
-    private javax.swing.JLabel lbl_buscar2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbl_buscarP;
-    private javax.swing.JLabel lbl_datosProveedor;
-    private javax.swing.JLabel lbl_delete;
-    private javax.swing.JLabel lbl_editar;
     private javax.swing.JLabel lbl_fecha;
-    private javax.swing.JLabel lbl_guardar;
     private javax.swing.JLabel lbl_idProducto_1;
-    private javax.swing.JLabel lbl_id_Proveedor;
     private javax.swing.JLabel lbl_id_entrada;
     private javax.swing.JLabel lbl_nombreProducto;
     private javax.swing.JLabel lbl_precioEntrada;
     private javax.swing.JLabel lbl_precioVenta;
-    private javax.swing.JLabel lbl_saved;
     private javax.swing.JLabel lbl_stock;
     private javax.swing.JLabel lbl_total;
     private javax.swing.JPanel panel_cont_icon_user1;
@@ -507,16 +521,171 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
     private javax.swing.JPanel panel_cont_icon_user6;
     private javax.swing.JPanel panel_cont_icon_user7;
     private javax.swing.JPanel panel_cont_icon_user8;
-    private javax.swing.JTable tbl_entradas2;
-    private javax.swing.JTextField txtField_fecha;
-    private javax.swing.JTextField txtField_precioEntrada;
-    private javax.swing.JTextField txtField_precioV;
-    private javax.swing.JTextField txtField_stock;
-    private javax.swing.JTextField txtTotal1;
-    public static javax.swing.JTextField txtidProducto;
-    private javax.swing.JTextField txtidentrada;
-    public static javax.swing.JTextField txtidproveedor;
-    public static javax.swing.JTextField txtnombreProducto;
-    public static javax.swing.JTextField txtproveedor;
+    private javax.swing.JTable tblEntradas;
+    private javax.swing.JTable tblTablaProductosABuscarEnt;
+    private javax.swing.JTextField txtBuscarNameProduct;
+    private javax.swing.JTextField txtCantidadP;
+    private javax.swing.JTextField txtDescOperacion;
+    private javax.swing.JTextField txtFechaEntrada;
+    private javax.swing.JTextField txtIdEntrada;
+    private javax.swing.JTextField txtIdProducto;
+    private javax.swing.JTextField txtNombreProducto;
+    private javax.swing.JTextField txtPrecioUnitario;
+    private javax.swing.JTextField txtTotalE;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getBtnEditarEntrada() {
+        return btnEditarEntrada;
+    }
+
+    public JButton getBtnEliminarEntrada() {
+        return btnEliminarEntrada;
+    }
+
+    public JButton getBtnRegistrarEntrada() {
+        return btnRegistrarEntrada;
+    }
+
+    public JLabel getjLabel1() {
+        return jLabel1;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    public JLabel getLbl_buscarP() {
+        return lbl_buscarP;
+    }
+
+    public JLabel getLbl_fecha() {
+        return lbl_fecha;
+    }
+
+    public JLabel getLbl_idProducto_1() {
+        return lbl_idProducto_1;
+    }
+
+    public JLabel getLbl_id_entrada() {
+        return lbl_id_entrada;
+    }
+
+    public JLabel getLbl_nombreProducto() {
+        return lbl_nombreProducto;
+    }
+
+    public JLabel getLbl_precioEntrada() {
+        return lbl_precioEntrada;
+    }
+
+    public JLabel getLbl_precioVenta() {
+        return lbl_precioVenta;
+    }
+
+    public JLabel getLbl_stock() {
+        return lbl_stock;
+    }
+
+    public JLabel getLbl_total() {
+        return lbl_total;
+    }
+
+    public JPanel getPanel_cont_icon_user1() {
+        return panel_cont_icon_user1;
+    }
+
+    public JPanel getPanel_cont_icon_user10() {
+        return panel_cont_icon_user10;
+    }
+
+    public JPanel getPanel_cont_icon_user11() {
+        return panel_cont_icon_user11;
+    }
+
+    public JPanel getPanel_cont_icon_user2() {
+        return panel_cont_icon_user2;
+    }
+
+    public JPanel getPanel_cont_icon_user3() {
+        return panel_cont_icon_user3;
+    }
+
+    public JPanel getPanel_cont_icon_user5() {
+        return panel_cont_icon_user5;
+    }
+
+    public JPanel getPanel_cont_icon_user6() {
+        return panel_cont_icon_user6;
+    }
+
+    public JPanel getPanel_cont_icon_user7() {
+        return panel_cont_icon_user7;
+    }
+
+    public JPanel getPanel_cont_icon_user8() {
+        return panel_cont_icon_user8;
+    }
+
+    public JTable getTblEntradas() {
+        return tblEntradas;
+    }
+
+    public JTable getTblTablaProductosABuscarEnt() {
+        return tblTablaProductosABuscarEnt;
+    }
+
+    public JTextField getTxtBuscarNameProduct() {
+        return txtBuscarNameProduct;
+    }
+
+    public JTextField getTxtCantidadP() {
+        return txtCantidadP;
+    }
+
+    public JTextField getTxtDescOperacion() {
+        return txtDescOperacion;
+    }
+
+    public JTextField getTxtFechaEntrada() {
+        return txtFechaEntrada;
+    }
+
+    public JTextField getTxtIdEntrada() {
+        return txtIdEntrada;
+    }
+
+    public JTextField getTxtIdProducto() {
+        return txtIdProducto;
+    }
+
+    public JTextField getTxtNombreProducto() {
+        return txtNombreProducto;
+    }
+
+    public JTextField getTxtPrecioUnitario() {
+        return txtPrecioUnitario;
+    }
+
+    public JTextField getTxtTotalE() {
+        return txtTotalE;
+    }
+
+    
+
+    
+    
+
+    
 }
