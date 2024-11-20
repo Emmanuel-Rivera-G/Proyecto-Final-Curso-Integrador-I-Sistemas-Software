@@ -5,6 +5,7 @@
 package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import controller.ControladorEntrada;
 
 import style.RoundedPanel;
 import java.awt.CardLayout;
@@ -28,6 +29,8 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     viewRegistroUsuario vistaUser = new viewRegistroUsuario();
     viewRegistroCategorias vistaCategorias = new viewRegistroCategorias();
     viewRegistroProductos vistaProductos = new viewRegistroProductos();//SOOOOOL
+    ViewRegistroEntradas vistaEntradas = new ViewRegistroEntradas();
+    
 
     public ViewMenuPrincipal() {
 
@@ -45,6 +48,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         pnl_principal.add(vistaCategorias, "RegistroCategoria");
         pnl_principal.add(vistaProductos, "RegistroProducto");
         
+        pnl_principal.add(vistaEntradas, "RegistroEntradas");
         //inicio AGREGANDO
         //ViewMenuPrincipal menu = new ViewMenuPrincipal();
         //ViewRegistroProductos menu1 = new ViewRegistroProductos();
@@ -505,6 +509,18 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
 
     private void btn_entradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entradaActionPerformed
         // TODO add your handling code here:
+        //agregandooo elvis
+        vista.show(pnl_principal, "RegistroEntradas");
+        
+        //viewRegistroProductos.cargarDatos();
+        ControladorEntrada controladorEntrad = new ControladorEntrada(vistaEntradas);//SOOOOO0L
+        //controlador.agregarEventos();
+        
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();
+        this.setTitle("Gestion de ENTRADAS de productos");
+        //vistaEntradas
+        
     }//GEN-LAST:event_btn_entradaActionPerformed
 
     private void btn_salidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salidaMouseEntered
