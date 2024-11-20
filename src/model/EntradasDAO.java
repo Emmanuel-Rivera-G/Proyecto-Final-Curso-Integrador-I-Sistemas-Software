@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+import config.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -16,7 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class EntradasDAO {
     
-    ConexionBD conexion = new ConexionBD();//llamanos a la clase conexionBD instanciamos
+    Conexion conexion = new Conexion();//llamanos a la clase conexionBD instanciamos
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
@@ -26,7 +27,7 @@ public class EntradasDAO {
         String sql = "SELECT * FROM productos";
         List<Producto>lista = new ArrayList<>();
         try {
-            con = conexion.conectarBaseDatos();
+            con = conexion.getConnection();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();// devuelve lista de la base de datos productos
             // la lista se guardara en el Result Set "rs"
@@ -36,7 +37,9 @@ public class EntradasDAO {
                 Producto producto = new Producto();// obj Producto llamado producto// aqui traigo DTO PRODUCTO
                 producto.setId(rs.getInt(1));// referencia por la posicion de la columna tambien puede ir el nombre de la columna BD
                 producto.setNombre(rs.getString(2));
-                producto.setIdcategoria(rs.getInt(3));
+                Categoria cat = new Categoria();
+                cat.setIdcat(rs.getInt(3));
+                producto.setCategoria(cat);
                 producto.setUndmedida(rs.getString(4));
                 producto.setStock(rs.getInt(5));
                 
@@ -57,7 +60,7 @@ public class EntradasDAO {
         String sql = "SELECT * FROM productos WHERE nombre LIKE ? OR CAST(id_productos AS CHAR) LIKE ?";
         List<Producto> lista = new ArrayList<>();
         try {
-            con = conexion.conectarBaseDatos();
+            con = conexion.getConnection();
             ps = con.prepareStatement(sql);
             // Utilizamos el mismo valor para ambas condiciones (nombre e id_productos)
             ps.setString(1, "%" + input + "%");
@@ -68,7 +71,9 @@ public class EntradasDAO {
                 Producto producto = new Producto();
                 producto.setId(rs.getInt("id_productos"));
                 producto.setNombre(rs.getString("nombre"));
-                producto.setIdcategoria(rs.getInt("idCategoria"));
+                Categoria cat = new Categoria();
+                cat.setIdcat(rs.getInt("idCategoria"));
+                producto.setCategoria(cat);
                 producto.setUndmedida(rs.getString("undMedida"));
                 producto.setStock(rs.getInt("stock"));
                 lista.add(producto);
@@ -93,7 +98,7 @@ public class EntradasDAO {
     public void agregar (Entrada entrada) throws SQLException {
         String sql = "INSERT INTO entradas(idProductos, nombreProductos, descripcionOperacion, fecha, cantidad, precioUnitario, total) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
-            con = conexion.conectarBaseDatos();
+            con = conexion.getConnection();
             ps = con.prepareStatement(sql);
             
             ps.setInt(1, entrada.getIdproducto());
@@ -123,7 +128,7 @@ public class EntradasDAO {
         String sql = "SELECT * FROM entradas";
         List<Entrada>lista = new ArrayList<>();
         try {
-            con = conexion.conectarBaseDatos();
+            con = conexion.getConnection();
             ps = con.prepareStatement(sql);
             rs = ps.executeQuery();// devuelve lista de la base de datos productos
             // la lista se guardara en el Result Set "rs"
@@ -160,7 +165,7 @@ public class EntradasDAO {
         String sql="UPDATE entradas SET idProductos=?, nombreProductos=?, descripcionOperacion=?, fecha=?, cantidad=?, precioUnitario=?, total=? WHERE id_Entrada=?";
         
         try {
-            con=conexion.conectarBaseDatos();
+            con=conexion.getConnection();
             ps = con.prepareStatement(sql);
             //Se asigna a los comodines ????? sql
             ps.setInt(1, entrada.getIdproducto());
@@ -185,7 +190,7 @@ public class EntradasDAO {
     public void eliminarEntrd (int id){
         String sql="DELETE FROM entradas WHERE id_Entrada="+id;
         try {
-            con = conexion.conectarBaseDatos();
+            con = conexion.getConnection();
             ps = con.prepareStatement(sql);
             ps.executeUpdate();
             

@@ -87,7 +87,7 @@ public class ControladorEntrada implements ActionListener{
                     modeloTablaBuscarProdEntrada.addRow(new Object[] {
                         producto.getId(),
                         producto.getNombre(),
-                        producto.getIdcategoria(),
+                        producto.getCategoria().getIdcat(),
                         producto.getUndmedida(),
                         producto.getStock()
                     });
@@ -187,7 +187,7 @@ public class ControladorEntrada implements ActionListener{
             modeloTablaBuscarProdEntrada.addRow(new Object[] {
                 producto.getId(),
                 producto.getNombre(),
-                producto.getIdcategoria(),
+                producto.getCategoria().getIdcat(),
                 producto.getUndmedida(),
                 producto.getStock()
             });
