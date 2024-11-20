@@ -33,12 +33,12 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     ViewRegistroUsuario vistaUser = new ViewRegistroUsuario();
     ViewRegistroCategorias vistaCategorias = new ViewRegistroCategorias();
     ViewRegistroProductos vistaProductos = new ViewRegistroProductos();//SOOOOOL
+    ViewRegistroEntradas vistaEntradas = new ViewRegistroEntradas();
     ViewVisualizador vistaVisualizador = new ViewVisualizador();
     ViewRegistroEntradas vistaRegistroEntradas = new ViewRegistroEntradas();
     ViewListadoSalidas vistaListadoSalidas = new ViewListadoSalidas(this);
     ViewRegistroSalidas vistaRegistroSalidas = new ViewRegistroSalidas(this);
     ViewRegistroProveedores vistaRegistroProveedor = new ViewRegistroProveedores();
-
     /**
      * Constructor de la ventana del menú principal.
      * <p>
@@ -66,7 +66,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         pnl_principal.add(vistaUser, "RegistroUsuario");
         pnl_principal.add(vistaCategorias, "RegistroCategoria");
         pnl_principal.add(vistaProductos, "RegistroProducto");
-        pnl_principal.add(vistaRegistroEntradas, "RegistroEntradas");
+        pnl_principal.add(vistaEntradas, "RegistroEntradas");
         pnl_principal.add(vistaListadoSalidas, "vistaListadoSalidas");
         pnl_principal.add(vistaRegistroSalidas, "RegistroSalidas");
         pnl_principal.add(vistaRegistroProveedor, "RegistroProveedor");
@@ -571,10 +571,19 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
      * @param evt Evento de clic del botón de entradas.
      */
     private void btn_entradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entradaActionPerformed
+        // TODO add your handling code here:
+        //agregandooo elvis
         vista.show(pnl_principal, "RegistroEntradas");
+        
+        //viewRegistroProductos.cargarDatos();
+        ControladorEntrada controladorEntrad = new ControladorEntrada(vistaEntradas);//SOOOOO0L
+        //controlador.agregarEventos();
+        
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint();
-        this.setTitle("Registro de entradas");
+        this.setTitle("Gestion de ENTRADAS de productos");
+        //vistaEntradas
+        
     }//GEN-LAST:event_btn_entradaActionPerformed
 
     private void btn_salidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salidaMouseEntered
