@@ -89,14 +89,14 @@ public class DTOEntrada {
      * 
      * @param entrada Objeto de tipo Entrada que será convertido a DTOEntrada.
      */
-    public DTOEntrada(Entrada entrada) {
-        this(entrada.getIdEntrada(), 
-             ConverterProducto.toDTOProducto(entrada.getProducto()), 
-             entrada.getCantidad(), entrada.getValorUnitario(), 
-             entrada.getValorTotal(), entrada.getFechaEntrada(), 
-             new DTOProveedor(entrada.getProveedor()), 
-             new DTOUsuario(entrada.getUsuario()));
-    }
+//    public DTOEntrada(Entrada entrada) {
+//        this(entrada.getIdEntrada(), 
+//             ConverterProducto.toDTOProducto(entrada.getProducto()), 
+//             entrada.getCantidad(), entrada.getValorUnitario(), 
+//             entrada.getValorTotal(), entrada.getFechaEntrada(), 
+//             new DTOProveedor(entrada.getProveedor()), 
+//             new DTOUsuario(entrada.getUsuario()));
+//    }
 
     /**
      * Obtiene el identificador de la entrada.

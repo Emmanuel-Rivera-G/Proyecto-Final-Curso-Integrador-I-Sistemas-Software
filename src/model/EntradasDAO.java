@@ -57,7 +57,7 @@ public class EntradasDAO {
     }
     //BUSCAR POR ID O NOMBRE DE PRODUCTO
     public List<Producto> filtrarProductoABuscar(String input) {
-        String sql = "SELECT * FROM productos WHERE nombre LIKE ? OR CAST(id_productos AS CHAR) LIKE ?";
+        String sql = "SELECT * FROM productos WHERE nombre LIKE ? OR CAST(id AS CHAR) LIKE ?";
         List<Producto> lista = new ArrayList<>();
         try {
             con = conexion.getConnection();
@@ -69,7 +69,7 @@ public class EntradasDAO {
 
             while (rs.next()) {
                 Producto producto = new Producto();
-                producto.setId(rs.getInt("id_productos"));
+                producto.setId(rs.getInt("id"));
                 producto.setNombre(rs.getString("nombre"));
                 Categoria cat = new Categoria();
                 cat.setIdcat(rs.getInt("idCategoria"));
@@ -137,14 +137,14 @@ public class EntradasDAO {
                 //hara uso del constructor vacioO
                 Entrada entrada = new Entrada();// obj Producto llamado producto// aqui traigo DTO PRODUCTO
                 
-                entrada.setIdentrada(rs.getInt(1));// 1 por la posicion de columna o nombre columna segun table BD
-                entrada.setIdproducto(rs.getInt(2));
-                entrada.setNombreproducto(rs.getString(3));
-                entrada.setDescoperacion(rs.getString(4));
-                entrada.setFecha(rs.getString(5));
-                entrada.setCantidad(rs.getInt(6));
-                entrada.setPreciounitario(rs.getDouble(7));
-                entrada.setTotal(rs.getDouble(8));
+                entrada.setIdentrada(rs.getInt(1)); // id_Entrada
+                entrada.setIdproducto(rs.getInt(2)); // idProductos
+                entrada.setNombreproducto(rs.getString(3)); // nombreProductos
+                entrada.setDescoperacion(rs.getString(4)); // descripcionOperacion
+                entrada.setCantidad(rs.getInt(5)); // cantidad
+                entrada.setPreciounitario(rs.getDouble(6)); // precioUnitario
+                entrada.setTotal(rs.getDouble(7)); // total
+                entrada.setFecha(rs.getString(8)); // fecha
                 
                 
                 lista.add(entrada);// carga todas las entradas ARRAYLIST
