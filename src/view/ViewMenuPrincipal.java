@@ -1,6 +1,7 @@
 package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import controller.ControladorEntrada;
 
 import style.RoundedPanel;
 import java.awt.CardLayout;
@@ -26,10 +27,15 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
      */
     static private String nombre_usuario;
     CardLayout vista;
+
     VistaPrincipal vistap = new VistaPrincipal();
     ViewRegistroUsuario vistaUser = new ViewRegistroUsuario();
     ViewRegistroCategorias vistaCategorias = new ViewRegistroCategorias();
     ViewRegistroProductos vistaProductos = new ViewRegistroProductos();//SOOOOOL
+    ViewRegistroEntradas vistaEntradas = new ViewRegistroEntradas();
+    
+
+    public ViewMenuPrincipal() {
 
     /**
      * Constructor de la ventana del menú principal.
@@ -57,6 +63,8 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         pnl_principal.add(vistaUser, "RegistroUsuario");
         pnl_principal.add(vistaCategorias, "RegistroCategoria");
         pnl_principal.add(vistaProductos, "RegistroProducto");
+        
+        pnl_principal.add(vistaEntradas, "RegistroEntradas");
 
         vista.show(pnl_principal, "menu");
     }
@@ -540,6 +548,18 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
 
     private void btn_entradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_entradaActionPerformed
         // TODO add your handling code here:
+        //agregandooo elvis
+        vista.show(pnl_principal, "RegistroEntradas");
+        
+        //viewRegistroProductos.cargarDatos();
+        ControladorEntrada controladorEntrad = new ControladorEntrada(vistaEntradas);//SOOOOO0L
+        //controlador.agregarEventos();
+        
+        SwingUtilities.updateComponentTreeUI(this);
+        this.repaint();
+        this.setTitle("Gestion de ENTRADAS de productos");
+        //vistaEntradas
+        
     }//GEN-LAST:event_btn_entradaActionPerformed
 
     private void btn_salidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_salidaMouseEntered
