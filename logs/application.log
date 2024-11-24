@@ -30,3 +30,1136 @@
 2024-11-20 03:54:10 INFO  model.ConexionBD - Conexion BD exitosa
 2024-11-20 03:54:10 INFO  model.ConexionBD - Conexion BD exitosa
 2024-11-20 03:54:24 INFO  model.ConexionBD - Conexion BD exitosa
+2024-11-23 18:14:42.671 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:14:43.248 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:14:43.278 [AWT-EventQueue-0] INFO  dao.interfaz.DAOUsuario - Se registro un nuevo inicio de sesión.
+2024-11-23 18:14:43.397 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:14:43.436 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:14:43.441 [AWT-EventQueue-0] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:14:43.539 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:14:43.569 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:14:43.588 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:14:43.617 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:14:48.706 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:14:48.737 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:14:49.985 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:14:50.027 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:14:50.030 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:14:50.060 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:15:23.234 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:15:23.260 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:15:23.263 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:15:23.288 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:15:34.925 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:15:34.963 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:15:35.464 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:15:35.489 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:15:35.491 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:15:35.520 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:15:36.477 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:15:36.506 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:15:37.441 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:15:37.469 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:15:37.471 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:15:37.501 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:15:45.738 [AWT-EventQueue-0] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:15:45.779 [AWT-EventQueue-0] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:12.246 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:12.807 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:12.808 [main] INFO  ConexionTest - Test de conexión exitoso.
+2024-11-23 18:16:35.254 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:35.785 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:35.817 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:35.862 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:35.869 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:35.914 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:35.924 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:35.958 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:35.964 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.001 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.004 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.038 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.050 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.084 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.086 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.123 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.127 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.171 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.174 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.206 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.213 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.242 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.244 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.278 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.284 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.318 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.320 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.349 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.353 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.380 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.382 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.407 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.410 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.434 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.439 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.465 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.466 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.493 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.497 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.522 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.526 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.554 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.558 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.583 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.585 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.610 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.613 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.640 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.643 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.669 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.673 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.699 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:36.704 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:36.730 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:54.891 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:55.405 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:55.465 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testEliminarUsuarioPorDocumento(ServiceUsuarioTest.java:130)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:16:55.473 [main] INFO  dao.interfaz.DAOUsuario - Se elimino correctamente a un usuario.
+2024-11-23 18:16:55.474 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:55.524 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:55.539 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:55.584 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:55.588 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testRegistrarUsuario(ServiceUsuarioTest.java:77)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:16:55.588 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:55.630 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:56.373 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:56.407 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:56.410 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testObtenerUsuarios(ServiceUsuarioTest.java:190)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:16:56.413 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testObtenerUsuarios(ServiceUsuarioTest.java:191)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:16:56.517 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:16:56.518 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:56.549 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:56.555 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:56.595 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:56.598 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testEditarUsuario(ServiceUsuarioTest.java:102)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:16:56.601 [main] INFO  dao.interfaz.DAOUsuario - Se actualizo correctamente a un usuario.
+2024-11-23 18:16:56.601 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:56.869 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:56.874 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:56.909 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:16:56.912 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testBuscarUsuarioPorCriterios(ServiceUsuarioTest.java:157)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:16:56.914 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:16:56.915 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:16:56.948 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:34.452 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:34.997 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:35.042 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testEliminarUsuarioPorDocumento(ServiceUsuarioTest.java:132)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:19:35.050 [main] INFO  dao.interfaz.DAOUsuario - Se elimino correctamente a un usuario.
+2024-11-23 18:19:35.050 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:35.102 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:35.115 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:35.151 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:35.155 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'telefono_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'telefono_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testRegistrarUsuario(ServiceUsuarioTest.java:79)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:19:35.155 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:35.194 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:35.200 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:35.236 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:35.239 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testObtenerUsuarios(ServiceUsuarioTest.java:192)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:19:35.613 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testObtenerUsuarios(ServiceUsuarioTest.java:193)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:19:35.628 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:19:35.629 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:35.689 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:35.695 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:35.747 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:35.750 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testEditarUsuario(ServiceUsuarioTest.java:104)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:19:36.099 [main] INFO  dao.interfaz.DAOUsuario - Se actualizo correctamente a un usuario.
+2024-11-23 18:19:36.099 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:36.134 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:36.140 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:36.170 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:19:36.172 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testBuscarUsuarioPorCriterios(ServiceUsuarioTest.java:159)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:19:36.174 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:19:36.175 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:19:36.410 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:31.186 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:31.719 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:31.762 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'telefono_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'telefono_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testEliminarUsuarioPorDocumento(ServiceUsuarioTest.java:134)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:21:31.768 [main] INFO  dao.interfaz.DAOUsuario - Se elimino correctamente a un usuario.
+2024-11-23 18:21:31.768 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:31.821 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:31.836 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:31.878 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:31.882 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'telefono_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'telefono_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testRegistrarUsuario(ServiceUsuarioTest.java:79)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:21:31.882 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:31.923 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:31.928 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:31.959 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:31.961 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'telefono_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'telefono_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testObtenerUsuarios(ServiceUsuarioTest.java:197)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:21:32.384 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'telefono_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'telefono_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testObtenerUsuarios(ServiceUsuarioTest.java:198)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:21:32.397 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:21:32.398 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:32.444 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:32.466 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:32.513 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:32.515 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'telefono_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'telefono_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testEditarUsuario(ServiceUsuarioTest.java:105)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:21:32.862 [main] INFO  dao.interfaz.DAOUsuario - Se actualizo correctamente a un usuario.
+2024-11-23 18:21:32.863 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:32.898 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:32.904 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:32.936 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:21:32.938 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'telefono_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'telefono_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testBuscarUsuarioPorCriterios(ServiceUsuarioTest.java:162)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:21:32.940 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:21:32.941 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:21:33.192 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:15.496 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.038 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:16.075 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:23:16.080 [main] INFO  dao.interfaz.DAOUsuario - Se elimino correctamente a un usuario.
+2024-11-23 18:23:16.097 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:23:16.097 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.140 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:16.149 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.182 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:16.186 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:23:16.188 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:23:16.188 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.223 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:16.228 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.257 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:16.260 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:23:16.263 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:23:16.265 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:23:16.266 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.298 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:16.303 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.333 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:16.337 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:23:16.340 [main] INFO  dao.interfaz.DAOUsuario - Se actualizo correctamente a un usuario.
+2024-11-23 18:23:16.343 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:23:16.343 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.372 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:16.378 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.410 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:23:16.413 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:23:16.415 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:23:16.416 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:23:16.448 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:25.120 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:25.628 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:25.655 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:25.660 [main] INFO  dao.interfaz.DAOUsuario - Se elimino correctamente a un usuario.
+2024-11-23 18:24:25.675 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:24:25.676 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:25.715 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:25.725 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:25.761 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:25.765 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:25.767 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:24:25.767 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:25.799 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:25.806 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:25.839 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:25.843 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:25.847 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:25.848 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:24:25.850 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:25.883 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:25.889 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:25.921 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:25.925 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:25.929 [main] INFO  dao.interfaz.DAOUsuario - Se actualizo correctamente a un usuario.
+2024-11-23 18:24:25.932 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:24:25.932 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:25.963 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:25.968 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:26.000 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:26.004 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:26.008 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:24:26.009 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:26.041 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:48.416 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:48.966 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:48.984 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:48.987 [main] INFO  dao.interfaz.DAOUsuario - Se elimino correctamente a un usuario.
+2024-11-23 18:24:48.999 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:24:49.000 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:49.045 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:49.051 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:49.085 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:49.088 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:49.090 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:24:49.091 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:49.128 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:49.134 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:49.172 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:49.210 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testObtenerUsuarios(ServiceUsuarioTest.java:203)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:24:49.216 [main] ERROR dao.interfaz.DAOUsuario - Hubo un problema en el registro de usuario. Column 'direccion_usuario' cannot be null
+java.sql.SQLIntegrityConstraintViolationException: Column 'direccion_usuario' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:109)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:987)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1165)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1100)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1466)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1083)
+	at dao.implemetacion.DAOUsuarioImpl.registrarUsuario(DAOUsuarioImpl.java:94)
+	at service.ServiceUsuario.registrarUsuario(ServiceUsuario.java:65)
+	at ServiceUsuarioTest.testObtenerUsuarios(ServiceUsuarioTest.java:204)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at junit.framework.JUnit4TestAdapter.run(JUnit4TestAdapter.java:50)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:534)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:1196)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:1041)
+2024-11-23 18:24:49.219 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:24:49.220 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:49.263 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:49.274 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:49.312 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:49.319 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:49.324 [main] INFO  dao.interfaz.DAOUsuario - Se actualizo correctamente a un usuario.
+2024-11-23 18:24:49.326 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:24:49.703 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:49.748 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:49.759 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:49.802 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:24:49.809 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:24:49.815 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:24:49.816 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:24:49.869 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:00.958 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.500 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:01.528 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:01.531 [main] INFO  dao.interfaz.DAOUsuario - Se elimino correctamente a un usuario.
+2024-11-23 18:25:01.543 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:25:01.544 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.593 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:01.602 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.629 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:01.634 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:01.636 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:25:01.637 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.674 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:01.679 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.715 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:01.720 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:01.723 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:01.725 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:25:01.726 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.765 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:01.772 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.801 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:01.805 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:01.808 [main] INFO  dao.interfaz.DAOUsuario - Se actualizo correctamente a un usuario.
+2024-11-23 18:25:01.811 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:25:01.811 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.843 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:01.848 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.882 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:01.885 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:01.886 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:25:01.887 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:01.922 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:08.279 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:08.828 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:08.855 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:08.859 [main] INFO  dao.interfaz.DAOUsuario - Se elimino correctamente a un usuario.
+2024-11-23 18:25:08.868 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:25:08.869 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:08.913 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:08.920 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:08.951 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:08.955 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:08.957 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:25:08.958 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:08.995 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:09.001 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:09.036 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:09.042 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:09.045 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:09.047 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-23 18:25:09.048 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:09.080 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:09.085 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:09.115 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:09.118 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:09.122 [main] INFO  dao.interfaz.DAOUsuario - Se actualizo correctamente a un usuario.
+2024-11-23 18:25:09.125 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:25:09.126 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:09.160 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:09.167 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:09.204 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 18:25:09.210 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-23 18:25:09.212 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-23 18:25:09.213 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 18:25:09.247 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:08.382 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.220 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.257 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.320 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.333 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.386 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.398 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.448 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.454 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.499 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.504 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.549 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.560 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.605 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.608 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.655 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.663 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.703 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.707 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.742 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.748 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.783 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.786 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.822 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.831 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.865 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.868 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.899 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.904 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.937 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.940 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:09.973 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:09.979 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.011 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.020 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.053 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.055 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.085 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.088 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.120 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.124 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.155 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.158 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.190 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.193 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.223 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.228 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.255 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.257 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.288 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.293 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.330 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-23 19:29:10.336 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-23 19:29:10.382 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:55.594 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:56.528 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:56.567 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-24 16:26:56.572 [main] INFO  dao.interfaz.DAOUsuario - Se elimino correctamente a un usuario.
+2024-11-24 16:26:56.584 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-24 16:26:56.585 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:56.633 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:56.644 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:56.686 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:56.693 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-24 16:26:56.695 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-24 16:26:56.696 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:56.735 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:56.745 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:56.784 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:56.789 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-24 16:26:56.795 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-24 16:26:56.797 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente a la lista de usuarios completa.
+2024-11-24 16:26:56.799 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:56.837 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:56.847 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:56.885 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:56.891 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-24 16:26:56.898 [main] INFO  dao.interfaz.DAOUsuario - Se actualizo correctamente a un usuario.
+2024-11-24 16:26:56.901 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-24 16:26:56.901 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:56.939 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:56.948 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:56.988 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
+2024-11-24 16:26:56.997 [main] INFO  dao.interfaz.DAOUsuario - Se registró exitosamente un usuario.
+2024-11-24 16:26:56.999 [main] INFO  dao.interfaz.DAOUsuario - Se recuperó correctamente los usuarios.
+2024-11-24 16:26:57.000 [main] INFO  config.Conexion - Intentando conectar a la base de datos control_stock en el puerto 3306
+2024-11-24 16:26:57.039 [main] INFO  config.Conexion - Conexión a la base de datos control_stock establecida correctamente.
