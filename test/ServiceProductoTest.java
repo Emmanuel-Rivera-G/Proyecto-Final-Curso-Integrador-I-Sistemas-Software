@@ -14,7 +14,6 @@ import dao.interfaz.DAOProducto;
 import static org.junit.Assert.*;
 
 import java.util.List;
-import model.Producto;
 import org.slf4j.Logger;
 import service.interfaz.ServiceProducto;
 import utils.UtilsLoggerManager;
@@ -27,8 +26,6 @@ import utils.UtilsLoggerManager;
  * Autor: Emmanuel
  */
 public class ServiceProductoTest {
-    private final int ID_1 = 1;
-    private final int ID_2 = 2;
     
     private ServiceProducto serviceProducto;
     private DAOProducto daoProductoSimulado;
