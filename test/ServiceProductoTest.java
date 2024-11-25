@@ -69,12 +69,18 @@ public class ServiceProductoTest {
     @After
     public void tearDown() {
         try (Connection con = conexion.getConnection();
-             PreparedStatement ps = con.prepareStatement("DELETE FROM productos WHERE id > ?")) {
+            PreparedStatement ps = con.prepareStatement("DELETE FROM productos WHERE id > ?")) {
             ps.setInt(1, lastIdBeforeTests);
             ps.executeUpdate();
+            
+            PreparedStatement psId = con.prepareStatement("ALTER TABLE productos AUTO_INCREMENT = ?");
+            psId.setInt(1, lastIdBeforeTests + 1);
+            psId.executeUpdate();
         } catch (SQLException e) {
             LOGGER.error("Error al eliminar los productos agregados durante las pruebas.", e);
         }
+        
+        
     }
 
     /**
