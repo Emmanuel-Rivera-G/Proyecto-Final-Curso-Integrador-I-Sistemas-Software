@@ -2,12 +2,19 @@ package view;
 
 import style.RoundedPanel;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
- * Panel de listado de listado en la interfaz gráfica de la aplicación.
+ * Panel de listado de salidas en la interfaz gráfica del sistema.
  * <p>
- * Esta clase define el panel para la vista de listado de salidas, con un fondo
- * personalizado.
+ * Esta clase define el panel para la vista de listado de salidas en el sistema.
+ * Permite listar las salidas de inventario o productos, adaptándose según el
+ * tipo de usuario que acceda (administrador o empleado).
+ * </p>
+ *
+ * <p>
+ * Incluye configuraciones personalizadas de fondo y soporte para interacción
+ * con el menú principal según el rol del usuario.
  * </p>
  *
  * @author Ralfph
@@ -15,13 +22,50 @@ import java.awt.Color;
 public class ViewListadoSalidas extends javax.swing.JPanel {
 
     private ViewMenuPrincipal framePrincipalParent;
+    private ViewMenuPrincipalUsuario vistaPrincipalParentUsuario;
+    private int tipoUsuario;
 
     /**
-     * Constructor que inicializa el panel de listado de salidas y establece el
-     * color de fondo.
+     * Constructor que inicializa el panel de listado de salidas para el
+     * administrador.
+     * <p>
+     * Este constructor configura el panel de listado de salidas y establece el
+     * color de fondo. Además, recibe una referencia al panel principal del
+     * administrador para poder interactuar con otras funcionalidades o paneles
+     * del sistema.
+     * </p>
+     *
+     * @param framePrincipalParent referencia al panel principal del
+     * administrador (instancia de {@link ViewMenuPrincipal}).
+     * @param tipoUsuario tipo de usuario que accede al panel. Se utiliza para
+     * determinar las acciones y permisos disponibles.
      */
-    public ViewListadoSalidas(ViewMenuPrincipal framePrincipalParent) {
+    public ViewListadoSalidas(ViewMenuPrincipal framePrincipalParent, int tipoUsuario) {
         this.framePrincipalParent = framePrincipalParent;
+        this.tipoUsuario = tipoUsuario;
+        this.setBackground(Color.decode("#000511"));
+        initComponents();
+
+    }
+
+    /**
+     * Constructor que inicializa el panel de listado de salidas para el
+     * empleado.
+     * <p>
+     * Este constructor configura el panel de listado de salidas y establece el
+     * color de fondo. Además, recibe una referencia al panel principal del
+     * usuario estándar (empleado) para poder interactuar con otras
+     * funcionalidades específicas para este tipo de usuario.
+     * </p>
+     *
+     * @param vistaPrincipalParentUsuario referencia al panel principal del
+     * usuario normal (instancia de {@link ViewMenuPrincipalUsuario}).
+     * @param tipoUsuario tipo de usuario que accede al panel. Se utiliza para
+     * determinar las acciones y permisos disponibles.
+     */
+    public ViewListadoSalidas(ViewMenuPrincipalUsuario vistaPrincipalParentUsuario, int tipoUsuario) {
+        this.vistaPrincipalParentUsuario = vistaPrincipalParentUsuario;
+        this.tipoUsuario = tipoUsuario;
         this.setBackground(Color.decode("#000511"));
         initComponents();
 
@@ -380,19 +424,31 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_lbl_salidas_pMouseClicked
     /**
-     * Cambia la vista al registro de salidas .
+     * Cambia la vista al registro de salidas.
      * <p>
-     * Actualiza el título de la ventana y asegura que el panel dinamico se
-     * actualice correctamente.
+     * Este método responde al clic del botón relacionado con el registro de
+     * salidas, actualizando la vista dinámica del sistema para mostrar el panel
+     * de registro correspondiente. También actualiza el título de la ventana
+     * según el tipo de usuario que accede (administrador o empleado). En caso
+     * de que no se pueda determinar el contexto del usuario, muestra un mensaje
+     * de error.
      * </p>
      *
-     * @param evt Evento de clic del botón de inicio.
+     * @param evt Evento de clic del botón de registro de salidas (generado por
+     * el usuario).
      */
     private void lbl_registro_salidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_registro_salidasMouseClicked
-        framePrincipalParent.getVista().show(framePrincipalParent.getPnlPrincipal(), "RegistroSalidas");
-        framePrincipalParent.setTitle("Registro de salidas");
-
+        if (tipoUsuario == 1) {
+            framePrincipalParent.getVista().show(framePrincipalParent.getPnlPrincipal(), "RegistroSalidas");
+            framePrincipalParent.setTitle("Registro de salidas");
+        } else if (tipoUsuario == 2) {
+            vistaPrincipalParentUsuario.getVista().show(vistaPrincipalParentUsuario.getPnlPrincipal(), "RegistroSalidas");
+            vistaPrincipalParentUsuario.setTitle("Registro de salidas");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error: no se pudo determinar el rol del usuario.");
+        }
     }//GEN-LAST:event_lbl_registro_salidasMouseClicked
+
 
     private void lbl_registro_salidasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_registro_salidasMouseEntered
         // TODO add your handling code here:
