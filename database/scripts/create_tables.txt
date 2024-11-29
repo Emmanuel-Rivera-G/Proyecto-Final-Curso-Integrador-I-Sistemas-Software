@@ -31,6 +31,14 @@ CREATE TABLE categorias (
     `nombre` VARCHAR(100) UNIQUE NOT NULL
 );
 
+INSERT INTO categorias (nombre)
+VALUES 
+('Frutas'),
+('Lácteos'),
+('Granos'),
+('Aceites'),
+('Limpieza');
+
 -- Crear la tabla productos
 CREATE TABLE productos (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -39,3 +47,54 @@ CREATE TABLE productos (
     `undMedida` VARCHAR(50) NOT NULL,
     `stock` INT NOT NULL
 );
+
+INSERT INTO productos (nombre, idCategoria, undMedida, stock)
+VALUES 
+('Manzanas', 1, 'Kilogramos', 150),
+('Naranjas', 1, 'Kilogramos', 200),
+('Leche', 2, 'Litros', 100),
+('Arroz', 3, 'Kilogramos', 300),
+('Azúcar', 3, 'Kilogramos', 250),
+('Aceite', 4, 'Litros', 120),
+('Jabón', 5, 'Unidades', 75),
+('Detergente', 5, 'Kilogramos', 50),
+('Cereales', 3, 'Cajas', 80),
+('Huevos', 1, 'Docenas', 90);
+('Plátanos', 1, 'Kilogramos', 180),
+('Fresas', 1, 'Kilogramos', 100),
+('Yogur', 2, 'Unidades', 50),
+('Queso', 2, 'Kilogramos', 75),
+('Lentejas', 3, 'Kilogramos', 120),
+('Harina', 3, 'Kilogramos', 200),
+('Vinagre', 4, 'Litros', 60),
+('Champú', 5, 'Unidades', 90),
+('Papel Higiénico', 5, 'Paquetes', 150),
+('Galletas', 3, 'Paquetes', 220);
+
+
+
+-- Crear la tabla entradas
+CREATE TABLE entradas (
+    id_Entrada INT AUTO_INCREMENT PRIMARY KEY,       -- Identificador único para cada entrada
+    idProductos INT NOT NULL,                        -- ID del producto relacionado (llave foránea a productos)
+    nombreProductos VARCHAR(100) NOT NULL,          -- Nombre del producto (redundante para facilitar búsqueda o informes)
+    descripcionOperacion VARCHAR(255),              -- Descripción de la operación (entrada, devolución, etc.)
+    cantidad INT NOT NULL,                           -- Cantidad del producto
+    precioUnitario DECIMAL(10, 2) NOT NULL,          -- Precio unitario del producto
+    total DECIMAL(10, 2) NOT NULL,                   -- Total calculado (cantidad * precioUnitario)
+    fecha DATETIME NOT NULL,                         -- Fecha y hora de la operación
+    FOREIGN KEY (idProductos) REFERENCES productos(id) -- Relación con la tabla productos
+);
+
+INSERT INTO entradas (idProductos, nombreProductos, descripcionOperacion, cantidad, precioUnitario, total, fecha)
+VALUES 
+(1, 'Manzanas', 'Compra inicial de stock', 100, 1.50, 150.00, '2024-11-27 10:30:00'),
+(2, 'Naranjas', 'Reabastecimiento', 200, 1.20, 240.00, '2024-11-27 11:00:00'),
+(3, 'Leche', 'Compra inicial', 50, 0.85, 42.50, '2024-11-27 11:15:00'),
+(4, 'Arroz', 'Promoción de proveedor', 150, 0.90, 135.00, '2024-11-27 12:00:00'),
+(5, 'Azúcar', 'Compra regular', 100, 0.95, 95.00, '2024-11-27 12:30:00'),
+(6, 'Aceite', 'Descuento especial', 60, 3.50, 210.00, '2024-11-27 13:00:00'),
+(7, 'Jabón', 'Ingreso por error en inventario', 20, 2.00, 40.00, '2024-11-27 13:30:00'),
+(8, 'Detergente', 'Pedido urgente', 30, 1.80, 54.00, '2024-11-27 14:00:00'),
+(9, 'Cereales', 'Promoción de proveedor', 40, 2.50, 100.00, '2024-11-27 14:30:00'),
+(10, 'Huevos', 'Compra regular', 70, 1.10, 77.00, '2024-11-27 15:00:00');
