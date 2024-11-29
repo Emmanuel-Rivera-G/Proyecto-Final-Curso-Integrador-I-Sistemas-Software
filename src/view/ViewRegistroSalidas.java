@@ -2,29 +2,85 @@ package view;
 
 import style.RoundedPanel;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  * Panel de registro de salidas en la interfaz gráfica de la aplicación.
  * <p>
- * Esta clase define el panel para la vista de registro de salidas, con un fondo
- * personalizado.
+ * Esta clase define el panel para la vista de registro de salidas en el
+ * sistema. Permite gestionar y registrar las salidas de inventario o productos,
+ * adaptándose según el tipo de usuario que acceda (administrador o empleado).
+ * </p>
+ *
+ * <p>
+ * Incluye configuraciones personalizadas de fondo y soporte para interacción
+ * con el menú principal según el rol del usuario.
  * </p>
  *
  * @author Ralfph
  */
 public class ViewRegistroSalidas extends javax.swing.JPanel {
 
+    /**
+     * Referencia al menú principal del administrador.
+     */
     private ViewMenuPrincipal vistaPrincipalParent;
+    /**
+     * Referencia al menú principal del usuario estándar (empleado).
+     */
+    private ViewMenuPrincipalUsuario vistaPrincipalParentUser;
+    /**
+     * Indica el tipo de usuario que accede al panel.
+     * <p>
+     * 1: Administrador. <br>
+     * 2: Usuario estándar (Empleado).
+     * </p>
+     */
+    private int tipoUsuario;
 
     /**
-     * Constructor que inicializa el panel de registro de salidas y establece el
-     * color de fondo.
+     * Constructor que inicializa el panel de registro de salidas para el
+     * administrador.
+     * <p>
+     * Este constructor configura el panel con un fondo personalizado y
+     * establece una referencia al menú principal del administrador para
+     * permitir la navegación y acciones relacionadas con las salidas de
+     * inventario.
+     * </p>
+     *
+     * @param vistaPrincipalParent referencia al menú principal del
+     * administrador (instancia de {@link ViewMenuPrincipal}).
+     * @param tipoUsuario tipo de usuario (en este caso, debe ser 1 para
+     * administrador).
      */
-    public ViewRegistroSalidas(ViewMenuPrincipal vistaPrincipalParent) {
+    public ViewRegistroSalidas(ViewMenuPrincipal vistaPrincipalParent, int tipoUsuario) {
         this.vistaPrincipalParent = vistaPrincipalParent;
+        this.tipoUsuario = tipoUsuario;
         this.setBackground(Color.decode("#000511"));
         initComponents();
 
+    }
+
+    /**
+     * Constructor que inicializa el panel de registro de salidas para el
+     * empleado.
+     * <p>
+     * Este constructor configura el panel con un fondo personalizado y
+     * establece una referencia al menú principal del usuario estándar
+     * (empleado) para permitir la navegación y acciones relacionadas con las
+     * salidas de inventario.
+     * </p>
+     *
+     * @param vistaPrincipalParentUsuario referencia al menú principal del
+     * usuario estándar (instancia de {@link ViewMenuPrincipalUsuario}).
+     * @param tipoUsuario tipo de usuario (en este caso, debe ser 2 para
+     * empleado).
+     */
+    public ViewRegistroSalidas(ViewMenuPrincipalUsuario vistaPrincipalParentUsuario, int tipoUsuario) {
+        this.vistaPrincipalParentUser = vistaPrincipalParentUsuario;
+        this.tipoUsuario = tipoUsuario;
+        this.setBackground(Color.decode("#000511"));
+        initComponents();
     }
 
     /**
@@ -460,18 +516,31 @@ public class ViewRegistroSalidas extends javax.swing.JPanel {
     private void tbl_salidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_salidasMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tbl_salidasMouseClicked
+
     /**
-     * Cambia la vista al listado de salidas .
+     * Cambia la vista al listado de salidas.
      * <p>
-     * Actualiza el título de la ventana y asegura que el panel dinamico se
-     * actualice correctamente.
+     * Este método responde al clic del botón relacionado con el listado de
+     * salidas, actualizando la vista dinámica del sistema para mostrar el panel
+     * del listado correspondiente. También actualiza el título de la ventana
+     * según el tipo de usuario que accede (administrador o empleado). En caso
+     * de que no se pueda determinar el contexto del usuario, muestra un mensaje
+     * de error.
      * </p>
      *
-     * @param evt Evento de clic del botón de inicio.
+     * @param evt Evento de clic del botón de listado de salidas (generado por
+     * el usuario).
      */
     private void lbl_returnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_returnMouseClicked
-        vistaPrincipalParent.getVista().show(vistaPrincipalParent.getPnlPrincipal(), "vistaListadoSalidas");
-        vistaPrincipalParent.setTitle("Listado de salidas");
+        if (tipoUsuario == 1) {
+            vistaPrincipalParent.getVista().show(vistaPrincipalParent.getPnlPrincipal(), "vistaListadoSalidas");
+            vistaPrincipalParent.setTitle("Listado de salidas");
+        } else if (tipoUsuario == 2) {
+            vistaPrincipalParentUser.getVista().show(vistaPrincipalParentUser.getPnlPrincipal(), "vistaListadoSalidas");
+            vistaPrincipalParentUser.setTitle("Listado de salidas");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error: no se pudo determinar el contexto del usuario.");
+        }
     }//GEN-LAST:event_lbl_returnMouseClicked
 
 

@@ -1,6 +1,7 @@
 package view;
 
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
+import com.google.common.math.DoubleMath;
 import controller.ControllerUsuario;
 import style.RoundedPanel;
 import java.awt.Color;
@@ -19,6 +20,8 @@ import javax.swing.UIManager;
  * @author Ralfph
  */
 public class ViewInicioSesion extends javax.swing.JFrame {
+
+    private static int tipoUsuario = 0;
 
     /**
      * Constructor de la ventana de inicio de sesión.
@@ -218,7 +221,6 @@ public class ViewInicioSesion extends javax.swing.JFrame {
     private void lbl_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_LoginMouseClicked
         String usuario = fld_username.getText().trim();
         String password = fld_password.getText().trim();
-        int tipoUsuario = 0;
 
         if (cmbx_tipoUsuario.getSelectedItem().equals("ADMINISTRADOR")) {
             tipoUsuario = 1;
@@ -233,10 +235,11 @@ public class ViewInicioSesion extends javax.swing.JFrame {
             boolean autenticacion = controllerUser.login(usuario, password, tipoUsuario);
             if (autenticacion) {
                 if (tipoUsuario == 1) {
-                    ViewMenuPrincipal menu = new ViewMenuPrincipal(usuario);
-                    menu.setVisible(true);
+                    ViewMenuPrincipal vistaAdministrador = new ViewMenuPrincipal(usuario, 1);
+                    vistaAdministrador.setVisible(true);
                 } else if (tipoUsuario == 2) {
-                    JOptionPane.showMessageDialog(null, "Vista Proximamente ...");
+                    ViewMenuPrincipalUsuario vistaUsuario = new ViewMenuPrincipalUsuario(usuario, 2);
+                    vistaUsuario.setVisible(true);
                 }
                 dispose();
             } else {

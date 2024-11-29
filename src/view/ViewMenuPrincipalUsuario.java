@@ -12,25 +12,29 @@ import controller.ControllerProducto;
 import javax.swing.JPanel;
 
 /**
- * Ventana principal del menú de la aplicación para el administrador, que
- * permite gestionar módulos como usuarios, categorías, productos, entradas y
- * salidas.
+ * Ventana principal del menú para el usuario (empleado).
  * <p>
- * Esta ventana es accesible después del inicio de sesión del administrador y
- * ofrece un conjunto de opciones para navegar entre distintas secciones de
- * gestión. Utiliza un CardLayout para mostrar diferentes vistas y cambiar entre
- * los módulos de manera dinámica.
+ * Esta clase representa la interfaz principal que se muestra a los usuarios con
+ * permisos limitados (tipoUsuario = 2). Proporciona acceso a diferentes vistas,
+ * como la de registro de salidas, registro de productos, listado de salidas,
+ * entre otros.
+ * </p>
+ * <p>
+ * La ventana contiene un diseño de paneles dinámicos (CardLayout) que permite
+ * cambiar entre diferentes vistas de la interfaz gráfica según el contexto del
+ * usuario.
  * </p>
  *
  * @author Ralfph
  */
-public class ViewMenuPrincipal extends javax.swing.JFrame {
+public class ViewMenuPrincipalUsuario extends javax.swing.JFrame {
 
     /**
-     * Creates new form MenuPrincipal
+     * Creates new form ViewMenuPrincipalUsuario
      */
     static private String nombre_usuario;
     static private int tipoUsuario;
+    static private boolean verificador;
     CardLayout vista;
 
     VistaPrincipal vistap = new VistaPrincipal();
@@ -39,23 +43,24 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     ViewRegistroProductos vistaProductos = new ViewRegistroProductos();//SOOOOOL
     ViewRegistroEntradas vistaEntradas = new ViewRegistroEntradas();
     ViewVisualizador vistaVisualizador = new ViewVisualizador();
-    ViewListadoSalidas vistaListadoSalidas = new ViewListadoSalidas(this, 1);
-    ViewRegistroSalidas vistaRegistroSalidas = new ViewRegistroSalidas(this, 1);
+    ViewListadoSalidas vistaListadoSalidas = new ViewListadoSalidas(this, 2);
+    ViewRegistroSalidas vistaRegistroSalidas = new ViewRegistroSalidas(this, 2);
     ViewRegistroProveedores vistaRegistroProveedor = new ViewRegistroProveedores();
 
     /**
-     * Constructor de la ventana del menú principal.
+     * Constructor de la ventana del menú principal para usuarios (empleados).
      * <p>
-     * Configura el fondo, ajusta el tamaño de la ventana y muestra el nombre
-     * del usuario autenticado.
+     * Configura la interfaz principal del usuario, mostrando el nombre del
+     * usuario autenticado, ajustando el tamaño de la ventana y preparando el
+     * sistema de navegación entre vistas.
      * </p>
      *
      * @param nombre_usuario Nombre del usuario autenticado que se muestra en la
      * interfaz.
-     * @param tipoUsuario Rol del usuario , se utiliza para determinar las
-     * acciones y permisos de cada usuario(empleado o administrador)
+     * @param tipoUsuario Tipo de usuario que determina qué vistas estarán
+     * disponibles.
      */
-    public ViewMenuPrincipal(String nombre_usuario, int tipoUsuario) {
+    public ViewMenuPrincipalUsuario(String nombre_usuario, int tipoUsuario) {
         this.nombre_usuario = nombre_usuario;
         this.tipoUsuario = tipoUsuario;
         getContentPane().setBackground(Color.decode("#000511"));
@@ -68,7 +73,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         vista = (CardLayout) pnl_principal.getLayout();
 
         // Agrega los paneles al pnl_principal
-        //pnl_principal.add(vistap, "menu");
+        pnl_principal.add(vistap, "VistaPrincipalUsuario");
         pnl_principal.add(vistaVisualizador, "vistaVisualizador");
         pnl_principal.add(vistaUser, "RegistroUsuario");
         pnl_principal.add(vistaCategorias, "RegistroCategoria");
@@ -94,14 +99,12 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         btn_inicio = new javax.swing.JButton();
         btn_categoria = new javax.swing.JButton();
         btn_cerrar_sesion = new javax.swing.JButton();
-        btn_usuario = new javax.swing.JButton();
         btn_producto = new javax.swing.JButton();
         btn_entrada = new javax.swing.JButton();
         btn_salida = new javax.swing.JButton();
         btn_proveedor = new javax.swing.JButton();
         lbl_icon_inicio = new javax.swing.JLabel();
         lbl_icon_categoria = new javax.swing.JLabel();
-        lbl_icon_usuario = new javax.swing.JLabel();
         lbl_icon_entrada = new javax.swing.JLabel();
         lbl_icon_salida = new javax.swing.JLabel();
         lbl_icon_proveedor = new javax.swing.JLabel();
@@ -170,25 +173,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         btn_cerrar_sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_cerrar_sesionActionPerformed(evt);
-            }
-        });
-
-        btn_usuario.setBackground(new java.awt.Color(19, 22, 27));
-        btn_usuario.setFont(new java.awt.Font("Gill Sans MT", 0, 20)); // NOI18N
-        btn_usuario.setForeground(new java.awt.Color(255, 255, 255));
-        btn_usuario.setText("Usuarios");
-        btn_usuario.setBorder(null);
-        btn_usuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_usuarioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_usuarioMouseExited(evt);
-            }
-        });
-        btn_usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_usuarioActionPerformed(evt);
             }
         });
 
@@ -275,8 +259,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
 
         lbl_icon_categoria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons_menu_principal/Layers.png"))); // NOI18N
 
-        lbl_icon_usuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons_menu_principal/Users.png"))); // NOI18N
-
         lbl_icon_entrada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons_menu_principal/Plus.png"))); // NOI18N
 
         lbl_icon_salida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons_menu_principal/Edit.png"))); // NOI18N
@@ -302,7 +284,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                 .addGroup(panel_cont_menu_opLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbl_icon_inicio)
                     .addComponent(lbl_icon_categoria)
-                    .addComponent(lbl_icon_usuario)
                     .addComponent(lbl_icon_entrada)
                     .addComponent(lbl_icon_salida)
                     .addComponent(lbl_icon_proveedor)
@@ -312,7 +293,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                     .addComponent(btn_salida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_entrada, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_producto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_usuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_categoria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_inicio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_proveedor, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
@@ -337,36 +317,30 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                         .addComponent(lbl_icon_categoria)))
                 .addGroup(panel_cont_menu_opLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_cont_menu_opLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel_cont_menu_opLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(lbl_icon_producto)))
+                .addGroup(panel_cont_menu_opLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_cont_menu_opLayout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(lbl_icon_usuario)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(panel_cont_menu_opLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_producto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_menu_opLayout.createSequentialGroup()
-                        .addComponent(lbl_icon_producto)
-                        .addGap(15, 15, 15)))
-                .addGroup(panel_cont_menu_opLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_cont_menu_opLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
                         .addComponent(lbl_icon_entrada)
-                        .addGap(38, 38, 38)
+                        .addGap(55, 55, 55)
                         .addComponent(lbl_icon_salida))
                     .addGroup(panel_cont_menu_opLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_salida, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(panel_cont_menu_opLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_cont_menu_opLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btn_proveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_cont_menu_opLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
+                        .addGap(33, 33, 33)
                         .addComponent(lbl_icon_proveedor)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
                 .addGroup(panel_cont_menu_opLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_menu_opLayout.createSequentialGroup()
                         .addComponent(btn_cerrar_sesion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -425,7 +399,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
                 .addComponent(panel_cont_icon_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panel_cont_menu_op, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
             .addComponent(pnl_principal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -433,15 +407,16 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-     * Obtiene el objeto {@link CardLayout} asociado al panel principal.
+     * Método getter para acceder al CardLayout utilizado para gestionar las
+     * vistas.
      * <p>
-     * Este método proporciona acceso al diseño dinámico de tarjetas utilizado
-     * en el panel principal, permitiendo cambiar entre diferentes vistas en la
-     * interfaz de usuario.
+     * Este método devuelve la instancia del objeto `CardLayout` que controla la
+     * visualización de los diferentes paneles en la interfaz gráfica. A través
+     * de este objeto, se pueden cambiar dinámicamente entre las diferentes
+     * vistas registro de salidas y listado de salidas.
      * </p>
      *
-     * @return El objeto {@link CardLayout} que gestiona las vistas del panel
-     * principal.
+     * @return El objeto `CardLayout` utilizado para cambiar entre vistas.
      */
     // Getter para acceder al CardLayout
     public CardLayout getVista() {
@@ -449,13 +424,15 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     }
 
     /**
-     * Obtiene el panel principal de la interfaz gráfica.
+     * Método getter para acceder al JPanel principal que contiene las vistas.
      * <p>
-     * Este método proporciona acceso al contenedor principal ({@link JPanel})
-     * que alberga las diferentes vistas gestionadas por el {@link CardLayout}.
+     * Este método devuelve el panel principal (`JPanel`) que contiene todos los
+     * subpaneles de la interfaz gráfica. El `JPanel` principal es el contenedor
+     * sobre el cual se añaden y muestran los diferentes paneles del sistema.
      * </p>
      *
-     * @return El objeto {@link JPanel} principal de la interfaz.
+     * @return El objeto `JPanel` principal que gestiona las vistas de la
+     * interfaz.
      */
     // Getter para acceder al JPanel principal
     public JPanel getPnlPrincipal() {
@@ -478,7 +455,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
      * @param evt Evento de clic del botón de inicio.
      */
     private void btn_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_inicioActionPerformed
-        vista.show(pnl_principal, "vistaVisualizador");
+        vista.show(pnl_principal, "VistaPrincipalUsuario");
         SwingUtilities.updateComponentTreeUI(this);
         this.repaint();
         this.setTitle("Menu Principal");
@@ -530,31 +507,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         viewInicio.setVisible(true);
         dispose();
     }//GEN-LAST:event_btn_cerrar_sesionActionPerformed
-
-    private void btn_usuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usuarioMouseEntered
-
-    }//GEN-LAST:event_btn_usuarioMouseEntered
-
-    private void btn_usuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_usuarioMouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_usuarioMouseExited
-
-    /**
-     * Cambia la vista a la sección de gestión de usuarios.
-     * <p>
-     * Actualiza el título de la ventana a "Gestion de usuarios" y muestra la
-     * vista de registro de usuarios en el panel principal.
-     * </p>
-     *
-     * @param evt Evento de clic del botón de usuario.
-     */
-    private void btn_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_usuarioActionPerformed
-        vista.show(pnl_principal, "RegistroUsuario");
-        SwingUtilities.updateComponentTreeUI(this);
-        this.repaint();
-        this.setTitle("Gestion de usuarios");
-
-    }//GEN-LAST:event_btn_usuarioActionPerformed
 
     private void btn_productoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_productoMouseEntered
 
@@ -670,7 +622,7 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewMenuPrincipal(nombre_usuario, 1).setVisible(true);
+                new ViewMenuPrincipalUsuario(nombre_usuario, 2).setVisible(true);
             }
         });
     }
@@ -683,7 +635,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btn_producto;
     private javax.swing.JButton btn_proveedor;
     private javax.swing.JButton btn_salida;
-    private javax.swing.JButton btn_usuario;
     private javax.swing.JLabel lbl_icon_categoria;
     private javax.swing.JLabel lbl_icon_cerrar_sesion;
     private javax.swing.JLabel lbl_icon_entrada;
@@ -692,7 +643,6 @@ public class ViewMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_icon_proveedor;
     private javax.swing.JLabel lbl_icon_salida;
     private javax.swing.JLabel lbl_icon_user;
-    private javax.swing.JLabel lbl_icon_usuario;
     private javax.swing.JLabel lbl_usuario_rol;
     private javax.swing.JPanel panel_cont_icon_user;
     private static javax.swing.JPanel panel_cont_menu_op;
