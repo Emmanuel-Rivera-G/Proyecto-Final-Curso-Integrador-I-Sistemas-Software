@@ -14,7 +14,6 @@ import dao.interfaz.DAOProducto;
 import static org.junit.Assert.*;
 
 import java.util.List;
-import model.Producto;
 import org.slf4j.Logger;
 import service.interfaz.ServiceProducto;
 import utils.UtilsLoggerManager;
@@ -27,8 +26,6 @@ import utils.UtilsLoggerManager;
  * Autor: Emmanuel
  */
 public class ServiceProductoTest {
-    private final int ID_1 = 1;
-    private final int ID_2 = 2;
     
     private ServiceProducto serviceProducto;
     private DAOProducto daoProductoSimulado;
@@ -69,12 +66,18 @@ public class ServiceProductoTest {
     @After
     public void tearDown() {
         try (Connection con = conexion.getConnection();
-             PreparedStatement ps = con.prepareStatement("DELETE FROM productos WHERE id > ?")) {
+            PreparedStatement ps = con.prepareStatement("DELETE FROM productos WHERE id > ?")) {
             ps.setInt(1, lastIdBeforeTests);
             ps.executeUpdate();
+            
+            PreparedStatement psId = con.prepareStatement("ALTER TABLE productos AUTO_INCREMENT = ?");
+            psId.setInt(1, lastIdBeforeTests + 1);
+            psId.executeUpdate();
         } catch (SQLException e) {
             LOGGER.error("Error al eliminar los productos agregados durante las pruebas.", e);
         }
+        
+        
     }
 
     /**
