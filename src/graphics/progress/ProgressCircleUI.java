@@ -85,7 +85,7 @@ public class ProgressCircleUI extends BasicProgressBarUI {
         Insets b = progressBar.getInsets();
         int barRectWidth = progressBar.getWidth() - b.right - b.left;
         int barRectHeight = progressBar.getHeight() - b.top - b.bottom;
-        g.setColor(new Color(212, 212, 212));
+        g.setColor(new Color(255, 255, 255));
         paintString(g, b.left, b.top, barRectWidth, barRectHeight, 0, b);
     }
 }

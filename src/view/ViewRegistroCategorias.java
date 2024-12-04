@@ -40,14 +40,14 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
         panel_cont_icon_user1 =  new RoundedPanel(60, new Color(19, 22, 27));
         jLabel10 = new javax.swing.JLabel();
         panel_cont_icon_user2 =  new RoundedPanel(60, new Color(19, 22, 27));
-        panel_cont_icon_user3 =  new RoundedPanel(60, Color.WHITE);
+        panel_cont_icon_user3 =  new RoundedPanel(30, Color.WHITE);
         jLabel3 = new javax.swing.JLabel();
         txt_fld_id_cat = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txt_fld_nombre = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txt_fld_detalles = new javax.swing.JTextField();
-        panel_cont_icon_user5 =  new RoundedPanel(60, Color.WHITE);
+        panel_cont_icon_user5 =  new RoundedPanel(30, Color.WHITE);
         jScrollPane1 = new javax.swing.JScrollPane();
         tblcategorias = new javax.swing.JTable();
         panel_cont_icon_user7 =  new RoundedPanel(60, new Color(0,5,17));
@@ -64,7 +64,6 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(839, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_cont_icon_user1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user1.setForeground(new java.awt.Color(19, 22, 27));
 
         jLabel10.setFont(new java.awt.Font("Gill Sans MT", 0, 21)); // NOI18N
@@ -79,22 +78,20 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
             .addGroup(panel_cont_icon_user1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         panel_cont_icon_user1Layout.setVerticalGroup(
             panel_cont_icon_user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         add(panel_cont_icon_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1100, 60));
 
-        panel_cont_icon_user2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user2.setForeground(new java.awt.Color(19, 22, 27));
 
-        panel_cont_icon_user3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user3.setForeground(new java.awt.Color(19, 22, 27));
 
         jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
@@ -139,7 +136,6 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
-        panel_cont_icon_user5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user5.setForeground(new java.awt.Color(19, 22, 27));
 
         tblcategorias.setModel(new javax.swing.table.DefaultTableModel(
@@ -174,7 +170,6 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
                 .addGap(34, 34, 34))
         );
 
-        panel_cont_icon_user7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user7.setForeground(new java.awt.Color(19, 22, 27));
 
         jLabel11.setFont(new java.awt.Font("Gill Sans MT", 0, 18)); // NOI18N
@@ -198,7 +193,6 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panel_cont_icon_user8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user8.setForeground(new java.awt.Color(19, 22, 27));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-start.png"))); // NOI18N
@@ -238,7 +232,6 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        panel_cont_icon_user6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user6.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-buscar.png"))); // NOI18N
@@ -287,7 +280,7 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
                         .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(panel_cont_icon_user6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
         panel_cont_icon_user2Layout.setVerticalGroup(
             panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,7 +297,7 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
                         .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addGap(17, 17, 17)
                         .addComponent(panel_cont_icon_user6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         add(panel_cont_icon_user2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1100, 590));
