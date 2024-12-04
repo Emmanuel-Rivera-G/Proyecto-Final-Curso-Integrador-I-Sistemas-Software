@@ -34,5 +34,10 @@ public class DTOCategoria {
         this.nombre = nombre;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "DTOCategoria{" + "idCategoria=" + idCategoria + ", nombre=" + nombre + '}';
+    }
     
 }

@@ -81,13 +81,14 @@ public class DAOCategoriaImpl implements DAOCategoria {
     */
     @Override
     public void actualizarCategoria(DTOCategoria categoria) {
-        String sql = "UPDATE " + TABLA + " SET nombre = ?;";
+        String sql = "UPDATE " + TABLA + " SET nombre = ? WHERE id_categoria = ?;";
         try {
             con = conexion.getConnection();
             Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
             ps = con.prepareStatement(sql);
             
             ps.setString(1,categoria.getNombre());
+            ps.setInt(2,categoria.getIdCategoria());
             
             ps.executeUpdate();
             con.close();
@@ -110,7 +111,7 @@ public class DAOCategoriaImpl implements DAOCategoria {
     */
     @Override
     public void eliminarCategoria(int idCategoria) {
-        String sql = "DELETE FROM " + TABLA + " WHERE id = ?;";
+        String sql = "DELETE FROM " + TABLA + " WHERE id_categoria = ?;";
         try {
             con = conexion.getConnection();
             Preconditions.checkNotNull(con, "La conexión no debe de ser nula.");
@@ -140,7 +141,7 @@ public class DAOCategoriaImpl implements DAOCategoria {
     */
     @Override
     public DTOCategoria obtenerCategoriaPorId(int idCategoria) {
-        String sql = "SELECT * FROM " + TABLA + " WHERE id=?;";
+        String sql = "SELECT * FROM " + TABLA + " WHERE id_categoria = ?;";
         DTOCategoria dtoCategoria = null;
         try {
             con = conexion.getConnection();
@@ -152,7 +153,7 @@ public class DAOCategoriaImpl implements DAOCategoria {
             
             if (rs.next()) {
                 dtoCategoria = new DTOCategoria();
-                dtoCategoria.setIdCategoria(rs.getInt("idCategoria"));
+                dtoCategoria.setIdCategoria(rs.getInt("id_categoria"));
                 dtoCategoria.setNombre(rs.getString("nombre"));
             }
         } catch (SQLException e) {
@@ -176,7 +177,7 @@ public class DAOCategoriaImpl implements DAOCategoria {
     */
     @Override
     public DTOCategoria obtenerCategoriaPorNombre(String nombre) {
-        String sql = "SELECT * FROM " + TABLA + " WHERE nombre=?;";
+        String sql = "SELECT * FROM " + TABLA + " WHERE nombre = ?;";
         DTOCategoria dtoCategoria = null;
         try {
             con = conexion.getConnection();
