@@ -149,3 +149,29 @@ INSERT INTO entradas (id_Entrada, idProductos, nombreProductos, descripcionOpera
 (8, 8, 'Pan Integral', 'Reposición diaria', 35, 1.50, 52.50, '2024-11-16', 5, 3),
 (9, 9, 'Sal de Mesa', 'Compra por temporada', 20, 0.50, 10.00, '2024-11-15', 1, 1);
 
+
+-- Crear la tabla salidas
+CREATE TABLE Salidas (
+    idSalida INT PRIMARY KEY AUTO_INCREMENT,
+    idProducto INT NOT NULL, 
+    cantidad INT NOT NULL,
+    valorUnitario DECIMAL(10, 2) NOT NULL, 
+    valorTotal DECIMAL(10, 2) NOT NULL,
+    fechaSalida TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    idUsuario INT NOT NULL, -- Referencia al usuario responsable
+    FOREIGN KEY (idProducto) REFERENCES Productos(id),
+    FOREIGN KEY (idUsuario) REFERENCES usuario(id_usuario)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO Salidas (idSalida, idProducto, cantidad, valorUnitario, valorTotal, fechaSalida, idUsuario) VALUES
+(1, 1, 20, 1.20, 24.00, '2024-11-20 10:00:00', 1), -- Venta parcial de "Arroz Blanco"
+(2, 2, 15, 2.50, 37.50, '2024-11-20 12:00:00', 1), -- Venta de "Frijol Negro"
+(3, 3, 10, 5.00, 50.00, '2024-11-19 15:00:00', 2), -- Ajuste de "Aceite Vegetal"
+(4, 4, 20, 1.00, 20.00, '2024-11-19 16:00:00', 3), -- Uso de "Harina de Maíz" en otro proceso
+(5, 5, 10, 0.80, 8.00, '2024-11-18 09:00:00', 1), -- Venta promocional de "Jabón de Barra"
+(6, 6, 5, 3.00, 15.00, '2024-11-18 11:00:00', 2), -- Venta de "Detergente en Polvo"
+(7, 7, 5, 4.00, 20.00, '2024-11-17 14:00:00', 2), -- Consumo interno de "Leche Entera"
+(8, 8, 25, 1.50, 37.50, '2024-11-17 15:30:00', 3), -- Venta de "Pan Integral"
+(9, 9, 10, 0.50, 5.00, '2024-11-16 10:00:00', 1); -- Venta por temporada de "Sal de Mesa"
+
+
