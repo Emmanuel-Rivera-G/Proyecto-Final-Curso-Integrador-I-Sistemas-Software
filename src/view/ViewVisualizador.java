@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JLabel;
 
 /**
  *
@@ -23,12 +24,19 @@ public class ViewVisualizador extends javax.swing.JPanel {
     private Connection connection;
 
     /**
-     * Creates new form ViewVisualizador
+     * Constructor de la clase `viewVisualizador`. Este constructor inicializa
+     * el panel con un color de fondo específico y carga los componentes
+     * necesarios. También llama a los métodos esenciales para inicializar los
+     * conteos de categorías, entradas, salidas y proveedores. Además, se
+     * definen los valores necesarios para configurar el gráfico.
      */
     public ViewVisualizador() {
         this.setBackground(Color.decode("#000511"));
         initComponents();
-        actualizarBarraDeProgreso(progress_categorias);
+        actualizarBarraDeProgresoCategorias(progress_categoria);
+        actualizarBarraDeProgresoEntradas(progress_entrada);
+        actualizarBarraDeProgresoSalidas(progress_salidas);
+        actualizarBarraDeProgresoProveedores(progress_proveedores);
         curveLine.setTitle("Grafico Stock por Categoria");
         curveLine.addLegend("Cantidad", Color.decode("#7b4397"), Color.decode("#dc2430"));
         curveLine.addLegend("Costo", Color.decode("#e65c00"), Color.decode("#F9D423"));
@@ -36,6 +44,14 @@ public class ViewVisualizador extends javax.swing.JPanel {
         setData();
     }
 
+    /**
+     * Obtiene la cantidad total de categorías registradas en la base de datos.
+     * Este método realiza una consulta SQL para contar el número total de
+     * categorías en la tabla "categorias" y devuelve el resultado.
+     *
+     * @return la cantidad total de categorías registradas en la base de datos.
+     * Si ocurre algún error en la consulta, retorna 0.
+     */
     private int obtenerCantidadCategorias() {
         int cantidad = 0;
         Connection connection = null;
@@ -72,42 +88,233 @@ public class ViewVisualizador extends javax.swing.JPanel {
         return cantidad;
     }
 
-    private void actualizarBarraDeProgreso(Progress progressBar) {
+    /**
+     * Obtiene el total acumulado de entradas registradas en la base de datos.
+     * Este método ejecuta una consulta SQL para calcular la suma de las
+     * cantidades de todas las entradas en la tabla "entradas".
+     *
+     * @return el total acumulado de entradas. Si ocurre un error en la
+     * consulta, retorna 0.
+     */
+    private int obtenerTotalEntradas() {
+        int totalEntradas = 0;
+        String sql = "SELECT SUM(cantidad) AS total_entradas FROM entradas";
+
+        try (Connection connection = new Conexion().getConnection(); PreparedStatement ps = connection.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+
+            if (rs.next()) {
+                totalEntradas = rs.getInt("total_entradas");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return totalEntradas;
+    }
+
+    /**
+     * Obtiene el total acumulado de salidas registradas en el sistema.
+     * Actualmente, este método devuelve un valor fijo como ejemplo. Sin
+     * embargo, está preparado para integrar una consulta SQL que calcule el
+     * total de salidas en la tabla "salidas".
+     *
+     * @return el total acumulado de salidas. Por ahora, devuelve 50 como valor
+     * fijo.
+     */
+    private int obtenerTotalSalidas() {
+        //int totalSalidas = 10;
+        /*
+        String sql = "SELECT SUM(cantidad) AS total_salidas FROM salidas"; 
+
+        try (Connection connection = new Conexion().getConnection(); PreparedStatement ps = connection.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+
+            if (rs.next()) {
+                totalSalidas = rs.getInt("total_salidas");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+         */
+        return 50;
+    }
+
+    /**
+     * Obtiene el total de proveedores registrados en el sistema. Este método
+     * actualmente retorna un valor fijo como ejemplo, pero puede ser modificado
+     * para realizar una consulta SQL que recupere el total real desde la base
+     * de datos.
+     *
+     * @return el total de proveedores registrados. Por ahora, devuelve 15 como
+     * valor fijo.
+     */
+    private int obtenerTotalProveedores() {
+        return 15;
+    }
+
+    /**
+     * Actualiza la barra de progreso que representa la cantidad de categorías
+     * registradas. Este método obtiene la cantidad de categorías mediante el
+     * método {@link  #obtenerCantidadCategorias()} y ajusta el valor de la barra
+     * de progreso.
+     *
+     * @param progressBar la barra de progreso que se actualizará.
+     */
+    private void actualizarBarraDeProgresoCategorias(Progress progressBar) {
         int cantidadCategorias = obtenerCantidadCategorias();
-        int maxCategorias = 100;
-        int progreso = (int) ((cantidadCategorias / (double) maxCategorias) * 100);
-        progressBar.setValue(progreso);
-        progressBar.setString(progreso + "%");
+        progressBar.setValue(cantidadCategorias);
         progressBar.start();
     }
 
+    /**
+     * Actualiza la barra de progreso que representa el porcentaje de entradas
+     * registradas. Este método calcula el progreso en base a un valor máximo de
+     * entradas permitido y ajusta la barra en consecuencia.
+     *
+     * @param progressBar la barra de progreso que se actualizará.
+     */
+    private void actualizarBarraDeProgresoEntradas(Progress progressBar) {
+        int totalEntradas = obtenerTotalEntradas();
+        int maxEntradas = 1000;
+        int progreso = (int) ((totalEntradas / (double) maxEntradas) * 100);
+        progressBar.setValue(progreso);
+        progressBar.start();
+    }
+
+    /**
+     * Actualiza la barra de progreso que representa el porcentaje de salidas
+     * registradas. Este método calcula el progreso en base a un valor máximo de
+     * salidas permitido y ajusta la barra en consecuencia.
+     *
+     * @param progressBar la barra de progreso que se actualizará.
+     */
+    private void actualizarBarraDeProgresoSalidas(Progress progressBar) {
+        int totalSalidas = obtenerTotalSalidas();
+        int maxSalidas = 100;
+        int progreso = (int) ((totalSalidas / (double) maxSalidas) * 100);
+        progressBar.setValue(progreso);
+        progressBar.start();
+    }
+
+    /**
+     * Actualiza la barra de progreso que representa el número de proveedores
+     * registrados. Este método obtiene el total de proveedores usando el método
+     * {@link #obtenerTotalProveedores()} y ajusta el valor de la barra de
+     * progreso.
+     *
+     * @param progressBar la barra de progreso que se actualizará.
+     */
+    private void actualizarBarraDeProgresoProveedores(Progress progressBar) {
+        int totalProveedores = obtenerTotalProveedores();
+        progressBar.setValue(totalProveedores);
+        progressBar.start();
+    }
+
+    /**
+     * Configura y establece los datos necesarios para el gráfico de línea
+     * curva. Este método realiza una consulta SQL para obtener datos
+     * relacionados con categorías, cantidades, costos totales y beneficios. Los
+     * datos obtenidos se utilizan para el gráfico visual.
+     */
     private void setData() {
         List<ModelData> list = new ArrayList<>();
         conexion = new Conexion();
         connection = conexion.getConnection();
-        String sql = "SELECT c.nombre AS categoria, SUM(p.stock) AS total_stock "
+
+        String sql = "SELECT c.nombre AS categoria, "
+                + "SUM(p.stock) AS total_stock, "
+                + "SUM(e.cantidad * e.precioUnitario) AS costo_total, "
+                + "SUM(e.cantidad * e.precioUnitario) * 0.3 AS beneficio_total "
                 + "FROM categorias c "
                 + "JOIN productos p ON c.id_categoria = p.idCategoria "
+                + "JOIN entradas e ON p.id = e.idProductos "
                 + "GROUP BY c.nombre";
-        try {
-            PreparedStatement ps = connection.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
+
+        try (PreparedStatement ps = connection.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+
+            // Almacenar los datos en la lista
             while (rs.next()) {
                 String categoria = rs.getString("categoria");
                 int cantidadStock = rs.getInt("total_stock");
-                list.add(new ModelData(categoria, cantidadStock, 10, 10));
+                double costoTotal = rs.getDouble("costo_total");
+                double beneficioTotal = rs.getDouble("beneficio_total");
+
+                list.add(new ModelData(categoria, cantidadStock, costoTotal, beneficioTotal));
             }
+
             for (ModelData md : list) {
                 curveLine.addData(new ModelChart(md.getParametroIdentificador(), new double[]{
-                    md.getParametroCantidad(), md.getCosto(), md.getBeneficio()
+                    md.getParametroCantidad(), // Cantidad
+                    md.getCosto(), // Costo
+                    md.getBeneficio() // Beneficio
                 }));
             }
+
             curveLine.start();
-            ps.close();
-            rs.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Obtiene el monto total acumulado de las entradas en soles. Este método
+     * ejecuta una consulta SQL que calcula la suma del campo "total" en la
+     * tabla "entradas".
+     *
+     * @return el monto total de entradas en soles. Si ocurre un error en la
+     * consulta, retorna 0.
+     */
+    private double obtenerTotalEntradasSoles() {
+        double totalEntradas = 0;
+        String sql = "SELECT SUM(total) AS total_entradas FROM entradas";
+
+        try (Connection connection = new Conexion().getConnection(); PreparedStatement ps = connection.prepareStatement(sql); ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+                totalEntradas = rs.getDouble("total_entradas");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return totalEntradas;
+    }
+
+    /**
+     * Obtiene el monto total acumulado de las salidas en soles. Este método
+     * actualmente devuelve un valor fijo como ejemplo, pero puede ser extendido
+     * para realizar una consulta SQL en la tabla "salidas".
+     *
+     * @return el monto total de salidas en soles. Por ahora, devuelve 1500.00
+     * como valor fijo.
+     */
+    private double obtenerTotalSalidasSoles() {
+        return 1500.00;
+    }
+
+    /**
+     * Actualiza el valor mostrado en una etiqueta para representar el saldo
+     * total de entradas. Este método utiliza
+     * {@link #obtenerTotalEntradasSoles()} para recuperar el total de entradas
+     * en soles y lo muestra en la etiqueta proporcionada.
+     *
+     * @param lblEntradas la etiqueta que mostrará el saldo total de entradas.
+     */
+    private void actualizarEntradasSaldo(JLabel lblEntradas) {
+        double totalEntradas = obtenerTotalEntradasSoles();
+        lblEntradas.setText("" + totalEntradas);
+    }
+
+    /**
+     * Actualiza el valor mostrado en una etiqueta para representar el saldo
+     * total de salidas. Este método utiliza {@link #obtenerTotalSalidasSoles()}
+     * para recuperar el total de salidas en soles y lo muestra en la etiqueta
+     * proporcionada.
+     *
+     * @param lblSalidas la etiqueta que mostrará el saldo total de salidas.
+     */
+    private void actualizarSalidasSaldo(JLabel lblSalidas) {
+        double totalSalidas = obtenerTotalSalidasSoles();
+        lblSalidas.setText("" + totalSalidas);
     }
 
     /**
@@ -119,27 +326,30 @@ public class ViewVisualizador extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 =  new RoundedPanel(30, new Color(5,63,255));
+        progressCircleUI1 = new graphics.progress.ProgressCircleUI();
+        jPanel3 =  new RoundedPanel(30, new Color(240, 191, 38));
         jLabel1 = new javax.swing.JLabel();
-        progress_categorias = new graphics.progress.Progress();
-        jPanel4 = new RoundedPanel(30, new Color(38,43,56));
+        progress_categoria = new graphics.progress.Progress();
+        jPanel4 = new RoundedPanel(30, new Color(49, 215, 1));
         jLabel4 = new javax.swing.JLabel();
-        progress_categorias2 = new graphics.progress.Progress();
-        jPanel5 = new RoundedPanel(30, new Color(38,43,56));
+        progress_entrada = new graphics.progress.Progress();
+        jPanel5 = new RoundedPanel(30, new Color(31, 169, 221));
         jLabel3 = new javax.swing.JLabel();
-        progress_categorias3 = new graphics.progress.Progress();
-        jPanel6 = new RoundedPanel(30, Color.WHITE);
+        progress_proveedores = new graphics.progress.Progress();
+        jPanel6 = new RoundedPanel(30, new Color(200, 25, 88));
         jLabel2 = new javax.swing.JLabel();
-        progress_categorias1 = new graphics.progress.Progress();
+        progress_salidas = new graphics.progress.Progress();
         jPanel7 = new RoundedPanel(30, Color.BLACK);
         jPanel8 = new RoundedPanel(30, new Color(19, 22, 27));
         jSpinner1 = new javax.swing.JSpinner();
         jPanel9 = new RoundedPanel(30, new Color(19, 22, 27));
         jSpinner2 = new javax.swing.JSpinner();
         jPanel10 = new RoundedPanel(30, new Color(19, 22, 27));
-        jLabel6 = new javax.swing.JLabel();
+        lbl_salidassole = new javax.swing.JLabel();
+        lbl_calc_salidas = new javax.swing.JLabel();
         jPanel11 = new RoundedPanel(30, new Color(19, 22, 27));
         jLabel5 = new javax.swing.JLabel();
+        lbl_calc_entrada = new javax.swing.JLabel();
         lbl_calcular = new javax.swing.JLabel();
         jPanel15 = new RoundedPanel(30, Color.WHITE);
         fld_busqueda_general = new javax.swing.JTextField();
@@ -153,34 +363,34 @@ public class ViewVisualizador extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Gill Sans MT", 0, 17)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Categorias");
 
-        progress_categorias.setBackground(new java.awt.Color(153, 153, 153));
-        progress_categorias.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        progress_categorias.setForeground(new java.awt.Color(0, 0, 0));
+        progress_categoria.setBackground(new java.awt.Color(39, 44, 54));
+        progress_categoria.setBorder(null);
+        progress_categoria.setForeground(new java.awt.Color(39, 44, 54));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(66, 66, 66)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(progress_categorias, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addContainerGap(67, Short.MAX_VALUE))
+                    .addComponent(progress_categoria, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(progress_categorias, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(progress_categoria, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -190,8 +400,10 @@ public class ViewVisualizador extends javax.swing.JPanel {
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Gill Sans MT", 0, 17)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Entradas");
+
+        progress_entrada.setBackground(new java.awt.Color(39, 44, 54));
+        progress_entrada.setForeground(new java.awt.Color(39, 44, 54));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -204,7 +416,7 @@ public class ViewVisualizador extends javax.swing.JPanel {
                         .addComponent(jLabel4))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(65, 65, 65)
-                        .addComponent(progress_categorias2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(progress_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -213,7 +425,7 @@ public class ViewVisualizador extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(progress_categorias2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(progress_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -223,8 +435,10 @@ public class ViewVisualizador extends javax.swing.JPanel {
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Gill Sans MT", 0, 17)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Proveedores");
+
+        progress_proveedores.setBackground(new java.awt.Color(39, 44, 54));
+        progress_proveedores.setForeground(new java.awt.Color(39, 44, 54));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -235,7 +449,7 @@ public class ViewVisualizador extends javax.swing.JPanel {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(progress_categorias3, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(progress_proveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel3))
                 .addGap(58, 58, 58))
         );
@@ -245,7 +459,7 @@ public class ViewVisualizador extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(progress_categorias3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(progress_proveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -256,6 +470,9 @@ public class ViewVisualizador extends javax.swing.JPanel {
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 17)); // NOI18N
         jLabel2.setText("Salidas");
+
+        progress_salidas.setBackground(new java.awt.Color(39, 44, 54));
+        progress_salidas.setForeground(new java.awt.Color(39, 44, 54));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -268,7 +485,7 @@ public class ViewVisualizador extends javax.swing.JPanel {
                         .addComponent(jLabel2))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(64, 64, 64)
-                        .addComponent(progress_categorias1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(progress_salidas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -277,7 +494,7 @@ public class ViewVisualizador extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(progress_categorias1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(progress_salidas, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -320,35 +537,47 @@ public class ViewVisualizador extends javax.swing.JPanel {
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(9, Short.MAX_VALUE)
                 .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addContainerGap())
         );
 
-        jLabel6.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Salidas S/.");
+        lbl_salidassole.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        lbl_salidassole.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_salidassole.setText("Salidas S/.");
+
+        lbl_calc_salidas.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_calc_salidas.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        lbl_calc_salidas.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(15, 15, 15)
+                .addComponent(lbl_salidassole)
+                .addGap(18, 18, 18)
+                .addComponent(lbl_calc_salidas, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel6)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_calc_salidas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lbl_salidassole, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel5.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Entradas S/.");
+
+        lbl_calc_entrada.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_calc_entrada.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
+        lbl_calc_entrada.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -357,7 +586,9 @@ public class ViewVisualizador extends javax.swing.JPanel {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addComponent(lbl_calc_entrada, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -365,9 +596,18 @@ public class ViewVisualizador extends javax.swing.JPanel {
                 .addGap(15, 15, 15)
                 .addComponent(jLabel5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbl_calc_entrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         lbl_calcular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons_menu_principal/icon-calcular.png"))); // NOI18N
+        lbl_calcular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_calcularMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -382,7 +622,7 @@ public class ViewVisualizador extends javax.swing.JPanel {
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
                 .addComponent(lbl_calcular)
                 .addGap(24, 24, 24))
         );
@@ -393,7 +633,7 @@ public class ViewVisualizador extends javax.swing.JPanel {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbl_calcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
@@ -473,6 +713,18 @@ public class ViewVisualizador extends javax.swing.JPanel {
         add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 1040, 330));
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Evento que se ejecuta cuando se hace clic en el JLabel `lbl_calcular`.
+     * Este método actualiza los saldos de entradas y salidas llamando a los
+     * métodos * {@link #actualizarEntradasSaldo(JLabel)} y
+     * {@link #actualizarSalidasSaldo(JLabel)}.
+     *
+     * @param evt el evento de clic del ratón
+     */
+    private void lbl_calcularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_calcularMouseClicked
+        actualizarEntradasSaldo(lbl_calc_entrada);
+        actualizarSalidasSaldo(lbl_calc_salidas);    }//GEN-LAST:event_lbl_calcularMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private graphics.panel.PanelShadow chartGraphic;
@@ -483,7 +735,6 @@ public class ViewVisualizador extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -497,11 +748,15 @@ public class ViewVisualizador extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JLabel lbl_calc_entrada;
+    private javax.swing.JLabel lbl_calc_salidas;
     private javax.swing.JLabel lbl_calcular;
+    private javax.swing.JLabel lbl_salidassole;
     private javax.swing.JLabel lbl_search;
-    private graphics.progress.Progress progress_categorias;
-    private graphics.progress.Progress progress_categorias1;
-    private graphics.progress.Progress progress_categorias2;
-    private graphics.progress.Progress progress_categorias3;
+    private graphics.progress.ProgressCircleUI progressCircleUI1;
+    private graphics.progress.Progress progress_categoria;
+    private graphics.progress.Progress progress_entrada;
+    private graphics.progress.Progress progress_proveedores;
+    private graphics.progress.Progress progress_salidas;
     // End of variables declaration//GEN-END:variables
 }

@@ -47,7 +47,7 @@ public class ViewRegistroProductos extends javax.swing.JPanel {
         panel_cont_icon_user1 =  new RoundedPanel(60, new Color(19, 22, 27));
         jLabel10 = new javax.swing.JLabel();
         panel_cont_icon_user2 =  new RoundedPanel(60, new Color(19, 22, 27));
-        panel_cont_icon_user3 =  new RoundedPanel(60, Color.WHITE);
+        panel_cont_icon_user3 =  new RoundedPanel(30, Color.WHITE);
         jLabel3 = new javax.swing.JLabel();
         txtCodProducto = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -61,7 +61,7 @@ public class ViewRegistroProductos extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         txtIdBuscar = new javax.swing.JTextField();
         btnLimpiarProducto = new javax.swing.JButton();
-        panel_cont_icon_user5 =  new RoundedPanel(60, Color.WHITE);
+        panel_cont_icon_user5 =  new RoundedPanel(30, Color.WHITE);
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTablaProductos = new javax.swing.JTable();
         panel_cont_icon_user7 =  new RoundedPanel(60, new Color(0,5,17));
