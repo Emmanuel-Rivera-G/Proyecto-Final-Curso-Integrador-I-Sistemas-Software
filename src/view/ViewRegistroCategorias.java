@@ -1,7 +1,11 @@
 package view;
 
+import controller.ControllerCategoria;
 import style.RoundedPanel;
 import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  * Panel de registro de categorías en la interfaz gráfica de la aplicación.
@@ -21,7 +25,7 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
     public ViewRegistroCategorias() {
         this.setBackground(Color.decode("#000511"));
         initComponents();
-
+        ControllerCategoria controller = new ControllerCategoria(this);
     }
 
     /**
@@ -200,6 +204,11 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-start.png"))); // NOI18N
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-delete.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearLblBtnMouseClicked(evt);
+            }
+        });
 
         lbl_saved.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-guardar.png"))); // NOI18N
 
@@ -292,7 +301,7 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(panel_cont_icon_user8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_cont_icon_user2Layout.createSequentialGroup()
-                        .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addGap(17, 17, 17)
                         .addComponent(panel_cont_icon_user6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(27, Short.MAX_VALUE))
@@ -304,6 +313,12 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
     private void tblcategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblcategoriasMouseClicked
 
     }//GEN-LAST:event_tblcategoriasMouseClicked
+
+    private void clearLblBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearLblBtnMouseClicked
+        for (JTextField txt:  new JTextField[]{txt_fld_id_cat, txt_fld_nombre, txt_fld_detalles}) {
+            txt.setText("");
+        }
+    }//GEN-LAST:event_clearLblBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -331,4 +346,36 @@ public class ViewRegistroCategorias extends javax.swing.JPanel {
     private javax.swing.JTextField txt_fld_id_cat;
     private javax.swing.JTextField txt_fld_nombre;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getLbl_buscar() {
+        return lbl_buscar;
+    }
+
+    public JLabel getLbl_delete() {
+        return lbl_delete;
+    }
+
+    public JLabel getLbl_editar() {
+        return lbl_editar;
+    }
+
+    public JLabel getLbl_saved() {
+        return lbl_saved;
+    }
+
+    public JTable getTblcategorias() {
+        return tblcategorias;
+    }
+
+    public JTextField getTxt_fld_detalles() {
+        return txt_fld_detalles;
+    }
+
+    public JTextField getTxt_fld_id_cat() {
+        return txt_fld_id_cat;
+    }
+
+    public JTextField getTxt_fld_nombre() {
+        return txt_fld_nombre;
+    }
 }
