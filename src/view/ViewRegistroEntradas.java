@@ -10,7 +10,8 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
- * Panel de registro de Registro de entradas en la interfaz gráfica de la aplicación.
+ * Panel de registro de Registro de entradas en la interfaz gráfica de la
+ * aplicación.
  * <p>
  * Esta clase define el panel para la vista de registro de entradas, con un
  * fondo personalizado.
@@ -80,7 +81,6 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(839, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel_cont_icon_user1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user1.setForeground(new java.awt.Color(19, 22, 27));
 
         jLabel10.setFont(new java.awt.Font("Gill Sans MT", 0, 21)); // NOI18N
@@ -95,19 +95,18 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
             .addGroup(panel_cont_icon_user1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 1080, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         panel_cont_icon_user1Layout.setVerticalGroup(
             panel_cont_icon_user1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         add(panel_cont_icon_user1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1100, 60));
 
-        panel_cont_icon_user2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user2.setForeground(new java.awt.Color(19, 22, 27));
 
         panel_cont_icon_user3.setForeground(new java.awt.Color(19, 22, 27));
@@ -443,7 +442,7 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
                             .addComponent(panel_cont_icon_user10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(panel_cont_icon_user6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(panel_cont_icon_user7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 22, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
         panel_cont_icon_user2Layout.setVerticalGroup(
             panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -463,7 +462,7 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
                 .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(panel_cont_icon_user6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(panel_cont_icon_user8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         add(panel_cont_icon_user2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1100, 600));
@@ -534,158 +533,336 @@ public class ViewRegistroEntradas extends javax.swing.JPanel {
     private javax.swing.JTextField txtTotalE;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Devuelve el botón para editar una entrada.
+     *
+     * @return el botón para editar una entrada
+     */
     public JButton getBtnEditarEntrada() {
         return btnEditarEntrada;
     }
 
+    /**
+     * Devuelve el botón para eliminar una entrada.
+     *
+     * @return el botón para eliminar una entrada
+     */
     public JButton getBtnEliminarEntrada() {
         return btnEliminarEntrada;
     }
 
+    /**
+     * Devuelve el botón para registrar una entrada.
+     *
+     * @return el botón para registrar una entrada
+     */
     public JButton getBtnRegistrarEntrada() {
         return btnRegistrarEntrada;
     }
 
+    /**
+     * Devuelve el componente JLabel 1.
+     *
+     * @return el componente JLabel 1
+     */
     public JLabel getjLabel1() {
         return jLabel1;
     }
 
+    /**
+     * Devuelve el componente JLabel 10.
+     *
+     * @return el componente JLabel 10
+     */
     public JLabel getjLabel10() {
         return jLabel10;
     }
 
+    /**
+     * Devuelve el componente JLabel 11.
+     *
+     * @return el componente JLabel 11
+     */
     public JLabel getjLabel11() {
         return jLabel11;
     }
 
+    /**
+     * Devuelve el componente JScrollPane 1.
+     *
+     * @return el componente JScrollPane 1
+     */
     public JScrollPane getjScrollPane1() {
         return jScrollPane1;
     }
 
+    /**
+     * Devuelve el componente JScrollPane 2.
+     *
+     * @return el componente JScrollPane 2
+     */
     public JScrollPane getjScrollPane2() {
         return jScrollPane2;
     }
 
+    /**
+     * Devuelve el componente JLabel para buscar productos.
+     *
+     * @return el componente JLabel para buscar productos
+     */
     public JLabel getLbl_buscarP() {
         return lbl_buscarP;
     }
 
+    /**
+     * Devuelve el componente JLabel para la fecha.
+     *
+     * @return el componente JLabel para la fecha
+     */
     public JLabel getLbl_fecha() {
         return lbl_fecha;
     }
 
+    /**
+     * Devuelve el componente JLabel para el ID del producto.
+     *
+     * @return el componente JLabel para el ID del producto
+     */
     public JLabel getLbl_idProducto_1() {
         return lbl_idProducto_1;
     }
 
+    /**
+     * Devuelve el componente JLabel para el ID de la entrada.
+     *
+     * @return el componente JLabel para el ID de la entrada
+     */
     public JLabel getLbl_id_entrada() {
         return lbl_id_entrada;
     }
 
+    /**
+     * Devuelve el componente JLabel para el nombre del producto.
+     *
+     * @return el componente JLabel para el nombre del producto
+     */
     public JLabel getLbl_nombreProducto() {
         return lbl_nombreProducto;
     }
 
+    /**
+     * Devuelve el componente JLabel para el precio de entrada.
+     *
+     * @return el componente JLabel para el precio de entrada
+     */
     public JLabel getLbl_precioEntrada() {
         return lbl_precioEntrada;
     }
 
+    /**
+     * Devuelve el componente JLabel para el precio de venta.
+     *
+     * @return el componente JLabel para el precio de venta
+     */
     public JLabel getLbl_precioVenta() {
         return lbl_precioVenta;
     }
 
+    /**
+     * Devuelve el componente JLabel para el stock.
+     *
+     * @return el componente JLabel para el stock
+     */
     public JLabel getLbl_stock() {
         return lbl_stock;
     }
 
+    /**
+     * Devuelve el componente JLabel para el total.
+     *
+     * @return el componente JLabel para el total
+     */
     public JLabel getLbl_total() {
         return lbl_total;
     }
 
+    /**
+     * Devuelve el panel contenedor de iconos de usuario 1.
+     *
+     * @return el panel contenedor de iconos de usuario 1
+     */
     public JPanel getPanel_cont_icon_user1() {
         return panel_cont_icon_user1;
     }
 
+    /**
+     * Devuelve el panel contenedor de iconos de usuario 10.
+     *
+     * @return el panel contenedor de iconos de usuario 10
+     */
     public JPanel getPanel_cont_icon_user10() {
         return panel_cont_icon_user10;
     }
 
+    /**
+     * Devuelve el panel contenedor de iconos de usuario 11.
+     *
+     * @return el panel contenedor de iconos de usuario 11
+     */
     public JPanel getPanel_cont_icon_user11() {
         return panel_cont_icon_user11;
     }
 
+    /**
+     * Devuelve el panel contenedor de iconos de usuario 2.
+     *
+     * @return el panel contenedor de iconos de usuario 2
+     */
     public JPanel getPanel_cont_icon_user2() {
         return panel_cont_icon_user2;
     }
 
+    /**
+     * Devuelve el panel contenedor de iconos de usuario 3.
+     *
+     * @return el panel contenedor de iconos de usuario 3
+     */
     public JPanel getPanel_cont_icon_user3() {
         return panel_cont_icon_user3;
     }
 
+    /**
+     * Devuelve el panel contenedor de iconos de usuario 5.
+     *
+     * @return el panel contenedor de iconos de usuario 5
+     */
     public JPanel getPanel_cont_icon_user5() {
         return panel_cont_icon_user5;
     }
 
+    /**
+     * Devuelve el panel contenedor de iconos de usuario 6.
+     *
+     * @return el panel contenedor de iconos de usuario 6
+     */
     public JPanel getPanel_cont_icon_user6() {
         return panel_cont_icon_user6;
     }
 
+    /**
+     * Devuelve el panel contenedor de iconos de usuario 7.
+     *
+     * @return el panel contenedor de iconos de usuario 7
+     */
     public JPanel getPanel_cont_icon_user7() {
         return panel_cont_icon_user7;
     }
 
+    /**
+     * Devuelve el panel contenedor de iconos de usuario 8.
+     *
+     * @return el panel contenedor de iconos de usuario 8
+     */
     public JPanel getPanel_cont_icon_user8() {
         return panel_cont_icon_user8;
     }
 
+    /**
+     * Devuelve la tabla de entradas.
+     *
+     * @return la tabla de entradas
+     */
     public JTable getTblEntradas() {
         return tblEntradas;
     }
 
+    /**
+     * Devuelve la tabla de productos a buscar para las entradas.
+     *
+     * @return la tabla de productos a buscar para las entradas
+     */
     public JTable getTblTablaProductosABuscarEnt() {
         return tblTablaProductosABuscarEnt;
     }
 
+    /**
+     * Devuelve el campo de texto para buscar el nombre del producto.
+     *
+     * @return el campo de texto para buscar el nombre del producto
+     */
     public JTextField getTxtBuscarNameProduct() {
         return txtBuscarNameProduct;
     }
 
+    /**
+     * Devuelve el campo de texto para la cantidad del producto.
+     *
+     * @return el campo de texto para la cantidad del producto
+     */
     public JTextField getTxtCantidadP() {
         return txtCantidadP;
     }
 
+    /**
+     * Devuelve el campo de texto para la descripción de la operación.
+     *
+     * @return el campo de texto para la descripción de la operación
+     */
     public JTextField getTxtDescOperacion() {
         return txtDescOperacion;
     }
 
+    /**
+     * Devuelve el campo de texto para la fecha de entrada.
+     *
+     * @return el campo de texto para la fecha de entrada
+     */
     public JTextField getTxtFechaEntrada() {
         return txtFechaEntrada;
     }
 
+    /**
+     * Devuelve el campo de texto para el ID de la entrada.
+     *
+     * @return el campo de texto para el ID de la entrada
+     */
     public JTextField getTxtIdEntrada() {
         return txtIdEntrada;
     }
 
+    /**
+     * Devuelve el campo de texto para el ID del producto.
+     *
+     * @return el campo de texto para el ID del producto
+     */
     public JTextField getTxtIdProducto() {
         return txtIdProducto;
     }
 
+    /**
+     * Devuelve el campo de texto para el nombre del producto.
+     *
+     * @return el campo de texto para el nombre del producto
+     */
     public JTextField getTxtNombreProducto() {
         return txtNombreProducto;
     }
 
+    /**
+     * Devuelve el campo de texto para el precio unitario.
+     *
+     * @return el campo de texto para el precio unitario
+     */
     public JTextField getTxtPrecioUnitario() {
         return txtPrecioUnitario;
     }
 
+    /**
+     * Devuelve el campo de texto para el total de la entrada.
+     *
+     * @return el campo de texto para el total de la entrada
+     */
     public JTextField getTxtTotalE() {
         return txtTotalE;
     }
-
-    
-
-    
-    
-
-    
 }

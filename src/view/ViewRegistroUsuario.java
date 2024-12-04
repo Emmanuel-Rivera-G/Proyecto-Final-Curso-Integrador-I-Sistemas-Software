@@ -58,7 +58,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
         lbl_btn_export = new javax.swing.JLabel();
         lbl_registroUsuarios = new javax.swing.JLabel();
         panel_cont_icon_user2 =  new RoundedPanel(60, new Color(19, 22, 27));
-        panel_cont_icon_user3 =  new RoundedPanel(60, Color.WHITE);
+        panel_cont_icon_user3 =  new RoundedPanel(30, Color.WHITE);
         jLabel3 = new javax.swing.JLabel();
         txtnombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -80,9 +80,10 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
         lbl_btn_saved = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         panel_cont_icon_user4 =  new RoundedPanel(60, new Color(19, 22, 27));
-        panel_cont_icon_user5 =  new RoundedPanel(60, Color.WHITE);
+        panel_cont_icon_user5 =  new RoundedPanel(30, Color.WHITE);
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaUsuarios = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         panel_cont_icon_user6 =  new RoundedPanel(75, new Color(19, 22, 27));
         lbl_editar = new javax.swing.JLabel();
         lbl_delete = new javax.swing.JLabel();
@@ -313,19 +314,27 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
+        jLabel2.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Listado de usuarios :");
+
         javax.swing.GroupLayout panel_cont_icon_user4Layout = new javax.swing.GroupLayout(panel_cont_icon_user4);
         panel_cont_icon_user4.setLayout(panel_cont_icon_user4Layout);
         panel_cont_icon_user4Layout.setHorizontalGroup(
             panel_cont_icon_user4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user4Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panel_cont_icon_user4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         panel_cont_icon_user4Layout.setVerticalGroup(
             panel_cont_icon_user4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user4Layout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
@@ -730,6 +739,7 @@ public class ViewRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
