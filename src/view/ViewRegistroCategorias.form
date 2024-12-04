@@ -371,6 +371,9 @@
                   <Image iconType="3" name="/style/icons-registro/icon-delete.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="clearLblBtnMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lbl_saved">
               <Properties>

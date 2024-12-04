@@ -1,8 +1,12 @@
 package view;
 
+import controller.ControllerSalida;
 import style.RoundedPanel;
 import java.awt.Color;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  * Panel de registro de salidas en la interfaz gráfica de la aplicación.
@@ -58,6 +62,8 @@ public class ViewRegistroSalidas extends javax.swing.JPanel {
         this.tipoUsuario = tipoUsuario;
         this.setBackground(Color.decode("#000511"));
         initComponents();
+        
+        ControllerSalida controlador = new ControllerSalida(this);
 
     }
 
@@ -501,7 +507,7 @@ public class ViewRegistroSalidas extends javax.swing.JPanel {
                 .addGroup(panel_cont1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel_cont1Layout.createSequentialGroup()
                         .addComponent(panel_cont2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panel_cont4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel_cont1Layout.createSequentialGroup()
                         .addComponent(panel_cont5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -543,6 +549,68 @@ public class ViewRegistroSalidas extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_lbl_returnMouseClicked
 
+    public JLabel getLbl_agregar() {
+        return lbl_agregar;
+    }
+
+    public JLabel getLbl_buscar4() {
+        return lbl_buscar4;
+    }
+
+    public JLabel getLbl_delete() {
+        return lbl_delete;
+    }
+
+    public JLabel getLbl_generar() {
+        return lbl_generar;
+    }
+
+    public JLabel getLbl_restar() {
+        return lbl_restar;
+    }
+
+    public JTable getTbl_salidas() {
+        return tbl_salidas;
+    }
+
+    public JTextField getTxtField_cantidad() {
+        return txtField_cantidad;
+    }
+
+    public JTextField getTxtField_fecha_salida() {
+        return txtField_fecha_salida;
+    }
+
+    public JTextField getTxtField_id_salida() {
+        return txtField_id_salida;
+    }
+
+    public JTextField getTxtField_igv() {
+        return txtField_igv;
+    }
+
+    public JTextField getTxtField_nombre() {
+        return txtField_nombre;
+    }
+
+    public JTextField getTxtField_precio() {
+        return txtField_precio;
+    }
+
+    public JTextField getTxtField_stockDisponible() {
+        return txtField_stockDisponible;
+    }
+
+    public JTextField getTxtField_subtotal() {
+        return txtField_subtotal;
+    }
+
+    public JTextField getTxtField_total() {
+        return txtField_total;
+    }
+
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel10;

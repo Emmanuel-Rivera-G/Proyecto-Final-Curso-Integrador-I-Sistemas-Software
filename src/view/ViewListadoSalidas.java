@@ -1,8 +1,12 @@
 package view;
 
+import controller.ControllerSalida;
 import style.RoundedPanel;
 import java.awt.Color;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  * Panel de listado de salidas en la interfaz gráfica del sistema.
@@ -45,7 +49,7 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
         this.tipoUsuario = tipoUsuario;
         this.setBackground(Color.decode("#000511"));
         initComponents();
-
+        ControllerSalida controlador = new ControllerSalida(this);
     }
 
     /**
@@ -453,6 +457,42 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
     private void lbl_registro_salidasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_registro_salidasMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_lbl_registro_salidasMouseEntered
+
+    public JTextField getLblFechaFinal() {
+        return lblFechaFinal;
+    }
+
+    public JLabel getLbl_anular() {
+        return lbl_anular;
+    }
+
+    public JLabel getLbl_buscar4() {
+        return lbl_buscar4;
+    }
+
+    public JLabel getLbl_pdf() {
+        return lbl_pdf;
+    }
+
+    public JTable getLbl_salidas_p() {
+        return lbl_salidas_p;
+    }
+
+    public JTable getTbl_listadoSalidas() {
+        return tbl_listadoSalidas;
+    }
+
+    public JTextField getTxtField_fechaInicial() {
+        return txtField_fechaInicial;
+    }
+
+    public JTextField getTxtField_id_salida() {
+        return txtField_id_salida;
+    }
+
+    public JTextField getTxtField_salida() {
+        return txtField_salida;
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

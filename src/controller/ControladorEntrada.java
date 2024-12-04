@@ -7,7 +7,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.ViewRegistroEntradas;
-import model.EntradasDAO;
+import dao.implemetacion.DAOEntradaImpl;
 
 import java.sql.SQLException;//------throw
 import java.awt.Dimension;
@@ -34,7 +34,7 @@ public class ControladorEntrada implements ActionListener{
     
     //instanciacion de objetos
     ViewRegistroEntradas view = new ViewRegistroEntradas();//PARA llamarlo desde menu principal
-    EntradasDAO entradadao = new EntradasDAO();
+    DAOEntradaImpl entradadao = new DAOEntradaImpl();
     DefaultTableModel modeloTablaBuscarProdEntrada = new DefaultTableModel();// carga los nombres de la base de datos para interactuar con el
     
     DefaultTableModel modeloTablaEntrada = new DefaultTableModel();//SOLO PARA tabla entradas
