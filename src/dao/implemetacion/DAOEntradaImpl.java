@@ -1,132 +1,202 @@
 package dao.implemetacion;
 
-import dao.interfaz.DAOEntrada;
-import dto.DTOEntrada;
-import dto.DTOProducto;
-import dto.DTOProveedor;
-import dto.DTOUsuario;
-import java.util.List;
-import java.sql.PreparedStatement;
+import config.Conexion;
 import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.ArrayList;
+import model.Categoria;
+import model.Entrada;
+import model.Producto;
 
 /**
- *
- * @author Emmanuel
+ * Clase encargada de gestionar las operaciones de base de datos relacionadas con las entradas y productos.
+ * Permite realizar operaciones CRUD sobre las tablas `productos` y `entradas`.
+ * 
+ * @author Elvis
  */
-public class DAOEntradaImpl implements DAOEntrada {
-
-    private Connection connection;
-
-    public DAOEntradaImpl(Connection connection) {
-        this.connection = connection;
-    }
+public class DAOEntradaImpl {
     
-    @Override
-    public boolean agregarEntrada(DTOEntrada entrada) {
-        String sql = "INSERT INTO Entrada (idEntrada, idProducto, cantidad, valorUnitario, valorTotal, fechaEntrada, idProveedor, idUsuario) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setInt(1, entrada.getIdEntrada());
-            stmt.setInt(2, entrada.getDtoProducto().getIdProducto());
-            stmt.setInt(3, entrada.getCantidad());
-            stmt.setDouble(4, entrada.getValorUnitario());
-            stmt.setDouble(5, entrada.getValorTotal());
-            stmt.setTimestamp(6, Timestamp.valueOf(entrada.getFechaEntrada()));
-            stmt.setInt(7, entrada.getDtoProveedor().getIdProveedor());
-            stmt.setInt(8, entrada.getUsuario().getIdUsuario());
-            return stmt.executeUpdate() > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
+    private final Conexion conexion = new Conexion(); // Instancia de la clase Conexion para manejar la base de datos.
+    private Connection con;
+    private PreparedStatement ps;
+    private ResultSet rs;
 
-    @Override
-    public boolean actualizarEntrada(DTOEntrada entrada) {
-         String sql = "UPDATE Entrada SET idProducto = ?, cantidad = ?, valorUnitario = ?, valorTotal = ?, fechaEntrada = ?, idProveedor = ?, idUsuario = ? WHERE idEntrada = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setInt(1, entrada.getDtoProducto().getIdProducto());
-            stmt.setInt(2, entrada.getCantidad());
-            stmt.setDouble(3, entrada.getValorUnitario());
-            stmt.setDouble(4, entrada.getValorTotal());
-            stmt.setTimestamp(5, Timestamp.valueOf(entrada.getFechaEntrada()));
-            stmt.setInt(6, entrada.getDtoProveedor().getIdProveedor());
-            stmt.setInt(7, entrada.getUsuario().getIdUsuario());
-            stmt.setInt(8, entrada.getIdEntrada());
-            return stmt.executeUpdate() > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    @Override
-    public boolean eliminarEntrada(int idEntrada) {
-        String sql = "DELETE FROM Entrada WHERE idEntrada = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setInt(1, idEntrada);
-            return stmt.executeUpdate() > 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    @Override
-    public DTOEntrada obtenerEntradaPorId(int idEntrada) {
-        String sql = "SELECT * FROM Entrada WHERE idEntrada = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setInt(1, idEntrada);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                return mapResultSetToEntrada(rs);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    @Override
-    public List<DTOEntrada> obtenerTodasLasEntradas() {
-        List<DTOEntrada> entradas = new ArrayList<>();
-        String sql = "SELECT * FROM Entrada";
-        try (Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+    /**
+     * Obtiene una lista de todos los productos en la tabla `productos`.
+     *
+     * @return una lista de objetos {@link Producto} que contiene los productos disponibles en la base de datos.
+     */
+    public List<Producto> listar() {
+        String sql = "SELECT * FROM productos";
+        List<Producto> lista = new ArrayList<>();
+        try {
+            con = conexion.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
             while (rs.next()) {
-                entradas.add(mapResultSetToEntrada(rs));
+                Producto producto = new Producto();
+                producto.setId(rs.getInt(1)); // ID del producto
+                producto.setNombre(rs.getString(2)); // Nombre del producto
+                Categoria cat = new Categoria();
+                cat.setIdcat(rs.getInt(3)); // ID de la categoría
+                producto.setCategoria(cat);
+                producto.setUndmedida(rs.getString(4)); // Unidad de medida
+                producto.setStock(rs.getInt(5)); // Stock disponible
+                lista.add(producto); // Agregar producto a la lista
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Error en listar: " + e);
         }
-        return entradas;
+        return lista;
     }
 
-    private DTOEntrada mapResultSetToEntrada(ResultSet rs) throws SQLException {
-        DTOEntrada entrada = new DTOEntrada();
-        entrada.setIdEntrada(rs.getInt("idEntrada"));
-        
-        DTOProducto producto = new DTOProducto();
-        producto.setIdProducto(rs.getInt("idProducto"));
-        entrada.setDtoProducto(producto);
-        
-        DTOProveedor proveedor = new DTOProveedor();
-        proveedor.setIdProveedor(rs.getInt("idProveedor"));
-        entrada.setDtoProveedor(proveedor);
-        
-        DTOUsuario usuario = new DTOUsuario();
-        usuario.setIdUsuario(rs.getInt("idUsuario"));
-        entrada.setUsuario(usuario);
-        
-        entrada.setCantidad(rs.getInt("cantidad"));
-        entrada.setValorUnitario(rs.getDouble("valorUnitario"));
-        entrada.setValorTotal(rs.getDouble("valorTotal"));
-        entrada.setFechaEntrada(rs.getTimestamp("fechaEntrada").toLocalDateTime());
-        
-        return entrada;
+    /**
+     * Filtra productos según el nombre o ID proporcionado.
+     *
+     * @param input texto de búsqueda que puede coincidir con el nombre o ID del producto.
+     * @return una lista de objetos {@link Producto} que coinciden con el criterio de búsqueda.
+     */
+    public List<Producto> filtrarProductoABuscar(String input) {
+        String sql = "SELECT * FROM productos WHERE nombre LIKE ? OR CAST(id AS CHAR) LIKE ?";
+        List<Producto> lista = new ArrayList<>();
+        try {
+            con = conexion.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, "%" + input + "%");
+            ps.setString(2, "%" + input + "%");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Producto producto = new Producto();
+                producto.setId(rs.getInt("id"));
+                producto.setNombre(rs.getString("nombre"));
+                Categoria cat = new Categoria();
+                cat.setIdcat(rs.getInt("idCategoria"));
+                producto.setCategoria(cat);
+                producto.setUndmedida(rs.getString("undMedida"));
+                producto.setStock(rs.getInt("stock"));
+                lista.add(producto);
+            }
+        } catch (Exception e) {
+            System.out.println("Error en filtrarProducto: " + e);
+        } finally {
+            cerrarConexiones();
+        }
+        return lista;
+    }
+
+    /**
+     * Agrega un nuevo registro a la tabla `entradas`.
+     *
+     * @param entrada objeto {@link Entrada} que contiene los datos del nuevo registro.
+     * @throws SQLException si ocurre un error al insertar el registro.
+     */
+    public void agregar(Entrada entrada) throws SQLException {
+        String sql = "INSERT INTO entradas(idProductos, nombreProductos, descripcionOperacion, fecha, cantidad, precioUnitario, total) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try {
+            con = conexion.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, entrada.getIdproducto());
+            ps.setString(2, entrada.getNombreproducto());
+            ps.setString(3, entrada.getDescoperacion());
+            ps.setString(4, entrada.getFecha());
+            ps.setInt(5, entrada.getCantidad());
+            ps.setDouble(6, entrada.getPreciounitario());
+            ps.setDouble(7, entrada.getTotal());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error en proceso de agregación EntradasDAO: " + e);
+            throw e;
+        } finally {
+            cerrarConexiones();
+        }
+    }
+
+    /**
+     * Obtiene una lista de todas las entradas registradas en la tabla `entradas`.
+     *
+     * @return una lista de objetos {@link Entrada} que contiene las entradas registradas.
+     */
+    public List<Entrada> listarTablaEntrada() {
+        String sql = "SELECT * FROM entradas";
+        List<Entrada> lista = new ArrayList<>();
+        try {
+            con = conexion.getConnection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                Entrada entrada = new Entrada();
+                entrada.setIdentrada(rs.getInt(1)); // ID de entrada
+                entrada.setIdproducto(rs.getInt(2)); // ID del producto
+                entrada.setNombreproducto(rs.getString(3)); // Nombre del producto
+                entrada.setDescoperacion(rs.getString(4)); // Descripción de la operación
+                entrada.setCantidad(rs.getInt(5)); // Cantidad
+                entrada.setPreciounitario(rs.getDouble(6)); // Precio unitario
+                entrada.setTotal(rs.getDouble(7)); // Total
+                entrada.setFecha(rs.getString(8)); // Fecha
+                lista.add(entrada);
+            }
+        } catch (Exception e) {
+            System.out.println("Error en listarTablaEntrada: " + e);
+        }
+        return lista;
+    }
+
+    /**
+     * Actualiza los datos de un registro existente en la tabla `entradas`.
+     *
+     * @param entrada objeto {@link Entrada} con los datos actualizados del registro.
+     */
+    public void editarEntrd(Entrada entrada) {
+        String sql = "UPDATE entradas SET idProductos=?, nombreProductos=?, descripcionOperacion=?, fecha=?, cantidad=?, precioUnitario=?, total=? WHERE id_Entrada=?";
+        try {
+            con = conexion.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, entrada.getIdproducto());
+            ps.setString(2, entrada.getNombreproducto());
+            ps.setString(3, entrada.getDescoperacion());
+            ps.setString(4, entrada.getFecha());
+            ps.setInt(5, entrada.getCantidad());
+            ps.setDouble(6, entrada.getPreciounitario());
+            ps.setDouble(7, entrada.getTotal());
+            ps.setInt(8, entrada.getIdentrada());
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error en editar entrada - EntradasDAO: " + e);
+        }
+    }
+
+    /**
+     * Elimina un registro de la tabla `entradas` basado en su ID.
+     *
+     * @param id ID del registro que se desea eliminar.
+     */
+    public void eliminarEntrd(int id) {
+        String sql = "DELETE FROM entradas WHERE id_Entrada=" + id;
+        try {
+            con = conexion.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println("Error en eliminarEntrd - EntradasDAO: " + e);
+        }
+    }
+
+    /**
+     * Cierra las conexiones a la base de datos para liberar recursos.
+     */
+    private void cerrarConexiones() {
+        try {
+            if (rs != null) rs.close();
+            if (ps != null) ps.close();
+            if (con != null) con.close();
+        } catch (SQLException e) {
+            System.out.println("Error al cerrar conexiones: " + e);
+        }
     }
 }
