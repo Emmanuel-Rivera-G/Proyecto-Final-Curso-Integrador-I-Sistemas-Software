@@ -1,0 +1,203 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+
+-- Tiempo de generación: 05-12-2024 a las 05:01:32
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `bdlogisticsmanagement`
+--
+CREATE DATABASE IF NOT EXISTS `bdlogisticsmanagement` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+USE `bdlogisticsmanagement`;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categorias`
+--
+
+CREATE TABLE `categorias` (
+  `id_catg` int(11) NOT NULL,
+  `nombreCat` varchar(20) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`id_catg`, `nombreCat`) VALUES
+(1, 'Electrodomesticos');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `entradas`
+--
+
+CREATE TABLE `entradas` (
+  `id_Entrada` int(11) NOT NULL,
+  `idProductos` int(11) NOT NULL,
+  `nombreProductos` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `descripcionOperacion` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fecha` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `cantidad` int(11) DEFAULT NULL,
+  `precioUnitario` double DEFAULT NULL,
+  `total` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `entradas`
+--
+
+INSERT INTO `entradas` (`id_Entrada`, `idProductos`, `nombreProductos`, `descripcionOperacion`, `fecha`, `cantidad`, `precioUnitario`, `total`) VALUES
+(1, 6, 'Cocina', 'Compra de 10 unidades de cocina MABE modelo CMABE-001 del proveedor CocinasABC S.A.C.', '19/11/2024', 10, 400, 4000),
+(2, 6, 'Cocina', 'Compra 7 und cocina MABE', '20/11/2024', 5, 350, 1750);
+
+--
+-- Disparadores `entradas`
+--
+DELIMITER $$
+CREATE TRIGGER `update_stock_after_delete` AFTER DELETE ON `entradas` FOR EACH ROW BEGIN
+    -- Restar del stock del producto correspondiente
+    UPDATE productos
+    SET stock = stock - OLD.cantidad
+    WHERE id_productos = OLD.idProductos;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `update_stock_after_insert` AFTER INSERT ON `entradas` FOR EACH ROW BEGIN
+    -- Elvis: Va a modificar editar o actualizar el stock en la tabla 'productos' por cada entrada
+    UPDATE productos
+    SET stock = stock + NEW.cantidad
+    WHERE id_productos = NEW.idProductos;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `update_stock_after_update` AFTER UPDATE ON `entradas` FOR EACH ROW BEGIN
+
+    IF OLD.idProductos != NEW.idProductos THEN
+        --resta
+		UPDATE productos
+        SET stock = stock - OLD.cantidad
+        WHERE id_productos = OLD.idProductos;
+
+        -- Suma
+        UPDATE productos
+        SET stock = stock + NEW.cantidad
+        WHERE id_productos = NEW.idProductos;
+
+    --el producto no cambio... ajusta el stock segun la diferencia de cantidades
+    ELSE
+        UPDATE productos
+        SET stock = stock - OLD.cantidad + NEW.cantidad
+        WHERE id_productos = NEW.idProductos;
+    END IF;
+END
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `id_productos` int(11) NOT NULL,
+  `nombre` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `idCategoria` int(11) NOT NULL,
+  `undMedida` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
+  `stock` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id_productos`, `nombre`, `idCategoria`, `undMedida`, `stock`) VALUES
+(1, 'Refrigeradora', 1, 'unidad', 16),
+(5, 'Horno Microondas', 1, 'unidad', 25),
+(6, 'Cocina', 1, 'unidad', 28);
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id_catg`);
+
+--
+-- Indices de la tabla `entradas`
+--
+ALTER TABLE `entradas`
+  ADD PRIMARY KEY (`id_Entrada`),
+  ADD KEY `fk_idProductos` (`idProductos`);
+
+--
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id_productos`),
+  ADD UNIQUE KEY `nombre_unico` (`nombre`),
+  ADD KEY `idCategoria` (`idCategoria`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `id_catg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `entradas`
+--
+ALTER TABLE `entradas`
+  MODIFY `id_Entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id_productos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `entradas`
+--
+ALTER TABLE `entradas`
+  ADD CONSTRAINT `fk_idProductos` FOREIGN KEY (`idProductos`) REFERENCES `productos` (`id_productos`);
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`idCategoria`) REFERENCES `categorias` (`id_catg`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
