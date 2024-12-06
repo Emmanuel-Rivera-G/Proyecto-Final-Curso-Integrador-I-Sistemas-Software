@@ -1,0 +1,376 @@
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\Nueva carpeta (2)\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\Nueva carpeta (2)\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin;C:\Program Files\Java\jdk-23\bin;C:\Users\USER\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python312\;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\GitHub CLI\;C:\ProgramData\chocolatey\bin;C:\Gradle\gradle-8.6\bin;C:\Users\USER\eclipse\ja;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\Downloads\php-8.3.6-Win32-vs16-x64;F:\Ciclo 05 Marzo\PortableGit;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.4\bin;C:\QMK_MSYS\conemu;C:\Users\USER\LINGO64_21\;C:\Users\USER\LINGO18\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.9\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\USER\.console-ninja\.bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\USER\Desktop\sqljdbc_12.4\enu\auth\x86;E:\Python\PyCharm Community Edition 2023.2.4\bin;E:\Program Files\IntelliJ IDEA Community Edition 2023.2.5\bin;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;D:\Usuariosss\IntelliJ IDEA 2023.2.5\bin;C:\Users\USER\Documents\Carpetas Generales\Guardar\sqljdbc_12.4\enu\auth\x64;C:\Users\USER\AppData\Local\Programs\oh-my-posh\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\USER\AppData\Local\Coursier\data\bin;D:\Archivos de programa\IntelliJ IDEA 2024.2.4\bin;D:\Archivos de programa\PyCharm 2024.2.4\bin;C:\Users\USER\AppData\Local\JetBrains\Toolbox\scripts;;D:\Archivos de programa\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+JRE paths:	;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin;C:\Program Files\Java\jdk-23\bin;C:\Users\USER\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python312\;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\GitHub CLI\;C:\ProgramData\chocolatey\bin;C:\Gradle\gradle-8.6\bin;C:\Users\USER\eclipse\ja;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\Downloads\php-8.3.6-Win32-vs16-x64;F:\Ciclo 05 Marzo\PortableGit;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.4\bin;C:\QMK_MSYS\conemu;C:\Users\USER\LINGO64_21\;C:\Users\USER\LINGO18\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.9\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\USER\.console-ninja\.bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\USER\Desktop\sqljdbc_12.4\enu\auth\x86;E:\Python\PyCharm Community Edition 2023.2.4\bin;E:\Program Files\IntelliJ IDEA Community Edition 2023.2.5\bin;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;D:\Usuariosss\IntelliJ IDEA 2023.2.5\bin;C:\Users\USER\Documents\Carpetas Generales\Guardar\sqljdbc_12.4\enu\auth\x64;C:\Users\USER\AppData\Local\Programs\oh-my-posh\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\USER\AppData\Local\Coursier\data\bin;D:\Archivos de programa\IntelliJ IDEA 2024.2.4\bin;D:\Archivos de programa\PyCharm 2024.2.4\bin;C:\Users\USER\AppData\Local\JetBrains\Toolbox\scripts;;D:\Archivos de programa\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+Check launcher:	C:\Users\USER\.dotnet\tools\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin\javaw.exe (OK)
+Version string: 1.021.000_001 / 64-Bit (OK)
+Main class:	view.ViewInicioSesion
+Add classpath:	.\lib
+Launcher:	C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\USER\Desktop\Nueva carpeta (2)\ProyectoFinal.exe;.\lib" view.ViewInicioSesion
+Args length:	98/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\Nueva carpeta (2)\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\Nueva carpeta (2)\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin;C:\Program Files\Java\jdk-23\bin;C:\Users\USER\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python312\;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\GitHub CLI\;C:\ProgramData\chocolatey\bin;C:\Gradle\gradle-8.6\bin;C:\Users\USER\eclipse\ja;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\Downloads\php-8.3.6-Win32-vs16-x64;F:\Ciclo 05 Marzo\PortableGit;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.4\bin;C:\QMK_MSYS\conemu;C:\Users\USER\LINGO64_21\;C:\Users\USER\LINGO18\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.9\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\USER\.console-ninja\.bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\USER\Desktop\sqljdbc_12.4\enu\auth\x86;E:\Python\PyCharm Community Edition 2023.2.4\bin;E:\Program Files\IntelliJ IDEA Community Edition 2023.2.5\bin;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;D:\Usuariosss\IntelliJ IDEA 2023.2.5\bin;C:\Users\USER\Documents\Carpetas Generales\Guardar\sqljdbc_12.4\enu\auth\x64;C:\Users\USER\AppData\Local\Programs\oh-my-posh\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\USER\AppData\Local\Coursier\data\bin;D:\Archivos de programa\IntelliJ IDEA 2024.2.4\bin;D:\Archivos de programa\PyCharm 2024.2.4\bin;C:\Users\USER\AppData\Local\JetBrains\Toolbox\scripts;;D:\Archivos de programa\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+JRE paths:	;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin;C:\Program Files\Java\jdk-23\bin;C:\Users\USER\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python312\;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\GitHub CLI\;C:\ProgramData\chocolatey\bin;C:\Gradle\gradle-8.6\bin;C:\Users\USER\eclipse\ja;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\Downloads\php-8.3.6-Win32-vs16-x64;F:\Ciclo 05 Marzo\PortableGit;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.4\bin;C:\QMK_MSYS\conemu;C:\Users\USER\LINGO64_21\;C:\Users\USER\LINGO18\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.9\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\USER\.console-ninja\.bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\USER\Desktop\sqljdbc_12.4\enu\auth\x86;E:\Python\PyCharm Community Edition 2023.2.4\bin;E:\Program Files\IntelliJ IDEA Community Edition 2023.2.5\bin;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;D:\Usuariosss\IntelliJ IDEA 2023.2.5\bin;C:\Users\USER\Documents\Carpetas Generales\Guardar\sqljdbc_12.4\enu\auth\x64;C:\Users\USER\AppData\Local\Programs\oh-my-posh\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\USER\AppData\Local\Coursier\data\bin;D:\Archivos de programa\IntelliJ IDEA 2024.2.4\bin;D:\Archivos de programa\PyCharm 2024.2.4\bin;C:\Users\USER\AppData\Local\JetBrains\Toolbox\scripts;;D:\Archivos de programa\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+Check launcher:	C:\Users\USER\.dotnet\tools\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin\javaw.exe (OK)
+Version string: 1.021.000_001 / 64-Bit (OK)
+Main class:	view.ViewInicioSesion
+Add classpath:	.\lib
+Launcher:	C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\USER\Desktop\Nueva carpeta (2)\ProyectoFinal.exe;.\lib" view.ViewInicioSesion
+Args length:	98/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\Nueva carpeta (2)\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\Nueva carpeta (2)\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin;C:\Program Files\Java\jdk-23\bin;C:\Users\USER\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python312\;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\GitHub CLI\;C:\ProgramData\chocolatey\bin;C:\Gradle\gradle-8.6\bin;C:\Users\USER\eclipse\ja;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\Downloads\php-8.3.6-Win32-vs16-x64;F:\Ciclo 05 Marzo\PortableGit;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.4\bin;C:\QMK_MSYS\conemu;C:\Users\USER\LINGO64_21\;C:\Users\USER\LINGO18\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.9\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\USER\.console-ninja\.bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\USER\Desktop\sqljdbc_12.4\enu\auth\x86;E:\Python\PyCharm Community Edition 2023.2.4\bin;E:\Program Files\IntelliJ IDEA Community Edition 2023.2.5\bin;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;D:\Usuariosss\IntelliJ IDEA 2023.2.5\bin;C:\Users\USER\Documents\Carpetas Generales\Guardar\sqljdbc_12.4\enu\auth\x64;C:\Users\USER\AppData\Local\Programs\oh-my-posh\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\USER\AppData\Local\Coursier\data\bin;D:\Archivos de programa\IntelliJ IDEA 2024.2.4\bin;D:\Archivos de programa\PyCharm 2024.2.4\bin;C:\Users\USER\AppData\Local\JetBrains\Toolbox\scripts;;D:\Archivos de programa\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+JRE paths:	;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin;C:\Program Files\Java\jdk-23\bin;C:\Users\USER\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python312\;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\GitHub CLI\;C:\ProgramData\chocolatey\bin;C:\Gradle\gradle-8.6\bin;C:\Users\USER\eclipse\ja;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\Downloads\php-8.3.6-Win32-vs16-x64;F:\Ciclo 05 Marzo\PortableGit;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.4\bin;C:\QMK_MSYS\conemu;C:\Users\USER\LINGO64_21\;C:\Users\USER\LINGO18\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.9\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\USER\.console-ninja\.bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\USER\Desktop\sqljdbc_12.4\enu\auth\x86;E:\Python\PyCharm Community Edition 2023.2.4\bin;E:\Program Files\IntelliJ IDEA Community Edition 2023.2.5\bin;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;D:\Usuariosss\IntelliJ IDEA 2023.2.5\bin;C:\Users\USER\Documents\Carpetas Generales\Guardar\sqljdbc_12.4\enu\auth\x64;C:\Users\USER\AppData\Local\Programs\oh-my-posh\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\USER\AppData\Local\Coursier\data\bin;D:\Archivos de programa\IntelliJ IDEA 2024.2.4\bin;D:\Archivos de programa\PyCharm 2024.2.4\bin;C:\Users\USER\AppData\Local\JetBrains\Toolbox\scripts;;D:\Archivos de programa\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+Check launcher:	C:\Users\USER\.dotnet\tools\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin\javaw.exe (OK)
+Version string: 1.021.000_001 / 64-Bit (OK)
+Main class:	view.ViewInicioSesion
+Add classpath:	.\lib
+Launcher:	C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\USER\Desktop\Nueva carpeta (2)\ProyectoFinal.exe;.\lib" view.ViewInicioSesion
+Args length:	98/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\Nueva carpeta (2)\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\Nueva carpeta (2)\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin;C:\Program Files\Java\jdk-23\bin;C:\Users\USER\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python312\;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\GitHub CLI\;C:\ProgramData\chocolatey\bin;C:\Gradle\gradle-8.6\bin;C:\Users\USER\eclipse\ja;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\Downloads\php-8.3.6-Win32-vs16-x64;F:\Ciclo 05 Marzo\PortableGit;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.4\bin;C:\QMK_MSYS\conemu;C:\Users\USER\LINGO64_21\;C:\Users\USER\LINGO18\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.9\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\USER\.console-ninja\.bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\USER\Desktop\sqljdbc_12.4\enu\auth\x86;E:\Python\PyCharm Community Edition 2023.2.4\bin;E:\Program Files\IntelliJ IDEA Community Edition 2023.2.5\bin;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;D:\Usuariosss\IntelliJ IDEA 2023.2.5\bin;C:\Users\USER\Documents\Carpetas Generales\Guardar\sqljdbc_12.4\enu\auth\x64;C:\Users\USER\AppData\Local\Programs\oh-my-posh\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\USER\AppData\Local\Coursier\data\bin;D:\Archivos de programa\IntelliJ IDEA 2024.2.4\bin;D:\Archivos de programa\PyCharm 2024.2.4\bin;C:\Users\USER\AppData\Local\JetBrains\Toolbox\scripts;;D:\Archivos de programa\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+JRE paths:	;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin;C:\Program Files\Java\jdk-23\bin;C:\Users\USER\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python312\;C:\Program Files\Microsoft MPI\Bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\dotnet\;D:\Downloads\SQL (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\GitHub CLI\;C:\ProgramData\chocolatey\bin;C:\Gradle\gradle-8.6\bin;C:\Users\USER\eclipse\ja;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;D:\Downloads\php-8.3.6-Win32-vs16-x64;F:\Ciclo 05 Marzo\PortableGit;C:\Program Files\Git\cmd;C:\Program Files\MySQL\MySQL Server 8.4\bin;C:\QMK_MSYS\conemu;C:\Users\USER\LINGO64_21\;C:\Users\USER\LINGO18\;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\lib\maven\apache-maven-3.9.9\bin;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\USER\.console-ninja\.bin;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Azure Data Studio\bin;C:\Users\USER\Desktop\sqljdbc_12.4\enu\auth\x86;E:\Python\PyCharm Community Edition 2023.2.4\bin;E:\Program Files\IntelliJ IDEA Community Edition 2023.2.5\bin;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;D:\Usuariosss\IntelliJ IDEA 2023.2.5\bin;C:\Users\USER\Documents\Carpetas Generales\Guardar\sqljdbc_12.4\enu\auth\x64;C:\Users\USER\AppData\Local\Programs\oh-my-posh\bin;C:\Users\USER\AppData\Local\GitHubDesktop\bin;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\USER\AppData\Local\Coursier\data\bin;D:\Archivos de programa\IntelliJ IDEA 2024.2.4\bin;D:\Archivos de programa\PyCharm 2024.2.4\bin;C:\Users\USER\AppData\Local\JetBrains\Toolbox\scripts;;D:\Archivos de programa\IntelliJ IDEA Community Edition 2024.2.4\bin;;C:\Users\USER\.dotnet\tools;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin
+Check launcher:	C:\Users\USER\.dotnet\tools\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin\javaw.exe (OK)
+Version string: 1.021.000_001 / 64-Bit (OK)
+Main class:	view.ViewInicioSesion
+Add classpath:	.\lib
+Launcher:	C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\USER\Desktop\Nueva carpeta (2)\ProyectoFinal.exe;.\lib" view.ViewInicioSesion
+Args length:	98/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jre
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe (not found)
+Error msg:	This application requires a Java Runtime Environment.
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jre
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe (not found)
+Error msg:	This application requires a Java Runtime Environment.
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jre
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe (not found)
+Error msg:	This application requires a Java Runtime Environment.
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jre
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe (not found)
+Error msg:	This application requires a Java Runtime Environment.
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jre
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe (not found)
+Error msg:	This application requires a Java Runtime Environment.
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jre
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe (not found)
+Error msg:	This application requires a Java Runtime Environment.
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jre
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe (not found)
+Error msg:	This application requires a Java Runtime Environment.
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jre
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe (OK)
+Version string: 1.008.000_202 / 64-Bit (OK)
+Main class:	view.ViewInicioSesion
+Add classpath:	.\lib\*
+      "      :	.\lib\.
+      "      :	.\lib\..
+      "      :	.\lib\AbsoluteLayout.jar
+      "      :	.\lib\commons-collections4-4.4.jar
+      "      :	.\lib\commons-io-2.11.0.jar
+      "      :	.\lib\commons-io-2.17.0.jar
+      "      :	.\lib\commons-lang3-3.17.0.jar
+      "      :	.\lib\flatlaf-demo-3.5.1.jar
+      "      :	.\lib\guava-33.3.1-jre.jar
+      "      :	.\lib\hamcrest-3.0.jar
+      "      :	.\lib\junit-4.13.2.jar
+      "      :	.\lib\logback-classic-1.5.11.jar
+      "      :	.\lib\logback-core-1.5.11.jar
+      "      :	.\lib\mysql-connector-j-9.0.0.jar
+      "      :	.\lib\nblibraries.properties
+      "      :	.\lib\openpdf-2.0.3.jar
+      "      :	.\lib\org-netbeans-modules-java-j2seproject-copylibstask.jar
+      "      :	.\lib\poi-3.12-20150511.jar
+      "      :	.\lib\poi-ooxml-3.12-20150511.jar
+      "      :	.\lib\poi-ooxml-schemas-3.12-20150511.jar
+      "      :	.\lib\slf4j-api-2.0.16.jar
+      "      :	.\lib\timingframework-1.0.jar
+      "      :	.\lib\xmlbeans-2.6.0.jar
+Launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe;.\lib\.;.\lib\..;.\lib\AbsoluteLayout.jar;.\lib\commons-collections4-4.4.jar;.\lib\commons-io-2.11.0.jar;.\lib\commons-io-2.17.0.jar;.\lib\commons-lang3-3.17.0.jar;.\lib\flatlaf-demo-3.5.1.jar;.\lib\guava-33.3.1-jre.jar;.\lib\hamcrest-3.0.jar;.\lib\junit-4.13.2.jar;.\lib\logback-classic-1.5.11.jar;.\lib\logback-core-1.5.11.jar;.\lib\mysql-connector-j-9.0.0.jar;.\lib\nblibraries.properties;.\lib\openpdf-2.0.3.jar;.\lib\org-netbeans-modules-java-j2seproject-copylibstask.jar;.\lib\poi-3.12-20150511.jar;.\lib\poi-ooxml-3.12-20150511.jar;.\lib\poi-ooxml-schemas-3.12-20150511.jar;.\lib\slf4j-api-2.0.16.jar;.\lib\timingframework-1.0.jar;.\lib\xmlbeans-2.6.0.jar" view.ViewInicioSesion
+Args length:	762/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jre
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jre\bin\javaw.exe (not found)
+Error msg:	This application requires a Java Runtime Environment.
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jdk
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jdk\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Main class:	view.ViewInicioSesion
+Add classpath:	.\lib\*
+      "      :	.\lib\.
+      "      :	.\lib\..
+      "      :	.\lib\AbsoluteLayout.jar
+      "      :	.\lib\commons-collections4-4.4.jar
+      "      :	.\lib\commons-io-2.11.0.jar
+      "      :	.\lib\commons-io-2.17.0.jar
+      "      :	.\lib\commons-lang3-3.17.0.jar
+      "      :	.\lib\flatlaf-demo-3.5.1.jar
+      "      :	.\lib\guava-33.3.1-jre.jar
+      "      :	.\lib\hamcrest-3.0.jar
+      "      :	.\lib\junit-4.13.2.jar
+      "      :	.\lib\logback-classic-1.5.11.jar
+      "      :	.\lib\logback-core-1.5.11.jar
+      "      :	.\lib\mysql-connector-j-9.0.0.jar
+      "      :	.\lib\nblibraries.properties
+      "      :	.\lib\openpdf-2.0.3.jar
+      "      :	.\lib\org-netbeans-modules-java-j2seproject-copylibstask.jar
+      "      :	.\lib\poi-3.12-20150511.jar
+      "      :	.\lib\poi-ooxml-3.12-20150511.jar
+      "      :	.\lib\poi-ooxml-schemas-3.12-20150511.jar
+      "      :	.\lib\slf4j-api-2.0.16.jar
+      "      :	.\lib\timingframework-1.0.jar
+      "      :	.\lib\xmlbeans-2.6.0.jar
+Launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jdk\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe;.\lib\.;.\lib\..;.\lib\AbsoluteLayout.jar;.\lib\commons-collections4-4.4.jar;.\lib\commons-io-2.11.0.jar;.\lib\commons-io-2.17.0.jar;.\lib\commons-lang3-3.17.0.jar;.\lib\flatlaf-demo-3.5.1.jar;.\lib\guava-33.3.1-jre.jar;.\lib\hamcrest-3.0.jar;.\lib\junit-4.13.2.jar;.\lib\logback-classic-1.5.11.jar;.\lib\logback-core-1.5.11.jar;.\lib\mysql-connector-j-9.0.0.jar;.\lib\nblibraries.properties;.\lib\openpdf-2.0.3.jar;.\lib\org-netbeans-modules-java-j2seproject-copylibstask.jar;.\lib\poi-3.12-20150511.jar;.\lib\poi-ooxml-3.12-20150511.jar;.\lib\poi-ooxml-schemas-3.12-20150511.jar;.\lib\slf4j-api-2.0.16.jar;.\lib\timingframework-1.0.jar;.\lib\xmlbeans-2.6.0.jar" view.ViewInicioSesion
+Args length:	762/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jdk
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jdk\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Main class:	view.ViewInicioSesion
+Add classpath:	.\lib\*
+      "      :	.\lib\.
+      "      :	.\lib\..
+      "      :	.\lib\AbsoluteLayout.jar
+      "      :	.\lib\commons-collections4-4.4.jar
+      "      :	.\lib\commons-io-2.11.0.jar
+      "      :	.\lib\commons-io-2.17.0.jar
+      "      :	.\lib\commons-lang3-3.17.0.jar
+      "      :	.\lib\flatlaf-demo-3.5.1.jar
+      "      :	.\lib\guava-33.3.1-jre.jar
+      "      :	.\lib\hamcrest-3.0.jar
+      "      :	.\lib\junit-4.13.2.jar
+      "      :	.\lib\logback-classic-1.5.11.jar
+      "      :	.\lib\logback-core-1.5.11.jar
+      "      :	.\lib\mysql-connector-j-9.0.0.jar
+      "      :	.\lib\nblibraries.properties
+      "      :	.\lib\openpdf-2.0.3.jar
+      "      :	.\lib\org-netbeans-modules-java-j2seproject-copylibstask.jar
+      "      :	.\lib\poi-3.12-20150511.jar
+      "      :	.\lib\poi-ooxml-3.12-20150511.jar
+      "      :	.\lib\poi-ooxml-schemas-3.12-20150511.jar
+      "      :	.\lib\slf4j-api-2.0.16.jar
+      "      :	.\lib\timingframework-1.0.jar
+      "      :	.\lib\xmlbeans-2.6.0.jar
+Launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jdk\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe;.\lib\.;.\lib\..;.\lib\AbsoluteLayout.jar;.\lib\commons-collections4-4.4.jar;.\lib\commons-io-2.11.0.jar;.\lib\commons-io-2.17.0.jar;.\lib\commons-lang3-3.17.0.jar;.\lib\flatlaf-demo-3.5.1.jar;.\lib\guava-33.3.1-jre.jar;.\lib\hamcrest-3.0.jar;.\lib\junit-4.13.2.jar;.\lib\logback-classic-1.5.11.jar;.\lib\logback-core-1.5.11.jar;.\lib\mysql-connector-j-9.0.0.jar;.\lib\nblibraries.properties;.\lib\openpdf-2.0.3.jar;.\lib\org-netbeans-modules-java-j2seproject-copylibstask.jar;.\lib\poi-3.12-20150511.jar;.\lib\poi-ooxml-3.12-20150511.jar;.\lib\poi-ooxml-schemas-3.12-20150511.jar;.\lib\slf4j-api-2.0.16.jar;.\lib\timingframework-1.0.jar;.\lib\xmlbeans-2.6.0.jar" view.ViewInicioSesion
+Args length:	762/32768 chars
+Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+JRE paths:	jdk
+Check launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jdk\bin\javaw.exe (OK)
+Version string: 1.023.000_001 / 64-Bit (OK)
+Main class:	view.ViewInicioSesion
+Add classpath:	.\lib\*
+      "      :	.\lib\.
+      "      :	.\lib\..
+      "      :	.\lib\AbsoluteLayout.jar
+      "      :	.\lib\commons-collections4-4.4.jar
+      "      :	.\lib\commons-io-2.11.0.jar
+      "      :	.\lib\commons-io-2.17.0.jar
+      "      :	.\lib\commons-lang3-3.17.0.jar
+      "      :	.\lib\flatlaf-demo-3.5.1.jar
+      "      :	.\lib\guava-33.3.1-jre.jar
+      "      :	.\lib\hamcrest-3.0.jar
+      "      :	.\lib\junit-4.13.2.jar
+      "      :	.\lib\logback-classic-1.5.11.jar
+      "      :	.\lib\logback-core-1.5.11.jar
+      "      :	.\lib\mysql-connector-j-9.0.0.jar
+      "      :	.\lib\nblibraries.properties
+      "      :	.\lib\openpdf-2.0.3.jar
+      "      :	.\lib\org-netbeans-modules-java-j2seproject-copylibstask.jar
+      "      :	.\lib\poi-3.12-20150511.jar
+      "      :	.\lib\poi-ooxml-3.12-20150511.jar
+      "      :	.\lib\poi-ooxml-schemas-3.12-20150511.jar
+      "      :	.\lib\slf4j-api-2.0.16.jar
+      "      :	.\lib\timingframework-1.0.jar
+      "      :	.\lib\xmlbeans-2.6.0.jar
+Launcher:	C:\Users\USER\Desktop\ProyectoFinal Ejecutable\jdk\bin\javaw.exe
+Launcher args:	-classpath "C:\Users\USER\Desktop\ProyectoFinal Ejecutable\ProyectoFinal.exe;.\lib\.;.\lib\..;.\lib\AbsoluteLayout.jar;.\lib\commons-collections4-4.4.jar;.\lib\commons-io-2.11.0.jar;.\lib\commons-io-2.17.0.jar;.\lib\commons-lang3-3.17.0.jar;.\lib\flatlaf-demo-3.5.1.jar;.\lib\guava-33.3.1-jre.jar;.\lib\hamcrest-3.0.jar;.\lib\junit-4.13.2.jar;.\lib\logback-classic-1.5.11.jar;.\lib\logback-core-1.5.11.jar;.\lib\mysql-connector-j-9.0.0.jar;.\lib\nblibraries.properties;.\lib\openpdf-2.0.3.jar;.\lib\org-netbeans-modules-java-j2seproject-copylibstask.jar;.\lib\poi-3.12-20150511.jar;.\lib\poi-ooxml-3.12-20150511.jar;.\lib\poi-ooxml-schemas-3.12-20150511.jar;.\lib\slf4j-api-2.0.16.jar;.\lib\timingframework-1.0.jar;.\lib\xmlbeans-2.6.0.jar" view.ViewInicioSesion
+Args length:	762/32768 chars
+Exit code:	0
