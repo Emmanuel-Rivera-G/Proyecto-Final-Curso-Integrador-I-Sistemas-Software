@@ -1,29 +1,92 @@
 CREATE DATABASE control_stock
 use control_stock
 
-CREATE TABLE `tipo_usuario` (
-  `id_tipo_usuario` INT AUTO_INCREMENT PRIMARY KEY,
-  `nombre_tipo_usuario` VARCHAR(20) NOT NULL UNIQUE -- Por ejemplo: 'Administrador', 'Empleado'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- Tabla: categorias
+CREATE TABLE categorias (
+    id_categoria INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id_categoria)
+);
+
+-- Tabla: entradas
+CREATE TABLE entradas (
+    id_Entrada INT NOT NULL AUTO_INCREMENT,
+    idProductos INT NOT NULL,
+    nombreProductos VARCHAR(255),
+    descripcionOperacion VARCHAR(255),
+    cantidad INT NOT NULL,
+    precioUnitario DECIMAL(10,2) NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
+    fecha VARCHAR(50) NOT NULL,
+    id_proveedor INT NOT NULL,
+    id_usuario INT NOT NULL,
+    PRIMARY KEY (id_Entrada),
+    FOREIGN KEY (idProductos) REFERENCES productos(id),
+    FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor),
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+);
+
+-- Tabla: productos
+CREATE TABLE productos (
+    id INT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(155) UNIQUE,
+    idCategoria INT,
+    undMedida VARCHAR(45),
+    Stock INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (idCategoria) REFERENCES categorias(id_categoria)
+);
+
+-- Tabla: proveedor
+CREATE TABLE proveedor (
+    id_proveedor INT NOT NULL AUTO_INCREMENT,
+    razon_social VARCHAR(100) NOT NULL,
+    direccion VARCHAR(150) NOT NULL,
+    numero_contacto VARCHAR(20) NOT NULL,
+    email VARCHAR(50) UNIQUE NOT NULL,
+    PRIMARY KEY (id_proveedor)
+);
+
+-- Tabla: salidas
+CREATE TABLE salidas (
+    idSalida INT NOT NULL AUTO_INCREMENT,
+    idProducto INT NOT NULL,
+    cantidad INT NOT NULL,
+    valorUnitario DECIMAL(10,2) NOT NULL,
+    valorTotal DECIMAL(10,2) NOT NULL,
+    fechaSalida TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    idUsuario INT NOT NULL,
+    PRIMARY KEY (idSalida),
+    FOREIGN KEY (idProducto) REFERENCES productos(id),
+    FOREIGN KEY (idUsuario) REFERENCES usuario(id_usuario)
+);
+
+-- Tabla: tipo_usuario
+CREATE TABLE tipo_usuario (
+    id_tipo_usuario INT NOT NULL AUTO_INCREMENT,
+    nombre_tipo_usuario VARCHAR(20) UNIQUE NOT NULL,
+    PRIMARY KEY (id_tipo_usuario)
+);
+
+-- Tabla: usuario
+CREATE TABLE usuario (
+    id_usuario INT NOT NULL AUTO_INCREMENT,
+    nombre_usuario VARCHAR(50) NOT NULL,
+    apellido_usuario VARCHAR(50) NOT NULL,
+    documento_usuario VARCHAR(20) NOT NULL,
+    direccion_usuario VARCHAR(100),
+    telefono_usuario VARCHAR(15),
+    correo_usuario VARCHAR(100) NOT NULL,
+    id_tipo_usuario INT NOT NULL,
+    username VARCHAR(30) NOT NULL,
+    password_usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_usuario),
+    FOREIGN KEY (id_tipo_usuario) REFERENCES tipo_usuario(id_tipo_usuario)
+);
 
 -- Insertar tipos de usuario
 INSERT INTO `tipo_usuario` (nombre_tipo_usuario) VALUES ('Administrador');
 INSERT INTO `tipo_usuario` (nombre_tipo_usuario) VALUES ('Empleado');
-
--- Crear la tabla usuario
-CREATE TABLE `usuario` (
-  `id_usuario` INT AUTO_INCREMENT PRIMARY KEY,
-  `nombre_usuario` VARCHAR(50) NOT NULL,
-  `apellido_usuario` VARCHAR(50) NOT NULL,
-  `documento_usuario` VARCHAR(12) NOT NULL UNIQUE,
-  `direccion_usuario` VARCHAR(100) NOT NULL,
-  `telefono_usuario` VARCHAR(15) NOT NULL,
-  `correo_usuario` VARCHAR(50) NOT NULL UNIQUE,
-  `id_tipo_usuario` INT NOT NULL, 
-  `username` VARCHAR(30) NOT NULL UNIQUE,
-  `password_usuario` VARCHAR(32) NOT NULL, 
-  FOREIGN KEY (`id_tipo_usuario`) REFERENCES `tipo_usuario` (`id_tipo_usuario`) ON DELETE RESTRICT -- No permitimos eliminar tipos de usuario si están asignados
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO usuario (id_usuario, nombre_usuario, apellido_usuario, documento_usuario, direccion_usuario, telefono_usuario, correo_usuario, id_tipo_usuario, username, password_usuario) VALUES
 (1, 'Juan', 'Pérez', '12345678', 'Av. Siempre Viva 123', '5551234', 'juan.perez@example.com', 1, 'juanp', 'pass123'),
@@ -43,14 +106,6 @@ INSERT INTO usuario (id_usuario, nombre_usuario, apellido_usuario, documento_usu
 (16, 'admin', 'root', '99999999', 'Av.', '00000000', 'root@admin.pass', 1, '', ''),
 (17, 'Jesamin', 'Zeballos', '4654654', 'Calle 2', '4654', 'jesamin@gmail.com', 1, 'admin1', 'admin1');
 
-
--- Crear la tabla categorias
-CREATE TABLE categorias (
-    `id_categoria` INT AUTO_INCREMENT PRIMARY KEY,
-    `nombre` VARCHAR(100) UNIQUE NOT NULL,
-    `detalles` VARCHAR(500)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 INSERT INTO categorias (id_categoria, nombre) VALUES
 (1, 'Granos y Harinas'),
 (2, 'Lácteos y Aceites'),
@@ -61,17 +116,6 @@ INSERT INTO categorias (id_categoria, nombre) VALUES
 (7, 'Enlatados'),
 (8, 'Café'),
 (9, 'Cereales y Chocolates');
-
-
--- Crear la tabla productos
-CREATE TABLE productos (
-    `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `nombre` VARCHAR(100) UNIQUE NOT NULL,
-    `idCategoria` INT NOT NULL,
-    `undMedida` VARCHAR(50) NOT NULL,
-    `stock` INT NOT NULL,
-    FOREIGN KEY (`idCategoria`) REFERENCES `categorias` (`id_categoria`) ON DELETE RESTRICT
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO productos (id, nombre, idCategoria, undMedida, Stock) VALUES
 (1, 'Arroz Blanco', 1, 'kg', 120),
@@ -122,20 +166,6 @@ INSERT INTO productos (id, nombre, idCategoria, undMedida, Stock) VALUES
 (53, 'Maíz', 2, 'kg', 230),
 (66, 'Arroz', 2, 'kg', 120);
 
-
--- Crear la tabla entradas
-CREATE TABLE entradas (
-    id_Entrada INT AUTO_INCREMENT PRIMARY KEY,
-    idProductos INT NOT NULL,
-    nombreProductos VARCHAR(100) NOT NULL,
-    descripcionOperacion VARCHAR(255),
-    cantidad INT NOT NULL,
-    precioUnitario DECIMAL(10, 2) NOT NULL,
-    total DECIMAL(10, 2) NOT NULL,
-    fecha DATETIME NOT NULL,
-    FOREIGN KEY (idProductos) REFERENCES productos(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 INSERT INTO entradas (id_Entrada, idProductos, nombreProductos, descripcionOperacion, cantidad, precioUnitario, total, fecha, idProductos) VALUES
 (1, 1, 'Arroz Blanco', 'Compra inicial de producto', 50, 1.20, 60.00, '2024-11-19'),
 (2, 2, 'Frijol Negro', 'Reabastecimiento semanal', 30, 2.50, 75.00, '2024-11-19'),
@@ -146,20 +176,6 @@ INSERT INTO entradas (id_Entrada, idProductos, nombreProductos, descripcionOpera
 (7, 7, 'Leche Entera', 'Pedido urgente', 15, 4.00, 60.00, '2024-11-16'),
 (8, 8, 'Pan Integral', 'Reposición diaria', 35, 1.50, 52.50, '2024-11-16'),
 (9, 9, 'Sal de Mesa', 'Compra por temporada', 20, 0.50, 10.00, '2024-11-15');
-
-
--- Crear la tabla salidas
-CREATE TABLE Salidas (
-    idSalida INT PRIMARY KEY AUTO_INCREMENT,
-    idProducto INT NOT NULL, 
-    cantidad INT NOT NULL,
-    valorUnitario DECIMAL(10, 2) NOT NULL, 
-    valorTotal DECIMAL(10, 2) NOT NULL,
-    fechaSalida TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    idUsuario INT NOT NULL, -- Referencia al usuario responsable
-    FOREIGN KEY (idProducto) REFERENCES productos(id),
-    FOREIGN KEY (idUsuario) REFERENCES usuario(id_usuario)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO alidas (idSalida, idProducto, cantidad, valorUnitario, valorTotal, fechaSalida, idUsuario) VALUES
 (1, 1, 20, 1.20, 24.00, '2024-11-20 10:00:00', 1), -- Venta parcial de "Arroz Blanco"
