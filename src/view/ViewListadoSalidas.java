@@ -72,7 +72,7 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
         this.tipoUsuario = tipoUsuario;
         this.setBackground(Color.decode("#000511"));
         initComponents();
-
+        ControllerSalida controlador = new ControllerSalida(this);
     }
 
     /**
