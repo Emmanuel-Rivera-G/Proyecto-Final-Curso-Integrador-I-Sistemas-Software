@@ -107,9 +107,6 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
         lbl_anular = new javax.swing.JLabel();
         lbl_buscar4 = new javax.swing.JLabel();
         lbl_pdf = new javax.swing.JLabel();
-        panel_cont_icon_user13 =  new RoundedPanel(30, Color.WHITE);
-        jScrollPane4 = new javax.swing.JScrollPane();
-        lbl_salidas_p = new javax.swing.JTable();
 
         setPreferredSize(new java.awt.Dimension(839, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -160,10 +157,11 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
         panel_cont_icon_user2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user2.setForeground(new java.awt.Color(19, 22, 27));
 
+        panel_cont_icon_user5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user5.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_numero.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
-        lbl_numero.setText("Numero :");
+        lbl_numero.setText("Nombre :");
 
         txtField_salida.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
 
@@ -220,7 +218,7 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
             panel_cont_icon_user7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 1040, Short.MAX_VALUE)
+                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panel_cont_icon_user7Layout.setVerticalGroup(
@@ -262,17 +260,19 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
             panel_cont_icon_user10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_cont_icon_user10Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
+        panel_cont_icon_user11.setBackground(new java.awt.Color(255, 255, 255));
+        panel_cont_icon_user11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user11.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_fechaInicial.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         lbl_fechaInicial.setText("Fecha Inicial :");
 
         lbl_fechaFinal.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
-        lbl_fechaFinal.setText("Fecha Final :");
+        lbl_fechaFinal.setText("Cantidad :");
 
         lblFechaFinal.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
 
@@ -291,7 +291,7 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
                 .addGroup(panel_cont_icon_user11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtField_fechaInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblFechaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addGap(0, 48, Short.MAX_VALUE))
         );
         panel_cont_icon_user11Layout.setVerticalGroup(
             panel_cont_icon_user11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,9 +304,10 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
                 .addGroup(panel_cont_icon_user11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_fechaFinal)
                     .addComponent(lblFechaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
+        panel_cont_icon_user12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         panel_cont_icon_user12.setForeground(new java.awt.Color(19, 22, 27));
 
         lbl_anular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/style/icons-registro/icon-anular.png"))); // NOI18N
@@ -323,7 +324,7 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(panel_cont_icon_user12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user12Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 115, Short.MAX_VALUE)
                         .addComponent(lbl_pdf))
                     .addGroup(panel_cont_icon_user12Layout.createSequentialGroup()
                         .addGroup(panel_cont_icon_user12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,7 +336,7 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
         panel_cont_icon_user12Layout.setVerticalGroup(
             panel_cont_icon_user12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user12Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lbl_buscar4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lbl_pdf, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -344,61 +345,26 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
                 .addGap(12, 12, 12))
         );
 
-        panel_cont_icon_user13.setForeground(new java.awt.Color(19, 22, 27));
-
-        lbl_salidas_p.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
-        lbl_salidas_p.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID Producto", "Cantidad"
-            }
-        ));
-        lbl_salidas_p.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lbl_salidas_pMouseClicked(evt);
-            }
-        });
-        jScrollPane4.setViewportView(lbl_salidas_p);
-
-        javax.swing.GroupLayout panel_cont_icon_user13Layout = new javax.swing.GroupLayout(panel_cont_icon_user13);
-        panel_cont_icon_user13.setLayout(panel_cont_icon_user13Layout);
-        panel_cont_icon_user13Layout.setHorizontalGroup(
-            panel_cont_icon_user13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_cont_icon_user13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        panel_cont_icon_user13Layout.setVerticalGroup(
-            panel_cont_icon_user13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_cont_icon_user13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
         javax.swing.GroupLayout panel_cont_icon_user2Layout = new javax.swing.GroupLayout(panel_cont_icon_user2);
         panel_cont_icon_user2.setLayout(panel_cont_icon_user2Layout);
         panel_cont_icon_user2Layout.setHorizontalGroup(
             panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_cont_icon_user2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panel_cont_icon_user7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panel_cont_icon_user2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_cont_icon_user2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panel_cont_icon_user7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panel_cont_icon_user2Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
                         .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(panel_cont_icon_user10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(panel_cont_icon_user2Layout.createSequentialGroup()
                                 .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(panel_cont_icon_user11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(panel_cont_icon_user10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(panel_cont_icon_user12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(panel_cont_icon_user13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 22, Short.MAX_VALUE))
+                                .addComponent(panel_cont_icon_user11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(panel_cont_icon_user12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 14, Short.MAX_VALUE)))
+                .addGap(6, 6, 6))
         );
         panel_cont_icon_user2Layout.setVerticalGroup(
             panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,14 +373,12 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
                 .addComponent(panel_cont_icon_user7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panel_cont_icon_user12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panel_cont_icon_user11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(24, 24, 24)
-                .addGroup(panel_cont_icon_user2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panel_cont_icon_user10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panel_cont_icon_user13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                    .addComponent(panel_cont_icon_user5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panel_cont_icon_user12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panel_cont_icon_user10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         add(panel_cont_icon_user2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 1100, 590));
@@ -423,10 +387,6 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
     private void tbl_listadoSalidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbl_listadoSalidasMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tbl_listadoSalidasMouseClicked
-
-    private void lbl_salidas_pMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_salidas_pMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lbl_salidas_pMouseClicked
     /**
      * Cambia la vista al registro de salidas.
      * <p>
@@ -474,9 +434,9 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
         return lbl_pdf;
     }
 
-    public JTable getLbl_salidas_p() {
+    /*public JTable getLbl_salidas_p() {
         return lbl_salidas_p;
-    }
+    }*/
 
     public JTable getTbl_listadoSalidas() {
         return tbl_listadoSalidas;
@@ -499,7 +459,6 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField lblFechaFinal;
     private javax.swing.JLabel lbl_anular;
     private javax.swing.JLabel lbl_buscar4;
@@ -509,12 +468,10 @@ public class ViewListadoSalidas extends javax.swing.JPanel {
     private javax.swing.JLabel lbl_numero;
     private javax.swing.JLabel lbl_pdf;
     private javax.swing.JLabel lbl_registro_salidas;
-    private javax.swing.JTable lbl_salidas_p;
     private javax.swing.JPanel panel_cont_icon_user1;
     private javax.swing.JPanel panel_cont_icon_user10;
     private javax.swing.JPanel panel_cont_icon_user11;
     private javax.swing.JPanel panel_cont_icon_user12;
-    private javax.swing.JPanel panel_cont_icon_user13;
     private javax.swing.JPanel panel_cont_icon_user2;
     private javax.swing.JPanel panel_cont_icon_user5;
     private javax.swing.JPanel panel_cont_icon_user7;

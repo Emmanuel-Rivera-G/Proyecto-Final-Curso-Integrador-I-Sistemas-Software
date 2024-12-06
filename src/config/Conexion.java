@@ -19,17 +19,17 @@ public class Conexion {
     /**
      * URL base para la conexión a la base de datos.
      */
-    private final String URL = "jdbc:mysql://localhost:";
+    private final String URL = "jdbc:mysql://junction.proxy.rlwy.net:";
     
     /**
      * Puerto de conexión a la base de datos.
      */
-    private final int PUERTO = 3306;
+    private final int PUERTO = 13784;
     
     /**
      * Nombre de la base de datos a la que se conectará.
      */
-    private final String NOMBRE_BD = "control_stock";
+    private final String NOMBRE_BD = "railway";
     
     /**
      * Nombre de usuario para la autenticación en la base de datos.
@@ -39,7 +39,7 @@ public class Conexion {
     /**
      * Contraseña para la autenticación en la base de datos.
      */
-    private final String CONTRASEÑA = "123456";
+    private final String CONTRASEÑA = "eebSnRnpWKNQVopcLYkHwXCmQTERnsZB";
     
     /**
      * URL completa generada a partir de la URL base, el puerto y el nombre de la base de datos.

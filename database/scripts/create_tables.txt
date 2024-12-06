@@ -1,5 +1,6 @@
 CREATE DATABASE control_stock
 use control_stock
+
 CREATE TABLE `tipo_usuario` (
   `id_tipo_usuario` INT AUTO_INCREMENT PRIMARY KEY,
   `nombre_tipo_usuario` VARCHAR(20) NOT NULL UNIQUE -- Por ejemplo: 'Administrador', 'Empleado'
@@ -31,7 +32,6 @@ INSERT INTO usuario (id_usuario, nombre_usuario, apellido_usuario, documento_usu
 (4, 'Laura', 'Fernández', '11223344', 'Calle Luna 321', '5559876', 'laura.fernandez@example.com', 1, 'lauraf', 'pass987'),
 (5, 'Miguel', 'Torres', '99887766', 'Av. Verde 456', '5554567', 'miguel.torres@example.com', 2, 'miguelt', 'pass654'),
 (6, 'Sofía', 'Martínez', '66778899', 'Calle Azul 789', '5553456', 'sofia.martinez@example.com', 2, 'sofiam', 'pass432'),
-(7, 'Pedro', 'López', '44556677', 'Av. Roja 123', '5552345', 'pedro.lopez@example.com', 1, 'pedrol', 'pass1234'),
 (8, 'Lucía', 'Ramírez', '99887755', 'Calle Blanca 456', '5556789', 'lucia.ramirez@example.com', 2, 'luciar', 'pass567'),
 (9, 'Manuel', 'Gómez', '22334455', 'Av. Central 789', '5559876', 'manuel.gomez@example.com', 2, 'manuelg', 'pass890'),
 (10, 'Elena', 'Morales', '33445566', 'Calle Oeste 321', '5551234', 'elena.morales@example.com', 2, 'elenam', 'pass321'),
@@ -41,9 +41,7 @@ INSERT INTO usuario (id_usuario, nombre_usuario, apellido_usuario, documento_usu
 (14, 'Raquel', 'Pérez', '77889900', 'Calle Sur 123', '5552345', 'raquel.perez@example.com', 2, 'raquelp', 'pass123'),
 (15, 'Hugo', 'Suárez', '11224488', 'Av. Norte 456', '5557654', 'hugo.suarez@example.com', 2, 'hugos', 'pass789'),
 (16, 'admin', 'root', '99999999', 'Av.', '00000000', 'root@admin.pass', 1, '', ''),
-(17, 'Jesamin', 'Zeballos', '4654654', 'Calle 2', '4654', 'jesamin@gmail.com', 1, 'admin1', 'admin1'),
-(18, 'Juan', '', '', '', '', '', 1, '', ''),
-(19, 'ggg', '', '', '', '', '', 1, '', '');
+(17, 'Jesamin', 'Zeballos', '4654654', 'Calle 2', '4654', 'jesamin@gmail.com', 1, 'admin1', 'admin1');
 
 
 -- Crear la tabla categorias
@@ -138,16 +136,16 @@ CREATE TABLE entradas (
     FOREIGN KEY (idProductos) REFERENCES productos(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO entradas (id_Entrada, idProductos, nombreProductos, descripcionOperacion, cantidad, precioUnitario, total, fecha, id_proveedor, id_usuario) VALUES
-(1, 1, 'Arroz Blanco', 'Compra inicial de producto', 50, 1.20, 60.00, '2024-11-19', 1, 1),
-(2, 2, 'Frijol Negro', 'Reabastecimiento semanal', 30, 2.50, 75.00, '2024-11-19', 2, 1),
-(3, 3, 'Aceite Vegetal', 'Reabastecimiento mensual', 20, 5.00, 100.00, '2024-11-18', 3, 2),
-(4, 4, 'Harina de Maíz', 'Ajuste de inventario', 40, 1.00, 40.00, '2024-11-18', 1, 3),
-(5, 5, 'Jabón de Barra', 'Oferta especial', 25, 0.80, 20.00, '2024-11-17', 2, 1),
-(6, 6, 'Detergente en Polvo', 'Compra mayorista', 10, 3.00, 30.00, '2024-11-17', 3, 2),
-(7, 7, 'Leche Entera', 'Pedido urgente', 15, 4.00, 60.00, '2024-11-16', 4, 2),
-(8, 8, 'Pan Integral', 'Reposición diaria', 35, 1.50, 52.50, '2024-11-16', 5, 3),
-(9, 9, 'Sal de Mesa', 'Compra por temporada', 20, 0.50, 10.00, '2024-11-15', 1, 1);
+INSERT INTO entradas (id_Entrada, idProductos, nombreProductos, descripcionOperacion, cantidad, precioUnitario, total, fecha, idProductos) VALUES
+(1, 1, 'Arroz Blanco', 'Compra inicial de producto', 50, 1.20, 60.00, '2024-11-19'),
+(2, 2, 'Frijol Negro', 'Reabastecimiento semanal', 30, 2.50, 75.00, '2024-11-19'),
+(3, 3, 'Aceite Vegetal', 'Reabastecimiento mensual', 20, 5.00, 100.00, '2024-11-18'),
+(4, 4, 'Harina de Maíz', 'Ajuste de inventario', 40, 1.00, 40.00, '2024-11-18'),
+(5, 5, 'Jabón de Barra', 'Oferta especial', 25, 0.80, 20.00, '2024-11-17'),
+(6, 6, 'Detergente en Polvo', 'Compra mayorista', 10, 3.00, 30.00, '2024-11-17'),
+(7, 7, 'Leche Entera', 'Pedido urgente', 15, 4.00, 60.00, '2024-11-16'),
+(8, 8, 'Pan Integral', 'Reposición diaria', 35, 1.50, 52.50, '2024-11-16'),
+(9, 9, 'Sal de Mesa', 'Compra por temporada', 20, 0.50, 10.00, '2024-11-15');
 
 
 -- Crear la tabla salidas
@@ -159,11 +157,11 @@ CREATE TABLE Salidas (
     valorTotal DECIMAL(10, 2) NOT NULL,
     fechaSalida TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     idUsuario INT NOT NULL, -- Referencia al usuario responsable
-    FOREIGN KEY (idProducto) REFERENCES Productos(id),
+    FOREIGN KEY (idProducto) REFERENCES productos(id),
     FOREIGN KEY (idUsuario) REFERENCES usuario(id_usuario)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO Salidas (idSalida, idProducto, cantidad, valorUnitario, valorTotal, fechaSalida, idUsuario) VALUES
+INSERT INTO alidas (idSalida, idProducto, cantidad, valorUnitario, valorTotal, fechaSalida, idUsuario) VALUES
 (1, 1, 20, 1.20, 24.00, '2024-11-20 10:00:00', 1), -- Venta parcial de "Arroz Blanco"
 (2, 2, 15, 2.50, 37.50, '2024-11-20 12:00:00', 1), -- Venta de "Frijol Negro"
 (3, 3, 10, 5.00, 50.00, '2024-11-19 15:00:00', 2), -- Ajuste de "Aceite Vegetal"

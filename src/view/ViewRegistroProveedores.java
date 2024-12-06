@@ -2,6 +2,7 @@ package view;
 
 import style.RoundedPanel;
 import java.awt.Color;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * La clase ViewRegistroProveedores representa el panel de registro de
@@ -19,6 +20,24 @@ public class ViewRegistroProveedores extends javax.swing.JPanel {
     public ViewRegistroProveedores() {
         this.setBackground(Color.decode("#000511"));
         initComponents();
+        String[] titles = {"Id Proveedor", "Razón Social", "Dirección", "Número de Contacto", "Email"};
+        DefaultTableModel dtm = new DefaultTableModel(titles, 0);
+        Object[][] data = {
+            {1, "Proveedor A", "Av. Industrial 123", "5551234567", "contacto@proveedora.com"},
+            {2, "Proveedor B", "Calle Comercio 456", "5557654321", "info@proveedorb.com"},
+            {3, "Proveedor C", "Av. Central 789", "5559876543", "ventas@proveedorc.com"},
+            {4, "Proveedor D", "Calle Secundaria 321", "5558765432", "soporte@proveedord.com"},
+            {5, "Proveedor E", "Av. Principal 654", "5551239876", "servicio@proveedore.com"},
+            {6, "Proveedor F", "Calle Los Pinos 987", "5556543210", "logistica@proveedorf.com"},
+            {7, "Proveedor G", "Av. América 852", "5557894561", "gerencia@proveedorg.com"},
+            {8, "Proveedor H", "Calle Victoria 963", "5554561237", "contacto@proveedorh.com"},
+            {9, "Proveedor I", "Av. Libertad 741", "5553217894", "info@proveedori.com"},
+            {10, "Proveedor J", "Calle Esperanza 159", "5559871234", "ventas@proveedorj.com"}
+        };
+        for (Object[] row : data) {
+            dtm.addRow(row);
+        }
+        this.tablaProveedores.setModel(dtm);
     }
 
     @SuppressWarnings("unchecked")

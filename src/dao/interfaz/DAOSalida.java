@@ -1,6 +1,7 @@
 package dao.interfaz;
 
 import dto.DTOSalida;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -50,4 +51,7 @@ public interface DAOSalida {
      * @return {@code true} si la eliminación fue exitosa, {@code false} si no se encontró la salida.
      */
     public boolean eliminarSalida(int idSalida);
+    
+    
+    public List<DTOSalida> buscarPorParametros(int idSalida, String nombreProducto, int cant, int stock, double valorU, double valorTotal, LocalDateTime tiempo);
 }
