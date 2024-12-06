@@ -12,8 +12,10 @@ import dto.DTOSalida;
 import dto.DTOUsuario;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import model.Producto;
 import org.slf4j.Logger;
 import service.ServiceUsuario;
 import utils.UtilsLoggerManager;
@@ -30,15 +32,15 @@ public class DAOSalidaImpl implements DAOSalida {
     
     private DAOProducto daoProducto = new DAOProductoImpl();
     private ServiceUsuario serviceUsuario;
-    private List<DTOUsuario> ususarioList;
+    private List<DTOUsuario> ususarioList = new ArrayList<>();
 
     public DAOSalidaImpl() {
         this.connection = new Conexion().getConnection();
         LOGGER.info("Instancia de DAOSalidaImpl creada con conexión a la base de datos.");
     
         try {
-            this.serviceUsuario = new ServiceUsuario();
             newThreadToUpdateUsersList();
+            this.serviceUsuario = new ServiceUsuario();
         } catch (Exception e) {
             LOGGER.error(e.getMessage());
         }
@@ -48,7 +50,7 @@ public class DAOSalidaImpl implements DAOSalida {
     public List<DTOSalida> obtenerTodasLasSalidas() {
         LOGGER.info("Obteniendo todas las salidas de la base de datos.");
         List<DTOSalida> salidas = new ArrayList<>();
-        String sql = "SELECT * FROM Salidas";
+        String sql = "SELECT * FROM salidas";
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
@@ -64,7 +66,7 @@ public class DAOSalidaImpl implements DAOSalida {
     @Override
     public DTOSalida obtenerSalidaPorId(int idSalida) {
         LOGGER.info("Obteniendo la salida con ID: {}", idSalida);
-        String sql = "SELECT * FROM Salidas WHERE idSalida = ?";
+        String sql = "SELECT * FROM salidas WHERE idSalida = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, idSalida);
             ResultSet rs = stmt.executeQuery();
@@ -83,7 +85,7 @@ public class DAOSalidaImpl implements DAOSalida {
     @Override
     public int guardarSalida(DTOSalida dtoSalida) {
         LOGGER.info("Insertando una nueva salida con ID: {}", dtoSalida.getIdSalida());
-        String sql = "INSERT INTO Salidas (idSalida, idProducto, cantidad, valorUnitario, valorTotal, fechaSalida, idUsuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO salidas (idSalida, idProducto, cantidad, valorUnitario, valorTotal, fechaSalida, idUsuario) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setInt(1, dtoSalida.getIdSalida());
             stmt.setInt(2, dtoSalida.getDtoProducto().getIdProducto());
@@ -110,7 +112,7 @@ public class DAOSalidaImpl implements DAOSalida {
     @Override
     public boolean actualizarSalida(DTOSalida dtoSalida) {
         LOGGER.info("Actualizando la salida con ID: {}", dtoSalida.getIdSalida());
-        String sql = "UPDATE Salidas SET idProducto = ?, cantidad = ?, valorUnitario = ?, valorTotal = ?, fechaSalida = ?, idUsuario = ? WHERE idSalida = ?";
+        String sql = "UPDATE salidas SET idProducto = ?, cantidad = ?, valorUnitario = ?, valorTotal = ?, fechaSalida = ?, idUsuario = ? WHERE idSalida = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, dtoSalida.getDtoProducto().getIdProducto());
             stmt.setInt(2, dtoSalida.getCantidad());
@@ -135,7 +137,7 @@ public class DAOSalidaImpl implements DAOSalida {
     @Override
     public boolean eliminarSalida(int idSalida) {
         LOGGER.info("Eliminando la salida con ID: {}", idSalida);
-        String sql = "DELETE FROM Salidas WHERE idSalida = ?";
+        String sql = "DELETE FROM salidas WHERE idSalida = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, idSalida);
             boolean deleted = stmt.executeUpdate() > 0;
@@ -185,14 +187,95 @@ public class DAOSalidaImpl implements DAOSalida {
     
     private void newThreadToUpdateUsersList() {
         Runnable runnable = () -> {
-            try {
-                this.ususarioList = serviceUsuario.obtenerUsuarios();
-                Thread.sleep(10000);
-            } catch (Exception e) {
-                LOGGER.error(e.getMessage());
+            while (true) {                
+                try {
+                    this.ususarioList = serviceUsuario.obtenerUsuarios();
+                    Thread.sleep(200000);
+                } catch (Exception e) {
+                    LOGGER.error(e.getMessage());
+                }
             }
         };
         new Thread(runnable)
                 .start();
     }
+
+    @Override
+    public List<DTOSalida> buscarPorParametros(int idSalida, String nombreProducto, int cant, int stock, double valorU, double valorTotal, LocalDateTime tiempo) {
+        StringBuilder sql = new StringBuilder("SELECT s.idSalida, p.id, p.nombre, p.undMedida, p.stock, ");
+        sql.append("s.cantidad, s.valorUnitario, s.valorTotal, s.fechaSalida, u.id_usuario, u.nombre_usuario ");
+        sql.append("FROM salidas s ");
+        sql.append("INNER JOIN productos p ON s.idProducto = p.id ");
+        sql.append("INNER JOIN usuario u ON s.idUsuario = u.id_usuario ");
+        sql.append("WHERE 1=1 ");
+
+        List<Object> parametros = new ArrayList<>();
+
+        if (idSalida > 0) {
+            sql.append("AND s.idSalida = ? ");
+            parametros.add(idSalida);
+        }
+        if (nombreProducto != null && !nombreProducto.isEmpty()) {
+            sql.append("AND p.nombre LIKE ? ");
+            parametros.add("%" + nombreProducto + "%");
+        }
+        if (cant > 0) {
+            sql.append("AND s.cantidad = ? ");
+            parametros.add(cant);
+        }
+        if (stock > 0) {
+            sql.append("AND p.stock = ? ");
+            parametros.add(stock);
+        }
+        if (valorU > 0) {
+            sql.append("AND s.valorUnitario = ? ");
+            parametros.add(valorU);
+        }
+        if (valorTotal > 0) {
+            sql.append("AND s.valorTotal = ? ");
+            parametros.add(valorTotal);
+        }
+        if (tiempo != null) {
+            sql.append("AND s.fechaSalida = ? ");
+            parametros.add(java.sql.Timestamp.valueOf(tiempo));
+        }
+
+        List<DTOSalida> salidas = new ArrayList<>();
+        try {
+            Connection conn = connection;
+            PreparedStatement ps = conn.prepareStatement(sql.toString());
+                     
+            for (int i = 0; i < parametros.size(); i++) {
+                ps.setObject(i + 1, parametros.get(i));
+            }
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    DTOProducto dtoProducto = new DTOProducto();
+                    dtoProducto.setNombre(rs.getString("p.nombre"));
+
+                    DTOUsuario dtoUsuario = new DTOUsuario();
+                    dtoUsuario.setNombre(rs.getString("u.nombre_usuario"));
+
+                    DTOSalida dtoSalida = new DTOSalida(
+                        rs.getInt("s.idSalida"),
+                        dtoProducto,
+                        rs.getInt("s.cantidad"),
+                        rs.getDouble("s.valorUnitario"),
+                        rs.getDouble("s.valorTotal"),
+                        rs.getTimestamp("s.fechaSalida").toLocalDateTime(),
+                        dtoUsuario,
+                        ""
+                    );
+
+                    salidas.add(dtoSalida);
+                }
+            }
+        } catch (SQLException e) {
+            LOGGER.error(e.getMessage());
+        }
+
+        return salidas;
+    }
+
 }

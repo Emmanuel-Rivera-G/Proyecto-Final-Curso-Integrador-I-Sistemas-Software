@@ -10,7 +10,7 @@ import model.Usuario;
  */
 public class DTOUsuario {
     /*Atributos*/
-    private int idUsuario;
+    private int idUsuario = 1;
     private String nombre;
     private String apellido;
     private String documento;

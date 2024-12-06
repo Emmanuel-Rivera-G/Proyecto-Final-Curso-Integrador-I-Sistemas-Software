@@ -378,6 +378,7 @@ public class ViewRegistroSalidas extends javax.swing.JPanel {
         lbl_igv.setText("IGV :");
 
         txtField_igv.setFont(new java.awt.Font("Gill Sans MT", 0, 12)); // NOI18N
+        txtField_igv.setText("0.18");
 
         lbl_total.setFont(new java.awt.Font("Gill Sans MT", 0, 14)); // NOI18N
         lbl_total.setText("Total :");

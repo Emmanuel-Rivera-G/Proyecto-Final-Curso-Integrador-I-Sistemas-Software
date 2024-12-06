@@ -5,14 +5,14 @@ import utils.UtilsCategoria;
 
 
 public class DTOProducto {
-    private int idProducto;
+    private int idProducto = 1;
     private String nombre;
     private int stock;
     private DTOCategoria categoria;
     private String undMedida;
 
     public DTOProducto() {
-        this.idProducto = -1;
+        this.idProducto = 1;
         this.nombre = null;
         this.stock = -1;
         this.categoria = null;

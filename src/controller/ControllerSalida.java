@@ -51,6 +51,7 @@ public class ControllerSalida {
     private JTable tablaListadoSalidasProductos;
 
     private DefaultTableModel defaultTablaSalidaModelListado;
+    private DefaultTableModel defaultTableSalidaProductoListado;
 
     private JLabel btnAnularListado;
     private JLabel btnBuscarListado;
@@ -72,7 +73,7 @@ public class ControllerSalida {
 
     private void iniciarTablasListado() {
         this.tablaListadoSalidas = vistaListado.getTbl_listadoSalidas();
-        this.tablaListadoSalidasProductos = vistaListado.getLbl_salidas_p();
+        //this.tablaListadoSalidasProductos = vistaListado.getLbl_salidas_p();
         iniciarDefaultModelTableListado();
     }
 
@@ -110,7 +111,6 @@ public class ControllerSalida {
         this.btnPdfListado.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.out.println("Hola");
                 actionBtnPdfListado(e);
             }
         });
@@ -124,12 +124,18 @@ public class ControllerSalida {
 
     private void actionBtnBuscarListado(MouseEvent event) {
         int idSalida = parseStringToInt.apply(this.txtSalidaIdListado.getText(), "El id tiene que ser un número.");
-        DTOSalida dtoSalida = serviceSalida.obtenerSalidaPorId(idSalida);
-        if (dtoSalida == null) {
-            MessageUtils.mostrarMensajeError("La salida buscada no exite de ID: " + idSalida);
-            return;
+        String nombreProducto = this.txtSalidaListado.getText();
+        int cant = parseStringToInt.apply(this.txtFechaFinalListado.getText(), "La cantidad tiene que ser un valor númerico.");
+        int stock = 0;
+        double valorU = 0;
+        
+        List<DTOSalida> lista = serviceSalida.buscarPorParametros(idSalida, nombreProducto, cant, stock, valorU, 0, null);
+        this.actualizarTablaSalidaListado(lista);
+        
+        if (lista.isEmpty()) {
+            actualizarTotalmenteTablaSalidaListado();
+            MessageUtils.mostrarMensajeError("La salida buscada no exite.");
         }
-        this.actualizarTablaSalidaListado(List.of(dtoSalida));
     }
 
     private void actionBtnPdfListado(MouseEvent event) {
@@ -310,34 +316,104 @@ public class ControllerSalida {
     }
     
     private void actionBtnAgregarRegistro(MouseEvent event) {
-        DTOSalida dtoSalida = new DTOSalida();
-        dtoSalida.setCantidad(Integer.parseInt(this.txtCantidadSalidaRegistro.getText()));
-        dtoSalida.setDestino("");
-        dtoSalida.setDtoProducto(new DTOProducto());
-        dtoSalida.setDtoUsuario(new DTOUsuario());
-        dtoSalida.setFechaSalida(LocalDateTime.parse(this.txtFechaSalidaRegistro.getText()));
-        dtoSalida.setIdSalida(parseStringToInt.apply(this.txtIdSalidaRegistro.getText(), "El id tiene que ser un número."));
-        dtoSalida.setValorTotal(Double.parseDouble(this.txtTotalSalidaRegistro.getText()));
-        dtoSalida.setValorUnitario(Double.parseDouble(this.txtTotalSalidaRegistro.getText()) / Double.parseDouble(this.txtCantidadSalidaRegistro.getText()));
-        MessageUtils.mostrarMensajeExitoso(String.valueOf(serviceSalida.guardarSalida(dtoSalida)));
+        try {
+            DTOSalida dtoSalida = new DTOSalida();
+
+            String cantidadText = this.txtCantidadSalidaRegistro.getText();
+            if (cantidadText.compareTo("") == 0 || cantidadText.isEmpty()) {
+                throw new IllegalArgumentException("La cantidad es obligatoria.");
+            }
+            int cantidad = Integer.parseInt(cantidadText);
+            dtoSalida.setCantidad(cantidad);
+
+            String destino = "Sin especificar";
+            dtoSalida.setDestino(destino.compareTo("") == 0 ? destino : "Sin especificar");
+
+            dtoSalida.setDtoProducto(new DTOProducto());
+            dtoSalida.setDtoUsuario(new DTOUsuario());
+
+            String time = this.txtFechaSalidaRegistro.getText();
+            LocalDateTime dateTime = (time.compareTo("") == 0 && !time.isEmpty()) 
+                    ? LocalDateTime.parse(time) 
+                    : LocalDateTime.now();
+            dtoSalida.setFechaSalida(dateTime);
+
+            String idText = this.txtIdSalidaRegistro.getText();
+            if (idText.compareTo("") == 0 || idText.isEmpty()) {
+                throw new IllegalArgumentException("El ID de salida es obligatorio.");
+            }
+            dtoSalida.setIdSalida(parseStringToInt.apply(idText, "El id tiene que ser un número."));
+
+            String totalText = this.txtTotalSalidaRegistro.getText();
+            if (totalText.compareTo("") == 0 || totalText.isEmpty()) {
+                throw new IllegalArgumentException("El valor total es obligatorio.");
+            }
+            double valorTotal = Double.parseDouble(totalText);
+
+            if (cantidad == 0) {
+                throw new IllegalArgumentException("La cantidad no puede ser cero.");
+            }
+            double valorUnitario = valorTotal / cantidad;
+
+            dtoSalida.setValorTotal(valorTotal);
+            dtoSalida.setValorUnitario(valorUnitario);
+
+            int resultado = serviceSalida.guardarSalida(dtoSalida);
+            MessageUtils.mostrarMensajeExitoso("Registro guardado exitosamente: " + resultado);
+
+        } catch (NumberFormatException e) {
+            MessageUtils.mostrarMensajeError("Error al procesar un número: " + e.getMessage());
+        } catch (IllegalArgumentException e) {
+            MessageUtils.mostrarMensajeError(e.getMessage());
+        } catch (Exception e) {
+            MessageUtils.mostrarMensajeError("Ocurrió un error inesperado: " + e.getMessage());
+        }
     }
+
     
     private void actionBtnBuscarRegistro(MouseEvent event) {
         int idSalida = parseStringToInt.apply(this.txtIdSalidaRegistro.getText(), "El id tiene que ser un número.");
-        if (idSalida == -1) {
+        String nombreProducto = this.txtNombreSalidaRegistro.getText();
+        int cant = parseStringToInt.apply(this.txtCantidadSalidaRegistro.getText(), "La cantidad tiene que ser un valor númerico.");
+        int stock = parseStringToInt.apply(this.txtStockDisponibleSalidaRegistro.getText(), "El stock tiene que ser un valor númerico.");
+        double valorU = 0;
+        try {
+            valorU = Double.parseDouble(this.txtPrecioSalidaRegistro.getText());
+        } catch (Exception e) {
+            MessageUtils.mostrarMensajeError("El precio debe ser un valor con decimal o númerico.");
+        }
+        
+        List<DTOSalida> lista = serviceSalida.buscarPorParametros(idSalida, nombreProducto, cant, stock, valorU, 0, null);
+        this.actualizarTablaSalidaRegistro(lista);
+        
+        if (lista.size() == 0) {
             actulaizarTablaTotalmenteRegistro();
-            return;
+            MessageUtils.mostrarMensajeError("La salida buscada no exite.");
         }
-        DTOSalida dtoSalida = serviceSalida.obtenerSalidaPorId(idSalida);
-        if (dtoSalida == null) {
-            MessageUtils.mostrarMensajeError("La salida buscada no exite de ID: " + idSalida);
-            return;
-        }
-        this.actualizarTablaSalidaRegistro(List.of(dtoSalida));
     }
     
     private void actionBtnGenerarRegistro(MouseEvent event) {
-        
+        String strSubTotal = this.txtSubTotalSalidaRegistro.getText();
+        double subTotal = -1;
+        if (strSubTotal.compareTo("") == 0) subTotal = 0;
+        if (subTotal == -1) {
+            try {
+                subTotal = Double.parseDouble(strSubTotal);
+            } catch (Exception e) {
+                MessageUtils.mostrarMensajeError("El campo SubTotal debe ser un número.");
+                subTotal = 0;
+                this.txtSubTotalSalidaRegistro.setText("0");
+            }
+        }
+        double igv = 0.18;
+        try {
+            igv = Double.parseDouble(this.txtIGVSalidaRegistro.getText());
+        } catch (Exception e) {
+            MessageUtils.mostrarMensajeError("El campo IGV debe ser un número.");
+            this.txtIGVSalidaRegistro.setText("0.18");
+        }
+        double total = (1 + igv) * subTotal;
+        this.txtTotalSalidaRegistro.setText("" + total);
     }
     
     private void actionBtnClearRegistro(MouseEvent event) {
@@ -376,11 +452,12 @@ public class ControllerSalida {
 
     private final BiFunction<String, String, Integer> parseStringToInt = (String text, String mensajeError) -> {
         int num;
+        if (text.compareTo("") == 0) return 0;
         try {
             num = Integer.parseInt(text);
         } catch (NumberFormatException e) {
             MessageUtils.mostrarMensajeError(mensajeError);
-            System.err.println(e.getMessage());
+            LOGGER.error(e.getMessage());
             return -1;
         }
         return num;
